@@ -8,11 +8,24 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
-		<key>88123170-13C8-4156-BB20-37D5FF3656EA</key>
+		<key>67B538ED-D0BA-41DC-99FF-4478B016372D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>AE9F85AF-BF26-4413-AB6D-897FB71EDAA1</string>
+				<string>B3B5B552-B537-4D50-8DA3-4411C42285BC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>67B538ED-D0BA-41DC-99FF-4478B016372D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -35,50 +48,94 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
 				<key>escaping</key>
 				<integer>126</integer>
+				<key>keyword</key>
+				<string>cf</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>ChatFred is thinking ...</string>
 				<key>script</key>
 				<string>var='{query}'
 var=${var//\?/|Q|}
 var=${var//\!/|E|}
 var=${var//\./|S|}
 
-
 python3 main.py $var</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>AE9F85AF-BF26-4413-AB6D-897FB71EDAA1</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>cf</string>
 				<key>subtext</key>
-				<string>Talk to ChatFred</string>
-				<key>text</key>
-				<string>ChatFred</string>
+				<string></string>
+				<key>title</key>
+				<string>You say: '{query}'</string>
+				<key>type</key>
+				<integer>5</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>88123170-13C8-4156-BB20-37D5FF3656EA</string>
+			<string>7B3B0EFA-A003-4C15-9647-0F1550A51D14</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>67B538ED-D0BA-41DC-99FF-4478B016372D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Copied to clipboard:</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B3B5B552-B537-4D50-8DA3-4411C42285BC</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -87,19 +144,30 @@ python3 main.py $var</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>88123170-13C8-4156-BB20-37D5FF3656EA</key>
+		<key>67B538ED-D0BA-41DC-99FF-4478B016372D</key>
 		<dict>
+			<key>note</key>
+			<string>Copy translated text to the clipboard.</string>
 			<key>xpos</key>
-			<real>130</real>
+			<real>485</real>
 			<key>ypos</key>
-			<real>150</real>
+			<real>100</real>
 		</dict>
-		<key>AE9F85AF-BF26-4413-AB6D-897FB71EDAA1</key>
+		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<dict>
 			<key>xpos</key>
-			<real>390</real>
+			<real>200</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>55</real>
+		</dict>
+		<key>B3B5B552-B537-4D50-8DA3-4411C42285BC</key>
+		<dict>
+			<key>note</key>
+			<string>Show a notifciation when text was copied to the clipboard.</string>
+			<key>xpos</key>
+			<real>400</real>
+			<key>ypos</key>
+			<real>300</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -108,9 +176,9 @@ python3 main.py $var</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>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</string>
-				<key>placeholder</key>
 				<string></string>
+				<key>placeholder</key>
+				<string>sk- ...</string>
 				<key>required</key>
 				<true/>
 				<key>trim</key>
@@ -145,6 +213,111 @@ python3 main.py $var</string>
 			<string>textfield</string>
 			<key>variable</key>
 			<string>model</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>0</string>
+				<key>placeholder</key>
+				<string>0</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.</string>
+			<key>label</key>
+			<string>Temperature</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>temperature</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>100</string>
+				<key>placeholder</key>
+				<string>100</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The maximum number of tokens to generate in the completion.</string>
+			<key>label</key>
+			<string>Maximum tokens</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>max_tokens</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>1</string>
+				<key>placeholder</key>
+				<string>1</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.</string>
+			<key>label</key>
+			<string>Top P</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>top_p</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>0.0</string>
+				<key>placeholder</key>
+				<string>0.0</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.</string>
+			<key>label</key>
+			<string>Frequency penalty</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>frequency_penalty</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>0.0</string>
+				<key>placeholder</key>
+				<string>0.0</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.</string>
+			<key>label</key>
+			<string>Presence penalty</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>presence_penalty</string>
 		</dict>
 	</array>
 	<key>version</key>

@@ -1,8 +1,10 @@
+import json
 import os
 import re
-import subprocess
 import sys
 from typing import List
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
 import openai
 
@@ -30,25 +32,35 @@ def __prompt_from_request(args: List[str]) -> str:
     return f"{request} A:"
 
 
-x = __prompt_from_request(sys.argv[1:])
-
-print(x, file=sys.stderr)
+query = __prompt_from_request(sys.argv[1:])
 
 response = (
     openai.Completion.create(
         model=os.getenv("model"),
-        prompt=x,
-        temperature=0,
-        max_tokens=100,
-        top_p=1,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
+        prompt=query,
+        temperature=int(os.getenv("temperature")),
+        max_tokens=int(os.getenv("max_tokens")) + len(query),
+        top_p=int(os.getenv("top_p")),
+        frequency_penalty=float(os.getenv("frequency_penalty")),
+        presence_penalty=float(os.getenv("presence_penalty")),
         stop=["\n"],
     )
     .choices[0]
     .text
 )
 
+response_dict = {
+    "items": [
+        {
+            "uid": "null",
+            "type": "text",
+            "title": response,
+            "subtitle": "Hit return to copy.",
+            "arg": response,
+            "autocomplete": response,
+            "icon": {"path": "./icon.png"},
+        }
+    ]
+}
 
-print(response, file=sys.stderr)
-subprocess.run("pbcopy", text=True, input=response)
+sys.stdout.write(json.dumps(response_dict))
