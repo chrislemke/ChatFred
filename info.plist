@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>ai.lemke.chatfred</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>88123170-13C8-4156-BB20-37D5FF3656EA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AE9F85AF-BF26-4413-AB6D-897FB71EDAA1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Chris Lemke</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ChatFred</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>script</key>
+				<string>var='{query}'
+var=${var//\?/|Q|}
+var=${var//\!/|E|}
+var=${var//\./|S|}
+
+
+python3 main.py $var</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AE9F85AF-BF26-4413-AB6D-897FB71EDAA1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>cf</string>
+				<key>subtext</key>
+				<string>Talk to ChatFred</string>
+				<key>text</key>
+				<string>ChatFred</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>88123170-13C8-4156-BB20-37D5FF3656EA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>88123170-13C8-4156-BB20-37D5FF3656EA</key>
+		<dict>
+			<key>xpos</key>
+			<real>130</real>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>AE9F85AF-BF26-4413-AB6D-897FB71EDAA1</key>
+		<dict>
+			<key>xpos</key>
+			<real>390</real>
+			<key>ypos</key>
+			<real>145</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>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</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Your personal API OpenAI key.</string>
+			<key>label</key>
+			<string>API-Key</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>api_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>text-davinci-003</string>
+				<key>placeholder</key>
+				<string>text-davinci-003</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Following models are available: "ada", "babbage", "curie", "text-davinci-003". Read more about pricing: https://openai.com/api/pricing/</string>
+			<key>label</key>
+			<string>OpenAI model</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>model</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string></string>
+	<key>webaddress</key>
+	<string>https://lemke.ai</string>
+</dict>
+</plist>
