@@ -38,7 +38,7 @@
 	<key>createdby</key>
 	<string>Chris Lemke</string>
 	<key>description</key>
-	<string>Alfred workflow using OpenAI's GPT model.</string>
+	<string>Alfred workflow using OpenAI's model for chatting, etc.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>

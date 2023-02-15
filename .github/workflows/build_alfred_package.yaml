@@ -18,7 +18,6 @@ jobs:
         with:
           workflow_dir: .
           exclude_patterns: "*.pyc *__pycache__/*"
-          custom_version: ${{ github.ref_name }}
 
       - name: Release
         uses: softprops/action-gh-release@v1
