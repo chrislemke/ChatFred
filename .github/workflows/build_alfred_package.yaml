@@ -16,7 +16,7 @@ jobs:
         id: builder
         uses: almibarss/build-alfred-workflow@v1.1
         with:
-          workflow_dir: src
+          workflow_dir: .
           exclude_patterns: "*.pyc *__pycache__/*"
           custom_version: ${{ github.ref_name }}
 
