@@ -1,7 +1,7 @@
-<img src="https://raw.githubusercontent.com/chrislemke/chatfred/main/assets/images/chatfred.png" alt="ChatFred Logo" width="200" height="200"/><br>
+<img src="assets/images/chatfred.png" alt="ChatFred Logo" width="200" height="200"/><br>
 
 # ChatFred
-**[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model for Q&A, text completion and much more 🤖**
+**[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model for chatting, text completion and much more 🤖**
 
 ## Setup
 The setup is simple. Just install the workflow and add your OpenAI API key. You can get your key [here](https://beta.openai.com/signup). Simply sign up and create an API key. Then add it to the workflow.
@@ -20,7 +20,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 ## Usage
 Just ask the model whatever you want. The model will answer to you. If you want to copy its answer, just press <kbd>RETURN</kbd> and paste it wherever you want.
 
-![Screenshot](https://raw.githubusercontent.com/chrislemke/ChatFred/main/assets/images/screenshot.png)
+![Screenshot](assets/images/screenshot.png)
 
 GTP-3 is a very powerful model. It can answer questions, write stories, and even write code. You can find more examples [here](https://platform.openai.com/examples).
 
