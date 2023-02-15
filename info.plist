@@ -177,25 +177,25 @@ OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs 
 			<key>note</key>
 			<string>Copy translated text to the clipboard.</string>
 			<key>xpos</key>
-			<real>485</real>
+			<real>485.0</real>
 			<key>ypos</key>
-			<real>100</real>
+			<real>100.0</real>
 		</dict>
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<dict>
 			<key>xpos</key>
-			<real>200</real>
+			<real>200.0</real>
 			<key>ypos</key>
-			<real>55</real>
+			<real>55.0</real>
 		</dict>
 		<key>B3B5B552-B537-4D50-8DA3-4411C42285BC</key>
 		<dict>
 			<key>note</key>
 			<string>Show a notifciation when text was copied to the clipboard.</string>
 			<key>xpos</key>
-			<real>400</real>
+			<real>400.0</real>
 			<key>ypos</key>
-			<real>300</real>
+			<real>300.0</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
