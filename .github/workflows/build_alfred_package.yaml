@@ -21,7 +21,6 @@ jobs:
           custom_version: ${{ github.ref_name }}
 
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v1.1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           files: ${{ steps.builder.outputs.workflow_file }}
