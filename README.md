@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/chrislemke/chatfred/main/assets/images/chatfred.png" alt="ChatFred Logo" width="200" height="200"/><br>
 
 # ChatFred
-**[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model 🤖**
+**[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model for Q&A, text completion and much more 🤖**
 
 ## Setup
 The setup is simple. Just install the workflow and add your OpenAI API key. You can get your key [here](https://beta.openai.com/signup). Simply sign up and create an API key. Then add it to the workflow.
