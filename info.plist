@@ -78,7 +78,7 @@ var=${var//\?/|Q|}
 var=${var//\!/|E|}
 var=${var//\./|S|}
 
-python3 main.py $var</string>
+python3 src/main.py $var</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -168,7 +168,8 @@ Just ask the model whatever you want. The model will answer to you. If you want 
 GTP-3 is a very powerful model. It can answer questions, write stories, and even write code. You can find more examples [here](https://platform.openai.com/examples).
 
 ## GPT-3 and ChatGPT
-OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs with the GPT-3 model. As soon as OpenAI or Microsoft Azure offers a ChatGPT API, it will be integrated into this workflow.</string>
+OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs with the GPT-3 model. As soon as OpenAI or Microsoft Azure offers a ChatGPT API, it will be integrated into this workflow.
+</string>
 	<key>uidata</key>
 	<dict>
 		<key>67B538ED-D0BA-41DC-99FF-4478B016372D</key>
