@@ -73,14 +73,14 @@
 				<key>runningsubtext</key>
 				<string>ChatFred is thinking ...</string>
 				<key>script</key>
-				<string>var='{query}'
+				<string>var=$1
 var=${var//\?/|Q|}
 var=${var//\!/|E|}
 var=${var//\./|S|}
 
 python3 src/main.py $var</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
@@ -151,12 +151,12 @@ The setup is simple. Just install the workflow and add your OpenAI API key. You 
 
 ### Tweaking the workflow (optional)
 You can tweak the workflow to your liking. The following parameters are available:
-- `model`: Following models are available: `ada`, `babbage`, `curie`, `text-davinci-003` (ascending quality). Default: `text-davinci-003`.
-- `temperature`: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
-- `max_tokens`: The maximum number of tokens to generate in the completion. Default: `100`.
-- `top_p`: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
-- `frequency_penalty`: A value between -2.0 and 2.0. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
-- `presence_penalty`: A Value between -2.0 and 2.0. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
+- `OpenAI model`: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
+- `Temperature`: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
+- `Maximum tokens`: The maximum number of tokens to generate in the completion. Default: `100`.
+- `Top-p`: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
+- `Frequency penalty`: A value between -2.0 and 2.0. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
+- `Presence penalty`: A Value between -2.0 and 2.0. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
 
  You can find more information about these parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
@@ -168,8 +168,7 @@ Just ask the model whatever you want. The model will answer to you. If you want 
 GTP-3 is a very powerful model. It can answer questions, write stories, and even write code. You can find more examples [here](https://platform.openai.com/examples).
 
 ## GPT-3 and ChatGPT
-OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs with the GPT-3 model. As soon as OpenAI or Microsoft Azure offers a ChatGPT API, it will be integrated into this workflow.
-</string>
+OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs with the GPT-3 model. As soon as OpenAI or Microsoft Azure offers a ChatGPT API, it will be integrated into this workflow.</string>
 	<key>uidata</key>
 	<dict>
 		<key>67B538ED-D0BA-41DC-99FF-4478B016372D</key>
@@ -226,19 +225,32 @@ OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs 
 			<dict>
 				<key>default</key>
 				<string>text-davinci-003</string>
-				<key>placeholder</key>
-				<string>text-davinci-003</string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Ada</string>
+						<string>ada</string>
+					</array>
+					<array>
+						<string>Babbage</string>
+						<string>babbage</string>
+					</array>
+					<array>
+						<string>Curie</string>
+						<string>curie</string>
+					</array>
+					<array>
+						<string>Davinci</string>
+						<string>text-davinci-003</string>
+					</array>
+				</array>
 			</dict>
 			<key>description</key>
-			<string>Following models are available: "ada", "babbage", "curie", "text-davinci-003" (ascending quality). Read more about pricing: https://openai.com/api/pricing/</string>
+			<string>Language model used for prediction. Read more about pricing: https://openai.com/api/pricing/</string>
 			<key>label</key>
 			<string>OpenAI model</string>
 			<key>type</key>
-			<string>textfield</string>
+			<string>popupbutton</string>
 			<key>variable</key>
 			<string>model</string>
 		</dict>
@@ -349,7 +361,7 @@ OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs 
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.1.2</string>
+	<string>v0.1.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
