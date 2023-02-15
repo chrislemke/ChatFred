@@ -1,4 +1,4 @@
-<img src="https://github.com/chrislemke/chatfred/raw/main/assets/images/chatfred.png" alt="ChatFred Logo" width="200" height="200"/><br>
+<img src="https://raw.githubusercontent.com/chrislemke/chatfred/main/assets/images/chatfred.png" alt="ChatFred Logo" width="200" height="200"/><br>
 
 # ChatFred
 **[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model 🤖**
@@ -20,7 +20,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 ## Usage
 Just ask the model whatever you want. The model will answer to you. If you want to copy its answer, just press <kbd>RETURN</kbd> and paste it wherever you want.
 
-![Screemshot]("https://github.com/chrislemke/chatfred/raw/main/assets/images/screenshot.png")
+![Screenshot](https://raw.githubusercontent.com/chrislemke/ChatFred/main/assets/images/screenshot.png)
 
 GTP-3 is a very powerful model. It can answer questions, write stories, and even write code. You can find more examples [here](https://platform.openai.com/examples).
 
