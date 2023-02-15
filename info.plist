@@ -349,7 +349,7 @@ OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs 
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.1.1</string>
+	<string>0.1.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
