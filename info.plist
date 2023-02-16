@@ -8,6 +8,19 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7B3B0EFA-A003-4C15-9647-0F1550A51D14</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
 		<array>
 			<dict>
@@ -213,7 +226,7 @@
 				<key>createintermediatefolders</key>
 				<false/>
 				<key>filename</key>
-				<string>~/ChatFred.txt</string>
+				<string>{var:save_to_file_dir}/ChatFred.txt</string>
 				<key>filetext</key>
 				<string>{date}, {time}: 
 {query}
@@ -288,6 +301,37 @@ python3 src/main.py $var</string>
 			<string>7B3B0EFA-A003-4C15-9647-0F1550A51D14</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>3</integer>
+				<key>hotmod</key>
+				<integer>1310720</integer>
+				<key>hotstring</key>
+				<string>F</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>00A84B22-93A9-4F5B-8208-5A09AE39A270</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -398,24 +442,28 @@ python3 src/main.py $var</string>
 **[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model for chatting, text completion and much more 🤖**
 
 ## Setup 🛠️
-The setup is simple. Just install the workflow and add your OpenAI API key. You can get your key [here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required and you can start right away talking to ChatFred.
+The setup is simple. Just install the workflow and add your OpenAI API key. You can get your key [here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required and you can start talking to ChatFred right away.
 
 ### Tweaking the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available:
-- `OpenAI model`: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
-- `Temperature`: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
-- `Maximum tokens`: The maximum number of tokens to generate in the completion. Default: `100`.
-- `Top-p`: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
-- `Frequency penalty`: A value between -2.0 and 2.0. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
-- `Presence penalty`: A Value between -2.0 and 2.0. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
-- `Always save replies`: If enabled, all replies will be saved to a file (`~/ChatFred.txt`). Default: 'unchecked'.
+- **OpenAI model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
+- **Temperature**: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
+- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default: `100`.
+- **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
+- **Frequency penalty**: A value between -2.0 and 2.0. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
+- **Presence penalty**: A Value between -2.0 and 2.0. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
+- **Always save replies**: If enabled, all replies will be saved to a file (`{Save to file directory}/ChatFred.txt`). Default: 'unchecked'.
+- **Save to file directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 
  You can find more information about these parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## Usage 🧑‍💻
-Just ask the model whatever you want. The model will answer your question. If you want to copy its answer, just hit &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt; and paste it wherever you want.
+To start the ChatFred workflow, just type ***cf*** or use the &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt; + &lt;kbd&gt;CMD ⌘&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt; hotkey.
 
-Ask questions like:
+
+![Screenshot](assets/images/screenshot0.png) 😂 🤣
+
+Ask questions:
 ![Screenshot](assets/images/screenshot1.png)
 
 Translate text:
@@ -430,7 +478,7 @@ To handle the reply of ChatFred you have the following options.
 - &lt;kbd&gt;CMD ⌘&lt;/kbd&gt;: Show the reply in large text (can be combined with &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;)
 - &lt;kbd&gt;OPTION ⌥&lt;/kbd&gt;: Let ChatFred speak
 - &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;: Copy the reply to the clipboard
-- &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt;: Write the reply to a file (`~/ChatFred.txt`)
+- &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt;: Write the reply to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
 
 
@@ -443,6 +491,13 @@ OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs 
 As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow.</string>
 	<key>uidata</key>
 	<dict>
+		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
+		<dict>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>285</real>
+		</dict>
 		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
 		<dict>
 			<key>note</key>
@@ -476,9 +531,9 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<dict>
 			<key>xpos</key>
-			<real>35</real>
+			<real>175</real>
 			<key>ypos</key>
-			<real>290</real>
+			<real>285</real>
 		</dict>
 		<key>AD46F538-F4DD-41B2-BE43-E830535CA0E3</key>
 		<dict>
@@ -541,15 +596,15 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 				<array>
 					<array>
 						<string>Ada</string>
-						<string>ada</string>
+						<string>text-ada-001</string>
 					</array>
 					<array>
 						<string>Babbage</string>
-						<string>babbage</string>
+						<string>text-babbage-001</string>
 					</array>
 					<array>
 						<string>Curie</string>
-						<string>curie</string>
+						<string>text-curie-001</string>
 					</array>
 					<array>
 						<string>Davinci</string>
@@ -558,7 +613,7 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 				</array>
 			</dict>
 			<key>description</key>
-			<string>Language model used for prediction. Read more about pricing: https://openai.com/api/pricing/</string>
+			<string>Language model used for prediction. Read more about the models: https://platform.openai.com/docs/models/gpt-3</string>
 			<key>label</key>
 			<string>OpenAI model</string>
 			<key>type</key>
@@ -690,9 +745,30 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>variable</key>
 			<string>save_to_file</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~</string>
+				<key>placeholder</key>
+				<string>~</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Custom directory where the 'ChatFred.txt' should be stored.</string>
+			<key>label</key>
+			<string>Save to file directory</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>save_to_file_dir</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>0.1.4</string>
+	<string>0.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>

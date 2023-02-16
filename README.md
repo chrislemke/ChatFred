@@ -4,24 +4,28 @@
 **[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model for chatting, text completion and much more 🤖**
 
 ## Setup 🛠️
-The setup is simple. Just install the workflow and add your OpenAI API key. You can get your key [here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required and you can start right away talking to ChatFred.
+The setup is simple. Just install the workflow and add your OpenAI API key. You can get your key [here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required and you can start talking to ChatFred right away.
 
 ### Tweaking the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available:
-- `OpenAI model`: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
-- `Temperature`: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
-- `Maximum tokens`: The maximum number of tokens to generate in the completion. Default: `100`.
-- `Top-p`: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
-- `Frequency penalty`: A value between -2.0 and 2.0. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
-- `Presence penalty`: A Value between -2.0 and 2.0. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
-- `Always save replies`: If enabled, all replies will be saved to a file (`~/ChatFred.txt`). Default: 'unchecked'.
+- **OpenAI model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
+- **Temperature**: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
+- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default: `100`.
+- **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
+- **Frequency penalty**: A value between -2.0 and 2.0. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
+- **Presence penalty**: A Value between -2.0 and 2.0. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
+- **Always save replies**: If enabled, all replies will be saved to a file (`{Save to file directory}/ChatFred.txt`). Default: 'unchecked'.
+- **Save to file directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 
  You can find more information about these parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## Usage 🧑‍💻
-Just ask the model whatever you want. The model will answer your question. If you want to copy its answer, just hit <kbd>RETURN ⏎</kbd> and paste it wherever you want.
+To start the ChatFred workflow, just type ***cf*** or use the <kbd>CTRL ⌃</kbd> + <kbd>CMD ⌘</kbd> + <kbd>C</kbd> hotkey.
 
-Ask questions like:
+
+![Screenshot](assets/images/screenshot0.png) 😂 🤣
+
+Ask questions:
 ![Screenshot](assets/images/screenshot1.png)
 
 Translate text:
@@ -36,7 +40,7 @@ To handle the reply of ChatFred you have the following options.
 - <kbd>CMD ⌘</kbd>: Show the reply in large text (can be combined with <kbd>CTRL ⌃</kbd>)
 - <kbd>OPTION ⌥</kbd>: Let ChatFred speak
 - <kbd>CTRL ⌃</kbd>: Copy the reply to the clipboard
-- <kbd>SHIFT ⇧</kbd>: Write the reply to a file (`~/ChatFred.txt`)
+- <kbd>SHIFT ⇧</kbd>: Write the reply to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
 
 
