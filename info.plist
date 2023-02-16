@@ -83,7 +83,7 @@
 				<key>modifiersubtext</key>
 				<string>Let ChatFred speak</string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -101,7 +101,7 @@
 				<key>modifiers</key>
 				<integer>131072</integer>
 				<key>modifiersubtext</key>
-				<string>Save reply to file</string>
+				<string>Save conversation to file</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -226,9 +226,12 @@
 				<key>filename</key>
 				<string>{var:save_to_file_dir}/ChatFred.txt</string>
 				<key>filetext</key>
-				<string>{date}, {time}: 
-{query}
+				<string>{date}, {time}:
+Request:
+ {var:request}
 
+Reply: 
+{query}
 ---
 </string>
 				<key>ignoredynamicplaceholders</key>
@@ -244,61 +247,6 @@
 			<string>547CA7CA-D433-488C-9950-FF584AE9601E</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>126</integer>
-				<key>keyword</key>
-				<string>cf</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>2</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>ChatFred is thinking ...</string>
-				<key>script</key>
-				<string>var=$1
-var=${var//\?/|Q|}
-var=${var//\!/|E|}
-var=${var//\./|S|}
-var=${var//\.../|C|}
-
-python3 src/main.py $var</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Talking to GPT models</string>
-				<key>title</key>
-				<string>ChatFred</string>
-				<key>type</key>
-				<integer>5</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>7B3B0EFA-A003-4C15-9647-0F1550A51D14</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -328,6 +276,55 @@ python3 src/main.py $var</string>
 			<string>00A84B22-93A9-4F5B-8208-5A09AE39A270</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>cf</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>ChatFred is thinking ...</string>
+				<key>script</key>
+				<string>python3 src/main.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Talking to GPT models</string>
+				<key>title</key>
+				<string>ChatFred</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7B3B0EFA-A003-4C15-9647-0F1550A51D14</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -448,10 +445,10 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
 - **Frequency penalty**: A value between -2.0 and 2.0. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
 - **Presence penalty**: A Value between -2.0 and 2.0. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
-- **Always save replies**: If enabled, all replies will be saved to a file (`{Save to file directory}/ChatFred.txt`). Default: 'unchecked'.
+- **Always save conversation**: If enabled, all your request and ChatFred's replies will be saved to a file (`{Save to file directory}/ChatFred.txt`). Default: 'unchecked'.
 - **Save to file directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 
- You can find more information about these parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
+You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## Usage 🧑‍💻
 To start the ChatFred workflow, just type ***cf*** or use configure your own hotkey.
@@ -462,19 +459,23 @@ Ask questions:
 Translate text:
 ![Screenshot](assets/images/screenshot2.png)
 
-If the reply is a bit longer just hit &lt;kbd&gt;CMD ⌘&lt;/kbd&gt;:
+If the reply is a bit longer just hit &lt;kbd&gt;CMD ⌘&lt;/kbd&gt; + &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt;:
 ![Screenshot](assets/images/screenshot3.png)
 ![Screenshot](assets/images/screenshot4.png)
 
 ### Options 🤗
 To handle the reply of ChatFred you have the following options.
 - &lt;kbd&gt;CMD ⌘&lt;/kbd&gt;: Show the reply in large text (can be combined with &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;)
-- &lt;kbd&gt;OPTION ⌥&lt;/kbd&gt;: Let ChatFred speak
+- &lt;kbd&gt;OPTION ⌥&lt;/kbd&gt;: Let ChatFred speak 🗣️
 - &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;: Copy the reply to the clipboard
-- &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt;: Write the reply to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
+- &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt;: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
+### Save conversations to file 📝
+If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Save to file directory*). The default location is the user's home directory (`~/`).
 
+You can also hit &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt; + &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt; for saving the reply manually.
 
+### Examples 📚
 GTP-3 is a very powerful model. It can answer questions, write stories, and even write code. You can find more examples [here](https://platform.openai.com/examples).
 
 ## GPT-3 and ChatGPT 🤖
@@ -565,14 +566,14 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 				<key>default</key>
 				<string></string>
 				<key>placeholder</key>
-				<string>sk- ...</string>
+				<string>sk-...</string>
 				<key>required</key>
 				<true/>
 				<key>trim</key>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Your personal API OpenAI key.</string>
+			<string>Your personal API OpenAI key. Should start with: 'sk-'.</string>
 			<key>label</key>
 			<string>API-Key</string>
 			<key>type</key>
@@ -730,9 +731,9 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 				<string></string>
 			</dict>
 			<key>description</key>
-			<string>ChatFreds replies can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN'. If this box is checked all replies will be stored to file automatically.</string>
+			<string>Your conversation with ChatFred can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN'. If this box is checked all requests and replies will be stored to file automatically.</string>
 			<key>label</key>
-			<string>Always save replies</string>
+			<string>Always save conversation</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
@@ -761,7 +762,7 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.2.1</string>
+	<string>0.2.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>

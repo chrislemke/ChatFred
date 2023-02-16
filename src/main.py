@@ -1,6 +1,5 @@
 import json
 import os
-import re
 import sys
 from typing import List
 
@@ -11,23 +10,22 @@ import openai
 openai.api_key = os.getenv("api_key")
 
 
-def __prepare_request(args: List[str]) -> str:
-    return " ".join(args)
+def __query() -> str:
+    return " ".join(sys.argv[1:])
 
 
-def __prompt_from_request(args: List[str]) -> str:
-    request = __prepare_request(args)
-    return f"Q: {request}\nA:"
+def __prompt_from_query(query: str) -> str:
+    return f"Q: {query}\nA:"
 
 
-query = __prompt_from_request(sys.argv[1:])
+prompt = __prompt_from_query(__query())
 
 response = (
     openai.Completion.create(
         model=os.getenv("model"),
-        prompt=query,
+        prompt=prompt,
         temperature=int(os.getenv("temperature")),
-        max_tokens=int(os.getenv("max_tokens")) + len(query),
+        max_tokens=int(os.getenv("max_tokens")) + len(prompt),
         top_p=int(os.getenv("top_p")),
         frequency_penalty=float(os.getenv("frequency_penalty")),
         presence_penalty=float(os.getenv("presence_penalty")),
@@ -40,17 +38,19 @@ response = (
 response = "..." if response == "" else response
 
 response_dict = {
+    "variables": {
+        "request": f"{__query()}",
+    },
     "items": [
         {
             "uid": "null",
-            "type": "text",
+            "type": "default",
             "title": response,
-            "subtitle": "SHIFT, CTRL or CMD for options",
+            "subtitle": "SHIFT ⇪, CTRL ⌃ or CMD ⌘ for options",
             "arg": response,
             "autocomplete": response,
             "icon": {"path": "./icon.png"},
         }
-    ]
+    ],
 }
-
 sys.stdout.write(json.dumps(response_dict))
