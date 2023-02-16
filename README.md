@@ -4,18 +4,20 @@
 **[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model for chatting, text completion and much more 🤖**
 
 ## Setup 🛠️
-The setup is simple. Just install the workflow and add your OpenAI API key. You can get your key [here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required and you can start talking to ChatFred right away.
+Just install the workflow and add your OpenAI API key. If you have used ChatGPT, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
 
 ### Tweaking the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available:
 - **OpenAI model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
 - **Temperature**: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
-- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default: `100`.
+- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default: `50`.
 - **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
-- **Frequency penalty**: A value between -2.0 and 2.0. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
-- **Presence penalty**: A Value between -2.0 and 2.0. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
-- **Always save conversation**: If enabled, all your request and ChatFred's replies will be saved to a file (`{Save to file directory}/ChatFred.txt`). Default: 'unchecked'.
-- **Save to file directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
+- **Frequency penalty**: A value between `-2.0` and `2.0`. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
+- **Presence penalty**: A Value between `-2.0` and `2.0`. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
+- **Always read out reply**: If enabled, ChatFred will read out all replies automatically. Default: `off`.
+- **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Default: `off`.
+- **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
+- **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
 
  You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
@@ -40,19 +42,19 @@ To handle the reply of ChatFred you have the following options.
 - <kbd>SHIFT ⇧</kbd>: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
 ### Save conversations to file 📝
-If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Save to file directory*). The default location is the user's home directory (`~/`).
+If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Always save conversation to file*). The default location is the user's home directory (`~/`) but can be changed (*File directory*).
 
 You can also hit <kbd>SHIFT ⇧</kbd> + <kbd>RETURN ⏎</kbd> for saving the reply manually.
 
-Here is an example of the saved replies:
+Here is an example of the saved reply:
 ```
-16. Feb 2023, 07:12:00:
+- 16. Feb 2023, 07:12:00 -
 Request:
  What is Star Wars?
 
 Reply:
- Star Wars is a science fiction media franchise created by George Lucas. 
- It includes films, television series, books, comics, video games, and other merchandise. 
+ Star Wars is a science fiction media franchise created by George Lucas.
+ It includes films, television series, books, comics, video games, and other merchandise.
  The franchise began with the eponymous 1977 film and quickly became a worldwide pop-culture phenomenon.
 ---
 ```
@@ -60,8 +62,5 @@ Reply:
 ### Examples 📚
 GTP-3 is a very powerful model. It can answer questions, write stories, and even write code. You can find more examples [here](https://platform.openai.com/examples).
 
-## GPT-3 and ChatGPT 🤖
-OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs with the GPT-3 model. As soon as OpenAI or Microsoft Azure offers a ChatGPT API, it will be integrated into this workflow.
-
 ## What's next? 🚧
-As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow.
+As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow. Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.

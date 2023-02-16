@@ -32,6 +32,36 @@
 				<false/>
 			</dict>
 		</array>
+		<key>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AD7BB662-4857-404A-9CEC-3F8D966EEF52</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>03B09396-117B-4CBE-BD96-5BA88D287C95</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3BF9843F-60FD-4683-9ADF-C5533691858B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>A851B8B3-DE1D-4DE3-B4F8-F65F92241CDC</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>51EEBBF2-BE53-4A88-965F-02AC2D651EF5</key>
 		<array>
 			<dict>
@@ -87,6 +117,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>AD46F538-F4DD-41B2-BE43-E830535CA0E3</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
@@ -127,6 +167,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>5D9861D9-2F55-408C-B1BD-33ADD7A02566</string>
 				<key>modifiers</key>
 				<integer>1310720</integer>
@@ -161,6 +211,38 @@
 			<string>alfred.workflow.output.speak</string>
 			<key>uid</key>
 			<string>AD7BB662-4857-404A-9CEC-3F8D966EEF52</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:always_speak}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>03B09396-117B-4CBE-BD96-5BA88D287C95</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -226,7 +308,7 @@
 				<key>filename</key>
 				<string>{var:save_to_file_dir}/ChatFred.txt</string>
 				<key>filetext</key>
-				<string>{date}, {time}:
+				<string>- {date}, {time} -
 Request:
  {var:request}
 
@@ -401,6 +483,38 @@ Reply:
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:always_copy_to_clipboard}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string>0</string>
+						<key>outputlabel</key>
+						<string>{query}</string>
+						<key>uid</key>
+						<string>A851B8B3-DE1D-4DE3-B4F8-F65F92241CDC</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alignment</key>
 				<integer>0</integer>
 				<key>backgroundcolor</key>
@@ -435,20 +549,22 @@ Reply:
 **[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model for chatting, text completion and much more 🤖**
 
 ## Setup 🛠️
-The setup is simple. Just install the workflow and add your OpenAI API key. You can get your key [here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required and you can start talking to ChatFred right away.
+Just install the workflow and add your OpenAI API key. If you have used ChatGPT, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
 
 ### Tweaking the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available:
 - **OpenAI model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
 - **Temperature**: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
-- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default: `100`.
+- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default: `50`.
 - **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
-- **Frequency penalty**: A value between -2.0 and 2.0. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
-- **Presence penalty**: A Value between -2.0 and 2.0. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
-- **Always save conversation**: If enabled, all your request and ChatFred's replies will be saved to a file (`{Save to file directory}/ChatFred.txt`). Default: 'unchecked'.
-- **Save to file directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
+- **Frequency penalty**: A value between `-2.0` and `2.0`. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
+- **Presence penalty**: A Value between `-2.0` and `2.0`. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
+- **Always read out reply**: If enabled, ChatFred will read out all replies automatically. Default: `off`.
+- **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Default: `off`.
+- **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
+- **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
 
-You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
+ You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## Usage 🧑‍💻
 To start the ChatFred workflow, just type ***cf*** or configure your own hotkey.
@@ -471,91 +587,142 @@ To handle the reply of ChatFred you have the following options.
 - &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt;: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
 ### Save conversations to file 📝
-If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Save to file directory*). The default location is the user's home directory (`~/`).
+If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Always save conversation to file*). The default location is the user's home directory (`~/`) but can be changed (*File directory*).
 
 You can also hit &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt; + &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt; for saving the reply manually.
 
 ### Examples 📚
 GTP-3 is a very powerful model. It can answer questions, write stories, and even write code. You can find more examples [here](https://platform.openai.com/examples).
 
-## GPT-3 and ChatGPT 🤖
-OpenAI does not provide a ChatGPT API yet. Accordingly, this workflow also runs with the GPT-3 model. As soon as OpenAI or Microsoft Azure offers a ChatGPT API, it will be integrated into this workflow.
-
 ## What's next? 🚧
-As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow.</string>
+As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow. Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.</string>
 	<key>uidata</key>
 	<dict>
 		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>note</key>
+			<string>Add a hotkey to start ChatFred without typing 'cf'.</string>
 			<key>xpos</key>
-			<real>30</real>
+			<real>265</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>445</real>
 		</dict>
 		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
 			<key>note</key>
-			<string>Copy translated text to the clipboard.</string>
+			<string>Copies ChatFred's reply to the clipboard.</string>
+			<key>xpos</key>
+			<real>885</real>
+			<key>ypos</key>
+			<real>600</real>
+		</dict>
+		<key>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Automatically reads out ChatFred's reply if 'Always read out reply' is checked.</string>
+			<key>xpos</key>
+			<real>505</real>
+			<key>ypos</key>
+			<real>195</real>
+		</dict>
+		<key>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Automatically copies conversation if 'Always copy reply to clipboard' is checked.</string>
 			<key>xpos</key>
 			<real>650</real>
 			<key>ypos</key>
-			<real>440</real>
+			<real>615</real>
 		</dict>
 		<key>51EEBBF2-BE53-4A88-965F-02AC2D651EF5</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Automatically saves conversation if 'Always save conversation to file' is checked.</string>
 			<key>xpos</key>
-			<real>540</real>
+			<real>775</real>
 			<key>ypos</key>
-			<real>335</real>
+			<real>495</real>
 		</dict>
 		<key>547CA7CA-D433-488C-9950-FF584AE9601E</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>note</key>
+			<string>Saves/appends the conversation (request and reply) to the ChatFred.txt file.</string>
 			<key>xpos</key>
-			<real>705</real>
+			<real>940</real>
 			<key>ypos</key>
-			<real>230</real>
+			<real>390</real>
 		</dict>
 		<key>5D9861D9-2F55-408C-B1BD-33ADD7A02566</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>note</key>
+			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>385</real>
+			<real>605</real>
 			<key>ypos</key>
-			<real>555</real>
+			<real>770</real>
 		</dict>
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
 			<key>xpos</key>
-			<real>175</real>
+			<real>410</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>445</real>
 		</dict>
 		<key>AD46F538-F4DD-41B2-BE43-E830535CA0E3</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>note</key>
+			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>705</real>
+			<real>940</real>
 			<key>ypos</key>
-			<real>45</real>
+			<real>205</real>
 		</dict>
 		<key>AD7BB662-4857-404A-9CEC-3F8D966EEF52</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>note</key>
+			<string>Reads out ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>365</real>
+			<real>715</real>
 			<key>ypos</key>
-			<real>25</real>
+			<real>105</real>
 		</dict>
 		<key>C7A6C68C-D4BD-4E85-9A6B-D1255B3136BA</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
 			<key>xpos</key>
-			<real>850</real>
+			<real>1085</real>
 			<key>ypos</key>
-			<real>440</real>
+			<real>600</real>
 		</dict>
 		<key>F0B1523D-0C58-4D43-9BC2-C96560E8AD95</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
 			<key>xpos</key>
-			<real>900</real>
+			<real>1135</real>
 			<key>ypos</key>
-			<real>230</real>
+			<real>390</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -649,7 +816,7 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>The maximum number of tokens to generate in the completion.</string>
+			<string>The maximum number of tokens to generate by the model.</string>
 			<key>label</key>
 			<string>Maximum tokens</string>
 			<key>type</key>
@@ -728,12 +895,31 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string></string>
+				<string>Be warned! He is very chatty 😎</string>
 			</dict>
 			<key>description</key>
-			<string>Your conversation with ChatFred can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN'. If this box is checked all requests and replies will be stored to file automatically.</string>
+			<string>To let ChatFred speak and read out his replies you can hit 'OPTION+Return'. If this box is checked, all replies will be read out automatically.</string>
 			<key>label</key>
-			<string>Always save conversation</string>
+			<string>Always read out reply</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>always_speak</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Useful for not forgetting ChatFred's replies</string>
+			</dict>
+			<key>description</key>
+			<string>Your conversation with ChatFred can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN'. If this box is checked, all requests and replies will be stored to file automatically.</string>
+			<key>label</key>
+			<string>Always save conversation to file</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
@@ -754,15 +940,34 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>description</key>
 			<string>Custom directory where the 'ChatFred.txt' should be stored.</string>
 			<key>label</key>
-			<string>Save to file directory</string>
+			<string>File directory</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
 			<string>save_to_file_dir</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>ChatFred reply can be copied to the clipboard by hitting 'CTRL+RETURN'. If this box is checked, the replies of ChatFred will be copied to the clipboard automatically.</string>
+			<key>label</key>
+			<string>Always copy reply to clipboard</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>always_copy_to_clipboard</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>0.2.2</string>
+	<string>0.2.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
