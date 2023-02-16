@@ -12,24 +12,12 @@ openai.api_key = os.getenv("api_key")
 
 
 def __prepare_request(args: List[str]) -> str:
-    return " ".join(args).replace("|Q|", "?").replace("|E|", "!").replace("|S|", ".")
-
-
-def __extract_last_punctuation(sentence: str) -> str:
-    punctuation_pattern = r"[\.\?!]"
-    match = re.search(punctuation_pattern, sentence)
-    if match:
-        return sentence[match.end() - 1]
-    else:
-        return ""
+    return " ".join(args)
 
 
 def __prompt_from_request(args: List[str]) -> str:
     request = __prepare_request(args)
-    punctuation = __extract_last_punctuation(request)
-    if punctuation == "?":
-        return f"Q: {request}\nA:"
-    return f"{request} A:"
+    return f"Q: {request}\nA:"
 
 
 query = __prompt_from_request(sys.argv[1:])
@@ -49,13 +37,15 @@ response = (
     .text
 )
 
+response = "..." if response == "" else response
+
 response_dict = {
     "items": [
         {
             "uid": "null",
             "type": "text",
             "title": response,
-            "subtitle": "Hit return to copy.",
+            "subtitle": "SHIFT, CTRL or CMD for options",
             "arg": response,
             "autocomplete": response,
             "icon": {"path": "./icon.png"},
