@@ -51,7 +51,9 @@ Request:
  What is Star Wars?
 
 Reply:
- Star Wars is a science fiction media franchise created by George Lucas. It includes films, television series, books, comics, video games, and other merchandise. The franchise began with the eponymous 1977 film and quickly became a worldwide pop-culture phenomenon.
+ Star Wars is a science fiction media franchise created by George Lucas. 
+ It includes films, television series, books, comics, video games, and other merchandise. 
+ The franchise began with the eponymous 1977 film and quickly became a worldwide pop-culture phenomenon.
 ---
 ```
 
