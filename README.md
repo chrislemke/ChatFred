@@ -20,10 +20,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
  You can find more information about these parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## Usage 🧑‍💻
-To start the ChatFred workflow, just type ***cf*** or use the <kbd>CTRL ⌃</kbd> + <kbd>CMD ⌘</kbd> + <kbd>C</kbd> hotkey.
-
-
-![Screenshot](assets/images/screenshot0.png) 😂 🤣
+To start the ChatFred workflow, just type ***cf*** or use configure your own hotkey.
 
 Ask questions:
 ![Screenshot](assets/images/screenshot1.png)

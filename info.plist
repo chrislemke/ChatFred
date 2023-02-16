@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>ai.lemke.chatfred</string>
-	<key>category</key>
-	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
@@ -314,11 +312,9 @@ python3 src/main.py $var</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>3</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1310720</integer>
-				<key>hotstring</key>
-				<string>F</string>
+				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -458,10 +454,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
  You can find more information about these parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## Usage 🧑‍💻
-To start the ChatFred workflow, just type ***cf*** or use the &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt; + &lt;kbd&gt;CMD ⌘&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt; hotkey.
-
-
-![Screenshot](assets/images/screenshot0.png) 😂 🤣
+To start the ChatFred workflow, just type ***cf*** or use configure your own hotkey.
 
 Ask questions:
 ![Screenshot](assets/images/screenshot1.png)
@@ -768,7 +761,7 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.2.0</string>
+	<string>0.2.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
