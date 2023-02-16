@@ -312,7 +312,7 @@
 Request:
  {var:request}
 
-Reply: 
+Reply:
 {query}
 ---
 </string>

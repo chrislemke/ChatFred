@@ -1,3 +1,5 @@
+"""This module contains the OpenAI GPT-3 API call."""
+
 import json
 import os
 import sys
@@ -24,11 +26,11 @@ response = (
     openai.Completion.create(
         model=os.getenv("model"),
         prompt=prompt,
-        temperature=int(os.getenv("temperature")),
-        max_tokens=int(os.getenv("max_tokens")) + len(prompt),
-        top_p=int(os.getenv("top_p")),
-        frequency_penalty=float(os.getenv("frequency_penalty")),
-        presence_penalty=float(os.getenv("presence_penalty")),
+        temperature=int(os.getenv("temperature")),  # type: ignore
+        max_tokens=int(os.getenv("max_tokens")) + len(prompt),  # type: ignore
+        top_p=int(os.getenv("top_p")),  # type: ignore
+        frequency_penalty=float(os.getenv("frequency_penalty")),  # type: ignore
+        presence_penalty=float(os.getenv("presence_penalty")),  # type: ignore
         stop=["\n"],
     )
     .choices[0]

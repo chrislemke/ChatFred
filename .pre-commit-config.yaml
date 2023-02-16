@@ -1,0 +1,105 @@
+default_language_version:
+  python: python3.10
+
+repos:
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.1.1
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args:
+          [
+            "add",
+            "ci",
+            "docs",
+            "feat",
+            "bug",
+            "fix",
+            "refactor",
+            "revert",
+            "test",
+            "security",
+            "perf",
+            "resolve",
+            "merge",
+            "maintain",
+          ]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: "src/libs"
+      - id: end-of-file-fixer
+        exclude: "src/libs"
+      - id: check-yaml
+      - id: check-xml
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+        exclude: "src/libs"
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-builtin-literals
+        exclude: "src/libs"
+      - id: check-case-conflict
+      - id: check-docstring-first
+        exclude: "src/libs"
+      - id: check-merge-conflict
+      - id: debug-statements
+      - id: fix-byte-order-marker
+      - id: forbid-new-submodules
+      - id: forbid-submodules
+      - id: detect-private-key
+      - id: no-commit-to-branch
+        args: ["--branch=main", "--branch=develop"]
+
+  - repo: https://github.com/PyCQA/docformatter
+    rev: v1.6.0.rc1
+    hooks:
+      - id: docformatter
+        exclude: "src/libs"
+
+  - repo: https://github.com/bwhmather/ssort
+    rev: v0.11.6
+    hooks:
+      - id: ssort
+        exclude: "src/libs"
+
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
+        exclude: "src/libs"
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile=black"]
+        exclude: "src/libs"
+
+  - repo: https://github.com/PyCQA/pylint
+    rev: v2.16.2
+    hooks:
+      - id: pylint
+        exclude: "src/libs"
+        args:
+          [
+            "--disable=C0413",
+            "--disable=E0401",
+            "--disable=W0611",
+          ]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.0.0
+    hooks:
+      - id: mypy
+        exclude: "src/libs"
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.4
+    hooks:
+      - id: bandit
+        exclude: "src/libs"
+        args:
+          - "-r"
