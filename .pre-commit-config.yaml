@@ -90,8 +90,14 @@ repos:
     rev: v2.16.2
     hooks:
       - id: pylint
+        args:
+          [
+            "--disable=C0413",
+            "--disable=E0401",
+            "--disable=R0913",
+            "--disable=W0611",
+          ]
         exclude: "src/libs"
-        args: ["--disable=C0413", "--disable=E0401", "--disable=W0611"]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.0.0

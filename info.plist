@@ -967,7 +967,7 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.2.5</string>
+	<string>0.2.6</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
