@@ -92,6 +92,7 @@ repos:
       - id: pylint
         args:
           [
+            "--disable=C0301",
             "--disable=C0413",
             "--disable=E0401",
             "--disable=R0913",
