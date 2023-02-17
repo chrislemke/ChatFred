@@ -4,7 +4,7 @@
 **[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) models for chatting, text completion, image generation, and more 🤖**
 
 ## Setup 🛠️
-Just install the workflow and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
+Just [download](https://github.com/chrislemke/ChatFred/releases) and install the workflow and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
 
 ## Usage 🧑‍💻
 ### Text completion and chatting 💬
@@ -54,7 +54,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Default: `off`.
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
-- **Image size**: The size of the by DALL·E 2 generated image. Default: `512`.
+- **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
 
  You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
