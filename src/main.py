@@ -3,7 +3,6 @@
 import json
 import os
 import sys
-from typing import List
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
