@@ -47,6 +47,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>428693A7-E395-41B3-8381-7A7EF6582F99</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>68073E31-6F28-4F7B-B20C-6F1611C7076D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</key>
 		<array>
 			<dict>
@@ -103,6 +116,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>68073E31-6F28-4F7B-B20C-6F1611C7076D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F471533B-A418-4158-B92C-AEA42E53945E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<array>
 			<dict>
@@ -117,21 +143,21 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>AD46F538-F4DD-41B2-BE43-E830535CA0E3</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Show repy in large text</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -188,6 +214,43 @@
 		</array>
 		<key>AD46F538-F4DD-41B2-BE43-E830535CA0E3</key>
 		<array/>
+		<key>F471533B-A418-4158-B92C-AEA42E53945E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BE49CE10-D46F-4E7E-AD8A-DEBCC4E3A6B0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3E861EE6-4706-47E6-92D2-687AD8E0414F</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7C03FCF-1822-409B-B1DC-1C070AB0290C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3E861EE6-4706-47E6-92D2-687AD8E0414F</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C0C66D8-A9A4-4CE6-B16B-52361998FF42</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Chris Lemke</string>
@@ -202,6 +265,139 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>BE49CE10-D46F-4E7E-AD8A-DEBCC4E3A6B0</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>🎨 Image generated: {query}</string>
+				<key>title</key>
+				<string>ChatFred</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A7C03FCF-1822-409B-B1DC-1C070AB0290C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 src/image_generation.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>68073E31-6F28-4F7B-B20C-6F1611C7076D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>cfi</string>
+				<key>subtext</key>
+				<string>Using DALL·E 2 to generate images 🎨</string>
+				<key>text</key>
+				<string>ChatFred</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>428693A7-E395-41B3-8381-7A7EF6582F99</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>.*ChatFred_.*\.png$</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>3E861EE6-4706-47E6-92D2-687AD8E0414F</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string></string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>F471533B-A418-4158-B92C-AEA42E53945E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>ChatFred</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7C0C66D8-A9A4-4CE6-B16B-52361998FF42</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>text</key>
 				<string>{query}</string>
 				<key>usevoiceover</key>
@@ -213,6 +409,35 @@
 			<string>AD7BB662-4857-404A-9CEC-3F8D966EEF52</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>50</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>100</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>AD46F538-F4DD-41B2-BE43-E830535CA0E3</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -245,35 +470,6 @@
 			<string>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>50</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>100</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>AD46F538-F4DD-41B2-BE43-E830535CA0E3</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -387,7 +583,7 @@ Reply:
 				<key>runningsubtext</key>
 				<string>ChatFred is thinking ...</string>
 				<key>script</key>
-				<string>python3 src/main.py $1</string>
+				<string>python3 src/text_completion.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -546,12 +742,13 @@ Reply:
 	<string>![chatfred](assets/images/chatfred.png)
 
 # ChatFred
-**[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model for chatting, text completion and much more 🤖**
+**[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) models for chatting, text completion, image generation, and more 🤖**
 
 ## Setup 🛠️
-Just install the workflow and add your OpenAI API key. If you have used ChatGPT, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
+Just install the workflow and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
 
 ## Usage 🧑‍💻
+### Text completion and chatting 💬
 To start the ChatFred workflow, just type ***cf*** or configure your own hotkey.
 
 Ask questions:
@@ -564,20 +761,32 @@ If the reply is a bit longer just hit &lt;kbd&gt;CMD ⌘&lt;/kbd&gt; + &lt;kbd&g
 ![Screenshot](assets/images/screenshot3.png)
 ![Screenshot](assets/images/screenshot4.png)
 
-### Options 🤗
+#### Options 🤗
 To handle the reply of ChatFred you have the following options.
 - &lt;kbd&gt;CMD ⌘&lt;/kbd&gt;: Show the reply in large text (can be combined with &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;)
 - &lt;kbd&gt;OPTION ⌥&lt;/kbd&gt;: Let ChatFred speak 🗣️
 - &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;: Copy the reply to the clipboard
 - &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt;: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
-### Save conversations to file 📝
+#### Save conversations to file 📝
 If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Always save conversation to file*). The default location is the user's home directory (`~/`) but can be changed (*File directory*).
 
 You can also hit &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt; + &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt; for saving the reply manually.
 
-### Examples 📚
-GTP-3 is a very powerful model. It can answer questions, write stories, and even write code. You can find more examples [here](https://platform.openai.com/examples).
+### Image generation by DALL·E 2 🖼️
+With the command ***cfi*** you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you.
+
+![Screenshot](assets/images/screenshot5.png)
+
+![Screenshot](assets/images/ChatFred_a_photo_of_a_person_looking_like_alfred_wearing_a_butlers_hat.png)
+
+*That's not really a butler's hat, but it's a start!* 😅
+
+![Screenshot](assets/images/screenshot6.png)
+
+![Screenshot](assets/images/ChatFred_a_round_butlers_hat.png)
+
+*That's more like it. But what is this fluffy white stuff on it's top?* 🤔
 
 ## Tweaking the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the workflow configuration.
@@ -591,6 +800,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Default: `off`.
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
+- **Image size**: The size of the by DALL·E 2 generated image. Default: `512`.
 
  You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
@@ -605,9 +815,9 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>note</key>
 			<string>Add a hotkey to start ChatFred without typing 'cf'.</string>
 			<key>xpos</key>
-			<real>265</real>
+			<real>215</real>
 			<key>ypos</key>
-			<real>445</real>
+			<real>770</real>
 		</dict>
 		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
 		<dict>
@@ -616,9 +826,9 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>note</key>
 			<string>Copies ChatFred's reply to the clipboard.</string>
 			<key>xpos</key>
-			<real>885</real>
+			<real>905</real>
 			<key>ypos</key>
-			<real>600</real>
+			<real>945</real>
 		</dict>
 		<key>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</key>
 		<dict>
@@ -627,9 +837,18 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>note</key>
 			<string>Automatically reads out ChatFred's reply if 'Always read out reply' is checked.</string>
 			<key>xpos</key>
-			<real>505</real>
+			<real>610</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>555</real>
+		</dict>
+		<key>428693A7-E395-41B3-8381-7A7EF6582F99</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>185</real>
 		</dict>
 		<key>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</key>
 		<dict>
@@ -638,9 +857,9 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>note</key>
 			<string>Automatically copies conversation if 'Always copy reply to clipboard' is checked.</string>
 			<key>xpos</key>
-			<real>650</real>
+			<real>670</real>
 			<key>ypos</key>
-			<real>615</real>
+			<real>960</real>
 		</dict>
 		<key>51EEBBF2-BE53-4A88-965F-02AC2D651EF5</key>
 		<dict>
@@ -649,9 +868,9 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>note</key>
 			<string>Automatically saves conversation if 'Always save conversation to file' is checked.</string>
 			<key>xpos</key>
-			<real>775</real>
+			<real>795</real>
 			<key>ypos</key>
-			<real>495</real>
+			<real>840</real>
 		</dict>
 		<key>547CA7CA-D433-488C-9950-FF584AE9601E</key>
 		<dict>
@@ -660,9 +879,9 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>note</key>
 			<string>Saves/appends the conversation (request and reply) to the ChatFred.txt file.</string>
 			<key>xpos</key>
-			<real>940</real>
+			<real>960</real>
 			<key>ypos</key>
-			<real>390</real>
+			<real>735</real>
 		</dict>
 		<key>5D9861D9-2F55-408C-B1BD-33ADD7A02566</key>
 		<dict>
@@ -671,18 +890,45 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>note</key>
 			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>605</real>
+			<real>625</real>
 			<key>ypos</key>
-			<real>770</real>
+			<real>1115</real>
+		</dict>
+		<key>68073E31-6F28-4F7B-B20C-6F1611C7076D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>215</real>
+			<key>ypos</key>
+			<real>185</real>
 		</dict>
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<real>410</real>
+			<real>390</real>
 			<key>ypos</key>
-			<real>445</real>
+			<real>770</real>
+		</dict>
+		<key>7C0C66D8-A9A4-4CE6-B16B-52361998FF42</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<real>675</real>
+			<key>ypos</key>
+			<real>335</real>
+		</dict>
+		<key>A7C03FCF-1822-409B-B1DC-1C070AB0290C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<real>675</real>
+			<key>ypos</key>
+			<real>85</real>
 		</dict>
 		<key>AD46F538-F4DD-41B2-BE43-E830535CA0E3</key>
 		<dict>
@@ -691,9 +937,9 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>note</key>
 			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>940</real>
+			<real>960</real>
 			<key>ypos</key>
-			<real>205</real>
+			<real>550</real>
 		</dict>
 		<key>AD7BB662-4857-404A-9CEC-3F8D966EEF52</key>
 		<dict>
@@ -702,27 +948,43 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>note</key>
 			<string>Reads out ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>715</real>
+			<real>950</real>
 			<key>ypos</key>
-			<real>105</real>
+			<real>370</real>
+		</dict>
+		<key>BE49CE10-D46F-4E7E-AD8A-DEBCC4E3A6B0</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>485</real>
+			<key>ypos</key>
+			<real>30</real>
 		</dict>
 		<key>C7A6C68C-D4BD-4E85-9A6B-D1255B3136BA</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1085</real>
+			<real>1105</real>
 			<key>ypos</key>
-			<real>600</real>
+			<real>945</real>
 		</dict>
 		<key>F0B1523D-0C58-4D43-9BC2-C96560E8AD95</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1135</real>
+			<real>1155</real>
 			<key>ypos</key>
-			<real>390</real>
+			<real>735</real>
+		</dict>
+		<key>F471533B-A418-4158-B92C-AEA42E53945E</key>
+		<dict>
+			<key>xpos</key>
+			<real>395</real>
+			<key>ypos</key>
+			<real>205</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -965,9 +1227,39 @@ As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow
 			<key>variable</key>
 			<string>always_copy_to_clipboard</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>512</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>256x256</string>
+						<string>256</string>
+					</array>
+					<array>
+						<string>512x512</string>
+						<string>512</string>
+					</array>
+					<array>
+						<string>1024x1024</string>
+						<string>1024</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>The size of the by DALL·E 2 generated image.</string>
+			<key>label</key>
+			<string>Image size</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>image_size</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>0.2.6</string>
+	<string>0.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>

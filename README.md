@@ -1,12 +1,13 @@
 ![chatfred](assets/images/chatfred.png)
 
 # ChatFred
-**[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) GPT model for chatting, text completion and much more 🤖**
+**[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) models for chatting, text completion, image generation, and more 🤖**
 
 ## Setup 🛠️
-Just install the workflow and add your OpenAI API key. If you have used ChatGPT, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
+Just install the workflow and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
 
 ## Usage 🧑‍💻
+### Text completion and chatting 💬
 To start the ChatFred workflow, just type ***cf*** or configure your own hotkey.
 
 Ask questions:
@@ -19,32 +20,32 @@ If the reply is a bit longer just hit <kbd>CMD ⌘</kbd> + <kbd>RETURN ⏎</kbd>
 ![Screenshot](assets/images/screenshot3.png)
 ![Screenshot](assets/images/screenshot4.png)
 
-### Options 🤗
+#### Options 🤗
 To handle the reply of ChatFred you have the following options.
 - <kbd>CMD ⌘</kbd>: Show the reply in large text (can be combined with <kbd>CTRL ⌃</kbd>)
 - <kbd>OPTION ⌥</kbd>: Let ChatFred speak 🗣️
 - <kbd>CTRL ⌃</kbd>: Copy the reply to the clipboard
 - <kbd>SHIFT ⇧</kbd>: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
-### Save conversations to file 📝
+#### Save conversations to file 📝
 If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Always save conversation to file*). The default location is the user's home directory (`~/`) but can be changed (*File directory*).
 
 You can also hit <kbd>SHIFT ⇧</kbd> + <kbd>RETURN ⏎</kbd> for saving the reply manually.
 
-Here is an example of the saved reply:
-```
-- 16. Feb 2023, 07:12:00 -
-Request:
- What is Star Wars?
+### Image generation by DALL·E 2 🖼️
+With the command ***cfi*** you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you.
 
-Reply:
- Star Wars is a science fiction media franchise created by George Lucas.
- It includes films, television series, books, comics, video games, and other merchandise.
- The franchise began with the eponymous 1977 film and quickly became a worldwide pop-culture phenomenon.
----
-```
-### Examples 📚
-GTP-3 is a very powerful model. It can answer questions, write stories, and even write code. You can find more examples [here](https://platform.openai.com/examples).
+![Screenshot](assets/images/screenshot5.png)
+
+![Screenshot](assets/images/ChatFred_a_photo_of_a_person_looking_like_alfred_wearing_a_butlers_hat.png)
+
+*That's not really a butler's hat, but it's a start!* 😅
+
+![Screenshot](assets/images/screenshot6.png)
+
+![Screenshot](assets/images/ChatFred_a_round_butlers_hat.png)
+
+*That's more like it. But what is this fluffy white stuff on it's top?* 🤔
 
 ## Tweaking the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the workflow configuration.
@@ -58,6 +59,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Default: `off`.
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
+- **Image size**: The size of the by DALL·E 2 generated image. Default: `512`.
 
  You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 

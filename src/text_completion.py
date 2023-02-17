@@ -1,4 +1,4 @@
-"""This module contains the OpenAI GPT-3 API call."""
+"""This module contains the text completion API."""
 
 import json
 import os
