@@ -90,15 +90,19 @@ def make_request(
     """Makes the request to the OpenAI API."""
 
     try:
-        return openai.Completion.create(
-            model=model,
-            prompt=prompt,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            top_p=top_p,
-            frequency_penalty=frequency_penalty,
-            presence_penalty=presence_penalty,
-            stop=["\n"],
+        return (
+            openai.Completion.create(
+                model=model,
+                prompt=prompt,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                top_p=top_p,
+                frequency_penalty=frequency_penalty,
+                presence_penalty=presence_penalty,
+                stop=["\n"],
+            )
+            .choices[0]
+            .text
         )
     except openai.error.AuthenticationError:
         return "🚨 There seems to be something wrong! Please check your API key."
