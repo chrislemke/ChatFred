@@ -27,7 +27,7 @@ def prompt_from_query(query: str) -> str:
     return f"Q: {query}\nA:"
 
 
-def stdout_write(output_string: str):
+def stdout_write(output_string: str) -> None:
     """Writes the response to stdout."""
     output_string = "..." if output_string == "" else output_string
     response_dict = {
@@ -49,7 +49,7 @@ def stdout_write(output_string: str):
     sys.stdout.write(json.dumps(response_dict))
 
 
-def env_value_checks():
+def env_value_checks() -> None:
     """Checks the environment variables for invalid values."""
     if __temperature < 0:
         stdout_write(
@@ -90,19 +90,15 @@ def make_request(
     """Makes the request to the OpenAI API."""
 
     try:
-        return (
-            openai.Completion.create(
-                model=model,
-                prompt=prompt,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                top_p=top_p,
-                frequency_penalty=frequency_penalty,
-                presence_penalty=presence_penalty,
-                stop=["\n"],
-            )
-            .choices[0]
-            .text
+        return openai.Completion.create(
+            model=model,
+            prompt=prompt,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            top_p=top_p,
+            frequency_penalty=frequency_penalty,
+            presence_penalty=presence_penalty,
+            stop=["\n"],
         )
     except openai.error.AuthenticationError:
         return "🚨 There seems to be something wrong! Please check your API key."
