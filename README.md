@@ -33,19 +33,14 @@ If you want to save all requests and ChatFred's replies to a file, you can enabl
 You can also hit <kbd>SHIFT ⇧</kbd> + <kbd>RETURN ⏎</kbd> for saving the reply manually.
 
 ### Image generation by DALL·E 2 🖼️
-With the command ***cfi*** you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you.
+With the command ***cfi*** you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this command:
+`a photo of a person looking like alfred, wearing a butler's hat`
 
 ![Screenshot](assets/images/screenshot5.png)
 
 ![Screenshot](assets/images/ChatFred_a_photo_of_a_person_looking_like_alfred_wearing_a_butlers_hat.png)
 
 *That's not really a butler's hat, but it's a start!* 😅
-
-![Screenshot](assets/images/screenshot6.png)
-
-![Screenshot](assets/images/ChatFred_a_round_butlers_hat.png)
-
-*That's more like it. But what is this fluffy white stuff on it's top?* 🤔
 
 ## Tweaking the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the workflow configuration.
