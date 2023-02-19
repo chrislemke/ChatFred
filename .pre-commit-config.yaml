@@ -62,7 +62,7 @@ repos:
         args: ["--branch=main", "--branch=develop"]
 
   - repo: https://github.com/PyCQA/docformatter
-    rev: v1.6.0.rc1
+    rev: v1.5.1
     hooks:
       - id: docformatter
         exclude: "src/libs"
@@ -79,29 +79,14 @@ repos:
       - id: black
         exclude: "src/libs"
 
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.12.0
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: "v0.0.247"
     hooks:
-      - id: isort
-        args: ["--profile=black"]
-        exclude: "src/libs"
-
-  - repo: https://github.com/PyCQA/pylint
-    rev: v2.16.2
-    hooks:
-      - id: pylint
-        args:
-          [
-            "--disable=C0301",
-            "--disable=C0413",
-            "--disable=E0401",
-            "--disable=R0913",
-            "--disable=W0611",
-          ]
-        exclude: "src/libs"
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.0.0
+    rev: v1.0.1
     hooks:
       - id: mypy
         exclude: "src/libs"
@@ -111,5 +96,4 @@ repos:
     hooks:
       - id: bandit
         exclude: "src/libs"
-        args:
-          - "-r"
+        args: [-r]
