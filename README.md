@@ -8,7 +8,7 @@ Just [download](https://github.com/chrislemke/ChatFred/releases) and install the
 
 ## Usage 🧑‍💻
 ### Text completion and chatting 💬
-To start the ChatFred workflow, just type ***cf*** or configure your own hotkey.
+To start the ChatFred workflow, just type `cf` or configure your own hotkey.
 
 Ask questions:
 ![Screenshot](assets/images/screenshot1.png)
@@ -20,21 +20,21 @@ If the reply is a bit longer just hit <kbd>CMD ⌘</kbd> + <kbd>RETURN ⏎</kbd>
 ![Screenshot](assets/images/screenshot3.png)
 ![Screenshot](assets/images/screenshot4.png)
 
-#### Options 🤗
+#### **Options** 🤗
 To handle the reply of ChatFred you have the following options.
 - <kbd>CMD ⌘</kbd>: Show the reply in large text (can be combined with <kbd>CTRL ⌃</kbd>)
 - <kbd>OPTION ⌥</kbd>: Let ChatFred speak 🗣️
 - <kbd>CTRL ⌃</kbd>: Copy the reply to the clipboard
 - <kbd>SHIFT ⇧</kbd>: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
-#### Save conversations to file 📝
+#### **Save conversations to file** 📝
 If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Always save conversation to file*). The default location is the user's home directory (`~/`) but can be changed (*File directory*).
 
 You can also hit <kbd>SHIFT ⇧</kbd> + <kbd>RETURN ⏎</kbd> for saving the reply manually.
 
 ### Image generation by DALL·E 2 🖼️
-With the command ***cfi*** you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this command:
-`a photo of a person looking like alfred, wearing a butler's hat`
+With the command `cfi` you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this prompt:
+`a photo of a person looking like alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and wii be opened in the default image viewer.
 
 ![Screenshot](assets/images/screenshot5.png)
 

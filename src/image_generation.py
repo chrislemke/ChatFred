@@ -45,7 +45,7 @@ def make_request(prompt: str, size: int) -> str:
         return "🚨 There seems to be something wrong! Please check your API key."
 
     except openai.error.InvalidRequestError:
-        return "🚨 You should not generate such stuff! Your prompt was declined by OpenAI's safety system."
+        return "🚨 You shouldn't generate such stuff! Your prompt was declined by OpenAI's safety system."
 
 
 __response = make_request(get_query(), __size)
