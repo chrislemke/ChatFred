@@ -39,7 +39,7 @@ def stdout_write(output_string: str) -> None:
                 "uid": "null",
                 "type": "default",
                 "title": output_string,
-                "subtitle": "SHIFT ⇪, CTRL ⌃ or CMD ⌘ for options",
+                "subtitle": "⇪, ⌃, ⌥ or ⌘ for options",
                 "arg": output_string,
                 "autocomplete": output_string,
                 "icon": {"path": "./icon.png"},
