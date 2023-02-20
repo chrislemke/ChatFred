@@ -745,7 +745,7 @@ Reply:
 **[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) models for chatting, text completion, image generation, and more 🤖**
 
 ## Setup 🛠️
-Just [download](https://github.com/chrislemke/ChatFred/releases) and install the workflow and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive $18 in free credit, no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
+Just [download](https://github.com/chrislemke/ChatFred/releases) and install the workflow and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$18 in free credit](https://openai.com/api/pricing/), no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
 
 ## Usage 🧑‍💻
 ### Text completion and chatting 💬
@@ -800,7 +800,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
  You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## What's next? 🚧
-As soon as OpenAI releases a ChatGPT API, I will integrate it into this workflow. Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.</string>
+As soon as OpenAI releases the ChatGPT API, we will integrate it into this workflow. Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.</string>
 	<key>uidata</key>
 	<dict>
 		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
