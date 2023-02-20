@@ -16,7 +16,6 @@ jobs:
         id: builder
         uses: almibarss/build-alfred-workflow@v1.1
         with:
-          workflow_dir: workflow
           exclude_patterns: "*.pyc *__pycache__/*"
 
       - name: Release
