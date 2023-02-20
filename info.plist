@@ -774,7 +774,7 @@ If you want to save all requests and ChatFred's replies to a file, you can enabl
 You can also hit &lt;kbd&gt;⇧&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt; for saving the reply manually.
 ### Image generation by DALL·E 2 🖼️
 With the command `cfi` you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this prompt:
-`a photo of a person looking like alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and wii be opened in the default image viewer.
+`a photo of a person looking like Alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and wii be opened in the default image viewer.
 
 ![Screenshot](assets/images/screenshot5.png)
 
