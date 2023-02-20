@@ -1,4 +1,4 @@
-![chatfred](assets/images/chatfred.png)
+![chatfred](workflow/assets/images/chatfred.png)
 
 # ChatFred
 **[Alfred](https://www.alfredapp.com/) workflow using [OpenAI's](https://openai.com/) models for chatting, text completion, image generation, and more 🤖**
@@ -11,14 +11,14 @@ Just [download](https://github.com/chrislemke/ChatFred/releases) and install the
 To start the ChatFred workflow, just type `cf` or configure your own hotkey.
 
 Ask questions:
-![Screenshot](assets/images/screenshot1.png)
+![Screenshot](workflow/assets/images/screenshot1.png)
 
 Translate text:
-![Screenshot](assets/images/screenshot2.png)
+![Screenshot](workflow/assets/images/screenshot2.png)
 
 If the reply is a bit longer just hit <kbd>CMD ⌘</kbd> + <kbd>RETURN ⏎</kbd>:
-![Screenshot](assets/images/screenshot3.png)
-![Screenshot](assets/images/screenshot4.png)
+![Screenshot](workflow/assets/images/screenshot3.png)
+![Screenshot](workflow/assets/images/screenshot4.png)
 
 #### **Options** 🤗
 To handle the reply of ChatFred you have the following options.
@@ -36,9 +36,9 @@ You can also hit <kbd>SHIFT ⇧</kbd> + <kbd>RETURN ⏎</kbd> for saving the rep
 With the command `cfi` you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this prompt:
 `a photo of a person looking like alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and wii be opened in the default image viewer.
 
-![Screenshot](assets/images/screenshot5.png)
+![Screenshot](workflow/assets/images/screenshot5.png)
 
-![Screenshot](assets/images/ChatFred_a_photo_of_a_person_looking_like_alfred_wearing_a_butlers_hat.png)
+![Screenshot](workflow/assets/images/ChatFred_a_photo_of_a_person_looking_like_alfred_wearing_a_butlers_hat.png)
 
 *That's not really a butler's hat, but it's a start!* 😅
 
@@ -56,7 +56,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
 
- You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
+You can find more information about the GPT model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## What's next? 🚧
 As soon as OpenAI releases the ChatGPT API, we will integrate it into this workflow. Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.

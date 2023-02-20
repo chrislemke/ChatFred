@@ -23,5 +23,5 @@ exclude = [
     "dist",
     "node_modules",
     "venv",
-    "src/libs/",
+    "workflow/src/libs/",
 ]

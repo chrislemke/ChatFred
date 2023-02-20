@@ -255,7 +255,7 @@
 	<key>createdby</key>
 	<string>Chris Lemke</string>
 	<key>description</key>
-	<string>Alfred workflow using OpenAI's model for chatting, etc.</string>
+	<string>Alfred workflow using OpenAI's model for chatting, image generation, etc.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -797,7 +797,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
 
- You can find more information about the model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
+You can find more information about the GPT model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## What's next? 🚧
 As soon as OpenAI releases the ChatGPT API, we will integrate it into this workflow. Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.</string>
@@ -1260,7 +1260,7 @@ As soon as OpenAI releases the ChatGPT API, we will integrate it into this workf
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.3.2</string>
+	<string>0.3.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>

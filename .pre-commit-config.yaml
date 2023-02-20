@@ -65,19 +65,19 @@ repos:
     rev: v1.5.1
     hooks:
       - id: docformatter
-        exclude: "src/libs"
+        exclude: "workflow/src/libs"
 
   - repo: https://github.com/bwhmather/ssort
     rev: v0.11.6
     hooks:
       - id: ssort
-        exclude: "src/libs"
+        exclude: "workflow/src/libs"
 
   - repo: https://github.com/psf/black
     rev: 23.1.0
     hooks:
       - id: black
-        exclude: "src/libs"
+        exclude: "workflow/src/libs"
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     rev: "v0.0.247"
@@ -89,11 +89,11 @@ repos:
     rev: v1.0.1
     hooks:
       - id: mypy
-        exclude: "src/libs"
+        exclude: "workflow/src/libs"
 
   - repo: https://github.com/PyCQA/bandit
     rev: 1.7.4
     hooks:
       - id: bandit
-        exclude: "src/libs"
+        exclude: "workflow/src/libs"
         args: [-r]
