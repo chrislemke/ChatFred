@@ -763,10 +763,10 @@ If the reply is a bit longer just hit &lt;kbd&gt;CMD ⌘&lt;/kbd&gt; + &lt;kbd&g
 
 #### **Options** 🤗
 To handle the reply of ChatFred you have the following options.
-- &lt;kbd&gt;CMD ⌘&lt;/kbd&gt;: Show the reply in large text (can be combined with &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;)
-- &lt;kbd&gt;OPTION ⌥&lt;/kbd&gt;: Let ChatFred speak 🗣️
-- &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;: Copy the reply to the clipboard
-- &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt;: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
+- &lt;kbd&gt;CMD ⌘&lt;/kbd&gt; + &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt;: Show the reply in large text (can be combined with &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;)
+- &lt;kbd&gt;OPTION ⌥&lt;/kbd&gt; + &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt;: Let ChatFred speak 🗣️
+- &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt; + &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt;: Copy the reply to the clipboard
+- &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt; + &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt;: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
 #### **Save conversations to file** 📝
 If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Always save conversation to file*). The default location is the user's home directory (`~/`) but can be changed (*File directory*).
