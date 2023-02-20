@@ -16,7 +16,7 @@ Ask questions:
 Translate text:
 ![Screenshot](workflow/assets/images/screenshot2.png)
 
-If the reply is a bit longer just hit <kbd>CMD ⌘</kbd> + <kbd>RETURN ⏎</kbd>:
+If the reply is a bit longer just hit <kbd>⌘</kbd> <kbd>⏎</kbd>:
 ![Screenshot](workflow/assets/images/screenshot3.png)
 ![Screenshot](workflow/assets/images/screenshot4.png)
 
