@@ -22,15 +22,15 @@ If the reply is a bit longer just hit <kbd>CMD ⌘</kbd> + <kbd>RETURN ⏎</kbd>
 
 #### **Options** 🤗
 To handle the reply of ChatFred you have the following options.
-- <kbd>CMD ⌘</kbd>: Show the reply in large text (can be combined with <kbd>CTRL ⌃</kbd>)
-- <kbd>OPTION ⌥</kbd>: Let ChatFred speak 🗣️
-- <kbd>CTRL ⌃</kbd>: Copy the reply to the clipboard
-- <kbd>SHIFT ⇧</kbd>: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
+- <kbd>⌘</kbd> <kbd>⏎</kbd>: Show the reply in large text (can be combined with <kbd>⌃</kbd>)
+- <kbd>⌥</kbd> <kbd>⏎</kbd>: Let ChatFred speak 🗣️
+- <kbd>⌃</kbd> <kbd>⏎</kbd>: Copy the reply to the clipboard (you can also set *Always copy reply to clipboard* in the workflow configuration)
+- <kbd>⇧</kbd> <kbd>⏎</kbd>: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
 #### **Save conversations to file** 📝
 If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Always save conversation to file*). The default location is the user's home directory (`~/`) but can be changed (*File directory*).
 
-You can also hit <kbd>SHIFT ⇧</kbd> + <kbd>RETURN ⏎</kbd> for saving the reply manually.
+You can also hit <kbd>⇧</kbd> <kbd>⏎</kbd> for saving the reply manually.
 
 ### Image generation by DALL·E 2 🖼️
 With the command `cfi` you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this prompt:
@@ -42,7 +42,7 @@ With the command `cfi` you can generate images by DALL·E 2. Just type in a desc
 
 *That's not really a butler's hat, but it's a start!* 😅
 
-## Tweaking the workflow (optional) 🦾
+## Configure the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the workflow configuration.
 - **OpenAI model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
 - **Temperature**: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.

@@ -763,16 +763,15 @@ If the reply is a bit longer just hit &lt;kbd&gt;CMD ⌘&lt;/kbd&gt; + &lt;kbd&g
 
 #### **Options** 🤗
 To handle the reply of ChatFred you have the following options.
-- &lt;kbd&gt;CMD ⌘&lt;/kbd&gt;: Show the reply in large text (can be combined with &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;)
-- &lt;kbd&gt;OPTION ⌥&lt;/kbd&gt;: Let ChatFred speak 🗣️
-- &lt;kbd&gt;CTRL ⌃&lt;/kbd&gt;: Copy the reply to the clipboard
-- &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt;: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
+- &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Show the reply in large text (can be combined with &lt;kbd&gt;⌃&lt;/kbd&gt;)
+- &lt;kbd&gt;⌥&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Let ChatFred speak 🗣️
+- &lt;kbd&gt;⌃&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Copy the reply to the clipboard (you can also set *Always copy reply to clipboard* in the workflow configuration)
+- &lt;kbd&gt;⇧&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
 
 #### **Save conversations to file** 📝
 If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Always save conversation to file*). The default location is the user's home directory (`~/`) but can be changed (*File directory*).
 
-You can also hit &lt;kbd&gt;SHIFT ⇧&lt;/kbd&gt; + &lt;kbd&gt;RETURN ⏎&lt;/kbd&gt; for saving the reply manually.
-
+You can also hit &lt;kbd&gt;⇧&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt; for saving the reply manually.
 ### Image generation by DALL·E 2 🖼️
 With the command `cfi` you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this prompt:
 `a photo of a person looking like alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and wii be opened in the default image viewer.
@@ -783,7 +782,7 @@ With the command `cfi` you can generate images by DALL·E 2. Just type in a desc
 
 *That's not really a butler's hat, but it's a start!* 😅
 
-## Tweaking the workflow (optional) 🦾
+## Configure the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the workflow configuration.
 - **OpenAI model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
 - **Temperature**: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
