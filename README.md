@@ -1,7 +1,7 @@
 ![chatfred](workflow/assets/images/chatfred.png)
 
 # ChatFred
-**[Alfred workflow](https://www.alfredapp.com/workflows/) using [OpenAI's](https://openai.com/) models for chatting, text completion, image generation, and more 🤖**
+**[Alfred workflow](https://www.alfredapp.com/workflows/) using [OpenAI's](https://openai.com/) models for chatting, text completion, and image generation 🤖**
 
 ## Setup 🛠️
 Just [download](https://github.com/chrislemke/ChatFred/releases) and install the workflow and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$18 in free credit](https://openai.com/api/pricing/), no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
