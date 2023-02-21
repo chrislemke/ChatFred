@@ -80,7 +80,7 @@ repos:
         exclude: "workflow/src/libs"
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.247"
+    rev: "v0.0.249"
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
