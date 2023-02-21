@@ -1,5 +1,13 @@
 default_language_version:
-  python: python3.10
+  python: python3.9
+
+ci:
+  autofix_commit_msg: |
+    ci: auto fixes from pre-commit.com hooks
+  autofix_prs: true
+  autoupdate_branch: "develop"
+  autoupdate_commit_msg: "ci: pre-commit autoupdate"
+  autoupdate_schedule: weekly
 
 repos:
   - repo: https://github.com/compilerla/conventional-pre-commit
@@ -59,7 +67,7 @@ repos:
       - id: forbid-submodules
       - id: detect-private-key
       - id: no-commit-to-branch
-        args: ["--branch=main", "--branch=develop"]
+        args: ["--branch=main"]
 
   - repo: https://github.com/PyCQA/docformatter
     rev: v1.5.1
