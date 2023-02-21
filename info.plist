@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>ai.lemke.chatfred</string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
@@ -19,11 +21,26 @@
 				<false/>
 			</dict>
 		</array>
-		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
+		<key>2CD4970E-43C0-4C91-BE0F-3FB55C662C1D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>C7A6C68C-D4BD-4E85-9A6B-D1255B3136BA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2CD4970E-43C0-4C91-BE0F-3FB55C662C1D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -90,11 +107,26 @@
 				<false/>
 			</dict>
 		</array>
-		<key>547CA7CA-D433-488C-9950-FF584AE9601E</key>
+		<key>538391F2-A3CE-4AD0-849E-3D78B5DD2843</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>F0B1523D-0C58-4D43-9BC2-C96560E8AD95</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>547CA7CA-D433-488C-9950-FF584AE9601E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>538391F2-A3CE-4AD0-849E-3D78B5DD2843</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -112,6 +144,21 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>63692C20-123A-4C28-BF36-40F18336FA66</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7C03FCF-1822-409B-B1DC-1C070AB0290C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -212,8 +259,25 @@
 				<false/>
 			</dict>
 		</array>
+		<key>A7C03FCF-1822-409B-B1DC-1C070AB0290C</key>
+		<array/>
 		<key>AD46F538-F4DD-41B2-BE43-E830535CA0E3</key>
 		<array/>
+		<key>BF4D7DFD-FEFE-4AEB-8B89-B77D1FCB74D4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C0C66D8-A9A4-4CE6-B16B-52361998FF42</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>F471533B-A418-4158-B92C-AEA42E53945E</key>
 		<array>
 			<dict>
@@ -230,7 +294,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>A7C03FCF-1822-409B-B1DC-1C070AB0290C</string>
+				<string>63692C20-123A-4C28-BF36-40F18336FA66</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -242,7 +306,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>7C0C66D8-A9A4-4CE6-B16B-52361998FF42</string>
+				<string>BF4D7DFD-FEFE-4AEB-8B89-B77D1FCB74D4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -301,6 +365,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>cfi</string>
+				<key>subtext</key>
+				<string>Using DALL·E 2 to generate images 🎨</string>
+				<key>text</key>
+				<string>ChatFred</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>428693A7-E395-41B3-8381-7A7EF6582F99</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -324,21 +409,32 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>cfi</string>
-				<key>subtext</key>
-				<string>Using DALL·E 2 to generate images 🎨</string>
-				<key>text</key>
-				<string>ChatFred</string>
-				<key>withspace</key>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:show_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>428693A7-E395-41B3-8381-7A7EF6582F99</string>
+			<string>63692C20-123A-4C28-BF36-40F18336FA66</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -371,6 +467,38 @@
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>F471533B-A418-4158-B92C-AEA42E53945E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:show_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>BF4D7DFD-FEFE-4AEB-8B89-B77D1FCB74D4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -523,6 +651,38 @@ Reply:
 			<string>alfred.workflow.output.writefile</string>
 			<key>uid</key>
 			<string>547CA7CA-D433-488C-9950-FF584AE9601E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:show_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>538391F2-A3CE-4AD0-849E-3D78B5DD2843</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -683,6 +843,38 @@ Reply:
 				<array>
 					<dict>
 						<key>inputstring</key>
+						<string>{var:show_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>2CD4970E-43C0-4C91-BE0F-3FB55C662C1D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
 						<string>{var:always_copy_to_clipboard}</string>
 						<key>matchcasesensitive</key>
 						<true/>
@@ -742,13 +934,13 @@ Reply:
 	<string>![chatfred](assets/images/chatfred.png)
 
 # ChatFred
-**[Alfred workflow](https://www.alfredapp.com/workflows/) using [OpenAI's](https://openai.com/) models for chatting, text completion, and image generation.**
+**[Alfred workflow](https://www.alfredapp.com/workflows/) using [OpenAI's](https://openai.com/) models for chatting and image generation.**
 
 ## Setup 🛠️
-Just [download](https://github.com/chrislemke/ChatFred/releases) and install the workflow and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$18 in free credit](https://openai.com/api/pricing/), no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
+[⤓ Install on the Alfred Gallery](https://alfred.app/workflows/chrislemke/chatfred/) and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$18 in free credit](https://openai.com/api/pricing/), no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
 
 ## Usage 🧑‍💻
-### Text completion and chatting 💬
+### Chatting 💬
 To start the ChatFred workflow, just type `cf` or configure your own hotkey.
 
 Ask questions:
@@ -763,17 +955,18 @@ If the reply is a bit longer just hit &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&
 
 #### **Options** 🤗
 To handle the reply of ChatFred you have the following options.
-- &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Show the reply in large text (can be combined with &lt;kbd&gt;⌃&lt;/kbd&gt;)
+- &lt;kbd&gt;⏎&lt;/kbd&gt;: Nothing by default. Set one or more actions in the [workflow’s configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
+- &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Show the reply in [Large Type](https://www.alfredapp.com/help/features/large-type/) (can be combined with &lt;kbd&gt;⌃&lt;/kbd&gt;)
 - &lt;kbd&gt;⌥&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Let ChatFred speak 🗣️
 - &lt;kbd&gt;⌃&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Copy the reply to the clipboard (you can also set *Always copy reply to clipboard* in the workflow configuration)
-- &lt;kbd&gt;⇧&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow configuration.
+- &lt;kbd&gt;⇧&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Write the conversation to file: `ChatFred.txt`. The default location is the user's home directory (`~/`). You can change the location in the workflow's configuration.
 
 #### **Save conversations to file** 📝
 If you want to save all requests and ChatFred's replies to a file, you can enable this option in the workflow configuration (*Always save conversation to file*). The default location is the user's home directory (`~/`) but can be changed (*File directory*).
 
 You can also hit &lt;kbd&gt;⇧&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt; for saving the reply manually.
 ### Image generation by DALL·E 2 🖼️
-With the command `cfi` you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this prompt:
+With the keyword `cfi` you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this prompt:
 `a photo of a person looking like Alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and wii be opened in the default image viewer.
 
 ![Screenshot](assets/images/screenshot5.png)
@@ -783,7 +976,7 @@ With the command `cfi` you can generate images by DALL·E 2. Just type in a desc
 *That's not really a butler's hat, but it's a start!* 😅
 
 ## Configure the workflow (optional) 🦾
-You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the workflow configuration.
+You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 - **OpenAI model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
 - **Temperature**: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
 - **Maximum tokens**: The maximum number of tokens to generate in the completion. Default: `50`.
@@ -797,6 +990,9 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
 
 You can find more information about the GPT model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
+
+## Safety best practices 🛡️
+Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it.
 
 ## What's next? 🚧
 As soon as OpenAI releases the ChatGPT API, we will integrate it into this workflow. Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.</string>
@@ -812,6 +1008,17 @@ As soon as OpenAI releases the ChatGPT API, we will integrate it into this workf
 			<real>215</real>
 			<key>ypos</key>
 			<real>770</real>
+		</dict>
+		<key>2CD4970E-43C0-4C91-BE0F-3FB55C662C1D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Only show notification if 'Show notifications' is checked.</string>
+			<key>xpos</key>
+			<real>1155</real>
+			<key>ypos</key>
+			<real>950</real>
 		</dict>
 		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
 		<dict>
@@ -866,6 +1073,17 @@ As soon as OpenAI releases the ChatGPT API, we will integrate it into this workf
 			<key>ypos</key>
 			<real>840</real>
 		</dict>
+		<key>538391F2-A3CE-4AD0-849E-3D78B5DD2843</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Only show notification if 'Show notifications' is checked.</string>
+			<key>xpos</key>
+			<real>1160</real>
+			<key>ypos</key>
+			<real>765</real>
+		</dict>
 		<key>547CA7CA-D433-488C-9950-FF584AE9601E</key>
 		<dict>
 			<key>colorindex</key>
@@ -887,6 +1105,17 @@ As soon as OpenAI releases the ChatGPT API, we will integrate it into this workf
 			<real>625</real>
 			<key>ypos</key>
 			<real>1115</real>
+		</dict>
+		<key>63692C20-123A-4C28-BF36-40F18336FA66</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Only show notification if 'Show notifications' is checked.</string>
+			<key>xpos</key>
+			<real>665</real>
+			<key>ypos</key>
+			<real>195</real>
 		</dict>
 		<key>68073E31-6F28-4F7B-B20C-6F1611C7076D</key>
 		<dict>
@@ -920,9 +1149,9 @@ As soon as OpenAI releases the ChatGPT API, we will integrate it into this workf
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>675</real>
+			<real>845</real>
 			<key>ypos</key>
-			<real>150</real>
+			<real>165</real>
 		</dict>
 		<key>AD46F538-F4DD-41B2-BE43-E830535CA0E3</key>
 		<dict>
@@ -957,21 +1186,32 @@ As soon as OpenAI releases the ChatGPT API, we will integrate it into this workf
 			<key>ypos</key>
 			<real>30</real>
 		</dict>
+		<key>BF4D7DFD-FEFE-4AEB-8B89-B77D1FCB74D4</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Only show notification if 'Show notifications' is checked.</string>
+			<key>xpos</key>
+			<real>535</real>
+			<key>ypos</key>
+			<real>335</real>
+		</dict>
 		<key>C7A6C68C-D4BD-4E85-9A6B-D1255B3136BA</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1105</real>
+			<real>1300</real>
 			<key>ypos</key>
-			<real>945</real>
+			<real>940</real>
 		</dict>
 		<key>F0B1523D-0C58-4D43-9BC2-C96560E8AD95</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1155</real>
+			<real>1295</real>
 			<key>ypos</key>
 			<real>735</real>
 		</dict>
@@ -1257,9 +1497,28 @@ As soon as OpenAI releases the ChatGPT API, we will integrate it into this workf
 			<key>variable</key>
 			<string>image_size</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>If this box is checked ChatFred will show a notification when a reply is copied to the clipboard, logged into a file, an image was generated or an error occurred. For this, to work System notifications must be activated for Alfred.</string>
+			<key>label</key>
+			<string>Show notifications</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>show_notifications</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>0.3.5</string>
+	<string>1.0.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
