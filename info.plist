@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>ai.lemke.chatfred</string>
-	<key>category</key>
-	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
@@ -1518,7 +1516,7 @@ As soon as OpenAI releases the ChatGPT API, we will integrate it into this workf
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
