@@ -35,7 +35,7 @@ You can also hit <kbd>⇧</kbd> <kbd>⏎</kbd> for saving the reply manually.
 
 ### Image generation by DALL·E 2 🖼️
 With the keyword `cfi` you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this prompt:
-`a photo of a person looking like Alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and wii be opened in the default image viewer.
+`a photo of a person looking like Alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and will be opened in the default image viewer.
 
 ![Screenshot](workflow/assets/images/screenshot5.png)
 
