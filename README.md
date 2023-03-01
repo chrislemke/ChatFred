@@ -46,7 +46,7 @@ With the keyword `cfi` you can generate images by DALL·E 2. Just type in a desc
 ## Configure the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 - **OpenAI model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
-- **Temperature**: The temperature determines how greedy the generative model is. If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
+- **Temperature**: The temperature determines how greedy the generative model is (between 0 and 2). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
 - **Maximum tokens**: The maximum number of tokens to generate in the completion. Default: `50`.
 - **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
 - **Frequency penalty**: A value between `-2.0` and `2.0`. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.

@@ -10,7 +10,7 @@ import openai
 
 openai.api_key = os.getenv("api_key")
 __model = os.getenv("model") or "text-davinci-003"
-__temperature = int(os.getenv("temperature") or 0)
+__temperature = float(os.getenv("temperature") or 0.0)
 __max_tokens = int(os.getenv("max_tokens") or 50)
 __top_p = int(os.getenv("top_p") or 1)
 __frequency_penalty = float(os.getenv("frequency_penalty") or 0.0)
@@ -51,9 +51,9 @@ def stdout_write(output_string: str) -> None:
 
 def env_value_checks() -> None:
     """Checks the environment variables for invalid values."""
-    if __temperature < 0:
+    if __temperature < 0 or __temperature > 2.0:
         stdout_write(
-            f"🚨 'Temperature' must be ≥ 0. But you have set it to {__temperature}."
+            f"🚨 'Temperature' must be ≤ 2.0 and ≥ 0. But you have set it to {__temperature}."
         )
         sys.exit(0)
 
@@ -81,7 +81,7 @@ def env_value_checks() -> None:
 def make_request(
     model: str,
     prompt: str,
-    temperature: int,
+    temperature: float,
     max_tokens: int,
     top_p: int,
     frequency_penalty: float,
