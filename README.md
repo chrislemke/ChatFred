@@ -7,8 +7,24 @@
 [⤓ Install on the Alfred Gallery](https://alfred.app/workflows/chrislemke/chatfred/) and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$18 in free credit](https://openai.com/api/pricing/), no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
 
 ## Usage 🧑‍💻
-### Chatting 💬
-To start the ChatFred workflow, just type `cf` or configure your own hotkey.
+
+### Talk to ChatGPT 💬
+To start chatting with ChatGPT just type `cf`, configure your own hotkey or use the workflow as a fallback search in Alfred.
+
+![Screenshot](workflow/assets/images/screenshot6.png)
+
+or use ChatFred as a fallback search in Alfred:
+![Screenshot](workflow/assets/images/screenshot7.png)
+
+![Screenshot](workflow/assets/images/screenshot8.png)
+
+The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
+
+#### **`ChatFred_ChatGPT.log`** 📄
+Your full conversation with ChatGPT is stored in the file `ChatFred_ChatGPT.log` in the user's home directory (`~/`). This file is needed so ChatGPT can access prior parts of the conversation. You can adjust how far ChatGPT can look back in the conversation in the workflow's configuration (*ChatGPT history length*).
+
+### Text generation by GPT 📘
+To start the ChatFred workflow, just type `cft` or configure your own hotkey.
 
 Ask questions:
 ![Screenshot](workflow/assets/images/screenshot1.png)
@@ -56,6 +72,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
+- **ChatGPT history length**: ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see. Default: `4`.
 
 You can find more information about the GPT model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 

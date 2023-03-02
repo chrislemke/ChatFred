@@ -14,7 +14,7 @@ class Completion(EngineAPIResource):
         """
         Creates a new completion for the provided prompt and parameters.
 
-        See https://beta.openai.com/docs/api-reference/completions/create for a list
+        See https://platform.openai.com/docs/api-reference/completions/create for a list
         of valid parameters.
         """
         start = time.time()
@@ -34,7 +34,7 @@ class Completion(EngineAPIResource):
         """
         Creates a new completion for the provided prompt and parameters.
 
-        See https://beta.openai.com/docs/api-reference/completions/create for a list
+        See https://platform.openai.com/docs/api-reference/completions/create for a list
         of valid parameters.
         """
         start = time.time()
