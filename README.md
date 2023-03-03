@@ -81,5 +81,3 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 
 ## What's next? 🚧
 As soon as OpenAI releases the ChatGPT API, we will integrate it into this workflow. Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.
-
-If this box is checked ChatFred will show a notification when a reply is copied to the clipboard or an image was generated. For this to work System notifications must be activated for Alfred.
