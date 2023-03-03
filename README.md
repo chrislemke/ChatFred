@@ -80,7 +80,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 
 ***Only available for InstructGPT models.**
 
-You can find more information about the GPT model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
+You can find more information about the InstructGPT model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## Safety best practices 🛡️
 Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it.
