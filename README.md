@@ -20,8 +20,21 @@ or use ChatFred as a fallback search in Alfred:
 
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
 
+#### **Universal action** ➡️
+ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
+
+To set it up just add a hotkey:
+![Screenshot](workflow/assets/images/screenshot9.png)
+
+And check the *Workflow Universal Action* checkbox:
+![Screenshot](workflow/assets/images/screenshot10.png)
+
+Now you can mark any text and hit your hotkey to send it to ChatFred.
+
 #### **`ChatFred_ChatGPT.log`** 📄
-Your full conversation with ChatGPT is stored in the file `ChatFred_ChatGPT.log` in the user's home directory (`~/`). This file is needed so ChatGPT can access prior parts of the conversation. You can adjust how far ChatGPT can look back in the conversation in the workflow's configuration (*ChatGPT history length*).
+Your full conversation with ChatGPT is stored in the file `ChatFred_ChatGPT.log` in the workflow's directory. This file is needed so ChatGPT can access prior parts of the conversation. You can adjust how far ChatGPT can look back in the conversation in the workflow's configuration (*ChatGPT history length*).
+
+To remove this file just tell ChatFred to `Forget everything` or to `clear chat log`.
 
 ### Text generation with InstructGPT 🤖
 > Instruct models are optimized to follow single-turn instructions. Ada is the fastest model, while Davinci is the most powerful.
@@ -65,25 +78,22 @@ With the keyword `cfi` you can generate images by DALL·E 2. Just type in a desc
 
 ## Configure the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
-- **ChatGPT history length**: ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see. Default: `4`.
-- **InstructGPT model***: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. This has no impact on the use of ChatGPT. Default: `Davinci`.
-- **Temperature***: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
-- **Maximum tokens***: The maximum number of tokens to generate in the completion. Default: `50`.
+- **ChatGPT history length**: ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see. Default: `2`.
+- **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. This has no impact on the use of ChatGPT. Default: `Davinci`.
+- **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
+- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default (InstructGPT): `50`. Default (ChatGPT): `4096`.
 - **Top-p***: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
-- **Frequency penalty***: A value between `-2.0` and `2.0`. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
-- **Presence penalty***: A Value between `-2.0` and `2.0`. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
+- **Frequency penalty**: A value between `-2.0` and `2.0`. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
+- **Presence penalty**: A Value between `-2.0` and `2.0`. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
 - **Always read out reply**: If enabled, ChatFred will read out all replies automatically. Default: `off`.
 - **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Default: `off`.
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
-- **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
+- **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
-
-***Only available for InstructGPT models.**
-
 You can find more information about the InstructGPT model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## Safety best practices 🛡️
-Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it.
+Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Please also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).
 
 ## What's next? 🚧
 Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.

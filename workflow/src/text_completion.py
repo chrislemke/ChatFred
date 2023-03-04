@@ -1,8 +1,10 @@
-"""This module contains the text completion API."""
+"""This module contains the InstructGPT API."""
 
 import json
 import os
 import sys
+
+from error_handling import env_value_error_if_needed, exception_response
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
@@ -49,32 +51,13 @@ def stdout_write(output_string: str) -> None:
     sys.stdout.write(json.dumps(response_dict))
 
 
-def env_value_checks() -> None:
+def exit_on_error() -> None:
     """Checks the environment variables for invalid values."""
-    if __temperature < 0 or __temperature > 2.0:
-        stdout_write(
-            f"🚨 'Temperature' must be ≤ 2.0 and ≥ 0. But you have set it to {__temperature}."
-        )
-        sys.exit(0)
-
-    if __model == "text-davinci-003" and __max_tokens > 4096:
-        stdout_write("🚨 'Maximum tokens' must be ≤ 4096 for 'Davinci'.")
-        sys.exit(0)
-
-    if (
-        __model in ["text-ada-001", "text-babbage-001", "text-curie-001"]
-        and __max_tokens > 2048
-    ):
-        model_name = __model.split("-")[1].capitalize()
-        stdout_write(f"🚨 'Maximum tokens' must be ≤ 4096 for '{model_name}'.")
-        sys.exit(0)
-
-    if __frequency_penalty <= -2.0 or __frequency_penalty >= 2.0:
-        stdout_write("🚨 'Frequency penalty' must be between -2.0 and 2.0.")
-        sys.exit(0)
-
-    if __presence_penalty <= -2.0 or __presence_penalty >= 2.0:
-        stdout_write("🚨 'Presence penalty' must be between -2.0 and 2.0.")
+    error = env_value_error_if_needed(
+        __temperature, __model, __max_tokens, __frequency_penalty, __presence_penalty
+    )
+    if error:
+        stdout_write(error)
         sys.exit(0)
 
 
@@ -104,29 +87,11 @@ def make_request(
             .choices[0]
             .text
         )
-    except openai.error.AuthenticationError:
-        return "🚨 There seems to be something wrong! Please check your API key."
-
-    except openai.error.InvalidRequestError:
-        return "🚨 Hmmm... Something is wrong with your request. Try again later."
-
-    except openai.error.ServiceUnavailableError:
-        return "🚨 Oh no! The server is overloaded or not ready yet."
-
-    except openai.error.APIError:
-        return "🚨 D'oh! The server had an error while processing your request."
-
-    except openai.error.APIConnectionError:
-        return "🚨 There is something fishy with your internet connection. Check your network settings."
-
-    except openai.error.RateLimitError:
-        return "🚨 You have reached the rate limit. Check your settings in your OpenAI dashboard."
-
-    except openai.error.Timeout:
-        return "🚨 The request timed out. Try again later."
+    except Exception as exception:  # pylint: disable=broad-except
+        return exception_response(exception)
 
 
-env_value_checks()
+exit_on_error()
 response = make_request(
     __model,
     prompt_from_query(get_query()),

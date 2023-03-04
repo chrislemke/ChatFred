@@ -254,21 +254,21 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>3BF9843F-60FD-4683-9ADF-C5533691858B</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
-				<key>modifiersubtext</key>
-				<string>Copy reply to clipboard</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3BF9843F-60FD-4683-9ADF-C5533691858B</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy reply to clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -284,21 +284,21 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>51EEBBF2-BE53-4A88-965F-02AC2D651EF5</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>5D9861D9-2F55-408C-B1BD-33ADD7A02566</string>
 				<key>modifiers</key>
 				<integer>1310720</integer>
 				<key>modifiersubtext</key>
 				<string>Show repy in large text and copy to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>51EEBBF2-BE53-4A88-965F-02AC2D651EF5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -333,17 +333,28 @@
 		<array/>
 		<key>AD46F538-F4DD-41B2-BE43-E830535CA0E3</key>
 		<array/>
-		<key>BF4D7DFD-FEFE-4AEB-8B89-B77D1FCB74D4</key>
+		<key>C83E6264-8F02-47D0-A671-2CF460D1052E</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>7C0C66D8-A9A4-4CE6-B16B-52361998FF42</string>
+				<string>45B5F36B-A668-4C79-A272-2948ABAF36C3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>sourceoutputuid</key>
-				<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E1171C29-3760-40F7-8FD6-C083889A0848</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>428693A7-E395-41B3-8381-7A7EF6582F99</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -376,7 +387,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>BF4D7DFD-FEFE-4AEB-8B89-B77D1FCB74D4</string>
+				<string>7C0C66D8-A9A4-4CE6-B16B-52361998FF42</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -389,7 +400,7 @@
 	<key>createdby</key>
 	<string>Chris Lemke</string>
 	<key>description</key>
-	<string>Alfred workflow using OpenAI's model for chatting, image generation, etc.</string>
+	<string>Alfred workflow using ChatGPT, DALL·E 2 and other models for chatting, image generation and more</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -452,6 +463,35 @@
 			<string>428693A7-E395-41B3-8381-7A7EF6582F99</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E1171C29-3760-40F7-8FD6-C083889A0848</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -537,38 +577,6 @@
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>F471533B-A418-4158-B92C-AEA42E53945E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:show_notifications}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>5</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string></string>
-						<key>uid</key>
-						<string>FEB2216B-355F-42E6-8717-AD2D9C2345FF</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>BF4D7DFD-FEFE-4AEB-8B89-B77D1FCB74D4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -683,7 +691,7 @@
 				<key>keyword</key>
 				<string>cf</string>
 				<key>subtext</key>
-				<string>Talk with ChatGPT 💬</string>
+				<string>Talk to ChatGPT 💬</string>
 				<key>text</key>
 				<string>ChatFred</string>
 				<key>withspace</key>
@@ -760,21 +768,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
+				<key>acceptsfiles</key>
 				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
+				<key>acceptsmulti</key>
+				<integer>1</integer>
+				<key>acceptstext</key>
+				<true/>
+				<key>acceptsurls</key>
 				<false/>
-				<key>transient</key>
-				<false/>
+				<key>name</key>
+				<string>Talk to ChatFred</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>3BF9843F-60FD-4683-9ADF-C5533691858B</string>
+			<string>C83E6264-8F02-47D0-A671-2CF460D1052E</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -811,6 +821,46 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Reply copied to clipboard</string>
+				<key>title</key>
+				<string>ChatFred</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C7A6C68C-D4BD-4E85-9A6B-D1255B3136BA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>3BF9843F-60FD-4683-9ADF-C5533691858B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -840,27 +890,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Reply copied to clipboard</string>
-				<key>title</key>
-				<string>ChatFred</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>C7A6C68C-D4BD-4E85-9A6B-D1255B3136BA</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -876,7 +905,7 @@
 				<key>keyword</key>
 				<string>cft</string>
 				<key>queuedelaycustom</key>
-				<integer>3</integer>
+				<integer>4</integer>
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
@@ -1030,6 +1059,35 @@ Reply:
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>50</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>100</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>5D9861D9-2F55-408C-B1BD-33ADD7A02566</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -1059,49 +1117,20 @@ Reply:
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>50</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>100</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>5D9861D9-2F55-408C-B1BD-33ADD7A02566</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>![chatfred](assets/images/chatfred.png)
 
 # ChatFred
-**[Alfred workflow](https://www.alfredapp.com/workflows/) using [OpenAI's](https://openai.com/) models for chatting and image generation.**
+**[Alfred workflow](https://www.alfredapp.com/workflows/) using [ChatGPT](https://chat.openai.com/chat), [DALL·E 2](https://openai.com/product/dall-e-2) and other models for chatting, image generation and more.**
 
 ## Setup 🛠️
-[⤓ Install on the Alfred Gallery](https://alfred.app/workflows/chrislemke/chatfred/) and add your OpenAI API key. If you have used [ChatGPT](https://chat.openai.com/chat) or [DALL·E 2](https://openai.com/dall-e-2/), you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$18 in free credit](https://openai.com/api/pricing/), no payment data is required. Then you can [create an API key](https://beta.openai.com/account/api-keys).
+[⤓ Install on the Alfred Gallery](https://alfred.app/workflows/chrislemke/chatfred/) and add your OpenAI API key. If you have used ChatGPT or DALL·E 2, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$5 in free credit](https://openai.com/api/pricing/), no payment data is required. Afterwards you can [create your API key](https://beta.openai.com/account/api-keys).
 
 ## Usage 🧑‍💻
 
 ### Talk to ChatGPT 💬
-To start chatting with ChatGPT just type `cf`, configure your own hotkey or use the workflow as a fallback search in Alfred.
+To start a conversation with ChatGPT use the keyword `cf` or setup the workflow as a fallback search in Alfred.
 
 ![Screenshot](assets/images/screenshot6.png)
 
@@ -1112,11 +1141,28 @@ or use ChatFred as a fallback search in Alfred:
 
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
 
-#### **`ChatFred_ChatGPT.log`** 📄
-Your full conversation with ChatGPT is stored in the file `ChatFred_ChatGPT.log` in the user's home directory (`~/`). This file is needed so ChatGPT can access prior parts of the conversation. You can adjust how far ChatGPT can look back in the conversation in the workflow's configuration (*ChatGPT history length*).
+#### **Universal action** ➡️
+ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
 
-### Text generation by GPT 📘
-To start the ChatFred workflow, just type `cft` or configure your own hotkey.
+To set it up just add a hotkey:
+![Screenshot](assets/images/screenshot9.png)
+
+And check the *Workflow Universal Action* checkbox:
+![Screenshot](assets/images/screenshot10.png)
+
+Now you can mark any text and hit your hotkey to send it to ChatFred.
+
+#### **`ChatFred_ChatGPT.log`** 📄
+Your full conversation with ChatGPT is stored in the file `ChatFred_ChatGPT.log` in the workflow's directory. This file is needed so ChatGPT can access prior parts of the conversation. You can adjust how far ChatGPT can look back in the conversation in the workflow's configuration (*ChatGPT history length*).
+
+To remove this file just tell ChatFred to `Forget everything` or to `clear chat log`.
+
+### Text generation with InstructGPT 🤖
+&gt; Instruct models are optimized to follow single-turn instructions. Ada is the fastest model, while Davinci is the most powerful.
+
+[OpenAI](https://platform.openai.com/docs/models/gpt-3)
+
+To start using InstructGPT models, just type `cft` or configure your own hotkey.
 
 Ask questions:
 ![Screenshot](assets/images/screenshot1.png)
@@ -1143,7 +1189,7 @@ You can also hit &lt;kbd&gt;⇧&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt; for savin
 
 ### Image generation by DALL·E 2 🖼️
 With the keyword `cfi` you can generate images by DALL·E 2. Just type in a description and ChatFred will generate an image for you. Let's generate an image with this prompt:
-`a photo of a person looking like Alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and will be opened in the default image viewer.
+`cfi a photo of a person looking like Alfred, wearing a butler's hat`. The result will be saved to the home directory (`~/`) and will be opened in the default image viewer.
 
 ![Screenshot](assets/images/screenshot5.png)
 
@@ -1153,28 +1199,25 @@ With the keyword `cfi` you can generate images by DALL·E 2. Just type in a desc
 
 ## Configure the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
-- **OpenAI model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci` (ascending quality). Default: `Davinci`.
-- **Temperature**: The temperature determines how greedy the generative model is (between 0 and 2). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense. Default: `0`.
-- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default: `50`.
-- **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
+- **ChatGPT history length**: ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see. Default: `2`.
+- **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. This has no impact on the use of ChatGPT. Default: `Davinci`.
+- **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
+- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default (InstructGPT): `50`. Default (ChatGPT): `4096`.
+- **Top-p***: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
 - **Frequency penalty**: A value between `-2.0` and `2.0`. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
 - **Presence penalty**: A Value between `-2.0` and `2.0`. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
 - **Always read out reply**: If enabled, ChatFred will read out all replies automatically. Default: `off`.
 - **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Default: `off`.
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
-- **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `off`.
+- **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
-- **ChatGPT history length**: ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see. Default: `4`.
-
-You can find more information about the GPT model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
+You can find more information about the InstructGPT model's parameters [here](https://platform.openai.com/docs/api-reference/completions/create).
 
 ## Safety best practices 🛡️
-Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it.
+Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Please also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).
 
 ## What's next? 🚧
-As soon as OpenAI releases the ChatGPT API, we will integrate it into this workflow. Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.
-
-If this box is checked ChatFred will show a notification when a reply is copied to the clipboard or an image was generated. For this to work System notifications must be activated for Alfred.</string>
+Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.</string>
 	<key>uidata</key>
 	<dict>
 		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
@@ -1191,7 +1234,7 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 		<key>157273FE-F494-4E67-8003-2C4B7794B8A6</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>6</integer>
+			<integer>5</integer>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
@@ -1206,7 +1249,7 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>xpos</key>
 			<real>1220</real>
 			<key>ypos</key>
-			<real>1125</real>
+			<real>1130</real>
 		</dict>
 		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
 		<dict>
@@ -1226,25 +1269,25 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>note</key>
 			<string>Automatically reads out ChatFred's reply if 'Always read out reply' is checked.</string>
 			<key>xpos</key>
-			<real>640</real>
+			<real>570</real>
 			<key>ypos</key>
-			<real>875</real>
+			<real>920</real>
 		</dict>
 		<key>428693A7-E395-41B3-8381-7A7EF6582F99</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<real>30</real>
+			<real>210</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>180</real>
 		</dict>
 		<key>45B5F36B-A668-4C79-A272-2948ABAF36C3</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<real>440</real>
+			<real>410</real>
 			<key>ypos</key>
 			<real>720</real>
 		</dict>
@@ -1255,9 +1298,9 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>note</key>
 			<string>Automatically copies conversation if 'Always copy reply to clipboard' is checked.</string>
 			<key>xpos</key>
-			<real>835</real>
+			<real>865</real>
 			<key>ypos</key>
-			<real>1110</real>
+			<real>1030</real>
 		</dict>
 		<key>51EEBBF2-BE53-4A88-965F-02AC2D651EF5</key>
 		<dict>
@@ -1266,9 +1309,9 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>note</key>
 			<string>Automatically saves conversation if 'Always save conversation to file' is checked.</string>
 			<key>xpos</key>
-			<real>1030</real>
+			<real>1020</real>
 			<key>ypos</key>
-			<real>1465</real>
+			<real>1365</real>
 		</dict>
 		<key>538391F2-A3CE-4AD0-849E-3D78B5DD2843</key>
 		<dict>
@@ -1277,9 +1320,9 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>1420</real>
+			<real>1415</real>
 			<key>ypos</key>
-			<real>1365</real>
+			<real>1310</real>
 		</dict>
 		<key>547CA7CA-D433-488C-9950-FF584AE9601E</key>
 		<dict>
@@ -1288,9 +1331,9 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>note</key>
 			<string>Saves/appends the conversation (request and reply) to the ChatFred.txt file.</string>
 			<key>xpos</key>
-			<real>1210</real>
+			<real>1205</real>
 			<key>ypos</key>
-			<real>1340</real>
+			<real>1280</real>
 		</dict>
 		<key>5D9861D9-2F55-408C-B1BD-33ADD7A02566</key>
 		<dict>
@@ -1299,9 +1342,9 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>note</key>
 			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>705</real>
+			<real>655</real>
 			<key>ypos</key>
-			<real>1480</real>
+			<real>1335</real>
 		</dict>
 		<key>63692C20-123A-4C28-BF36-40F18336FA66</key>
 		<dict>
@@ -1310,18 +1353,18 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>665</real>
+			<real>845</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>190</real>
 		</dict>
 		<key>68073E31-6F28-4F7B-B20C-6F1611C7076D</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<real>215</real>
+			<real>395</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>180</real>
 		</dict>
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<dict>
@@ -1337,9 +1380,9 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>675</real>
+			<real>855</real>
 			<key>ypos</key>
-			<real>335</real>
+			<real>330</real>
 		</dict>
 		<key>9D373129-2BF8-437F-9529-0D4651FB60F1</key>
 		<dict>
@@ -1366,9 +1409,9 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>845</real>
+			<real>1025</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>160</real>
 		</dict>
 		<key>AD46F538-F4DD-41B2-BE43-E830535CA0E3</key>
 		<dict>
@@ -1399,20 +1442,9 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>note</key>
 			<string>Opens the generated image in the default application. Usually: 'Preview'.</string>
 			<key>xpos</key>
-			<real>485</real>
+			<real>665</real>
 			<key>ypos</key>
-			<real>30</real>
-		</dict>
-		<key>BF4D7DFD-FEFE-4AEB-8B89-B77D1FCB74D4</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>note</key>
-			<string>Only show notification if 'Show notifications' is checked.</string>
-			<key>xpos</key>
-			<real>535</real>
-			<key>ypos</key>
-			<real>335</real>
+			<real>25</real>
 		</dict>
 		<key>C7A6C68C-D4BD-4E85-9A6B-D1255B3136BA</key>
 		<dict>
@@ -1421,7 +1453,27 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>xpos</key>
 			<real>1360</real>
 			<key>ypos</key>
-			<real>1115</real>
+			<real>1100</real>
+		</dict>
+		<key>C83E6264-8F02-47D0-A671-2CF460D1052E</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>230</real>
+			<key>ypos</key>
+			<real>955</real>
+		</dict>
+		<key>E1171C29-3760-40F7-8FD6-C083889A0848</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>note</key>
+			<string>Add a hotkey to start ChatFred without typing 'cf'.</string>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>180</real>
 		</dict>
 		<key>F0B1523D-0C58-4D43-9BC2-C96560E8AD95</key>
 		<dict>
@@ -1430,7 +1482,7 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>xpos</key>
 			<real>1550</real>
 			<key>ypos</key>
-			<real>1335</real>
+			<real>1280</real>
 		</dict>
 		<key>F471533B-A418-4158-B92C-AEA42E53945E</key>
 		<dict>
@@ -1439,9 +1491,9 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>note</key>
 			<string>Checks if 'Run Script' return a path to an image. If not it posts a notification with an error message.</string>
 			<key>xpos</key>
-			<real>395</real>
+			<real>575</real>
 			<key>ypos</key>
-			<real>205</real>
+			<real>200</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1471,7 +1523,65 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>text-ada-001</string>
+				<string>5</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>1</string>
+						<string>1</string>
+					</array>
+					<array>
+						<string>2</string>
+						<string>2</string>
+					</array>
+					<array>
+						<string>3</string>
+						<string>3</string>
+					</array>
+					<array>
+						<string>4</string>
+						<string>4</string>
+					</array>
+					<array>
+						<string>5</string>
+						<string>5</string>
+					</array>
+					<array>
+						<string>6</string>
+						<string>6</string>
+					</array>
+					<array>
+						<string>7</string>
+						<string>7</string>
+					</array>
+					<array>
+						<string>8</string>
+						<string>8</string>
+					</array>
+					<array>
+						<string>9</string>
+						<string>9</string>
+					</array>
+					<array>
+						<string>10</string>
+						<string>10</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see.</string>
+			<key>label</key>
+			<string>ChatGPT history length</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>history_length</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>text-davinci-003</string>
 				<key>pairs</key>
 				<array>
 					<array>
@@ -1495,7 +1605,7 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>description</key>
 			<string>Language model used for prediction. Read more about the models: https://platform.openai.com/docs/models/gpt-3</string>
 			<key>label</key>
-			<string>OpenAI model</string>
+			<string>InstructGPT model</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
@@ -1526,16 +1636,16 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>50</string>
+				<string></string>
 				<key>placeholder</key>
-				<string>50</string>
+				<string></string>
 				<key>required</key>
-				<true/>
+				<false/>
 				<key>trim</key>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>The maximum number of tokens to generate by the model.</string>
+			<string>The maximum number of tokens to generate by the model. If not set OpenAI's default value will be used.</string>
 			<key>label</key>
 			<string>Maximum tokens</string>
 			<key>type</key>
@@ -1617,7 +1727,7 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 				<string>Be warned! He is very chatty 😎</string>
 			</dict>
 			<key>description</key>
-			<string>To let ChatFred speak and read out his replies you can hit 'OPTION+Return' (not available for chatting functionality). If this box is checked, all replies will be read out automatically.</string>
+			<string>To let ChatFred speak and read out his replies you can hit 'OPTION+Return' (only available for InstructGPT). If this box is checked, all replies will be read out automatically.</string>
 			<key>label</key>
 			<string>Always read out reply</string>
 			<key>type</key>
@@ -1629,14 +1739,14 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<true/>
+				<false/>
 				<key>required</key>
 				<false/>
 				<key>text</key>
 				<string>Useful for not forgetting ChatFred's replies</string>
 			</dict>
 			<key>description</key>
-			<string>Your conversation with ChatFred can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN' (not available for chatting functionality). If this box is checked, all requests and replies will be stored to file automatically.</string>
+			<string>Your conversation with ChatFred can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN' (only available for InstructGPT). If this box is checked, all requests and replies will be stored to file automatically.</string>
 			<key>label</key>
 			<string>Always save conversation to file</string>
 			<key>type</key>
@@ -1657,7 +1767,7 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Directory where the 'ChatFred.txt' should be stored (not available for chatting functionality). The ChatGPT results are stored in the '~/ChatFred_ChatGPT.log' file.</string>
+			<string>Directory where the 'ChatFred.txt' should be stored (only available for InstructGPT). The ChatGPT results are stored in the '~/ChatFred_ChatGPT.log' file.</string>
 			<key>label</key>
 			<string>File directory</string>
 			<key>type</key>
@@ -1676,7 +1786,7 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 				<string></string>
 			</dict>
 			<key>description</key>
-			<string>ChatFred reply can be copied to the clipboard by hitting 'CTRL+RETURN' (not available for chatting functionality). If this box is checked, the replies of ChatFred will be copied to the clipboard automatically.</string>
+			<string>ChatFred reply can be copied to the clipboard by hitting 'CTRL+RETURN' (only available for InstructGPT). If this box is checked, the replies of ChatFred will be copied to the clipboard automatically.</string>
 			<key>label</key>
 			<string>Always copy reply to clipboard</string>
 			<key>type</key>
@@ -1718,7 +1828,7 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<true/>
+				<false/>
 				<key>required</key>
 				<false/>
 				<key>text</key>
@@ -1732,64 +1842,6 @@ If this box is checked ChatFred will show a notification when a reply is copied 
 			<string>checkbox</string>
 			<key>variable</key>
 			<string>show_notifications</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>4</string>
-				<key>pairs</key>
-				<array>
-					<array>
-						<string>1</string>
-						<string>1</string>
-					</array>
-					<array>
-						<string>2</string>
-						<string>2</string>
-					</array>
-					<array>
-						<string>3</string>
-						<string>3</string>
-					</array>
-					<array>
-						<string>4</string>
-						<string>4</string>
-					</array>
-					<array>
-						<string>5</string>
-						<string>5</string>
-					</array>
-					<array>
-						<string>6</string>
-						<string>6</string>
-					</array>
-					<array>
-						<string>7</string>
-						<string>7</string>
-					</array>
-					<array>
-						<string>8</string>
-						<string>8</string>
-					</array>
-					<array>
-						<string>9</string>
-						<string>9</string>
-					</array>
-					<array>
-						<string>10</string>
-						<string>10</string>
-					</array>
-				</array>
-			</dict>
-			<key>description</key>
-			<string>ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see.</string>
-			<key>label</key>
-			<string>ChatGPT history length</string>
-			<key>type</key>
-			<string>popupbutton</string>
-			<key>variable</key>
-			<string>history_length</string>
 		</dict>
 	</array>
 	<key>version</key>
