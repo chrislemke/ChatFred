@@ -5,7 +5,12 @@ clear_log_prompts = [
     "clear history",
     "clear chat",
     "clear chat log",
+    "erase log",
     "forget everything",
     "forget everything i said",
     "forget everything i said to you",
+    "remove log",
+    "remove history",
+    "remove chat",
+    "remove chat log",
 ]
