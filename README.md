@@ -8,7 +8,7 @@
 
 ## Usage 🧑‍💻
 
-### Talk to ChatGPT 💬 (in beta: download it [here](https://github.com/chrislemke/ChatFred/releases/tag/v1.1.0-dev2))
+### Talk to ChatGPT 💬 (in beta: download it [here](https://github.com/chrislemke/ChatFred/releases/tag/v1.1.0-dev3))
 To start a conversation with ChatGPT use the keyword `cf` or setup the workflow as a fallback search in Alfred.
 
 ![Screenshot](workflow/assets/images/screenshot6.png)
