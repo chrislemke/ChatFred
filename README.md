@@ -1,6 +1,13 @@
 ![chatfred](workflow/assets/images/chatfred.png)
 
 # ChatFred
+[![Alfred](https://img.shields.io/badge/Alfred-Workflow-blueviolet%20)](https://alfred.app/workflows/)
+[![Releases](https://img.shields.io/github/v/release/chrislemke/chatfred?include_prereleases)](https://github.com/chrislemke/ChatFred/releases)
+[![Issues](https://img.shields.io/github/issues/chrislemke/chatfred)](https://github.com/chrislemke/ChatFred/issues)
+[![Downloads](https://img.shields.io/github/downloads/chrislemke/chatfred/total)](https://alfred.app/workflows/chrislemke/chatfred/)
+[![License](https://img.shields.io/github/license/chrislemke/chatfred)](https://github.com/chrislemke/chatfred/blob/main/LICENSE)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+
 **[Alfred workflow](https://www.alfredapp.com/workflows/) using [ChatGPT](https://chat.openai.com/chat), [DALL·E 2](https://openai.com/product/dall-e-2) and other models for chatting, image generation and more.**
 
 ## Setup 🛠️
