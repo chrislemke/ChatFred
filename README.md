@@ -1,10 +1,10 @@
 ![chatfred](workflow/assets/images/chatfred.png)
 
 # ChatFred
-[![Alfred](https://img.shields.io/badge/Alfred-Workflow-blueviolet%20)](https://alfred.app/workflows/)
+[![Alfred](https://img.shields.io/badge/Alfred-Workflow-blueviolet%20)](https://alfred.app/workflows/chrislemke/chatfred/)
 [![Releases](https://img.shields.io/github/v/release/chrislemke/chatfred?include_prereleases)](https://github.com/chrislemke/ChatFred/releases)
 [![Issues](https://img.shields.io/github/issues/chrislemke/chatfred)](https://github.com/chrislemke/ChatFred/issues)
-[![Downloads](https://img.shields.io/github/downloads/chrislemke/chatfred/total)](https://alfred.app/workflows/chrislemke/chatfred/)
+![Downloads](https://img.shields.io/github/downloads/chrislemke/chatfred/total)
 [![License](https://img.shields.io/github/license/chrislemke/chatfred)](https://github.com/chrislemke/chatfred/blob/main/LICENSE)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
