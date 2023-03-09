@@ -2,7 +2,8 @@
 
 import os
 import sys
-from typing import Optional
+from datetime import datetime
+from typing import Dict, Optional, Union
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
@@ -71,3 +72,33 @@ def exception_response(error: openai.error) -> str:
         return "🚨 The request timed out. Try again later."
 
     return "🚨 Something went wrong. Try again later."
+
+
+def log_error_if_needed(
+    model: str,
+    error_message: str,
+    user_prompt: str,
+    parameters: Dict[str, Union[str, int, float, Optional[int]]],
+    workflow_data_path: str,
+    workflow_version: str,
+    debug: int,
+) -> None:
+    """Logs the error to a `ChatFred_Error.log` if `debug` is set to 1."""
+
+    if debug == 0:
+        return
+
+    if not os.path.exists(workflow_data_path):
+        os.makedirs(workflow_data_path)
+
+    with open(
+        f"{workflow_data_path}/ChatFred_Error.log", "a+", encoding="utf-8"
+    ) as log:
+        log.write(f"\nDate/Time: {str(datetime.now())}\n")
+        log.write(f"model: {model}\n")
+        log.write(f"workflow_version: {workflow_version}\n")
+        log.write(f"error_message: {error_message}\n")
+        log.write(f"user_prompt: {user_prompt}\n")
+        for key in parameters:
+            log.write(f"{key}: {parameters[key]}\n")
+        log.write("---")
