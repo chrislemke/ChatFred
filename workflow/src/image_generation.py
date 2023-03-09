@@ -3,6 +3,7 @@
 import os
 import sys
 import urllib.request
+from datetime import datetime
 
 from error_handling import exception_response
 
@@ -35,7 +36,9 @@ def prepare_file_name(prompt: str) -> str:
 
 def make_request(prompt: str, size: int) -> str:
     """Makes the request to the OpenAI API."""
-    file_path = f"{os.path.expanduser('~')}/ChatFred_{prepare_file_name(prompt)}.png"
+
+    datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    file_path = f"{os.path.expanduser('~')}/ChatFred_{prepare_file_name(prompt)}_{datetime_string}.png"
 
     try:
         response = openai.Image.create(prompt=prompt, n=1, size=f"{size}x{size}")
