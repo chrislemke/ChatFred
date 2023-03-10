@@ -28,7 +28,6 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Relevant information from the `ChatFred_Error.log` file**
-E.g.:
 ```
 Date/Time: 2023-03-10 16:32:29.819957
 model: gpt-3.5-turbo
