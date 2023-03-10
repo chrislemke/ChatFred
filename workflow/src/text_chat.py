@@ -4,12 +4,14 @@ import os
 import sys
 from typing import Optional, Tuple
 
-from custom_chat_prompts import clear_log_prompts
+from custom_prompts import clear_log_prompts, error_prompts
 from error_handling import (
     env_value_error_if_needed,
     exception_response,
+    get_last_error_message,
     log_error_if_needed,
 )
+from global_services import read_from_cache, write_to_cache
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
@@ -26,8 +28,6 @@ __presence_penalty = float(os.getenv("presence_penalty") or 0.0)
 __workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("~")
 __log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.log"
 __jailbreak_prompt = os.getenv("jailbreak_prompt")
-__workflow_version = os.getenv("alfred_workflow_version") or "unknown"
-__debug = int(os.getenv("alfred_debug") or 0)
 
 
 def get_query() -> str:
@@ -92,11 +92,17 @@ def remove_log_file() -> None:
         os.remove(__log_file_path)
 
 
-def handle_custom_prompts(prompt: str):
-    """Handles custom prompts.
+def intercept_custom_prompts(prompt: str):
+    """Intercepts custom queries."""
 
-    Currently only the clear log prompts.
-    """
+    last_request_successful = read_from_cache("last_chat_request_successful")
+    if prompt in error_prompts and not last_request_successful:
+        stdout_write(
+            f"😬 Sorry, the error message was not really helpful. Here is the original message from OpenAI:\n\n➡️ {get_last_error_message()}"
+        )
+        write_to_cache("last_chat_request_successful", True)
+        sys.exit(0)
+
     if prompt in clear_log_prompts:
         remove_log_file()
         stdout_write("All my memories of you have been erased 😢")
@@ -138,8 +144,9 @@ def make_chat_request(
     """Makes a request to the OpenAI API and returns the prompt and the
     response."""
 
-    handle_custom_prompts(prompt)
+    intercept_custom_prompts(prompt)
     messages = create_message(prompt)
+    write_to_cache("last_chat_request_successful", True)
 
     try:
         response = (
@@ -158,6 +165,7 @@ def make_chat_request(
 
     except Exception as exception:  # pylint: disable=broad-except
         response = exception_response(exception)
+        write_to_cache("last_chat_request_successful", False)
         log_error_if_needed(
             model="gpt-3.5-turbo",
             error_message=exception._message,  # type: ignore  # pylint: disable=protected-access
@@ -169,9 +177,6 @@ def make_chat_request(
                 "frequency_penalty": frequency_penalty,
                 "presence_penalty": presence_penalty,
             },
-            workflow_data_path=__workflow_data_path,
-            workflow_version=__workflow_version,
-            debug=__debug,
         )
 
     return prompt, response

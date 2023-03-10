@@ -1,4 +1,15 @@
-"""Custom chat prompts for the ChatGPT."""
+"""Custom prompts for custom actions."""
+
+error_prompts = [
+    "wtf",
+    "what does that even mean?",
+    "what does that even mean",
+    "shut up and tell me what this means",
+    "tell me what this means",
+    "show error",
+    "show openai error",
+    "show OpenAI error",
+]
 
 clear_log_prompts = [
     "clear log",

@@ -10,7 +10,7 @@
 
 **[Alfred workflow](https://www.alfredapp.com/workflows/) using [ChatGPT](https://chat.openai.com/chat), [DALL·E 2](https://openai.com/product/dall-e-2) and other models for chatting, image generation and more.**
 
-## Setup 🛠️
+## Setup 🧰
 [⤓ Install on the Alfred Gallery](https://alfred.app/workflows/chrislemke/chatfred/) or download it over [GitHub](https://github.com/chrislemke/ChatFred/releases) and add your OpenAI API key. If you have used ChatGPT or DALL·E 2, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$5 in free credit](https://openai.com/api/pricing/), no payment data is required. Afterwards you can [create your API key](https://beta.openai.com/account/api-keys).
 
 ## Usage 🧑‍💻
@@ -113,8 +113,10 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
 
-## Troubleshooting 🛠️
-If you have any problems with the workflow, the first thing you could do is having a look at the `ChatFred_Error.log` file. It is placed in the workflow's data directory which you find here: `~/Library/Application Support/Alfred/Workflow Data/`. When you run the workflow in the [Workflow Debugger](https://www.alfredapp.com/help/workflows/advanced/debugger/) every error will be logged here, together with some relevant information. Maybe this helps you to solve the problem. If not, please [open an issue](https://github.com/chrislemke/ChatFred/issues/new) and add the needed information from the `ChatFred_Error.log` file.
+## Troubleshooting ⛑️
+After you received an error (🚨), you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
+
+You can also have a look at the `ChatFred_Error.log` file. It is placed in the workflow's data directory which you find here: `~/Library/Application Support/Alfred/Workflow Data/`. Every error will be logged there, together with some relevant information. Maybe this helps to solve your problem. If not, please [open an issue](https://github.com/chrislemke/ChatFred/issues/new) and add the needed information from the `ChatFred_Error.log` file.
 
 ## Safety best practices 🛡️
 Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).

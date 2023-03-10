@@ -9,6 +9,9 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
 import openai
 
+__workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("~")
+__workflow_version = os.getenv("alfred_workflow_version") or "unknown"
+
 
 def env_value_error_if_needed(
     temperature: float,
@@ -79,26 +82,36 @@ def log_error_if_needed(
     error_message: str,
     user_prompt: str,
     parameters: Dict[str, Union[str, int, float, Optional[int]]],
-    workflow_data_path: str,
-    workflow_version: str,
-    debug: int,
 ) -> None:
     """Logs the error to a `ChatFred_Error.log` if `debug` is set to 1."""
 
-    if debug == 0:
-        return
-
-    if not os.path.exists(workflow_data_path):
-        os.makedirs(workflow_data_path)
+    if not os.path.exists(__workflow_data_path):
+        os.makedirs(__workflow_data_path)
 
     with open(
-        f"{workflow_data_path}/ChatFred_Error.log", "a+", encoding="utf-8"
+        f"{__workflow_data_path}/ChatFred_Error.log", "a+", encoding="utf-8"
     ) as log:
+        log.write("---")
         log.write(f"\nDate/Time: {str(datetime.now())}\n")
         log.write(f"model: {model}\n")
-        log.write(f"workflow_version: {workflow_version}\n")
+        log.write(f"workflow_version: {__workflow_version}\n")
         log.write(f"error_message: {error_message}\n")
         log.write(f"user_prompt: {user_prompt}\n")
         for key in parameters:
             log.write(f"{key}: {parameters[key]}\n")
-        log.write("---")
+
+
+def get_last_error_message() -> str:
+    """Returns the last error message from the log file."""
+    with open(
+        f"{__workflow_data_path}/ChatFred_Error.log", "r", encoding="utf-8"
+    ) as log:
+        lines = log.readlines()
+        lines.reverse()
+        error = ""
+        for line in lines:
+            if line.startswith("error_message:"):
+                error = line[14:]
+                break
+
+    return error

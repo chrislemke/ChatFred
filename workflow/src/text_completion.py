@@ -4,11 +4,14 @@ import json
 import os
 import sys
 
+from custom_prompts import error_prompts
 from error_handling import (
     env_value_error_if_needed,
     exception_response,
+    get_last_error_message,
     log_error_if_needed,
 )
+from global_services import read_from_cache, write_to_cache
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
@@ -21,9 +24,6 @@ __max_tokens = int(os.getenv("max_tokens") or 50)
 __top_p = int(os.getenv("top_p") or 1)
 __frequency_penalty = float(os.getenv("frequency_penalty") or 0.0)
 __presence_penalty = float(os.getenv("presence_penalty") or 0.0)
-__workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("~")
-__workflow_version = os.getenv("alfred_workflow_version") or "unknown"
-__debug = int(os.getenv("alfred_debug") or 0)
 
 
 def get_query() -> str:
@@ -58,6 +58,19 @@ def stdout_write(output_string: str) -> None:
     sys.stdout.write(json.dumps(response_dict))
 
 
+def intercept_custom_prompts(prompt: str):
+    """Intercepts custom queries."""
+
+    user_prompt = prompt.replace("Q: ", "").split("\n")[0]
+    last_request_successful = read_from_cache("last_text_completion_request_successful")
+    if user_prompt in error_prompts and not last_request_successful:
+        stdout_write(
+            f"😬 Sorry, the error message was not really helpful. Here is the original message from OpenAI:\n\n➡️ {get_last_error_message()}"
+        )
+        write_to_cache("last_text_completion_request_successful", True)
+        sys.exit(0)
+
+
 def exit_on_error() -> None:
     """Checks the environment variables for invalid values."""
     error = env_value_error_if_needed(
@@ -79,6 +92,9 @@ def make_request(
 ) -> str:
     """Makes the request to the OpenAI API."""
 
+    intercept_custom_prompts(prompt)
+    write_to_cache("last_text_completion_request_successful", True)
+
     try:
         return (
             openai.Completion.create(
@@ -95,6 +111,7 @@ def make_request(
             .text
         )
     except Exception as exception:  # pylint: disable=broad-except
+        write_to_cache("last_text_completion_request_successful", False)
         log_error_if_needed(
             model=model,
             error_message=exception._message,  # type: ignore  # pylint: disable=protected-access
@@ -106,9 +123,6 @@ def make_request(
                 "frequency_penalty": frequency_penalty,
                 "presence_penalty": presence_penalty,
             },
-            workflow_data_path=__workflow_data_path,
-            workflow_version=__workflow_version,
-            debug=__debug,
         )
         return exception_response(exception)
 
