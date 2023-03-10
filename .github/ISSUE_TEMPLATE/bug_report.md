@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-I had a look at the [troubleshooting section](https://github.com/chrislemke/ChatFred#troubleshooting-%EF%B8%8F) 
+I had a look at the [troubleshooting section](https://github.com/chrislemke/ChatFred#troubleshooting-%EF%B8%8F)
 - [ ] Yes
 - [ ] No
 
