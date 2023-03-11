@@ -133,7 +133,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 ## Troubleshooting ⛑️
 After you received an error (🚨), you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
 
-You can also have a look at the `ChatFred_Error.log` file. It is placed in the workflow's data directory which you find here: `~/Library/Application Support/Alfred/Workflow Data/`. Every error will be logged there, together with some relevant information. Maybe this helps to solve your problem. If not, please [open an issue](https://github.com/chrislemke/ChatFred/issues/new) and add the needed information from the `ChatFred_Error.log` file.
+You can also have a look at the `ChatFred_Error.log` file. It is placed in the workflow's data directory which you find here: `~/Library/Application Support/Alfred/Workflow Data/`. Every error will be logged there, together with some relevant information. Maybe this helps to solve your problem. If not, please [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) and add the needed information from the `ChatFred_Error.log` file.
 
 ## Safety best practices 🛡️
 Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).
