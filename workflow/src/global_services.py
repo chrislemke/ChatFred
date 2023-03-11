@@ -34,6 +34,9 @@ def write_to_cache(key: str, value: Union[str, int, float, bool]) -> None:
 def read_from_cache(entry: str) -> Union[str, int, float, bool, None]:
     """Reads the cache file and returns the value of the entry."""
 
-    with open(__cache_file_path, "rb") as plist:
-        data = plistlib.load(plist)
-    return data.get(entry)
+    if os.path.exists(__cache_file_path):
+        with open(__cache_file_path, "rb") as plist:
+            data = plistlib.load(plist)
+        return data.get(entry)
+    else:
+        return False
