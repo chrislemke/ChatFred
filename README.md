@@ -14,7 +14,7 @@
 - [Setup](#setup-)
 - [Usage](#usage-)
     - [Talk to ChatGPT](#talk-to-chatgpt-)
-        - [Aliases](#aliases-)
+        - [Aliases](#aliases-%EF%B8%8F)
         - [Universal action & combining queries](#universal-action--combining-queries-%EF%B8%8F)
         - [Jailbreak](#jailbreak-)
         - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
