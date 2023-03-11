@@ -2067,7 +2067,7 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.2.0</string>
+	<string>1.2.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
