@@ -50,7 +50,7 @@ The results will always be shown in [Large Type](https://www.alfredapp.com/help/
 Maybe you have some prompts for ChatGPT that you use pretty often. In this case you can create an alias for it. Just add a new entry to the *ChatGPT aliases* in the workflow's configuration:
 ```
 joke=tell me a joke;
-to_python=convert this to python but leave out the comments and just show me the code;
+to_python=convert this to python but only show the code:;
 ```
 
 ![Screenshot](workflow/assets/images/screenshot15.png)
