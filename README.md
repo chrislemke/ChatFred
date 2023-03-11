@@ -10,6 +10,23 @@
 
 **[Alfred workflow](https://www.alfredapp.com/workflows/) using [ChatGPT](https://chat.openai.com/chat), [DALL·E 2](https://openai.com/product/dall-e-2) and other models for chatting, image generation and more.**
 
+## Table of contents 📚
+- [Setup](#setup-)
+- [Usage](#usage-)
+    - [Talk to ChatGPT](#talk-to-chatgpt-)
+        - [Universal action & combining queries](#universal-action--combining-queries-%EF%B8%8F)
+        - [Jailbreak](#jailbreak-)
+        - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
+    - [Text generation with InstructGPT](#text-generation-with-instructgpt-)
+        - [Options](#options-)
+        - [Save conversations to file](#save-conversations-to-file-)
+    - [Image generation by DALL·E 2](#image-generation-by-dalle-2-%EF%B8%8F)
+- [Configure the workflow (optional)](#configure-the-workflow-optional-)
+- [Troubleshooting](#troubleshooting-%EF%B8%8F)
+- [Safety best practices](#safety-best-practices-%EF%B8%8F)
+- [Contributing](#contributing-)
+- [What's next?](#whats-next-)
+
 ## Setup 🧰
 [⤓ Install on the Alfred Gallery](https://alfred.app/workflows/chrislemke/chatfred/) or download it over [GitHub](https://github.com/chrislemke/ChatFred/releases) and add your OpenAI API key. If you have used ChatGPT or DALL·E 2, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$5 in free credit](https://openai.com/api/pricing/), no payment data is required. Afterwards you can [create your API key](https://beta.openai.com/account/api-keys).
 
