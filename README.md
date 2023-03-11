@@ -14,6 +14,7 @@
 - [Setup](#setup-)
 - [Usage](#usage-)
     - [Talk to ChatGPT](#talk-to-chatgpt-)
+        - [Aliases](#aliases-)
         - [Universal action & combining queries](#universal-action--combining-queries-%EF%B8%8F)
         - [Jailbreak](#jailbreak-)
         - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
@@ -33,7 +34,7 @@
 ## Usage 🧑‍💻
 
 ### Talk to ChatGPT 💬
-To start a conversation with ChatGPT either use the keyword `cf`, setup the workflow as a fallback search in Alfred or create your custom hotkey.
+To start a conversation with ChatGPT either use the keyword `cf`, setup the workflow as a fallback search in Alfred or create your custom hotkey to directly send the clipboard content to ChatGPT.
 
 Just talk to ChatGPT as you would do on the ChatGPT website:
 ![Screenshot](workflow/assets/images/screenshot6.png)
@@ -45,6 +46,18 @@ or use ChatFred as a fallback search in Alfred:
 
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
 
+#### **Aliases** ⌨️
+Maybe you have some prompts for ChatGPT that you use pretty often. In this case you can create an alias for it. Just add a new entry to the *ChatGPT aliases* in the workflow's configuration:
+```
+joke=tell me a joke;
+to_python=convert this to python but leave out the comments and just show me the code;
+```
+
+![Screenshot](workflow/assets/images/screenshot15.png)
+Is now equivalent to:
+![Screenshot](workflow/assets/images/screenshot16.png)
+
+This is especially useful in combination with [Universal Actions and the combining queries feature](#universal-action--combining-queries-%EF%B8%8F). For example, you can easily convert code from one language to another using the `to_python` alias and a combined query. You can read more about this in the next chapter.
 #### **Universal action & combining queries** ➡️
 ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
 
@@ -119,7 +132,7 @@ Translate text:
 ![Screenshot](workflow/assets/images/screenshot2.png)
 
 #### **Options** 🤗
-To handle the reply of ChatFred you have the following options.
+To handle the reply of ChatFred (InstructGPT) you have the following options.
 - <kbd>⏎</kbd>: Nothing by default. Set one or more actions in the [workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 - <kbd>⌘</kbd> <kbd>⏎</kbd>: Show the reply in [Large Type](https://www.alfredapp.com/help/features/large-type/) (can be combined with <kbd>⌃</kbd>)
 - <kbd>⌥</kbd> <kbd>⏎</kbd>: Let ChatFred speak 🗣️
@@ -149,6 +162,7 @@ The result will be saved to the home directory (`~/`) and will be opened in the 
 ## Configure the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 - **ChatGPT history length**: ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see. Default: `3`.
+- **ChatGPT aliases**: If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`
 - **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be automatically included to your request. You can use it by hitting <kbd>⌘</kbd> <kbd>⏎</kbd>. Default: `None`.
 - **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. This has no impact on the use of ChatGPT. Default: `Davinci`.
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.

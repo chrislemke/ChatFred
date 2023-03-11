@@ -452,6 +452,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BCA16B64-CE45-4F06-9E49-0A323FDCEA3B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>53D403AB-73C5-4662-9933-5D29892F5A0A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C83E6264-8F02-47D0-A671-2CF460D1052E</key>
 		<array>
 			<dict>
@@ -807,21 +820,21 @@ python3 -c 'import caching_manager; caching_manager.write_query_to_cache()' $1</
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>cf</string>
+				<key>subtext</key>
+				<string>Talk to ChatGPT 💬</string>
 				<key>text</key>
-				<string>💾 "{query}" has been saved for later usage.</string>
-				<key>title</key>
 				<string>ChatFred</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>211128E1-95B4-4BAD-B046-F78111D83574</string>
+			<string>A383EE76-68BF-44A3-8D8E-F4870A90896A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -857,21 +870,21 @@ python3 -c 'import caching_manager; caching_manager.write_query_to_cache()' $1</
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>cf</string>
-				<key>subtext</key>
-				<string>Talk to ChatGPT 💬</string>
-				<key>text</key>
-				<string>ChatFred</string>
-				<key>withspace</key>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
 				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>💾 "{query}" has been saved for later usage.</string>
+				<key>title</key>
+				<string>ChatFred</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>A383EE76-68BF-44A3-8D8E-F4870A90896A</string>
+			<string>211128E1-95B4-4BAD-B046-F78111D83574</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1126,6 +1139,37 @@ python3 -c 'import caching_manager; caching_manager.combine_user_input_with_quer
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>2</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>17</integer>
+				<key>hotmod</key>
+				<integer>1179648</integer>
+				<key>hotstring</key>
+				<string>T</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>BCA16B64-CE45-4F06-9E49-0A323FDCEA3B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -1309,6 +1353,27 @@ python3 -c 'import caching_manager; caching_manager.combine_user_input_with_quer
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Reply saved to file</string>
+				<key>title</key>
+				<string>ChatFred</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F0B1523D-0C58-4D43-9BC2-C96560E8AD95</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>adduuid</key>
 				<false/>
 				<key>allowemptyfiles</key>
@@ -1337,27 +1402,6 @@ Reply:
 			<string>alfred.workflow.output.writefile</string>
 			<key>uid</key>
 			<string>547CA7CA-D433-488C-9950-FF584AE9601E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Reply saved to file</string>
-				<key>title</key>
-				<string>ChatFred</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>F0B1523D-0C58-4D43-9BC2-C96560E8AD95</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1467,7 +1511,7 @@ Reply:
 ## Usage 🧑‍💻
 
 ### Talk to ChatGPT 💬
-To start a conversation with ChatGPT either use the keyword `cf`, setup the workflow as a fallback search in Alfred or create your custom hotkey.
+To start a conversation with ChatGPT either use the keyword `cf`, setup the workflow as a fallback search in Alfred or create your custom hotkey to directly send the clipboard content to ChatGPT.
 
 ![Screenshot](assets/images/screenshot6.png)
 
@@ -1477,6 +1521,18 @@ or use ChatFred as a fallback search in Alfred:
 ![Screenshot](assets/images/screenshot8.png)
 
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
+
+#### **Aliases** ⌨️
+Maybe you have some prompts for ChatGPT that you use pretty often. In this case you can create an alias for it. Just add a new entry to the *ChatGPT aliases* in the workflow's configuration:
+
+*joke=tell me a joke;*
+*to_python=convert this to python but leave out the comments and just show me the code;*
+
+![Screenshot](assets/images/screenshot15.png)
+Is now equivalent to:
+![Screenshot](assets/images/screenshot16.png)
+
+This is especially useful in combination with Universal Actions and the combining queries feature. For example, you can easily convert code from one language to another using the `to_python` alias and a combined query. You can read more about this in the next chapter.
 
 #### **Universal action &amp; combining queries** ➡️
 ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
@@ -1531,7 +1587,7 @@ Translate text:
 ![Screenshot](assets/images/screenshot2.png)
 
 #### **Options** 🤗
-To handle the reply of ChatFred you have the following options.
+To handle the reply of ChatFred (InstructGPT) you have the following options.
 - &lt;kbd&gt;⏎&lt;/kbd&gt;: Nothing by default. Set one or more actions in the [workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 - &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Show the reply in [Large Type](https://www.alfredapp.com/help/features/large-type/) (can be combined with &lt;kbd&gt;⌃&lt;/kbd&gt;)
 - &lt;kbd&gt;⌥&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;: Let ChatFred speak 🗣️
@@ -1560,7 +1616,8 @@ The result will be saved to the home directory (`~/`) and will be opened in the 
 ## Configure the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 - **ChatGPT history length**: ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see. Default: `3`.
-- **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be included automatically to your request. To use it adopt the argument `-j`. E.g. `cf -j what time is it?`. Default: `None`.
+- **ChatGPT aliases**: If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`
+- **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be included automatically to your request. You can use it by hitting &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;. Default: `None`.
 - **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. This has no impact on the use of ChatGPT. Default: `Davinci`.
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
 - **Maximum tokens**: The maximum number of tokens to generate in the completion. Default (InstructGPT): `50`. Default (ChatGPT): `4096`.
@@ -1592,31 +1649,31 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>2</integer>
 			<key>note</key>
 			<string>Add a hotkey to start ChatFred without typing 'cf'.</string>
 			<key>xpos</key>
-			<real>145</real>
+			<real>245</real>
 			<key>ypos</key>
-			<real>1165</real>
+			<real>1215</real>
 		</dict>
 		<key>157273FE-F494-4E67-8003-2C4B7794B8A6</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<real>110</real>
+			<real>210</real>
 			<key>ypos</key>
-			<real>740</real>
+			<real>790</real>
 		</dict>
 		<key>211128E1-95B4-4BAD-B046-F78111D83574</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1015</real>
+			<real>1115</real>
 			<key>ypos</key>
-			<real>485</real>
+			<real>535</real>
 		</dict>
 		<key>220DE84A-9685-4957-ACD6-AEA9F41005C5</key>
 		<dict>
@@ -1625,9 +1682,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Activates the jailbroken version of ChatGPT.</string>
 			<key>xpos</key>
-			<real>750</real>
+			<real>850</real>
 			<key>ypos</key>
-			<real>550</real>
+			<real>600</real>
 		</dict>
 		<key>2CD4970E-43C0-4C91-BE0F-3FB55C662C1D</key>
 		<dict>
@@ -1636,9 +1693,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>1500</real>
+			<real>1600</real>
 			<key>ypos</key>
-			<real>1170</real>
+			<real>1220</real>
 		</dict>
 		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
 		<dict>
@@ -1647,9 +1704,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Copies ChatFred's reply to the clipboard.</string>
 			<key>xpos</key>
-			<real>1280</real>
+			<real>1380</real>
 			<key>ypos</key>
-			<real>1145</real>
+			<real>1195</real>
 		</dict>
 		<key>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</key>
 		<dict>
@@ -1658,9 +1715,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Automatically reads out ChatFred's reply if 'Always read out reply' is checked.</string>
 			<key>xpos</key>
-			<real>850</real>
+			<real>950</real>
 			<key>ypos</key>
-			<real>960</real>
+			<real>1010</real>
 		</dict>
 		<key>428693A7-E395-41B3-8381-7A7EF6582F99</key>
 		<dict>
@@ -1676,18 +1733,18 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<real>675</real>
+			<real>775</real>
 			<key>ypos</key>
-			<real>785</real>
+			<real>835</real>
 		</dict>
 		<key>4C6745E5-A076-49F7-B070-E0A22C1C54DC</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>850</real>
+			<real>950</real>
 			<key>ypos</key>
-			<real>660</real>
+			<real>710</real>
 		</dict>
 		<key>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</key>
 		<dict>
@@ -1696,9 +1753,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Automatically copies conversation if 'Always copy reply to clipboard' is checked.</string>
 			<key>xpos</key>
-			<real>1145</real>
+			<real>1245</real>
 			<key>ypos</key>
-			<real>1070</real>
+			<real>1120</real>
 		</dict>
 		<key>51EEBBF2-BE53-4A88-965F-02AC2D651EF5</key>
 		<dict>
@@ -1707,9 +1764,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Automatically saves conversation if 'Always save conversation to file' is checked.</string>
 			<key>xpos</key>
-			<real>1300</real>
+			<real>1400</real>
 			<key>ypos</key>
-			<real>1405</real>
+			<real>1455</real>
 		</dict>
 		<key>538391F2-A3CE-4AD0-849E-3D78B5DD2843</key>
 		<dict>
@@ -1718,9 +1775,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>1695</real>
+			<real>1795</real>
 			<key>ypos</key>
-			<real>1350</real>
+			<real>1400</real>
 		</dict>
 		<key>53D403AB-73C5-4662-9933-5D29892F5A0A</key>
 		<dict>
@@ -1729,9 +1786,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Combines the saved ChatGPT query with the text from the Universal action.</string>
 			<key>xpos</key>
-			<real>455</real>
+			<real>555</real>
 			<key>ypos</key>
-			<real>985</real>
+			<real>1035</real>
 		</dict>
 		<key>547CA7CA-D433-488C-9950-FF584AE9601E</key>
 		<dict>
@@ -1740,9 +1797,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Saves/appends the conversation (request and reply) to the ChatFred.txt file.</string>
 			<key>xpos</key>
-			<real>1485</real>
+			<real>1585</real>
 			<key>ypos</key>
-			<real>1320</real>
+			<real>1370</real>
 		</dict>
 		<key>5D9861D9-2F55-408C-B1BD-33ADD7A02566</key>
 		<dict>
@@ -1751,9 +1808,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>935</real>
+			<real>1035</real>
 			<key>ypos</key>
-			<real>1375</real>
+			<real>1425</real>
 		</dict>
 		<key>63692C20-123A-4C28-BF36-40F18336FA66</key>
 		<dict>
@@ -1782,18 +1839,18 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>755</real>
+			<real>855</real>
 			<key>ypos</key>
-			<real>405</real>
+			<real>455</real>
 		</dict>
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<real>395</real>
+			<real>495</real>
 			<key>ypos</key>
-			<real>1175</real>
+			<real>1225</real>
 		</dict>
 		<key>7CF07DAA-DED0-4740-897B-7D92DBFDB841</key>
 		<dict>
@@ -1802,20 +1859,20 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Saves a ChatGPT query for later usage.</string>
 			<key>xpos</key>
-			<real>535</real>
+			<real>635</real>
 			<key>ypos</key>
-			<real>390</real>
+			<real>440</real>
 		</dict>
 		<key>9D373129-2BF8-437F-9529-0D4651FB60F1</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>2</integer>
 			<key>note</key>
 			<string>Add a hotkey to start ChatFred without typing 'cf'.</string>
 			<key>xpos</key>
-			<real>95</real>
+			<real>175</real>
 			<key>ypos</key>
-			<real>515</real>
+			<real>490</real>
 		</dict>
 		<key>9DA641B9-0F6E-4A67-8555-0F3E2DA9AE1E</key>
 		<dict>
@@ -1824,18 +1881,18 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Copies ChatFred's reply to the clipboard.</string>
 			<key>xpos</key>
-			<real>1135</real>
+			<real>1235</real>
 			<key>ypos</key>
-			<real>770</real>
+			<real>800</real>
 		</dict>
 		<key>A383EE76-68BF-44A3-8D8E-F4870A90896A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<real>305</real>
+			<real>355</real>
 			<key>ypos</key>
-			<real>520</real>
+			<real>490</real>
 		</dict>
 		<key>A7C03FCF-1822-409B-B1DC-1C070AB0290C</key>
 		<dict>
@@ -1853,9 +1910,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>1240</real>
+			<real>1340</real>
 			<key>ypos</key>
-			<real>905</real>
+			<real>955</real>
 		</dict>
 		<key>AD7BB662-4857-404A-9CEC-3F8D966EEF52</key>
 		<dict>
@@ -1864,9 +1921,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>Reads out ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>1150</real>
+			<real>1270</real>
 			<key>ypos</key>
-			<real>615</real>
+			<real>635</real>
 		</dict>
 		<key>B9194751-E497-43DD-A32E-220F56171FD7</key>
 		<dict>
@@ -1875,9 +1932,20 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>note</key>
 			<string>If jailbreak is activated but no "ChatGPT jailbreak prompt" is provided an error notification will be shown.</string>
 			<key>xpos</key>
-			<real>580</real>
+			<real>680</real>
 			<key>ypos</key>
-			<real>585</real>
+			<real>635</real>
+		</dict>
+		<key>BCA16B64-CE45-4F06-9E49-0A323FDCEA3B</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>note</key>
+			<string>Add your hotkey for a fast and simple way to send the content of the clipboard to ChatGPT.</string>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>1095</real>
 		</dict>
 		<key>BE49CE10-D46F-4E7E-AD8A-DEBCC4E3A6B0</key>
 		<dict>
@@ -1895,23 +1963,23 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1640</real>
+			<real>1740</real>
 			<key>ypos</key>
-			<real>1140</real>
+			<real>1190</real>
 		</dict>
 		<key>C83E6264-8F02-47D0-A671-2CF460D1052E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<real>135</real>
+			<real>235</real>
 			<key>ypos</key>
-			<real>925</real>
+			<real>975</real>
 		</dict>
 		<key>E1171C29-3760-40F7-8FD6-C083889A0848</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>2</integer>
 			<key>note</key>
 			<string>Add a hotkey to start ChatFred without typing 'cf'.</string>
 			<key>xpos</key>
@@ -1924,9 +1992,9 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1830</real>
+			<real>1930</real>
 			<key>ypos</key>
-			<real>1320</real>
+			<real>1370</real>
 		</dict>
 		<key>F471533B-A418-4158-B92C-AEA42E53945E</key>
 		<dict>
@@ -2031,6 +2099,27 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<string>popupbutton</string>
 			<key>variable</key>
 			<string>history_length</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>joke=tell me a joke;</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>9</integer>
+			</dict>
+			<key>description</key>
+			<string>If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`</string>
+			<key>label</key>
+			<string>ChatGPT aliases</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>cf_aliases</string>
 		</dict>
 		<dict>
 			<key>config</key>

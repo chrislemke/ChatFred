@@ -4,6 +4,7 @@ import os
 import sys
 from typing import Optional, Tuple
 
+from aliases_manager import prompt_for_alias
 from caching_manager import read_from_cache, write_to_cache
 from custom_prompts import clear_log_prompts, error_prompts
 from error_handler import (
@@ -145,6 +146,7 @@ def make_chat_request(
     response."""
 
     intercept_custom_prompts(prompt)
+    prompt = prompt_for_alias(prompt)
     messages = create_message(prompt)
     write_to_cache("last_chat_request_successful", True)
 
