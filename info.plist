@@ -1478,7 +1478,7 @@ or use ChatFred as a fallback search in Alfred:
 
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
 
-#### **Universal action** ➡️
+#### **Universal action &amp; combining queries** ➡️
 ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
 
 To set it up just add a hotkey:
@@ -1487,7 +1487,16 @@ To set it up just add a hotkey:
 And check the *Workflow Universal Action* checkbox:
 ![Screenshot](assets/images/screenshot10.png)
 
-Now you can mark any text and hit your hotkey to send it to ChatFred.
+Now you can mark any text and hit your hotkey to send it to ChatFred. If you want to combine two ChatGPT requests, you can do it easily.
+
+**Combining queries** 🔗
+
+First save one query for ChatGPT by pressing &lt;kbd&gt;⌥&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;.
+![Screenshot](assets/images/screenshot13.png)
+Or:
+![Screenshot](assets/images/screenshot14.png)
+
+Then simply activate the Universal Action followed by pressing &lt;kbd&gt;⌥&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt; - to send a combined query to ChatGPT. This is especially useful if you want to add some text in front of something you copied.
 
 #### **Jailbreak** 🔓
 For anyone who wants to feed ChatGPT with a jailbreak prompt. You can enter a command in workflow's configuration under *ChatGPT jailbreak prompt*. By hitting &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt; you can talk to an unlocked version of ChatGPT. Here is a small example:
