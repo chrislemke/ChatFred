@@ -10,6 +10,23 @@
 
 **[Alfred workflow](https://www.alfredapp.com/workflows/) using [ChatGPT](https://chat.openai.com/chat), [DALL·E 2](https://openai.com/product/dall-e-2) and other models for chatting, image generation and more.**
 
+## Table of contents 📚
+- [Setup](#setup-)
+- [Usage](#usage-)
+    - [Talk to ChatGPT](#talk-to-chatgpt-)
+        - [Universal action & combining queries](#universal-action--combining-queries-)
+        - [Jailbreak](#jailbreak-)
+        - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
+    - [Text generation with InstructGPT](#text-generation-with-instructgpt-)
+        - [Options](#options-)
+        - [Save conversations to file](#save-conversations-to-file-)
+    - [Image generation by DALL·E 2](#image-generation-by-dalle-2-%EF%B8%8F)
+- [Configure the workflow (optional)](#configure-the-workflow-optional-)
+- [Troubleshooting](#troubleshooting-%EF%B8%8F)
+- [Safety best practices](#safety-best-practices-%EF%B8%8F)
+- [Contributing](#contributing-)
+- [What's next?](#whats-next-)
+
 ## Setup 🧰
 [⤓ Install on the Alfred Gallery](https://alfred.app/workflows/chrislemke/chatfred/) or download it over [GitHub](https://github.com/chrislemke/ChatFred/releases) and add your OpenAI API key. If you have used ChatGPT or DALL·E 2, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$5 in free credit](https://openai.com/api/pricing/), no payment data is required. Afterwards you can [create your API key](https://beta.openai.com/account/api-keys).
 
@@ -28,7 +45,7 @@ or use ChatFred as a fallback search in Alfred:
 
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
 
-#### **Universal action** ➡️
+#### **Universal action & combining queries** ➡️
 ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
 
 To set it up just add a hotkey:
@@ -37,7 +54,39 @@ To set it up just add a hotkey:
 And check the *Workflow Universal Action* checkbox:
 ![Screenshot](workflow/assets/images/screenshot10.png)
 
-Now you can mark any text and hit your hotkey to send it to ChatFred.
+Now you can mark any text and hit your hotkey to send it to ChatFred. If you want to combine two ChatGPT requests, you can do it easily.
+
+**Combining queries** 🔗
+
+First save one query for ChatGPT by pressing <kbd>⌥</kbd> <kbd>⏎</kbd>.
+![Screenshot](workflow/assets/images/screenshot13.png)
+Or:
+![Screenshot](workflow/assets/images/screenshot14.png)
+
+Then simply activate the Universal Action followed by pressing <kbd>⌥</kbd> <kbd>⏎</kbd> - to send a combined query to ChatGPT. This is especially useful if you want to add some text in front of something you copied.
+
+E.g. Combining `convert this to python` with this copied code:
+```cpp
+int main() {
+    std::cout << "Hello World!";
+    return 0;
+}
+```
+
+resulting in a combined query with the following answer:
+```
+Here's the Python equivalent of the C++ code you provided:
+
+def main():
+    print("Hello World!")
+    return 0
+
+if __name__ == "__main__":
+    main()
+
+In Python, we don't need to explicitly define a `main()` function like in C++. Instead, we can simply define the code we want to execute in the global scope and then use the `if __name__ == "__main__":` statement to ensure that the code is only executed if the script is run directly (as opposed to being imported as a module).
+```
+⚠️ Be careful when asking ChatGPT for coding advice. [Stack Overflow](https://stackoverflow.com/) is still the better choice.
 
 #### **Jailbreak** 🔓
 For anyone who wants to feed ChatGPT with a jailbreak prompt. You can enter a command in workflow's configuration under *ChatGPT jailbreak prompt*. By hitting <kbd>⌘</kbd> <kbd>⏎</kbd> you can talk to an unlocked version of ChatGPT. Here is a small example:
@@ -112,6 +161,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
+- **Show notifications**: Shows all notifications provided by the workflow. For this, to work System notifications must be activated for Alfred. Default: `on`.
 
 ## Troubleshooting ⛑️
 After you received an error (🚨), you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
