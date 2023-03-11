@@ -1557,9 +1557,9 @@ Maybe you have some prompts for ChatGPT that you use pretty often. In this case 
 Is now equivalent to:
 ![Screenshot](assets/images/screenshot16.png)
 
-This is especially useful in combination with Universal Actions and the combining queries feature. For example, you can easily convert code from one language to another using the `to_python` alias and a combined query. You can read more about this in the next chapter.
+This is especially useful in combination with Universal Actions and the combined queries feature. For example, you can easily convert code from one language to another using the `to_python` alias and a combined query. You can read more about this in the next chapter.
 
-#### **Universal action &amp; combining queries** ➡️
+#### **Universal action &amp; combined queries** ➡️
 ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
 
 To set it up just add a hotkey:
@@ -1570,7 +1570,7 @@ And check the *Workflow Universal Action* checkbox:
 
 Now you can mark any text and hit your hotkey to send it to ChatFred. If you want to combine two ChatGPT requests, you can do it easily.
 
-**Combining queries** 🔗
+**Combined queries** 🔗
 
 First save one query for ChatGPT by pressing &lt;kbd&gt;⌥&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;.
 ![Screenshot](assets/images/screenshot13.png)

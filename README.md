@@ -15,7 +15,7 @@
 - [Usage](#usage-)
     - [Talk to ChatGPT](#talk-to-chatgpt-)
         - [Aliases](#aliases-%EF%B8%8F)
-        - [Universal action & combining queries](#universal-action--combining-queries-%EF%B8%8F)
+        - [Universal action & combined queries](#universal-action--combined-queries-%EF%B8%8F)
         - [Jailbreak](#jailbreak-)
         - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
     - [Text generation with InstructGPT](#text-generation-with-instructgpt-)
@@ -57,8 +57,8 @@ to_python=convert this to python but only show the code:;
 Is now equivalent to:
 ![Screenshot](workflow/assets/images/screenshot16.png)
 
-This is especially useful in combination with [Universal Actions and the combining queries feature](#universal-action--combining-queries-%EF%B8%8F). For example, you can easily convert code from one language to another using the `to_python` alias and a combined query. You can read more about this in the next chapter.
-#### **Universal action & combining queries** ➡️
+This is especially useful in combination with [Universal Actions and the combined queries feature](#universal-action--combined-queries-%EF%B8%8F). For example, you can easily convert code from one language to another using the `to_python` alias and a combined query. You can read more about this in the next chapter.
+#### **Universal action & combined queries** ➡️
 ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
 
 To set it up just add a hotkey:
@@ -69,7 +69,7 @@ And check the *Workflow Universal Action* checkbox:
 
 Now you can mark any text and hit your hotkey to send it to ChatFred. If you want to combine two ChatGPT requests, you can do it easily.
 
-**Combining queries** 🔗
+**Combined queries** 🔗
 
 First save one query for ChatGPT by pressing <kbd>⌥</kbd> <kbd>⏎</kbd>.
 ![Screenshot](workflow/assets/images/screenshot13.png)
