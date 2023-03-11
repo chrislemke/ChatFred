@@ -257,6 +257,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>69B13DF7-F365-4690-A804-F6439C7B9CA7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>F471533B-A418-4158-B92C-AEA42E53945E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -573,6 +583,21 @@
 			<string>BE49CE10-D46F-4E7E-AD8A-DEBCC4E3A6B0</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict/>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/macOS/clipboard.set.image.data</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>69B13DF7-F365-4690-A804-F6439C7B9CA7</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1634,13 +1659,13 @@ You can tweak the workflow to your liking. The following parameters are availabl
 ## Troubleshooting ⛑️
 After you received an error (🚨), you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
 
-You can also have a look at the `ChatFred_Error.log` file. It is placed in the workflow's data directory which you find here: `~/Library/Application Support/Alfred/Workflow Data/`. Every error will be logged there, together with some relevant information. Maybe this helps to solve your problem. If not, please [open an issue](https://github.com/chrislemke/ChatFred/issues/new) and add the needed information from the `ChatFred_Error.log` file.
+You can also have a look at the `ChatFred_Error.log` file. It is placed in the workflow's data directory which you find here: `~/Library/Application Support/Alfred/Workflow Data/`. Every error will be logged there, together with some relevant information. Maybe this helps to solve your problem. If not, please [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) and add the needed information from the `ChatFred_Error.log` file.
 
 ## Safety best practices 🛡️
 Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).
 
 ## Contributing 🤝
-Please feel free to [open an issue](https://github.com/chrislemke/ChatFred/issues/new) if you have any questions or suggestions. Or participate in the [discussion](https://github.com/chrislemke/ChatFred/discussions). If you want to contribute, please read the [contribution guidelines](https://github.com/chrislemke/ChatFred/blob/main/CONTRIBUTING.md) for more information.
+Please feel free to [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) if you have any questions or suggestions. Or participate in the [discussion](https://github.com/chrislemke/ChatFred/discussions). If you want to contribute, please read the [contribution guidelines](https://github.com/chrislemke/ChatFred/blob/main/CONTRIBUTING.md) for more information.
 
 ## What's next? 🚧
 Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.</string>
@@ -1831,6 +1856,13 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<real>395</real>
 			<key>ypos</key>
 			<real>180</real>
+		</dict>
+		<key>69B13DF7-F365-4690-A804-F6439C7B9CA7</key>
+		<dict>
+			<key>xpos</key>
+			<real>460</real>
+			<key>ypos</key>
+			<real>35</real>
 		</dict>
 		<key>71081001-6D53-4FDE-BFBC-89F5B2DD5C58</key>
 		<dict>
