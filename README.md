@@ -149,7 +149,7 @@ The result will be saved to the home directory (`~/`) and will be opened in the 
 ## Configure the workflow (optional) 🦾
 You can tweak the workflow to your liking. The following parameters are available. Simply adjust them in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
 - **ChatGPT history length**: ChatGPT can target previous parts of the conversation to provide a better result. This value determines how many previous steps of the conversation the model can see. Default: `3`.
-- **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be automatically included to your request. To use it adopt the argument `-j`. E.g. `cf -j what time is it?`. Default: `None`.
+- **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be automatically included to your request. You can use it by hitting <kbd>⌘</kbd> <kbd>⏎</kbd>. Default: `None`.
 - **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. This has no impact on the use of ChatGPT. Default: `Davinci`.
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
 - **Maximum tokens**: The maximum number of tokens to generate in the completion. Default (InstructGPT): `50`. Default (ChatGPT): `4096`.
