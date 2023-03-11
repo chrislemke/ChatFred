@@ -139,7 +139,7 @@ You can also have a look at the `ChatFred_Error.log` file. It is placed in the w
 Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).
 
 ## Contributing 🤝
-Please feel free to [open an issue](https://github.com/chrislemke/ChatFred/issues/new) if you have any questions or suggestions. Or participate in the [discussion](https://github.com/chrislemke/ChatFred/discussions). If you want to contribute, please read the [contribution guidelines](https://github.com/chrislemke/ChatFred/blob/main/CONTRIBUTING.md) for more information.
+Please feel free to [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) if you have any questions or suggestions. Or participate in the [discussion](https://github.com/chrislemke/ChatFred/discussions). If you want to contribute, please read the [contribution guidelines](https://github.com/chrislemke/ChatFred/blob/main/CONTRIBUTING.md) for more information.
 
 ## What's next? 🚧
 Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.
