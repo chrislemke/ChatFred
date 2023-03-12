@@ -71,7 +71,8 @@ And check the *Workflow Universal Action* checkbox:
 
 Now you can mark any text and hit the hotkey to send it to ChatFred.
 
-**Combined prompts** 🔗<br>
+**Combined prompts** 🔗
+
 First save a prompts for ChatGPT by pressing <kbd>⌥</kbd> <kbd>⏎</kbd>.
 ![Screenshot](workflow/assets/images/screenshot13.png)
 Or:
@@ -105,7 +106,8 @@ In Python, we don't need to explicitly define a `main()` function like in C++. I
 #### **Voice to ChatGPT** 🗣️
 With [Alfred's File Actions](https://www.alfredapp.com/blog/tips-and-tricks/file-actions-from-alfred-or-finder/) you can send a voice recording (as an *mp3* file) to ChatGPT. Just record you voice and use the *Send to ChatGPT* action. ChatFred is using [OpenAI's Whisper](https://openai.com/research/whisper) to convert your voice recording to text.
 
-**Using the `Record voice` shortcut** 🎙️<br>
+**Using the `Record voice` shortcut** 🎙️
+
 If you want to talk directly to ChatGPT you use the provided [`Record voice`](https://github.com/chrislemke/ChatFred/blob/main/Record%20voice.shortcut) shortcut. It will record your voice and send it to ChatGPT.
 
 First add the `Record voice` shortcut to the [Shortcut app](https://support.apple.com/en-gb/guide/shortcuts-mac/apdf22b0444c/mac) on your Mac, run it once to grant it access to the microphone. Afterwards you just set a hotkey in Alfred and you are ready to go. The files created by the shortcut will be stored on your desktop (`~/Desktop`).
@@ -192,6 +194,8 @@ You can tweak the workflow to your liking. The following parameters are availabl
 After you received an error (🚨), you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
 
 You can also have a look at the `ChatFred_Error.log` file. It is placed in the workflow's data directory which you find here: `~/Library/Application Support/Alfred/Workflow Data/`. Every error will be logged there, together with some relevant information. Maybe this helps to solve your problem. If not, please [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) and add the needed information from the `ChatFred_Error.log` file.
+
+When having trouble it is always a good idea to download the [newest release version 🌈](https://github.com/chrislemke/ChatFred/releases). Before you install it, remove the old workflow and its files (`~/Library/Application Support/Alfred/Workflow Data/something with ChatFred/`).
 
 ## Safety best practices 🛡️
 Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).
