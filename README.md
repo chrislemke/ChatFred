@@ -103,7 +103,7 @@ In Python, we don't need to explicitly define a `main()` function like in C++. I
 ⚠️ *Be careful when asking ChatGPT for coding advice. [Stack Overflow](https://stackoverflow.com/) is still the better choice.*
 
 #### **Voice to ChatGPT** 🗣️
-With [Alfred's File Actions](https://www.alfredapp.com/blog/tips-and-tricks/file-actions-from-alfred-or-finder/) you can send a voice recording to ChatGPT. Just record you voice (*mp3*) and use the *Send to ChatGPT* action.
+With [Alfred's File Actions](https://www.alfredapp.com/blog/tips-and-tricks/file-actions-from-alfred-or-finder/) you can send a voice recording (as an *mp3* file) to ChatGPT. Just record you voice and use the *Send to ChatGPT* action.
 
 **Using the `Record voice` shortcut** 🎙️<br>
 If you want to talk directly to ChatGPT you use the provided [`Record voice`](https://github.com/chrislemke/ChatFred/blob/main/Record%20voice.shortcut) shortcut. It will record your voice and send it to ChatGPT.

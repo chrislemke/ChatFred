@@ -1802,7 +1802,7 @@ Or:
 Then simply activate the Universal Action followed by pressing &lt;kbd&gt;⌥&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt; - to send a combined prompts to ChatGPT. This is especially useful if you want to add some prompt in front of something you copied.
 
 #### **Voice to ChatGPT** 🗣️
-With [Alfred's File Actions](https://www.alfredapp.com/blog/tips-and-tricks/file-actions-from-alfred-or-finder/) you can send a voice recording to ChatGPT. Just record you voice (*mp3*) and use the *Send to ChatGPT* action.
+With [Alfred's File Actions](https://www.alfredapp.com/blog/tips-and-tricks/file-actions-from-alfred-or-finder/) you can send a voice recording (as an *mp3* file) to ChatGPT. Just record you voice and use the *Send to ChatGPT* action.
 
 #### **Jailbreak** 🔓
 For anyone who wants to feed ChatGPT with a jailbreak prompt. You can enter a command in workflow's configuration under *ChatGPT jailbreak prompt*. By hitting &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt; you can talk to an unlocked version of ChatGPT. Here is a small example:
