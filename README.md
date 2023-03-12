@@ -16,7 +16,7 @@
     - [Talk to ChatGPT](#talk-to-chatgpt-)
         - [Aliases](#aliases-%EF%B8%8F)
         - [Universal action & combined prompts](#universal-action--combined-prompts-%EF%B8%8F)
-        - [Voice to ChatGPT](#jailbreak-)
+        - [Voice to ChatGPT](#voice-to-chatgpt-%EF%B8%8F)
         - [Jailbreak](#jailbreak-)
         - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
     - [Text generation with InstructGPT](#text-generation-with-instructgpt-)
@@ -105,7 +105,7 @@ In Python, we don't need to explicitly define a `main()` function like in C++. I
 With [Alfred's File Actions](https://www.alfredapp.com/blog/tips-and-tricks/file-actions-from-alfred-or-finder/) you can send a voice recording to ChatGPT. Just record you voice (*mp3*) and use the *Send to ChatGPT* action.
 
 **Using the `Record voice` shortcut** 🎙️<br>
-If you want to talk directly to ChatGPT you use the provided [`Record voice`]((https://github.com/chrislemke/ChatFred/blob/main/SECURITY.md)) shortcut. It will record your voice and send it to ChatGPT.
+If you want to talk directly to ChatGPT you use the provided [`Record voice`](https://github.com/chrislemke/ChatFred/blob/main/Record%20voice.shortcut) shortcut. It will record your voice and send it to ChatGPT.
 
 First add the `Record voice` shortcut to the [Shortcut app](https://support.apple.com/en-gb/guide/shortcuts-mac/apdf22b0444c/mac) on your Mac, run it once to grant it access to the microphone. Afterwards you just set a hotkey in Alfred and you are ready to go. The files created by the shortcut will be stored on your desktop (`~/Desktop`).
 

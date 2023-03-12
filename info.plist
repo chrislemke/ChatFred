@@ -1065,7 +1065,7 @@ python3 -c 'import caching_manager; caching_manager.write_query_to_cache()' $1</
 				<key>script</key>
 				<string>curl https://api.openai.com/v1/audio/transcriptions \
   -X POST \
-  -H 'Authorization: Bearer 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' \
+  -H 'Authorization: Bearer $api_key' \
   -H 'Content-Type: multipart/form-data' \
   -F file=@$1 \
   -F model=whisper-1</string>
