@@ -16,6 +16,7 @@
     - [Talk to ChatGPT](#talk-to-chatgpt-)
         - [Aliases](#aliases-%EF%B8%8F)
         - [Universal action & combined prompts](#universal-action--combined-prompts-%EF%B8%8F)
+        - [Voice to ChatGPT](#jailbreak-)
         - [Jailbreak](#jailbreak-)
         - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
     - [Text generation with InstructGPT](#text-generation-with-instructgpt-)
@@ -69,8 +70,7 @@ And check the *Workflow Universal Action* checkbox:
 
 Now you can mark any text and hit the hotkey to send it to ChatFred.
 
-**Combined prompts** 🔗
-
+**Combined prompts** 🔗<br>
 First save a prompts for ChatGPT by pressing <kbd>⌥</kbd> <kbd>⏎</kbd>.
 ![Screenshot](workflow/assets/images/screenshot13.png)
 Or:
@@ -100,6 +100,16 @@ if __name__ == "__main__":
 In Python, we don't need to explicitly define a `main()` function like in C++. Instead, we can simply define the code we want to execute in the global scope and then use the `if __name__ == "__main__":` statement to ensure that the code is only executed if the script is run directly (as opposed to being imported as a module).
 ```
 ⚠️ *Be careful when asking ChatGPT for coding advice. [Stack Overflow](https://stackoverflow.com/) is still the better choice.*
+
+#### **Voice to ChatGPT** 🗣️
+With [Alfred's File Actions](https://www.alfredapp.com/blog/tips-and-tricks/file-actions-from-alfred-or-finder/) you can send a voice recording to ChatGPT. Just record you voice (*mp3*) and use the *Send to ChatGPT* action.
+
+**Using the `Record voice` shortcut** 🎙️<br>
+If you want to talk directly to ChatGPT you use the provided [`Record voice`]((https://github.com/chrislemke/ChatFred/blob/main/SECURITY.md)) shortcut. It will record your voice and send it to ChatGPT.
+
+First add the `Record voice` shortcut to the [Shortcut app](https://support.apple.com/en-gb/guide/shortcuts-mac/apdf22b0444c/mac) on your Mac, run it once to grant it access to the microphone. Afterwards you just set a hotkey in Alfred and you are ready to go. The files created by the shortcut will be stored on your desktop (`~/Desktop`).
+
+⚠️ *This feature is still in beta. Please report any issues you encounter.*
 
 #### **Jailbreak** 🔓
 For anyone who wants to feed ChatGPT with a jailbreak prompt. You can enter a command in workflow's configuration under *ChatGPT jailbreak prompt*. By hitting <kbd>⌘</kbd> <kbd>⏎</kbd> you can talk to an unlocked version of ChatGPT. Here is a small example:
