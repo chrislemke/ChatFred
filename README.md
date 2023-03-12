@@ -145,7 +145,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 Please feel free to [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) if you have any questions or suggestions. Or participate in the [discussion](https://github.com/chrislemke/ChatFred/discussions). If you want to contribute, please read the [contribution guidelines](https://github.com/chrislemke/ChatFred/blob/main/CONTRIBUTING.md) for more information.
 
 ## Beta testing 🧪
-Want to try out the newest not yet released features? You can download the beta version [here](https://github.com/chrislemke/ChatFred/releases?q=dev&expanded=true). Or checkout the [development branch](https://github.com/chrislemke/ChatFred/tree/develop) and build the workflow yourself.
+Want to try out the newest not yet released features? You can download the beta version [here](https://github.com/chrislemke/ChatFred/releases). Or checkout the [development branch](https://github.com/chrislemke/ChatFred/tree/develop) and build the workflow yourself.
 
 ## What's next? 🚧
 Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.
