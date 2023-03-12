@@ -413,6 +413,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>9AAF0BE9-20F4-4893-BB1E-262546359CDB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C5697BC2-6494-4083-89F7-47C0506925B1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>9D373129-2BF8-437F-9529-0D4651FB60F1</key>
 		<array>
 			<dict>
@@ -578,19 +591,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>428693A7-E395-41B3-8381-7A7EF6582F99</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>E8587135-84B9-42B4-8AC7-67852B82E94E</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C5697BC2-6494-4083-89F7-47C0506925B1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1065,7 +1065,7 @@ python3 -c 'import caching_manager; caching_manager.write_query_to_cache()' $1</
 				<key>script</key>
 				<string>curl https://api.openai.com/v1/audio/transcriptions \
   -X POST \
-  -H 'Authorization: Bearer $api_key' \
+  -H 'Authorization: Bearer '${api_key}'' \
   -H 'Content-Type: multipart/form-data' \
   -F file=@$1 \
   -F model=whisper-1</string>
@@ -1175,7 +1175,7 @@ sys.stdout.write(ast.literal_eval(sys.argv[1])["text"])</string>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>E8587135-84B9-42B4-8AC7-67852B82E94E</string>
+			<string>9AAF0BE9-20F4-4893-BB1E-262546359CDB</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -1998,7 +1998,7 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 		<key>49294345-F3A5-43C6-B547-0EC1CAB2839F</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>12</integer>
+			<integer>7</integer>
 			<key>xpos</key>
 			<real>405</real>
 			<key>ypos</key>
@@ -2137,6 +2137,17 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<key>ypos</key>
 			<real>675</real>
 		</dict>
+		<key>9AAF0BE9-20F4-4893-BB1E-262546359CDB</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>Add your hotkey for starting the "Record voice" shortcut for speaking to ChatGPT.</string>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>1200</real>
+		</dict>
 		<key>9D373129-2BF8-437F-9529-0D4651FB60F1</key>
 		<dict>
 			<key>colorindex</key>
@@ -2243,6 +2254,8 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 		</dict>
 		<key>C5697BC2-6494-4083-89F7-47C0506925B1</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
 			<key>xpos</key>
 			<real>245</real>
 			<key>ypos</key>
@@ -2287,17 +2300,6 @@ Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.m
 			<real>40</real>
 			<key>ypos</key>
 			<real>180</real>
-		</dict>
-		<key>E8587135-84B9-42B4-8AC7-67852B82E94E</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
-			<key>note</key>
-			<string>Add your hotkey for starting the "Record voice" shortcut for speaking to ChatGPT.</string>
-			<key>xpos</key>
-			<real>45</real>
-			<key>ypos</key>
-			<real>1190</real>
 		</dict>
 		<key>F0B1523D-0C58-4D43-9BC2-C96560E8AD95</key>
 		<dict>
