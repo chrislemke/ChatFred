@@ -15,7 +15,7 @@
 - [Usage](#usage-)
     - [Talk to ChatGPT](#talk-to-chatgpt-)
         - [Aliases](#aliases-%EF%B8%8F)
-        - [Universal action & combined queries](#universal-action--combined-queries-%EF%B8%8F)
+        - [Universal action & combined prompts](#universal-action--combined-prompts-%EF%B8%8F)
         - [Jailbreak](#jailbreak-)
         - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
     - [Text generation with InstructGPT](#text-generation-with-instructgpt-)
@@ -57,8 +57,8 @@ to_python=convert this to python but only show the code:;
 Is now equivalent to:
 ![Screenshot](workflow/assets/images/screenshot16.png)
 
-This is especially useful in combination with [Universal Actions and the combined queries feature](#universal-action--combined-queries-%EF%B8%8F). For example, you can easily convert code from one language to another using the `to_python` alias and a combined query. You can read more about this in the next chapter.
-#### **Universal action & combined queries** ➡️
+This is especially useful in combination with [Universal Actions and the combined prompts feature](#universal-action--combined-prompts-%EF%B8%8F). For example, you can easily convert code from one language to Python using the `to_python` alias and a combined prompts. Read more about it in the next chapter.
+#### **Universal action & combined prompts** ➡️
 ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
 
 To set it up just add a hotkey:
@@ -67,18 +67,18 @@ To set it up just add a hotkey:
 And check the *Workflow Universal Action* checkbox:
 ![Screenshot](workflow/assets/images/screenshot10.png)
 
-Now you can mark any text and hit your hotkey to send it to ChatFred. If you want to combine two ChatGPT requests, you can do it easily.
+Now you can mark any text and hit the hotkey to send it to ChatFred.
 
-**Combined queries** 🔗
+**Combined prompts** 🔗
 
-First save one query for ChatGPT by pressing <kbd>⌥</kbd> <kbd>⏎</kbd>.
+First save a prompts for ChatGPT by pressing <kbd>⌥</kbd> <kbd>⏎</kbd>.
 ![Screenshot](workflow/assets/images/screenshot13.png)
 Or:
 ![Screenshot](workflow/assets/images/screenshot14.png)
 
-Then simply activate the Universal Action followed by pressing <kbd>⌥</kbd> <kbd>⏎</kbd> - to send a combined query to ChatGPT. This is especially useful if you want to add some text in front of something you copied.
+Then simply activate the Universal Action followed by pressing <kbd>⌥</kbd> <kbd>⏎</kbd> - to send a combined prompts to ChatGPT. This is especially useful if you want to add some prompt in front of something you copied.
 
-E.g. Combining `convert this to python` with this copied code:
+E.g. Combining `convert this to python` (or `to_python`) with this copied code:
 ```cpp
 int main() {
     std::cout << "Hello World!";
@@ -86,7 +86,7 @@ int main() {
 }
 ```
 
-resulting in a combined query with the following answer:
+resulting in a combined prompt with the following answer:
 ```
 Here's the Python equivalent of the C++ code you provided:
 
@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
 In Python, we don't need to explicitly define a `main()` function like in C++. Instead, we can simply define the code we want to execute in the global scope and then use the `if __name__ == "__main__":` statement to ensure that the code is only executed if the script is run directly (as opposed to being imported as a module).
 ```
-⚠️ Be careful when asking ChatGPT for coding advice. [Stack Overflow](https://stackoverflow.com/) is still the better choice.
+⚠️ *Be careful when asking ChatGPT for coding advice. [Stack Overflow](https://stackoverflow.com/) is still the better choice.*
 
 #### **Jailbreak** 🔓
 For anyone who wants to feed ChatGPT with a jailbreak prompt. You can enter a command in workflow's configuration under *ChatGPT jailbreak prompt*. By hitting <kbd>⌘</kbd> <kbd>⏎</kbd> you can talk to an unlocked version of ChatGPT. Here is a small example:
@@ -171,7 +171,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Frequency penalty**: A value between `-2.0` and `2.0`. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
 - **Presence penalty**: A Value between `-2.0` and `2.0`. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
 - **Always read out reply**: If enabled, ChatFred will read out all replies automatically. Default: `off`.
-- **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Default: `off`.
+- **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Only available for InstructGPT. Default: `off`.
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
