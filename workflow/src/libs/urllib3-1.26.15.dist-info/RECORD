@@ -1,9 +1,9 @@
-urllib3-1.26.14.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
-urllib3-1.26.14.dist-info/LICENSE.txt,sha256=w3vxhuJ8-dvpYZ5V7f486nswCRzrPaY8fay-Dm13kHs,1115
-urllib3-1.26.14.dist-info/METADATA,sha256=Xzpp771-k5KmKbJ2izOutnYr7o8QrC37ap90Xnbt1og,47722
-urllib3-1.26.14.dist-info/RECORD,,
-urllib3-1.26.14.dist-info/WHEEL,sha256=bb2Ot9scclHKMOLDEHY6B2sicWOgugjFKaJsT7vwMQo,110
-urllib3-1.26.14.dist-info/top_level.txt,sha256=EMiXL2sKrTcmrMxIHTqdc3ET54pQI2Y072LexFEemvo,8
+urllib3-1.26.15.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+urllib3-1.26.15.dist-info/LICENSE.txt,sha256=w3vxhuJ8-dvpYZ5V7f486nswCRzrPaY8fay-Dm13kHs,1115
+urllib3-1.26.15.dist-info/METADATA,sha256=blT5BzPICGt1qpMvC6GdfIBUNNMobmh1bXPyuOQmq30,48125
+urllib3-1.26.15.dist-info/RECORD,,
+urllib3-1.26.15.dist-info/WHEEL,sha256=bb2Ot9scclHKMOLDEHY6B2sicWOgugjFKaJsT7vwMQo,110
+urllib3-1.26.15.dist-info/top_level.txt,sha256=EMiXL2sKrTcmrMxIHTqdc3ET54pQI2Y072LexFEemvo,8
 urllib3/__init__.py,sha256=iXLcYiJySn0GNbWOOZDDApgBL1JgP44EZ8i1760S8Mc,3333
 urllib3/__pycache__/__init__.cpython-310.pyc,,
 urllib3/__pycache__/_collections.cpython-310.pyc,,
@@ -17,9 +17,9 @@ urllib3/__pycache__/poolmanager.cpython-310.pyc,,
 urllib3/__pycache__/request.cpython-310.pyc,,
 urllib3/__pycache__/response.cpython-310.pyc,,
 urllib3/_collections.py,sha256=Rp1mVyBgc_UlAcp6M3at1skJBXR5J43NawRTvW2g_XY,10811
-urllib3/_version.py,sha256=JWE--BUVy7--9FsXILONIpQ43irftKGjT9j2H_fdF2M,64
-urllib3/connection.py,sha256=8976wL6sGeVMW0JnXvx5mD00yXu87uQjxtB9_VL8dx8,20070
-urllib3/connectionpool.py,sha256=vS4UaHLoR9_5aGLXSQ776y_jTxgqqjx0YsjkYksWGOo,39095
+urllib3/_version.py,sha256=vFwhFPO1DTzD8xawsdSDwriGSheS7LurJQL9fSgM_IM,64
+urllib3/connection.py,sha256=92k9td_y4PEiTIjNufCUa1NzMB3J3w0LEdyokYgXnW8,20300
+urllib3/connectionpool.py,sha256=u7I7TzJTsicVoNjGeZkCD5LANp_GCeDNBwXZoGHHVLo,39128
 urllib3/contrib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
 urllib3/contrib/__pycache__/__init__.cpython-310.pyc,,
 urllib3/contrib/__pycache__/_appengine_environ.cpython-310.pyc,,
@@ -77,6 +77,6 @@ urllib3/util/retry.py,sha256=4laWh0HpwGijLiBmdBIYtbhYekQnNzzhx2W9uys0RHA,22003
 urllib3/util/ssl_.py,sha256=c0sYiSC6272r6uPkxQpo5rYPP9QC1eR6oI7004gYqZo,17165
 urllib3/util/ssl_match_hostname.py,sha256=Ir4cZVEjmAk8gUAIHWSi7wtOO83UCYABY2xFD1Ql_WA,5758
 urllib3/util/ssltransport.py,sha256=NA-u5rMTrDFDFC8QzRKUEKMG0561hOD4qBTr3Z4pv6E,6895
-urllib3/util/timeout.py,sha256=QSbBUNOB9yh6AnDn61SrLQ0hg5oz0I9-uXEG91AJuIg,10003
-urllib3/util/url.py,sha256=znoYE94l8y-SKv2FPS-6V7HVSoULsBMPYK1WE8GKPUE,14281
+urllib3/util/timeout.py,sha256=cwq4dMk87mJHSBktK1miYJ-85G-3T3RmT20v7SFCpno,10168
+urllib3/util/url.py,sha256=kMxL1k0d-aQm_iZDw_zMmnyYyjrIA_DbsMy3cm3V55M,14279
 urllib3/util/wait.py,sha256=fOX0_faozG2P7iVojQoE1mbydweNyTcm-hXEfFrTtLI,5403

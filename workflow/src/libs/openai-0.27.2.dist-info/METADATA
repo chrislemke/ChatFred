@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: openai
-Version: 0.27.0
+Version: 0.27.2
 Summary: Python client library for the OpenAI API
 Home-page: https://github.com/openai/openai-python
 Author: OpenAI

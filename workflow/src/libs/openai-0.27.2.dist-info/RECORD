@@ -1,13 +1,13 @@
 ../../bin/openai,sha256=J4qk_D5A5UvssfmwzcU1mjeu6HNDurfo5s1oAOm4WLA,258
-openai-0.27.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
-openai-0.27.0.dist-info/LICENSE,sha256=vLo94hSFHM5G7Vr0LWaYBEYW7qzoh8MjG8eiBHSrY54,1083
-openai-0.27.0.dist-info/METADATA,sha256=tHpzZOSj3rsHEmxYFH2BtNXPNe7wdj3jtWYSR2sejJY,13127
-openai-0.27.0.dist-info/RECORD,,
-openai-0.27.0.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
-openai-0.27.0.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
-openai-0.27.0.dist-info/entry_points.txt,sha256=q68fD1MsMkiejaG68n2mKmbuZEwWkq89oniOBBq9fo0,55
-openai-0.27.0.dist-info/top_level.txt,sha256=yroxRDiE4kOdI0tEpF1d7ffoQJMxe4i3z_pKoyou9wg,7
-openai-0.27.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+openai-0.27.2.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+openai-0.27.2.dist-info/LICENSE,sha256=vLo94hSFHM5G7Vr0LWaYBEYW7qzoh8MjG8eiBHSrY54,1083
+openai-0.27.2.dist-info/METADATA,sha256=LWCRBj1UaVCzX1lq2yHsOF4sDHPTGL718vRDIC_TYt8,13127
+openai-0.27.2.dist-info/RECORD,,
+openai-0.27.2.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+openai-0.27.2.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+openai-0.27.2.dist-info/entry_points.txt,sha256=q68fD1MsMkiejaG68n2mKmbuZEwWkq89oniOBBq9fo0,55
+openai-0.27.2.dist-info/top_level.txt,sha256=yroxRDiE4kOdI0tEpF1d7ffoQJMxe4i3z_pKoyou9wg,7
+openai-0.27.2.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
 openai/__init__.py,sha256=NKBGPoh7HP3XXo2VgSfqkovavDHOPjC6G0GPGBvY3mo,2203
 openai/__pycache__/__init__.cpython-310.pyc,,
 openai/__pycache__/_openai_scripts.cpython-310.pyc,,
@@ -25,7 +25,7 @@ openai/__pycache__/validators.cpython-310.pyc,,
 openai/__pycache__/version.cpython-310.pyc,,
 openai/__pycache__/wandb_logger.cpython-310.pyc,,
 openai/_openai_scripts.py,sha256=-SYV_h-4pTfyG4IB4YLUcejX7QrHZGSvS8djkbprR34,2047
-openai/api_requestor.py,sha256=ivJr_OVWCkoKtjUf0tfHkscDD0wDi6wEJgkZypvtdt0,22716
+openai/api_requestor.py,sha256=l0TU4WiMN1ffE3WMZPOC2bR4YTF8V-HsToMrSvhDyZo,22828
 openai/api_resources/__init__.py,sha256=S5vOHXDRZu1kHikYR82kF5QUU4jEK7rMr2vEaoHQn20,907
 openai/api_resources/__pycache__/__init__.cpython-310.pyc,,
 openai/api_resources/__pycache__/audio.cpython-310.pyc,,
@@ -51,7 +51,7 @@ openai/api_resources/abstract/__pycache__/engine_api_resource.cpython-310.pyc,,
 openai/api_resources/abstract/__pycache__/listable_api_resource.cpython-310.pyc,,
 openai/api_resources/abstract/__pycache__/nested_resource_class_methods.cpython-310.pyc,,
 openai/api_resources/abstract/__pycache__/updateable_api_resource.cpython-310.pyc,,
-openai/api_resources/abstract/api_resource.py,sha256=8IVb4p2PT3ZXPLUn1AlheGa8RdgDRNDxjJ5J2XC3UiM,5421
+openai/api_resources/abstract/api_resource.py,sha256=wzCww3boKgr0Ru33CIRi8lOCsMEtQJLKlz1HMHIpMkY,5443
 openai/api_resources/abstract/createable_api_resource.py,sha256=w6atKaf0aUDe3NuV-wLtbmCxCGPtCxXIkH98yk8s7xQ,2573
 openai/api_resources/abstract/deletable_api_resource.py,sha256=9jI4tt7RejbO0aIyLJwivyg3jclr7r55-l50mVFC7GI,1624
 openai/api_resources/abstract/engine_api_resource.py,sha256=GGj9NpJkPqKozgTT3E2meIS1VsRq8YnTg_A3Uzh-P00,10007
@@ -107,5 +107,5 @@ openai/tests/test_util.py,sha256=sZYMnEMG1_1Y7feqr8e-_dcRqvQrgTNROWuusG62x4Q,797
 openai/upload_progress.py,sha256=L723nchd5OQ_tfDFDKOru_rlHdG73uzesOh528wOOcM,1188
 openai/util.py,sha256=_kb73f0Hb6J83I7fPLQUGKxz84CcSMVPS1kD2rAwYMY,5403
 openai/validators.py,sha256=GiN8mmG9-v5RdBdZRSB-0PUMGfcozKEFZ6Ft5IDfAEc,33767
-openai/version.py,sha256=YIaTq0U5Z7gLcTxWOhFo275bGDpvF0RXZVKVcGjJRB0,19
+openai/version.py,sha256=PWvgg1pO5onx_obdvWT0QYlTRqg_tTpSoXUCMryf9-4,19
 openai/wandb_logger.py,sha256=PZxSK9w8EnyYFKEgBUUVngnxbsBOJllp3e3qncGxUFY,10361

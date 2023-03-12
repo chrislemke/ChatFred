@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: tqdm
-Version: 4.64.1
+Version: 4.65.0
 Summary: Fast, Extensible Progress Meter
 Home-page: https://tqdm.github.io
 Maintainer: tqdm developers
@@ -38,15 +38,13 @@ Classifier: Operating System :: POSIX :: Linux
 Classifier: Operating System :: POSIX :: SunOS/Solaris
 Classifier: Operating System :: Unix
 Classifier: Programming Language :: Python
-Classifier: Programming Language :: Python :: 2
-Classifier: Programming Language :: Python :: 2.7
 Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.5
-Classifier: Programming Language :: Python :: 3.6
 Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
 Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
 Classifier: Programming Language :: Python :: Implementation
 Classifier: Programming Language :: Python :: Implementation :: IronPython
 Classifier: Programming Language :: Python :: Implementation :: PyPy
@@ -68,11 +66,10 @@ Classifier: Topic :: System :: Shells
 Classifier: Topic :: Terminals
 Classifier: Topic :: Utilities
 Provides: tqdm
-Requires-Python: !=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7
+Requires-Python: >=3.7
 Description-Content-Type: text/x-rst
 License-File: LICENCE
 Requires-Dist: colorama ; platform_system == "Windows"
-Requires-Dist: importlib-resources ; python_version < "3.7"
 Provides-Extra: dev
 Requires-Dist: py-make (>=0.1.0) ; extra == 'dev'
 Requires-Dist: twine ; extra == 'dev'
@@ -536,9 +533,7 @@ Parameters
 * unit_divisor  : float, optional  
     [default: 1000], ignored unless ``unit_scale`` is True.
 * write_bytes  : bool, optional  
-    If (default: None) and ``file`` is unspecified,
-    bytes will be written in Python 2. If ``True`` will also write
-    bytes. In all other cases will default to unicode.
+    Whether to write bytes. If (default: False) will write unicode.
 * lock_args  : tuple, optional  
     Passed to ``refresh`` for intermediate output
     (initialisation, iterating, and updating).
@@ -717,10 +712,7 @@ Returns
           """Registers the current `tqdm` class with `pandas`."""
 
     def trange(*args, **tqdm_kwargs):
-        """
-        A shortcut for `tqdm(xrange(*args), **tqdm_kwargs)`.
-        On Python3+, `range` is used instead of `xrange`.
-        """
+        """Shortcut for `tqdm(range(*args), **tqdm_kwargs)`."""
 
 Convenience Functions
 ~~~~~~~~~~~~~~~~~~~~~
@@ -823,7 +815,7 @@ with the ``desc`` and ``postfix`` arguments:
             sleep(0.1)
 
     with tqdm(total=10, bar_format="{postfix[0]} {postfix[1][value]:>8.2g}",
-              postfix=["Batch", dict(value=0)]) as t:
+              postfix=["Batch", {"value": 0}]) as t:
         for i in range(10):
             sleep(0.1)
             t.postfix[1]["value"] = i / 2
@@ -1528,8 +1520,8 @@ Citation information: |DOI|
    :target: https://tqdm.github.io/PyData2019/slides.html
 .. |Merch| image:: https://img.tqdm.ml/merch.jpg
    :target: https://tqdm.github.io/merch
-.. |Build-Status| image:: https://img.shields.io/github/workflow/status/tqdm/tqdm/Test/master?logo=GitHub
-   :target: https://github.com/tqdm/tqdm/actions?query=workflow%3ATest
+.. |Build-Status| image:: https://img.shields.io/github/actions/workflow/status/tqdm/tqdm/test.yml?branch=master&label=tqdm&logo=GitHub
+   :target: https://github.com/tqdm/tqdm/actions/workflows/test.yml
 .. |Coverage-Status| image:: https://img.shields.io/coveralls/github/tqdm/tqdm/master?logo=coveralls
    :target: https://coveralls.io/github/tqdm/tqdm
 .. |Branch-Coverage-Status| image:: https://codecov.io/gh/tqdm/tqdm/branch/master/graph/badge.svg
