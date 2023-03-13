@@ -1,6 +1,6 @@
 ---
 name: Help wanted
-about: Ask for support
+about: Ask a question or request support
 title: ''
 labels: help wanted
 assignees: ''

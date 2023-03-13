@@ -29,7 +29,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Relevant information from the `ChatFred_Error.log` file**
 ```
-Date/Time: 2023-03-10 16:32:29.819957
+Date/Time: 2023-01-01 12:30:07.000000
 model: gpt-3.5-turbo
 workflow_version: 1.2.0
 error_message: Incorrect API key provided: sk-44******************************************PEG2.   You can find your API key at https://platform.openai.com/account/api-keys.
