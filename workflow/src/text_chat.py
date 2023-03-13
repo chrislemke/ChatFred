@@ -2,7 +2,7 @@
 
 import os
 import sys
-from typing import Optional, Tuple
+from typing import List, Optional, Tuple
 
 from custom_prompts import clear_log_prompts, error_prompts
 from error_handling import (
@@ -55,9 +55,9 @@ def exit_on_error() -> None:
         sys.exit(0)
 
 
-def read_from_log() -> list[str]:
+def read_from_log() -> List[str]:
     """Reads the log file and returns the last __history_length lines."""
-    history: list[str] = []
+    history: List[str] = []
     if os.path.isfile(__log_file_path) is False:
         return history
 
