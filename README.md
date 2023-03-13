@@ -48,6 +48,12 @@ or use ChatFred as a fallback search in Alfred:
 
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
 
+#### **Text transformation** ⚙️
+This feature allows you to easily let ChatGPT transform your text using a pre-defined prompt. Just replace the default *ChatGPT transformation prompt* in the workflow's configuration with your own prompt. Use either the Talk to ChatGPT 💬 Universal Actions (option: <kbd>⇧</kbd>) to send the marked text to ChatGPT using your transformation prompt. Let's check out an example:
+
+For *ChatGPT transformation prompt* we use:
+> Rewrite the following text in the style of the movie "Wise Guys" from 1986.
+
 #### **Aliases** ⌨️
 Maybe you have some prompts for ChatGPT that you use pretty often. In this case you can create an alias for it. Just add a new entry to the *ChatGPT aliases* in the workflow's configuration:
 ```

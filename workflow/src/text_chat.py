@@ -28,6 +28,7 @@ __frequency_penalty = float(os.getenv("frequency_penalty") or 0.0)
 __presence_penalty = float(os.getenv("presence_penalty") or 0.0)
 __workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("~")
 __log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.log"
+__text_transformation_prompt = os.getenv("text_transformation_prompt") or None
 __jailbreak_prompt = os.getenv("jailbreak_prompt")
 
 
@@ -112,9 +113,19 @@ def intercept_custom_prompts(prompt: str):
 
 def create_message(prompt: str):
     """Creates the messages for the OpenAI API request."""
+    transformation_pre_prompt = """You are a helpful assistant who interprets every input as raw
+    text unless instructed otherwise. Your answers do not include a description unless prompted to do so."""
+
+    if __text_transformation_prompt:
+        return [
+            {"role": "system", "content": transformation_pre_prompt},
+            {
+                "role": "user",
+                "content": f"{__text_transformation_prompt} Don't add any comments: {prompt}",
+            },
+        ]
 
     messages = [{"role": "system", "content": "You are a helpful assistant"}]
-
     for text in read_from_log():
         if text == (f"user: {__jailbreak_prompt}"):
             continue
