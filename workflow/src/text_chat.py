@@ -2,7 +2,7 @@
 
 import os
 import sys
-from typing import Optional, Tuple
+from typing import List, Optional, Tuple
 
 from aliases_manager import prompt_for_alias
 from caching_manager import read_from_cache, write_to_cache
@@ -57,9 +57,9 @@ def exit_on_error() -> None:
         sys.exit(0)
 
 
-def read_from_log() -> list[str]:
+def read_from_log() -> List[str]:
     """Reads the log file and returns the last __history_length lines."""
-    history: list[str] = []
+    history: List[str] = []
     if os.path.isfile(__log_file_path) is False:
         return history
 
