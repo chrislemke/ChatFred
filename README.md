@@ -14,7 +14,7 @@
 - [Setup](#setup-)
 - [Usage](#usage-)
     - [Talk to ChatGPT](#talk-to-chatgpt-)
-        - [Text transformation](##text-transformation-%EF%B8%8F)
+        - [Text transformation](#text-transformation-%EF%B8%8F)
         - [Aliases](#aliases-%EF%B8%8F)
         - [Universal action & combined prompts](#universal-action--combined-prompts-%EF%B8%8F)
         - [Voice to ChatGPT](#voice-to-chatgpt-%EF%B8%8F)
