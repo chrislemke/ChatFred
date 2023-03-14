@@ -1,7 +1,9 @@
 """This module contains the chatGPT API."""
 
+import csv
 import os
 import sys
+import uuid
 from typing import List, Optional, Tuple
 
 from aliases_manager import prompt_for_alias
@@ -20,16 +22,18 @@ import openai
 
 openai.api_key = os.getenv("api_key")
 
-__history_length = int(os.getenv("history_length") or 2)
+
+__history_length = int(os.getenv("history_length") or 4)
 __temperature = float(os.getenv("temperature") or 0.0)
 __max_tokens = int(os.getenv("max_tokens")) if os.getenv("max_tokens") else None  # type: ignore
 __top_p = int(os.getenv("top_p") or 1)
 __frequency_penalty = float(os.getenv("frequency_penalty") or 0.0)
 __presence_penalty = float(os.getenv("presence_penalty") or 0.0)
 __workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("~")
-__log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.log"
+__log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.csv"
 __text_transformation_prompt = os.getenv("text_transformation_prompt") or None
 __jailbreak_prompt = os.getenv("jailbreak_prompt")
+__unlocked = int(os.getenv("unlocked") or 0)
 
 
 def get_query() -> str:
@@ -57,20 +61,19 @@ def exit_on_error() -> None:
         sys.exit(0)
 
 
-def read_from_log() -> List[str]:
-    """Reads the log file and returns the last __history_length lines."""
-    history: List[str] = []
+def read_from_log() -> List[Tuple[str, str]]:
     if os.path.isfile(__log_file_path) is False:
-        return history
+        return [("", "")]
 
-    with open(__log_file_path, "r", encoding="utf-8") as log_file:
-        logs = log_file.readlines()
+    with open(__log_file_path, "r") as csv_file:
+        csv.register_dialect("custom", delimiter=" ", skipinitialspace=True)
+        reader = csv.reader(csv_file, dialect="custom")
 
-    for line in logs:
-        line = line.replace("\n", "")
-        history.append(line)
+        history = []
+        for row in reader:
+            history.append((row[1], row[2]))
 
-    return history[: __history_length * 2]
+    return history[-__history_length:]
 
 
 def write_to_log(
@@ -81,11 +84,14 @@ def write_to_log(
     if not os.path.exists(__workflow_data_path):
         os.makedirs(__workflow_data_path)
 
-    with open(__log_file_path, "a+", encoding="utf-8") as log:
+    with open(__log_file_path, "a+") as csv_file:
+        csv.register_dialect("custom", delimiter=" ", skipinitialspace=True)
+        writer = csv.writer(csv_file, dialect="custom")
         if jailbreak_prompt:
-            log.write(f"user: {jailbreak_prompt}\n")
-        log.write(f"user: {user_input[3:] if user_input[:2] == '-j' else user_input}\n")
-        log.write(f"assistant: {assistant_output}\n")
+            writer.writerow(
+                [str(uuid.uuid4()), jailbreak_prompt, "Okay! How can I help?", 1]
+            )
+        writer.writerow([str(uuid.uuid4()), user_input, assistant_output, 0])
 
 
 def remove_log_file() -> None:
@@ -126,20 +132,15 @@ def create_message(prompt: str):
         ]
 
     messages = [{"role": "system", "content": "You are a helpful assistant"}]
-    for text in read_from_log():
-        if text == (f"user: {__jailbreak_prompt}"):
+    for user_text, assistant_text in read_from_log():
+        if user_text == __jailbreak_prompt:
             continue
-        if text.startswith("user: "):
-            messages.append({"role": "user", "content": text.replace("user: ", "")})
-        elif text.startswith("assistant: "):
-            messages.append(
-                {"role": "assistant", "content": text.replace("assistant: ", "")}
-            )
-    if __jailbreak_prompt and prompt[:2] == "-j":
-        messages.append(
-            {"role": "user", "content": __jailbreak_prompt.replace("user: ", "")}
-        )
-        prompt = prompt[3:]
+        messages.append({"role": "user", "content": user_text})
+        messages.append({"role": "assistant", "content": assistant_text})
+
+    if __jailbreak_prompt and __unlocked == 1:
+        messages.append({"role": "user", "content": __jailbreak_prompt})
+        messages.append({"role": "assistant", "content": "Okay! How can I help?"})
 
     messages.append({"role": "user", "content": prompt})
     return messages
@@ -205,4 +206,4 @@ __prompt, __response = make_chat_request(
     __presence_penalty,
 )
 stdout_write(__response)
-write_to_log(__prompt, __response, __jailbreak_prompt if __prompt[:2] == "-j" else None)
+write_to_log(__prompt, __response, __jailbreak_prompt if __unlocked else None)

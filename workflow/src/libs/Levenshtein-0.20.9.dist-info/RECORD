@@ -1,0 +1,13 @@
+Levenshtein-0.20.9.dist-info/COPYING,sha256=h_G9SlK0ApR2toT83VH-08ayVA5GLTwtO_yb5FWLKCU,18085
+Levenshtein-0.20.9.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+Levenshtein-0.20.9.dist-info/METADATA,sha256=vtRAVE08_DzEkMa02aRLYKbx-nyVg18C7jUb-gkKYrk,3411
+Levenshtein-0.20.9.dist-info/RECORD,,
+Levenshtein-0.20.9.dist-info/WHEEL,sha256=qs8Yz0ZbqM5VOyCb1-BnB3rFDQdhd1TcVdDfo2VM4zc,104
+Levenshtein-0.20.9.dist-info/top_level.txt,sha256=RvPuPevm_7j5S0VBmjD7AQr8RlHYl2CTA_4GqFW-gfA,12
+Levenshtein/StringMatcher.py,sha256=i0xwHTR1dmzQsijtjxXFOHrwWiDNidQd29WNkYD06qg,2275
+Levenshtein/__init__.py,sha256=PErygLmnBJwidH9M0FiKIL9qdK6tRo9yivwE8lxlFTk,16115
+Levenshtein/__init__.pyi,sha256=mQJjf8RiWDLrqwZNpSyA05ysVSu7KjsgcY-4O4pxb9A,2887
+Levenshtein/__pycache__/StringMatcher.cpython-310.pyc,,
+Levenshtein/__pycache__/__init__.cpython-310.pyc,,
+Levenshtein/levenshtein_cpp.cpython-310-darwin.so,sha256=Z6RRcKRQeUs5K6dTal3NyLkEc4BcYk2GUC6LaHdf9B8,398978
+Levenshtein/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
