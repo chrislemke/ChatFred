@@ -27,6 +27,7 @@ def stdout_write(output_string: str) -> None:
 
 
 def provide_history():
+    """Provide the history of the user."""
     prompt = get_query()
     history: List[Tuple[str, str, str, str]] = []
     if prompt != "":
@@ -39,7 +40,8 @@ def provide_history():
             if row[3] == "0":
                 history.append((row[0], row[1], row[2], row[3]))
 
-    if __history_type == "search":
+    history = list(reversed(history))
+    if __history_type == "search" and prompt != "":
         history = [tuple[0] for tuple in process.extract(prompt, history, limit=20)]
 
     response_dict = {
@@ -55,7 +57,7 @@ def provide_history():
                 "arg": [entry[0], entry[1]],
                 "autocomplete": entry[1],
                 "icon": {
-                    "path": f"./{'icon.png' if index == 0 and entry[1] == prompt else 'icon.png'}"
+                    "path": f"./{'icon.png' if index == 0 and entry[1] == prompt else 'magnifying_glass.png'}"
                 },
             }
             for index, entry in enumerate(history)

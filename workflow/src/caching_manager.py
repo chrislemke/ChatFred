@@ -12,7 +12,14 @@ __cache_file_path = f"{__workflow_data_path}/ChatFred_Cache"
 
 
 def __remove_entry_from_cache(key: str) -> None:
-    """Removes the entry from the cache file."""
+    """Removes the entry from the cache file.
+
+    Args:
+        key (str): The key of the entry to be removed.
+
+    Returns:
+        None
+    """
     with open(__cache_file_path, "rb") as plist:
         data = plistlib.load(plist)
         del data[key]
@@ -22,8 +29,15 @@ def __remove_entry_from_cache(key: str) -> None:
 
 
 def write_to_cache(key: str, value: Union[str, int, float, bool]) -> None:
-    """Writes the user input and the assistant output to the log file."""
+    """Writes the user input and the assistant output to the log file.
 
+    Args:
+        key (str): The key to be used to store the value in the cache.
+        value (Union[str, int, float, bool]): The value to be stored in the cache.
+
+    Returns:
+        None
+    """
     if not os.path.exists(__workflow_data_path):
         os.makedirs(__workflow_data_path)
 
@@ -45,8 +59,14 @@ def write_to_cache(key: str, value: Union[str, int, float, bool]) -> None:
 
 
 def read_from_cache(entry: str) -> Union[str, int, float, bool, None]:
-    """Reads the cache file and returns the value of the entry."""
+    """Reads the cache file and returns the value of the entry.
 
+    Args:
+        entry (str): The key to look up in the cache file.
+
+    Returns:
+        Union[str, int, float, bool, None]: The value associated with the key in the cache file, or False if the cache file does not exist.
+    """
     if os.path.exists(__cache_file_path):
         with open(__cache_file_path, "rb") as plist:
             data = plistlib.load(plist)

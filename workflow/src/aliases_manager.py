@@ -9,9 +9,9 @@ __aliases = os.getenv("cf_aliases")
 def __prepare_aliases() -> Dict[str, str]:
     """Prepares the aliases for the workflow.
 
-    And returns them as a dictionary
+    Returns:
+        Dict[str, str]: A dictionary containing the aliases.
     """
-
     aliases_dict = {}
     aliases = [alias_list.split("=") for alias_list in str(__aliases).split(";")]
     for alias in aliases:
@@ -21,9 +21,14 @@ def __prepare_aliases() -> Dict[str, str]:
 
 
 def prompt_for_alias(prompt: str) -> str:
-    """Returns the prompt for the provided alias.
+    """Returns the prompt for the provided alias. If the alias is not found, it
+    returns the provided original prompt.
 
-    If the alias is not found, it returns the provided original prompt.`
+    Args:
+        prompt (str): The prompt to be checked for an alias.
+
+    Returns:
+        str: The prompt for the provided alias, or the original prompt if the alias is not found.
     """
 
     aliases_dict = __prepare_aliases()

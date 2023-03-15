@@ -120,7 +120,8 @@ def intercept_custom_prompts(prompt: str):
 def create_message(prompt: str):
     """Creates the messages for the OpenAI API request."""
     transformation_pre_prompt = """You are a helpful assistant who interprets every input as raw
-    text unless instructed otherwise. Your answers do not include a description unless prompted to do so."""
+    text unless instructed otherwise. Your answers do not include a description unless prompted to do so.
+    Also drop any "`" characters from the your response."""
 
     if __text_transformation_prompt:
         return [
@@ -155,7 +156,19 @@ def make_chat_request(
     presence_penalty: float,
 ) -> Tuple[str, str]:
     """Makes a request to the OpenAI API and returns the prompt and the
-    response."""
+    response.
+
+    Args:
+        prompt (str): The prompt to send to the OpenAI API.
+        temperature (float): Controls the "creativity" of the response. Higher values result in more diverse responses.
+        max_tokens (Optional[int]): The maximum number of tokens (words) in the response.
+        top_p (int): Controls the "quality" of the response. Higher values result in more coherent responses.
+        frequency_penalty (float): Controls the "repetition" of the response. Higher values result in less repetition.
+        presence_penalty (float): Controls the "diversity" of the response. Higher values result in more diverse responses.
+
+    Returns:
+        Tuple[str, str]: A tuple containing the prompt and the response.
+    """
 
     intercept_custom_prompts(prompt)
     prompt = prompt_for_alias(prompt)
