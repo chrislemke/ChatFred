@@ -89,9 +89,9 @@ def write_to_log(
         writer = csv.writer(csv_file, dialect="custom")
         if jailbreak_prompt:
             writer.writerow(
-                [str(uuid.uuid4()), jailbreak_prompt, "Okay! How can I help?", 1]
+                [str(uuid.uuid1()), jailbreak_prompt, "Okay! How can I help?", 1]
             )
-        writer.writerow([str(uuid.uuid4()), user_input, assistant_output, 0])
+        writer.writerow([str(uuid.uuid1()), user_input, assistant_output, 0])
 
 
 def remove_log_file() -> None:
@@ -102,7 +102,6 @@ def remove_log_file() -> None:
 
 def intercept_custom_prompts(prompt: str):
     """Intercepts custom queries."""
-
     last_request_successful = read_from_cache("last_chat_request_successful")
     if prompt in error_prompts and not last_request_successful:
         stdout_write(
@@ -156,19 +155,7 @@ def make_chat_request(
     presence_penalty: float,
 ) -> Tuple[str, str]:
     """Makes a request to the OpenAI API and returns the prompt and the
-    response.
-
-    Args:
-        prompt (str): The prompt to send to the OpenAI API.
-        temperature (float): Controls the "creativity" of the response. Higher values result in more diverse responses.
-        max_tokens (Optional[int]): The maximum number of tokens (words) in the response.
-        top_p (int): Controls the "quality" of the response. Higher values result in more coherent responses.
-        frequency_penalty (float): Controls the "repetition" of the response. Higher values result in less repetition.
-        presence_penalty (float): Controls the "diversity" of the response. Higher values result in more diverse responses.
-
-    Returns:
-        Tuple[str, str]: A tuple containing the prompt and the response.
-    """
+    response."""
 
     intercept_custom_prompts(prompt)
     prompt = prompt_for_alias(prompt)

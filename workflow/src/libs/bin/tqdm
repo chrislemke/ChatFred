@@ -1,4 +1,4 @@
-#!/opt/homebrew/Caskroom/mambaforge/base/bin/python3.10
+#!/opt/homebrew/Caskroom/mambaforge/base/envs/alfred/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

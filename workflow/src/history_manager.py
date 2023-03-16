@@ -30,19 +30,24 @@ def provide_history():
     """Provide the history of the user."""
     prompt = get_query()
     history: List[Tuple[str, str, str, str]] = []
-    if prompt != "":
-        history.append((str(uuid.uuid4()), prompt, "Talk to ChatGPT 💬", "0"))
 
-    with open(__log_file_path, "r") as csv_file:
-        csv.register_dialect("custom", delimiter=" ", skipinitialspace=True)
-        reader = csv.reader(csv_file, dialect="custom")
-        for row in reader:
-            if row[3] == "0":
-                history.append((row[0], row[1], row[2], row[3]))
+    if not os.path.exists(__workflow_data_path):
+        os.makedirs(__workflow_data_path)
+
+    if os.path.exists(__log_file_path):
+        with open(__log_file_path, "r") as csv_file:
+            csv.register_dialect("custom", delimiter=" ", skipinitialspace=True)
+            reader = csv.reader(csv_file, dialect="custom")
+            for row in reader:
+                if row[3] == "0":
+                    history.append((row[0], row[1], row[2], row[3]))
 
     history = list(reversed(history))
     if __history_type == "search" and prompt != "":
         history = [tuple[0] for tuple in process.extract(prompt, history, limit=20)]
+
+    if prompt != "":
+        history.insert(0, (str(uuid.uuid1()), prompt, "Talk to ChatGPT 💬", "0"))
 
     response_dict = {
         "variables": {
@@ -50,7 +55,6 @@ def provide_history():
         },
         "items": [
             {
-                "uid": str(uuid.uuid4()),
                 "type": "default",
                 "title": entry[1],
                 "subtitle": entry[2].strip(),

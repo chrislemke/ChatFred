@@ -123,14 +123,6 @@ In Python, we don't need to explicitly define a `main()` function like in C++. I
 #### **Voice to ChatGPT** 🗣️
 With [Alfred's File Actions](https://www.alfredapp.com/blog/tips-and-tricks/file-actions-from-alfred-or-finder/) you can send a voice recording (as an *mp3* file) to ChatGPT. Just record you voice and use the *Send to ChatGPT* action. ChatFred is using [OpenAI's Whisper](https://openai.com/research/whisper) to convert your voice recording to text.
 
-**Using the `Record voice` shortcut** 🎙️
-
-If you want to talk directly to ChatGPT you use the provided [`Record voice`](https://github.com/chrislemke/ChatFred/blob/main/Record%20voice.shortcut) shortcut. It will record your voice and send it to ChatGPT.
-
-First add the `Record voice` shortcut to the [Shortcut app](https://support.apple.com/en-gb/guide/shortcuts-mac/apdf22b0444c/mac) on your Mac, run it once to grant it access to the microphone. Afterwards you just set a hotkey in Alfred and you are ready to go. The files created by the shortcut will be stored on your desktop (`~/Desktop`).
-
-⚠️ *The record voice feature is still in beta and not officially supported. Please [report any issues](https://github.com/chrislemke/ChatFred/issues/new/choose) you encounter.*
-
 #### **Jailbreak** 🔓
 For anyone who wants to feed ChatGPT with a jailbreak prompt. You can enter a command in workflow's configuration under *ChatGPT jailbreak prompt*. By hitting <kbd>⌘</kbd> <kbd>⏎</kbd> you can talk to an unlocked version of ChatGPT. Here is a small example:
 
