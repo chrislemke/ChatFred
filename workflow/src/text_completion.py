@@ -105,7 +105,7 @@ def make_request(
                 top_p=top_p,
                 frequency_penalty=frequency_penalty,
                 presence_penalty=presence_penalty,
-                stop=["\n", "<|endoftext|>"],
+                stop=["<|endoftext|>"],
             )
             .choices[0]
             .text
