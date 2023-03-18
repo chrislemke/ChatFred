@@ -27,6 +27,34 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
+**Alfred's debug log**
+```
+ VARIABLES:{
+  always_copy_to_clipboard = "1"
+  always_speak = "0"
+  api_key = "sk-************************************************" # Removed for privacy
+  cf_aliases = "joke=tell me a joke;"
+  chat_gpt_model = "gpt-3.5-turbo"
+  frequency_penalty = "0.0"
+  history_length = "3"
+  history_type = "search"
+  image_size = "512"
+  instruct_gpt_model = "text-davinci-003"
+  jailbreak_prompt = ""
+  max_tokens = ""
+  presence_penalty = "0.0"
+  save_to_file = "0"
+  save_to_file_dir = "/Users/***" # Removed for privacy
+  show_loading_indicator = "1"
+  show_notifications = "1"
+  temperature = "0"
+  top_p = "1"
+  transformation_prompt = "Write the text so that each letter is replaced by its successor in the alphabet."
+  user_prompt = "why are errors bad?"
+}
+RESPONSE:'Errors are often considered bad because they can lead to negative consequences in various aspects of life.'
+```
+
 **Relevant information from the `ChatFred_Error.log` file**
 ```
 Date/Time: 2023-01-01 12:30:07.000000

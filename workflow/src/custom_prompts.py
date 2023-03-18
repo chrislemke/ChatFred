@@ -35,18 +35,12 @@ clear_log_prompts = [
 ]
 
 
-def set_env_variable() -> None:
-    """Sets the environment variable 'user_prompt' to '0' if it is not already
-    set.
+def custom_or_error_prompt_usage() -> None:
+    prompt = os.getenv("user_prompt") or "1"
 
-    If 'user_prompt' is set to an error prompt and the last chat request
-    was unsuccessful, or if 'user_prompt' is set to a clear log prompt,
-    prints '1' to stdout. Otherwise, prints '0' to stdout.
-    """
-    prompt = os.getenv("user_prompt") or "0"
     if (
         prompt in error_prompts and not read_from_cache("last_chat_request_successful")
     ) or (prompt in clear_log_prompts):
-        sys.stdout.write("1")
-    else:
         sys.stdout.write("0")
+    else:
+        sys.stdout.write("1")

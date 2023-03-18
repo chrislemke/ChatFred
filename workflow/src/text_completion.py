@@ -33,6 +33,8 @@ def get_query() -> str:
 
 def prompt_from_query(query: str) -> str:
     """Creates a suitable prompt for the OpenAI API."""
+    if __model == "Code-Davinci" or __model == "Code-Cushman":
+        return query
     return f"Q: {query}\nA:"
 
 
@@ -47,7 +49,7 @@ def stdout_write(output_string: str) -> None:
             {
                 "uid": "null",
                 "type": "default",
-                "title": output_string,
+                "title": output_string.strip(),
                 "subtitle": "⇪, ⌃, ⌥ or ⌘ for options",
                 "arg": output_string,
                 "autocomplete": output_string,

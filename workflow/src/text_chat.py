@@ -22,7 +22,7 @@ import openai
 
 openai.api_key = os.getenv("api_key")
 
-
+__model = os.getenv("chat_gpt_model") or "gpt-3.5-turbo"
 __history_length = int(os.getenv("history_length") or 4)
 __temperature = float(os.getenv("temperature") or 0.0)
 __max_tokens = int(os.getenv("max_tokens")) if os.getenv("max_tokens") else None  # type: ignore
@@ -51,7 +51,7 @@ def exit_on_error() -> None:
     """Checks the environment variables for invalid values."""
     error = env_value_error_if_needed(
         __temperature,
-        "gpt-3.5-turbo",
+        __model,
         __max_tokens,
         __frequency_penalty,
         __presence_penalty,
@@ -165,7 +165,7 @@ def make_chat_request(
     try:
         response = (
             openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model=__model,
                 messages=messages,
                 temperature=temperature,
                 max_tokens=max_tokens,
@@ -181,7 +181,7 @@ def make_chat_request(
         response = exception_response(exception)
         write_to_cache("last_chat_request_successful", False)
         log_error_if_needed(
-            model="gpt-3.5-turbo",
+            model=__model,
             error_message=exception._message,  # type: ignore  # pylint: disable=protected-access
             user_prompt=prompt,
             parameters={

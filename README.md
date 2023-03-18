@@ -15,8 +15,8 @@
 - [Usage](#usage-)
     - [Talk to ChatGPT](#talk-to-chatgpt-)
         - [Text transformation](#text-transformation-%EF%B8%8F)
-        - [Aliases](#aliases-%EF%B8%8F)
         - [Universal action & combined prompts](#universal-action--combined-prompts-%EF%B8%8F)
+        - [Aliases](#aliases-%EF%B8%8F)
         - [Voice to ChatGPT](#voice-to-chatgpt-%EF%B8%8F)
         - [Jailbreak](#jailbreak-)
         - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
@@ -26,10 +26,9 @@
     - [Image generation by DALL·E 2](#image-generation-by-dalle-2-%EF%B8%8F)
 - [Configure the workflow (optional)](#configure-the-workflow-optional-)
 - [Troubleshooting](#troubleshooting-%EF%B8%8F)
-- [Safety best practices](#safety-best-practices-%EF%B8%8F)
-- [Contributing](#contributing-)
 - [Beta testing](#beta-testing-)
-- [What's next?](#whats-next-)
+- [Contributing](#contributing-)
+- [Safety best practices](#safety-best-practices-%EF%B8%8F)
 
 ## Setup 🧰
 [⤓ Install on the Alfred Gallery](https://alfred.app/workflows/chrislemke/chatfred/) or download it over [GitHub](https://github.com/chrislemke/ChatFred/releases) and add your OpenAI API key. If you have used ChatGPT or DALL·E 2, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$5 in free credit](https://openai.com/api/pricing/), no payment data is required. Afterwards you can [create your API key](https://beta.openai.com/account/api-keys).
@@ -50,7 +49,7 @@ or use ChatFred as a fallback search in Alfred:
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
 
 #### **Text transformation** ⚙️
-This feature allows you to easily let ChatGPT transform your text using a pre-defined prompt. Just replace the default *ChatGPT transformation prompt* in the workflow's configuration with your own prompt. Use either the [Talk to ChatGPT 💬 Universal Actions](#universal-action--combined-prompts-%EF%B8%8F) (option: <kbd>⇧</kbd>) to send the highlighted text to ChatGPT using your transformation prompt. Or configure a hotkey to use the clipboard content.
+This feature allows you to easily let ChatGPT transform your text using a pre-defined prompt. Just replace the default *ChatGPT transformation prompt* in the workflow's configuration with your own prompt. Use either the [Send to ChatGPT 💬 Universal Actions](#universal-action--combined-prompts-%EF%B8%8F) (option: <kbd>⇧</kbd>) to pass the highlighted text to ChatGPT using your transformation prompt. Or configure a hotkey to use the clipboard content.
 
  Let's check out an example:
 
@@ -64,19 +63,12 @@ Using Alfred's Universal Action while holding the Shift key <kbd>⇧</kbd> you a
 The highlighted text together with the transformation prompt will be sent to ChatGPT. And this will be the result:
 > Hey, listen up! You wanna be a real wise guy on your Mac? Then you gotta check out Alfred! This app is a real award-winner, and it's gonna boost your efficiency like nobody's business. With hotkeys, keywords, and text expansion, you'll be searching your Mac and the web like a pro. And if you wanna be even more productive, you can create custom actions to control your Mac. So what are you waiting for? Get Alfred and start being a real wise guy on your Mac!
 
+Another great use case for the transformation prompt is to automatically write docstring for your code. You could use the following prompt:
+```
+Return this Python function including Google Style Python Docstring.
+```
+
 This feature is kind of similar to the [Jailbreak](#jailbreak-) feature. But it's main purpose is to let you easily transform text.
-#### **Aliases** ⌨️
-Maybe you have some prompts for ChatGPT that you use pretty often. In this case you can create an alias for it. Just add a new entry to the *ChatGPT aliases* in the workflow's configuration:
-```
-joke=tell me a joke;
-to_python=convert this to python but only show the code:;
-```
-
-![Screenshot](workflow/assets/images/screenshot15.png)
-Is now equivalent to:
-![Screenshot](workflow/assets/images/screenshot16.png)
-
-This is especially useful in combination with [Universal Actions and the combined prompts feature](#universal-action--combined-prompts-%EF%B8%8F). For example, you can easily convert code from one language to Python using the `to_python` alias and a combined prompts. Read more about it in the next chapter.
 #### **Universal action & combined prompts** ➡️
 ChatFred supports Alfred's [Universal Action](https://www.alfredapp.com/universal-actions/) feature. With this you can simply send any text to ChatGPT.
 
@@ -120,6 +112,19 @@ In Python, we don't need to explicitly define a `main()` function like in C++. I
 ```
 ⚠️ *Be careful when asking ChatGPT for coding advice. [Stack Overflow](https://stackoverflow.com/) is still the better choice.*
 
+#### **Aliases** ⌨️
+Maybe you have some prompts for ChatGPT that you use pretty often. In this case you can create an alias for it. Just add a new entry to the *ChatGPT aliases* in the workflow's configuration:
+```
+joke=tell me a joke;
+to_python=convert this to python but only show the code:;
+```
+
+![Screenshot](workflow/assets/images/screenshot15.png)
+Is now equivalent to:
+![Screenshot](workflow/assets/images/screenshot16.png)
+
+This is especially useful in combination with [Universal Actions and the combined prompts feature](#universal-action--combined-prompts-%EF%B8%8F). For example, you can easily convert code from one language to Python using the `to_python` alias and a combined prompts. Read more about it in the next chapter.
+
 #### **Voice to ChatGPT** 🗣️
 With [Alfred's File Actions](https://www.alfredapp.com/blog/tips-and-tricks/file-actions-from-alfred-or-finder/) you can send a voice recording (as an *mp3* file) to ChatGPT. Just record you voice and use the *Send to ChatGPT* action. ChatFred is using [OpenAI's Whisper](https://openai.com/research/whisper) to convert your voice recording to text.
 
@@ -144,15 +149,13 @@ Now you can do the following:
 And this will be ChatGPT's reply:
 ![Screenshot](workflow/assets/images/screenshot12.png)
 
-#### **`ChatFred_ChatGPT.log`** 📄
-Your full conversation with ChatGPT is stored in the file `ChatFred_ChatGPT.log` in the workflow's directory. This file is needed so ChatGPT can access prior parts of its conversation with you. You can adjust how far ChatGPT can look back in the conversation in the workflow's configuration (*ChatGPT history length*).
+#### **`ChatFred_ChatGPT.csv`** 📄
+Your full conversation with ChatGPT is stored in the file `ChatFred_ChatGPT.csv` in the workflow's data directory. This file is needed so ChatGPT can access prior parts of its conversation with you. And to provide the history.
 
-To remove this file just tell ChatGPT to `Forget everything` or to `clear chat log`.
+To remove this file just tell ChatGPT to `forget everything`.
 
 ### Text generation with InstructGPT 🤖
-> Instruct models are optimized to follow single-turn instructions. Ada is the fastest model, while Davinci is the most powerful.
-
-[OpenAI](https://platform.openai.com/docs/models/gpt-3)
+Instruct models are optimized to follow single-turn instructions. Ada is the fastest model, while Davinci is the most powerful. Code-Davinci and Code-Cushman are optimized for code completion.
 
 To start using InstructGPT models, just type `cft` or configure your own hotkey.
 
@@ -196,7 +199,8 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **ChatGPT transformation prompt**: Use this prompt to automatically  transform either highlighted text through Universal actions or by adding a hotkey to process the content of the clipboard.
 - **ChatGPT aliases**: If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`
 - **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be automatically included to your request. You can use it by hitting <kbd>⌘</kbd> <kbd>⏎</kbd>. Default: `None`.
-- **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. This has no impact on the use of ChatGPT. Default: `Davinci`.
+- **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`, `Code-Davinci`, `Code-Cushman`. Default: `Davinci`. ([Read more](https://platform.openai.com/docs/models/overview))
+- **ChatGPT model**: Following models are available: `ChatGPT 3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). Default: `ChatGPT 3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
 - **Maximum tokens**: The maximum number of tokens to generate in the completion. Default (InstructGPT): `50`. Default (ChatGPT): `4096`.
 - **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
@@ -208,22 +212,27 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
 - **Show notifications**: Shows all notifications provided by the workflow. For this, to work System notifications must be activated for Alfred. Default: `on`.
+- **Show ChatGPT is thinking message**: Shows the message: "💭 Stay tuned... ChatGPT is thinking" while OpenAI is processing your request. Default: `on`.
 
 ## Troubleshooting ⛑️
-After you received an error (🚨), you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
+### General 🙀
+When having trouble it is always a good idea to download the [newest release version 🌈](https://github.com/chrislemke/ChatFred/releases). Before you install it, remove the old workflow and its files (`~/Library/Application Support/Alfred/Workflow Data/some-long-identifier/`).
 
-You can also have a look at the `ChatFred_Error.log` file. It is placed in the workflow's data directory which you find here: `~/Library/Application Support/Alfred/Workflow Data/`. Every error will be logged there, together with some relevant information. Maybe this helps to solve your problem. If not, please [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) and add the needed information from the `ChatFred_Error.log` file.
+Also, make sure that you have some Python version installed. You can check this by running `python --version` in the terminal. If you don't have Python installed, you can download it as a [Homebrew package](https://brew.sh): `brew install python`.
 
-When having trouble it is always a good idea to download the [newest release version 🌈](https://github.com/chrislemke/ChatFred/releases). Before you install it, remove the old workflow and its files (`~/Library/Application Support/Alfred/Workflow Data/something with ChatFred/`).
+### Error messages 🚨
+If you have received an error, you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
 
-## Safety best practices 🛡️
-Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).
+You can also have a look at the `ChatFred_Error.log` file. It is placed in the workflow's data directory which you find here: `~/Library/Application Support/Alfred/Workflow Data/`. Every error from OpenAI's API will be logged there, together with some relevant information. Maybe this helps to solve your problem.
 
-## Contributing 🤝
-Please feel free to [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) if you have any questions or suggestions. Or participate in the [discussion](https://github.com/chrislemke/ChatFred/discussions). If you want to contribute, please read the [contribution guidelines](https://github.com/chrislemke/ChatFred/blob/main/CONTRIBUTING.md) for more information.
+### Open an issue 🕵️
+If nothing helped, please [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) and add the needed information from the `ChatFred_Error.log` file (if available) and from Alfred's debug log (don't forget to remove your API-key and any personal information from it).
 
 ## Beta testing 🧪
 Want to try out the newest not yet released features? You can download the beta version [here](https://github.com/chrislemke/ChatFred/releases). Or checkout the [development branch](https://github.com/chrislemke/ChatFred/tree/develop) and build the workflow yourself.
 
-## What's next? 🚧
-Soon we will also implement the [Microsoft Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/) to provide a broader choice of available services.
+## Contributing 🤝
+Please feel free to [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) if you have any questions or suggestions. Or participate in the [discussion](https://github.com/chrislemke/ChatFred/discussions). If you want to contribute, please read the [contribution guidelines](https://github.com/chrislemke/ChatFred/blob/main/CONTRIBUTING.md) for more information.
+
+## Safety best practices 🛡️
+Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).
