@@ -2396,9 +2396,7 @@ And this will be ChatGPT's reply:
 Your full conversation with ChatGPT is stored in the file `ChatFred_ChatGPT.csv` in the workflow's data directory. This file is needed so ChatGPT can access prior parts of its conversation with you. And to provide the history.
 
 ### Text generation with InstructGPT 🤖
-&gt; Instruct models are optimized to follow single-turn instructions. Ada is the fastest model, while Davinci is the most powerful.
-
-[OpenAI](https://platform.openai.com/docs/models/gpt-3)
+Instruct models are optimized to follow single-turn instructions. Ada is the fastest model, while Davinci is the most powerful. Code-Davinci and Code-Cushman are optimized for code completion.
 
 To start using InstructGPT models, just type `cft` or configure your own hotkey.
 
@@ -2442,7 +2440,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **ChatGPT aliases**: If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`
 - **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be automatically included to your request. You can use it by hitting &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;. Default: `None`.
 - **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`, `Code-Davinci`, `Code-Cushman`. Default: `Davinci`. ([Read more](https://platform.openai.com/docs/models/overview))
-- **ChatGPT model**: Following models are available: `ChatGPT 3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). Default: `ChatGPT 3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
+- **ChatGPT model**: Following models are available: `ChatGPT-3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). Default: `ChatGPT-3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
 - **Maximum tokens**: The maximum number of tokens to generate in the completion. Default (InstructGPT): `50`. Default (ChatGPT): `4096`.
 - **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
@@ -3198,15 +3196,15 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<key>pairs</key>
 				<array>
 					<array>
-						<string>ChatGPT 3.5</string>
+						<string>ChatGPT-3.5</string>
 						<string>gpt-3.5-turbo</string>
 					</array>
 					<array>
-						<string>GPT 4</string>
+						<string>GPT-4</string>
 						<string>gpt-4</string>
 					</array>
 					<array>
-						<string>GPT 4 (32k)</string>
+						<string>GPT-4 (32k)</string>
 						<string>gpt-4-32k</string>
 					</array>
 				</array>
@@ -3424,10 +3422,10 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>Useful for not forgetting ChatFred's replies</string>
+				<string>Useful for ot forgetting ChatFred's replies</string>
 			</dict>
 			<key>description</key>
-			<string>Your conversation with ChatFred can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN' (only available for InstructGPT). If this box is checked, all requests and replies will be stored to file automatically.</string>
+			<string>Your conversation with ChatFred's InstructGPT models can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN' (only available for InstructGPT). If this box is checked, all requests and replies will be stored to file automatically.</string>
 			<key>label</key>
 			<string>Always save conversation to file</string>
 			<key>type</key>
@@ -3544,10 +3542,8 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<string>show_loading_indicator</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>1.3.0-dev5</string>
+	<string>1.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>

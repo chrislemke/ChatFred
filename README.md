@@ -19,7 +19,7 @@
         - [Aliases](#aliases-%EF%B8%8F)
         - [Voice to ChatGPT](#voice-to-chatgpt-%EF%B8%8F)
         - [Jailbreak](#jailbreak-)
-        - [ChatFred_ChatGPT.log](#chatfred_chatgptlog-)
+        - [ChatFred_ChatGPT.csv](#chatfred_chatgptlog-)
     - [Text generation with InstructGPT](#text-generation-with-instructgpt-)
         - [Options](#options-)
         - [Save conversations to file](#save-conversations-to-file-)
@@ -200,7 +200,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **ChatGPT aliases**: If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`
 - **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be automatically included to your request. You can use it by hitting <kbd>⌘</kbd> <kbd>⏎</kbd>. Default: `None`.
 - **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`, `Code-Davinci`, `Code-Cushman`. Default: `Davinci`. ([Read more](https://platform.openai.com/docs/models/overview))
-- **ChatGPT model**: Following models are available: `ChatGPT 3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). Default: `ChatGPT 3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
+- **ChatGPT model**: Following models are available: `ChatGPT-3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). Default: `ChatGPT-3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
 - **Maximum tokens**: The maximum number of tokens to generate in the completion. Default (InstructGPT): `50`. Default (ChatGPT): `4096`.
 - **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
