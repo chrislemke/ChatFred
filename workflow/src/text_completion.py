@@ -4,21 +4,21 @@ import json
 import os
 import sys
 
+from caching_manager import read_from_cache, write_to_cache
 from custom_prompts import error_prompts
-from error_handling import (
+from error_handler import (
     env_value_error_if_needed,
     exception_response,
     get_last_error_message,
     log_error_if_needed,
 )
-from global_services import read_from_cache, write_to_cache
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
 import openai
 
 openai.api_key = os.getenv("api_key")
-__model = os.getenv("model") or "text-davinci-003"
+__model = os.getenv("instruct_gpt_model") or "text-davinci-003"
 __temperature = float(os.getenv("temperature") or 0.0)
 __max_tokens = int(os.getenv("max_tokens") or 50)
 __top_p = int(os.getenv("top_p") or 1)
@@ -33,6 +33,8 @@ def get_query() -> str:
 
 def prompt_from_query(query: str) -> str:
     """Creates a suitable prompt for the OpenAI API."""
+    if __model == "Code-Davinci" or __model == "Code-Cushman":
+        return query
     return f"Q: {query}\nA:"
 
 
@@ -47,7 +49,7 @@ def stdout_write(output_string: str) -> None:
             {
                 "uid": "null",
                 "type": "default",
-                "title": output_string,
+                "title": output_string.strip(),
                 "subtitle": "⇪, ⌃, ⌥ or ⌘ for options",
                 "arg": output_string,
                 "autocomplete": output_string,
@@ -105,7 +107,7 @@ def make_request(
                 top_p=top_p,
                 frequency_penalty=frequency_penalty,
                 presence_penalty=presence_penalty,
-                stop=["\n", "<|endoftext|>"],
+                stop=["<|endoftext|>"],
             )
             .choices[0]
             .text

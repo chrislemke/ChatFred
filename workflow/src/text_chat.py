@@ -1,17 +1,20 @@
 """This module contains the chatGPT API."""
 
+import csv
 import os
 import sys
+import uuid
 from typing import List, Optional, Tuple
 
+from aliases_manager import prompt_for_alias
+from caching_manager import read_from_cache, write_to_cache
 from custom_prompts import clear_log_prompts, error_prompts
-from error_handling import (
+from error_handler import (
     env_value_error_if_needed,
     exception_response,
     get_last_error_message,
     log_error_if_needed,
 )
-from global_services import read_from_cache, write_to_cache
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
@@ -19,15 +22,18 @@ import openai
 
 openai.api_key = os.getenv("api_key")
 
-__history_length = int(os.getenv("history_length") or 2)
+__model = os.getenv("chat_gpt_model") or "gpt-3.5-turbo"
+__history_length = int(os.getenv("history_length") or 4)
 __temperature = float(os.getenv("temperature") or 0.0)
 __max_tokens = int(os.getenv("max_tokens")) if os.getenv("max_tokens") else None  # type: ignore
 __top_p = int(os.getenv("top_p") or 1)
 __frequency_penalty = float(os.getenv("frequency_penalty") or 0.0)
 __presence_penalty = float(os.getenv("presence_penalty") or 0.0)
 __workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("~")
-__log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.log"
+__log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.csv"
+__text_transformation_prompt = os.getenv("text_transformation_prompt") or None
 __jailbreak_prompt = os.getenv("jailbreak_prompt")
+__unlocked = int(os.getenv("unlocked") or 0)
 
 
 def get_query() -> str:
@@ -45,7 +51,7 @@ def exit_on_error() -> None:
     """Checks the environment variables for invalid values."""
     error = env_value_error_if_needed(
         __temperature,
-        "gpt-3.5-turbo",
+        __model,
         __max_tokens,
         __frequency_penalty,
         __presence_penalty,
@@ -55,20 +61,19 @@ def exit_on_error() -> None:
         sys.exit(0)
 
 
-def read_from_log() -> List[str]:
-    """Reads the log file and returns the last __history_length lines."""
-    history: List[str] = []
+def read_from_log() -> List[Tuple[str, str]]:
     if os.path.isfile(__log_file_path) is False:
-        return history
+        return [("", "")]
 
-    with open(__log_file_path, "r", encoding="utf-8") as log_file:
-        logs = log_file.readlines()
+    with open(__log_file_path, "r") as csv_file:
+        csv.register_dialect("custom", delimiter=" ", skipinitialspace=True)
+        reader = csv.reader(csv_file, dialect="custom")
 
-    for line in logs:
-        line = line.replace("\n", "")
-        history.append(line)
+        history = []
+        for row in reader:
+            history.append((row[1], row[2]))
 
-    return history[: __history_length * 2]
+    return history[-__history_length:]
 
 
 def write_to_log(
@@ -79,11 +84,14 @@ def write_to_log(
     if not os.path.exists(__workflow_data_path):
         os.makedirs(__workflow_data_path)
 
-    with open(__log_file_path, "a+", encoding="utf-8") as log:
+    with open(__log_file_path, "a+") as csv_file:
+        csv.register_dialect("custom", delimiter=" ", skipinitialspace=True)
+        writer = csv.writer(csv_file, dialect="custom")
         if jailbreak_prompt:
-            log.write(f"user: {jailbreak_prompt}\n")
-        log.write(f"user: {user_input[3:] if user_input[:2] == '-j' else user_input}\n")
-        log.write(f"assistant: {assistant_output}\n")
+            writer.writerow(
+                [str(uuid.uuid1()), jailbreak_prompt, "Okay! How can I help?", 1]
+            )
+        writer.writerow([str(uuid.uuid1()), user_input, assistant_output, 0])
 
 
 def remove_log_file() -> None:
@@ -94,7 +102,6 @@ def remove_log_file() -> None:
 
 def intercept_custom_prompts(prompt: str):
     """Intercepts custom queries."""
-
     last_request_successful = read_from_cache("last_chat_request_successful")
     if prompt in error_prompts and not last_request_successful:
         stdout_write(
@@ -111,23 +118,29 @@ def intercept_custom_prompts(prompt: str):
 
 def create_message(prompt: str):
     """Creates the messages for the OpenAI API request."""
+    transformation_pre_prompt = """You are a helpful assistant who interprets every input as raw
+    text unless instructed otherwise. Your answers do not include a description unless prompted to do so.
+    Also drop any "`" characters from the your response."""
+
+    if __text_transformation_prompt:
+        return [
+            {"role": "system", "content": transformation_pre_prompt},
+            {
+                "role": "user",
+                "content": f"{__text_transformation_prompt} Don't add any comments: {prompt}",
+            },
+        ]
 
     messages = [{"role": "system", "content": "You are a helpful assistant"}]
-
-    for text in read_from_log():
-        if text == (f"user: {__jailbreak_prompt}"):
+    for user_text, assistant_text in read_from_log():
+        if user_text == __jailbreak_prompt:
             continue
-        if text.startswith("user: "):
-            messages.append({"role": "user", "content": text.replace("user: ", "")})
-        elif text.startswith("assistant: "):
-            messages.append(
-                {"role": "assistant", "content": text.replace("assistant: ", "")}
-            )
-    if __jailbreak_prompt and prompt[:2] == "-j":
-        messages.append(
-            {"role": "user", "content": __jailbreak_prompt.replace("user: ", "")}
-        )
-        prompt = prompt[3:]
+        messages.append({"role": "user", "content": user_text})
+        messages.append({"role": "assistant", "content": assistant_text})
+
+    if __jailbreak_prompt and __unlocked == 1:
+        messages.append({"role": "user", "content": __jailbreak_prompt})
+        messages.append({"role": "assistant", "content": "Okay! How can I help?"})
 
     messages.append({"role": "user", "content": prompt})
     return messages
@@ -145,13 +158,14 @@ def make_chat_request(
     response."""
 
     intercept_custom_prompts(prompt)
+    prompt = prompt_for_alias(prompt)
     messages = create_message(prompt)
     write_to_cache("last_chat_request_successful", True)
 
     try:
         response = (
             openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model=__model,
                 messages=messages,
                 temperature=temperature,
                 max_tokens=max_tokens,
@@ -167,7 +181,7 @@ def make_chat_request(
         response = exception_response(exception)
         write_to_cache("last_chat_request_successful", False)
         log_error_if_needed(
-            model="gpt-3.5-turbo",
+            model=__model,
             error_message=exception._message,  # type: ignore  # pylint: disable=protected-access
             user_prompt=prompt,
             parameters={
@@ -192,4 +206,4 @@ __prompt, __response = make_chat_request(
     __presence_penalty,
 )
 stdout_write(__response)
-write_to_log(__prompt, __response, __jailbreak_prompt if __prompt[:2] == "-j" else None)
+write_to_log(__prompt, __response, __jailbreak_prompt if __unlocked else None)
