@@ -46,8 +46,12 @@ def provide_history():
     if __history_type == "search" and prompt != "":
         history = [tuple[0] for tuple in process.extract(prompt, history, limit=20)]
 
-    if prompt != "":
+    if prompt in ["", " "]:
+        history.insert(0, (str(uuid.uuid1()), "...", "Talk to ChatGPT 💬", "0"))
+    else:
         history.insert(0, (str(uuid.uuid1()), prompt, "Talk to ChatGPT 💬", "0"))
+
+    non_hist_text = [prompt, "..."]
 
     response_dict = {
         "variables": {
@@ -61,7 +65,7 @@ def provide_history():
                 "arg": [entry[0], entry[1]],
                 "autocomplete": entry[1],
                 "icon": {
-                    "path": f"./{'icon.png' if index == 0 and entry[1] == prompt else 'magnifying_glass.png'}"
+                    "path": f"./{'icon.png' if index == 0 and entry[1] in non_hist_text else 'magnifying_glass.png'}"
                 },
             }
             for index, entry in enumerate(history)

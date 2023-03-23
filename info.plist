@@ -79,6 +79,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F127DDE4-1464-48AA-AE75-648EA4013D87</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Speak the answer 🗣️</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>2CD4970E-43C0-4C91-BE0F-3FB55C662C1D</key>
 		<array>
@@ -213,6 +223,19 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>A851B8B3-DE1D-4DE3-B4F8-F65F92241CDC</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A714CC5B-5F89-4D9A-A71D-DB9DD4F85305</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -472,6 +495,16 @@
 		</array>
 		<key>8D3B95CA-78A1-4E37-920A-29C777780804</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Speak the answer 🗣️</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>A714CC5B-5F89-4D9A-A71D-DB9DD4F85305</string>
@@ -800,6 +833,29 @@
 				<false/>
 			</dict>
 		</array>
+		<key>F127DDE4-1464-48AA-AE75-648EA4013D87</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>703A86F6-9BC5-4F81-8E45-AB13862691F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>45B5F36B-A668-4C79-A272-2948ABAF36C3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>F3547C17-564C-4320-BDF6-EF35EDAF73C2</key>
 		<array>
 			<dict>
@@ -1093,6 +1149,26 @@ RESPONSE:'{query}'</string>
 			<string>alfred.workflow.utility.debug</string>
 			<key>uid</key>
 			<string>3E8AAE6B-9833-4A30-8522-301BBEA42592</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>always_speak</key>
+					<string>1</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1657,6 +1733,26 @@ sys.stdout.write(ast.literal_eval(sys.argv[1])["text"])</string>
 			<string>45B5F36B-A668-4C79-A272-2948ABAF36C3</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>always_speak</key>
+					<string>1</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F127DDE4-1464-48AA-AE75-648EA4013D87</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2439,7 +2535,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **ChatGPT transformation prompt**: Use this prompt to automatically  transform either highlighted text through Universal actions or by adding a hotkey to process the content of the clipboard.
 - **ChatGPT aliases**: If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`
 - **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be automatically included to your request. You can use it by hitting &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;. Default: `None`.
-- **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`, `Code-Davinci`, `Code-Cushman`. Default: `Davinci`. ([Read more](https://platform.openai.com/docs/models/overview))
+- **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. Default: `Davinci`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **ChatGPT model**: Following models are available: `ChatGPT-3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). Default: `ChatGPT-3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
 - **Maximum tokens**: The maximum number of tokens to generate in the completion. Default (InstructGPT): `50`. Default (ChatGPT): `4096`.
@@ -2624,6 +2720,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<real>1010</real>
 			<key>ypos</key>
 			<real>1670</real>
+		</dict>
+		<key>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Sets: "always_speak"</string>
+			<key>xpos</key>
+			<real>295</real>
+			<key>ypos</key>
+			<real>475</real>
 		</dict>
 		<key>51EEBBF2-BE53-4A88-965F-02AC2D651EF5</key>
 		<dict>
@@ -3006,6 +3113,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>1495</real>
 		</dict>
+		<key>F127DDE4-1464-48AA-AE75-648EA4013D87</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Sets: "always_speak"</string>
+			<key>xpos</key>
+			<real>205</real>
+			<key>ypos</key>
+			<real>1110</real>
+		</dict>
 		<key>F3547C17-564C-4320-BDF6-EF35EDAF73C2</key>
 		<dict>
 			<key>colorindex</key>
@@ -3240,14 +3358,6 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 					<array>
 						<string>Davinci</string>
 						<string>text-davinci-003</string>
-					</array>
-					<array>
-						<string>Code-Davinci</string>
-						<string>code-davinci-002</string>
-					</array>
-					<array>
-						<string>Code-Cushman</string>
-						<string>code-cushman-001</string>
 					</array>
 					<array>
 						<string>GPT-4</string>
@@ -3543,7 +3653,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.3.0</string>
+	<string>1.3.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
