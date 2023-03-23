@@ -3532,7 +3532,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>Useful for ot forgetting ChatFred's replies</string>
+				<string>Useful for not forgetting ChatFred's replies</string>
 			</dict>
 			<key>description</key>
 			<string>Your conversation with ChatFred's InstructGPT models can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN' (only available for InstructGPT). If this box is checked, all requests and replies will be stored to file automatically.</string>

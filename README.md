@@ -152,7 +152,7 @@ And this will be ChatGPT's reply:
 #### **`ChatFred_ChatGPT.csv`** 📄
 Your full conversation with ChatGPT is stored in the file `ChatFred_ChatGPT.csv` in the workflow's data directory. This file is needed so ChatGPT can access prior parts of its conversation with you. And to provide the history.
 
-To remove this file just tell ChatGPT to `forget everything`.
+To remove this file just tell ChatGPT to `forget me`.
 
 ### Text generation with InstructGPT 🤖
 Instruct models are optimized to follow single-turn instructions. Ada is the fastest model, while Davinci is the most powerful. Code-Davinci and Code-Cushman are optimized for code completion.
