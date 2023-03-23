@@ -32,9 +32,7 @@ def get_query() -> str:
 
 
 def prompt_from_query(query: str) -> str:
-    """Creates a suitable prompt for the OpenAI API."""
-    if __model == "Code-Davinci" or __model == "Code-Cushman":
-        return query
+    """Creates a suitable prompt for the OpenAI InstructGPT API."""
     return f"Q: {query}\nA:"
 
 
