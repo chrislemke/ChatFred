@@ -19,7 +19,7 @@
         - [Aliases](#aliases-%EF%B8%8F)
         - [Voice to ChatGPT](#voice-to-chatgpt-%EF%B8%8F)
         - [Jailbreak](#jailbreak-)
-        - [ChatFred_ChatGPT.csv](#chatfred_chatgptlog-)
+        - [ChatFred_ChatGPT.csv](#chatfred_chatgptcsv-)
     - [Text generation with InstructGPT](#text-generation-with-instructgpt-)
         - [Options](#options-)
         - [Save conversations to file](#save-conversations-to-file-)
