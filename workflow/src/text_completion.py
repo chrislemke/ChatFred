@@ -20,7 +20,7 @@ import openai
 openai.api_key = os.getenv("api_key")
 __model = os.getenv("instruct_gpt_model") or "text-davinci-003"
 __temperature = float(os.getenv("temperature") or 0.0)
-__max_tokens = int(os.getenv("max_tokens") or 50)
+__max_tokens = int(os.getenv("completion_max_tokens") or 50)
 __top_p = int(os.getenv("top_p") or 1)
 __frequency_penalty = float(os.getenv("frequency_penalty") or 0.0)
 __presence_penalty = float(os.getenv("presence_penalty") or 0.0)
