@@ -2026,6 +2026,35 @@ python3 -c 'import caching_manager; caching_manager.combine_user_input_with_quer
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>2</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>BCA16B64-CE45-4F06-9E49-0A323FDCEA3B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -2094,35 +2123,6 @@ python3 -c 'import caching_manager; caching_manager.combine_user_input_with_quer
 			<string>3BF9843F-60FD-4683-9ADF-C5533691858B</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>2</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>BCA16B64-CE45-4F06-9E49-0A323FDCEA3B</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2544,7 +2544,8 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. Default: `Davinci`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **ChatGPT model**: Following models are available: `ChatGPT-3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). Default: `ChatGPT-3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
-- **Maximum tokens**: The maximum number of tokens to generate in the completion. Default (InstructGPT): `50`. Default (ChatGPT): `4096`.
+- **ChatGPT maximum tokens**: The maximum number of tokens to generated. Default: `4096`.
+- **InstructGPT maximum tokens**: The maximum number of tokens to generated. Default: `50`.
 - **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
 - **Frequency penalty**: A value between `-2.0` and `2.0`. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
 - **Presence penalty**: A Value between `-2.0` and `2.0`. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
@@ -2589,7 +2590,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>60</real>
 			<key>ypos</key>
-			<real>1900</real>
+			<real>2430</real>
 		</dict>
 		<key>102B0D78-41C3-4F27-A0C3-43C38776205E</key>
 		<dict>
@@ -2600,7 +2601,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>290</real>
 			<key>ypos</key>
-			<real>640</real>
+			<real>820</real>
 		</dict>
 		<key>12AC97A6-0D9C-4181-9641-E5EC4FF5162A</key>
 		<dict>
@@ -2609,7 +2610,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>815</real>
 			<key>ypos</key>
-			<real>860</real>
+			<real>1040</real>
 		</dict>
 		<key>157273FE-F494-4E67-8003-2C4B7794B8A6</key>
 		<dict>
@@ -2618,7 +2619,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>1195</real>
+			<real>1375</real>
 		</dict>
 		<key>211128E1-95B4-4BAD-B046-F78111D83574</key>
 		<dict>
@@ -2627,7 +2628,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1220</real>
 			<key>ypos</key>
-			<real>965</real>
+			<real>1145</real>
 		</dict>
 		<key>2CD4970E-43C0-4C91-BE0F-3FB55C662C1D</key>
 		<dict>
@@ -2638,7 +2639,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1505</real>
 			<key>ypos</key>
-			<real>1720</real>
+			<real>2250</real>
 		</dict>
 		<key>326D2898-9873-45CB-803B-D4F77C46E6CF</key>
 		<dict>
@@ -2649,14 +2650,14 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>985</real>
+			<real>1165</real>
 		</dict>
 		<key>33C006A9-47ED-40F7-8F56-6B98D7343DCD</key>
 		<dict>
 			<key>xpos</key>
 			<real>990</real>
 			<key>ypos</key>
-			<real>1195</real>
+			<real>1375</real>
 		</dict>
 		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
 		<dict>
@@ -2667,7 +2668,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1330</real>
 			<key>ypos</key>
-			<real>1690</real>
+			<real>2220</real>
 		</dict>
 		<key>3E8AAE6B-9833-4A30-8522-301BBEA42592</key>
 		<dict>
@@ -2685,7 +2686,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>770</real>
 			<key>ypos</key>
-			<real>1380</real>
+			<real>1560</real>
 		</dict>
 		<key>428693A7-E395-41B3-8381-7A7EF6582F99</key>
 		<dict>
@@ -2705,7 +2706,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>770</real>
 			<key>ypos</key>
-			<real>1105</real>
+			<real>1285</real>
 		</dict>
 		<key>4C6745E5-A076-49F7-B070-E0A22C1C54DC</key>
 		<dict>
@@ -2714,7 +2715,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>625</real>
 			<key>ypos</key>
-			<real>910</real>
+			<real>1090</real>
 		</dict>
 		<key>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</key>
 		<dict>
@@ -2725,7 +2726,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1010</real>
 			<key>ypos</key>
-			<real>1670</real>
+			<real>2200</real>
 		</dict>
 		<key>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</key>
 		<dict>
@@ -2736,7 +2737,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>295</real>
 			<key>ypos</key>
-			<real>475</real>
+			<real>655</real>
 		</dict>
 		<key>51EEBBF2-BE53-4A88-965F-02AC2D651EF5</key>
 		<dict>
@@ -2747,7 +2748,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>735</real>
 			<key>ypos</key>
-			<real>2060</real>
+			<real>2590</real>
 		</dict>
 		<key>538391F2-A3CE-4AD0-849E-3D78B5DD2843</key>
 		<dict>
@@ -2758,7 +2759,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1130</real>
 			<key>ypos</key>
-			<real>2005</real>
+			<real>2535</real>
 		</dict>
 		<key>53D403AB-73C5-4662-9933-5D29892F5A0A</key>
 		<dict>
@@ -2769,7 +2770,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>405</real>
 			<key>ypos</key>
-			<real>1505</real>
+			<real>1685</real>
 		</dict>
 		<key>547CA7CA-D433-488C-9950-FF584AE9601E</key>
 		<dict>
@@ -2780,7 +2781,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>920</real>
 			<key>ypos</key>
-			<real>1975</real>
+			<real>2505</real>
 		</dict>
 		<key>5D9861D9-2F55-408C-B1BD-33ADD7A02566</key>
 		<dict>
@@ -2791,7 +2792,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1100</real>
 			<key>ypos</key>
-			<real>1790</real>
+			<real>2320</real>
 		</dict>
 		<key>63692C20-123A-4C28-BF36-40F18336FA66</key>
 		<dict>
@@ -2831,7 +2832,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>540</real>
 			<key>ypos</key>
-			<real>740</real>
+			<real>920</real>
 		</dict>
 		<key>71081001-6D53-4FDE-BFBC-89F5B2DD5C58</key>
 		<dict>
@@ -2842,7 +2843,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1105</real>
 			<key>ypos</key>
-			<real>820</real>
+			<real>1000</real>
 		</dict>
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<dict>
@@ -2853,7 +2854,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>305</real>
 			<key>ypos</key>
-			<real>1860</real>
+			<real>2390</real>
 		</dict>
 		<key>7CF07DAA-DED0-4740-897B-7D92DBFDB841</key>
 		<dict>
@@ -2864,7 +2865,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>950</real>
 			<key>ypos</key>
-			<real>645</real>
+			<real>825</real>
 		</dict>
 		<key>8D3B95CA-78A1-4E37-920A-29C777780804</key>
 		<dict>
@@ -2873,7 +2874,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>535</real>
+			<real>715</real>
 		</dict>
 		<key>910D0E7B-74F4-45BE-B169-CB1CFD521C93</key>
 		<dict>
@@ -2882,7 +2883,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>600</real>
 			<key>ypos</key>
-			<real>550</real>
+			<real>730</real>
 		</dict>
 		<key>978BC56D-DF92-4EDA-94D3-767408EEBB1A</key>
 		<dict>
@@ -2893,7 +2894,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>210</real>
 			<key>ypos</key>
-			<real>755</real>
+			<real>935</real>
 		</dict>
 		<key>9D373129-2BF8-437F-9529-0D4651FB60F1</key>
 		<dict>
@@ -2904,7 +2905,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>760</real>
+			<real>940</real>
 		</dict>
 		<key>9DA641B9-0F6E-4A67-8555-0F3E2DA9AE1E</key>
 		<dict>
@@ -2915,7 +2916,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1275</real>
 			<key>ypos</key>
-			<real>1160</real>
+			<real>1340</real>
 		</dict>
 		<key>A5007DE0-7C69-4529-B502-ADF0661B899B</key>
 		<dict>
@@ -2924,7 +2925,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>540</real>
 			<key>ypos</key>
-			<real>1030</real>
+			<real>1210</real>
 		</dict>
 		<key>A714CC5B-5F89-4D9A-A71D-DB9DD4F85305</key>
 		<dict>
@@ -2935,7 +2936,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>440</real>
 			<key>ypos</key>
-			<real>530</real>
+			<real>710</real>
 		</dict>
 		<key>A771E81A-2CB8-4C65-A854-EE119126EF8E</key>
 		<dict>
@@ -2946,7 +2947,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>746</real>
 			<key>ypos</key>
-			<real>535</real>
+			<real>715</real>
 		</dict>
 		<key>A7C03FCF-1822-409B-B1DC-1C070AB0290C</key>
 		<dict>
@@ -2966,7 +2967,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1345</real>
 			<key>ypos</key>
-			<real>1390</real>
+			<real>1570</real>
 		</dict>
 		<key>AD7BB662-4857-404A-9CEC-3F8D966EEF52</key>
 		<dict>
@@ -2977,7 +2978,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>970</real>
 			<key>ypos</key>
-			<real>1375</real>
+			<real>1555</real>
 		</dict>
 		<key>B62CBEE1-3486-4276-AC19-52E8DE526050</key>
 		<dict>
@@ -2986,7 +2987,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1000</real>
 			<key>ypos</key>
-			<real>1280</real>
+			<real>1460</real>
 		</dict>
 		<key>BCA16B64-CE45-4F06-9E49-0A323FDCEA3B</key>
 		<dict>
@@ -2997,7 +2998,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>55</real>
 			<key>ypos</key>
-			<real>1695</real>
+			<real>1875</real>
 		</dict>
 		<key>BE49CE10-D46F-4E7E-AD8A-DEBCC4E3A6B0</key>
 		<dict>
@@ -3019,7 +3020,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>380</real>
 			<key>ypos</key>
-			<real>1025</real>
+			<real>1205</real>
 		</dict>
 		<key>C7A6C68C-D4BD-4E85-9A6B-D1255B3136BA</key>
 		<dict>
@@ -3028,7 +3029,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1610</real>
 			<key>ypos</key>
-			<real>1690</real>
+			<real>2220</real>
 		</dict>
 		<key>C83E6264-8F02-47D0-A671-2CF460D1052E</key>
 		<dict>
@@ -3037,7 +3038,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>45</real>
 			<key>ypos</key>
-			<real>1340</real>
+			<real>1520</real>
 		</dict>
 		<key>DA682449-61B7-4506-84C5-8A52180DC896</key>
 		<dict>
@@ -3048,14 +3049,14 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>375</real>
 			<key>ypos</key>
-			<real>720</real>
+			<real>900</real>
 		</dict>
 		<key>E08CC934-9538-464C-9749-DBA3D887699A</key>
 		<dict>
 			<key>xpos</key>
 			<real>475</real>
 			<key>ypos</key>
-			<real>1990</real>
+			<real>2520</real>
 		</dict>
 		<key>E1171C29-3760-40F7-8FD6-C083889A0848</key>
 		<dict>
@@ -3075,7 +3076,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>940</real>
 			<key>ypos</key>
-			<real>1285</real>
+			<real>1465</real>
 		</dict>
 		<key>EA76A340-8584-41BA-B696-FAAEC3B7A14F</key>
 		<dict>
@@ -3086,7 +3087,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>880</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1135</real>
 		</dict>
 		<key>EF4028E7-9747-4303-8F40-30C6B60F0588</key>
 		<dict>
@@ -3097,7 +3098,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>515</real>
 			<key>ypos</key>
-			<real>1325</real>
+			<real>1505</real>
 		</dict>
 		<key>F0B1523D-0C58-4D43-9BC2-C96560E8AD95</key>
 		<dict>
@@ -3106,7 +3107,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1265</real>
 			<key>ypos</key>
-			<real>1975</real>
+			<real>2505</real>
 		</dict>
 		<key>F0FC541F-FCDF-4ADC-9A0B-35E52C1067B1</key>
 		<dict>
@@ -3117,7 +3118,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>50</real>
 			<key>ypos</key>
-			<real>1495</real>
+			<real>1675</real>
 		</dict>
 		<key>F127DDE4-1464-48AA-AE75-648EA4013D87</key>
 		<dict>
@@ -3128,7 +3129,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>205</real>
 			<key>ypos</key>
-			<real>1110</real>
+			<real>1290</real>
 		</dict>
 		<key>F3547C17-564C-4320-BDF6-EF35EDAF73C2</key>
 		<dict>
@@ -3139,7 +3140,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>645</real>
 			<key>ypos</key>
-			<real>710</real>
+			<real>890</real>
 		</dict>
 		<key>F471533B-A418-4158-B92C-AEA42E53945E</key>
 		<dict>
