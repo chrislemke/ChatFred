@@ -82,13 +82,13 @@ repos:
         exclude: "workflow/src/libs"
 
   - repo: https://github.com/psf/black
-    rev: 23.1.0
+    rev: 23.3.0
     hooks:
       - id: black
         exclude: "workflow/src/libs"
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.258"
+    rev: "v0.0.260"
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
