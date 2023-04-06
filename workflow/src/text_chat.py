@@ -154,9 +154,20 @@ def make_chat_request(
     frequency_penalty: float,
     presence_penalty: float,
 ) -> Tuple[str, str]:
-    """Makes a request to the OpenAI API and returns the prompt and the
-    response."""
+    """Sends a chat request to OpenAI's GPT-3 model and returns the prompt and
+    response as a tuple.
 
+    Args:
+        prompt (str): The prompt to send to the model.
+        temperature (float): Controls the "creativity" of the response. Higher values result in more diverse responses.
+        max_tokens (Optional[int]): The maximum number of tokens (words) in the response.
+        top_p (int): Controls the "quality" of the response. Higher values result in more coherent responses.
+        frequency_penalty (float): Controls the model's tendency to repeat itself.
+        presence_penalty (float): Controls the model's tendency to stay on topic.
+
+    Returns:
+        Tuple[str, str]: A tuple containing the prompt and the response from the model.
+    """
     intercept_custom_prompts(prompt)
     prompt = prompt_for_alias(prompt)
     messages = create_message(prompt)

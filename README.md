@@ -45,11 +45,19 @@ or use ChatFred as a fallback search in Alfred:
 ![Screenshot](workflow/assets/images/screenshot7.png)
 
 ![Screenshot](workflow/assets/images/screenshot8.png)
-
-Or paste ChatGPT's response directly into the current app with switching on the *Paste response to frontmost app* option in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/). This is especially useful in combination with the [Text transformation](#text-transformation-%EF%B8%8F) feature.
-![Screenshot](workflow/assets/images/screenshot18.png)
-
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the workflow's configuration for more options (e.g. *Always copy reply to clipboard*).
+
+ChatFred can also automatically paste ChatGPT's response directly into the frontmost app. Just switch on the *Paste response to frontmost app* in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) or use the <kbd>⌘</kbd> <kbd>⌥</kbd> option.
+
+In this example we use ChatGPT to automatically add a docstring to a Python function. For this we put the following prompt into the workflow's configuration (*ChatGPT transformation prompt*):
+```
+Return this Python function including the Google style Python docstrings.
+The response should be in plain text and should only contain the function
+itself. Don't put the code is a code block.
+```
+Now we can use Alfred's [Text Action](https://www.alfredapp.com/universal-actions/) and the [text transformation](#text-transformation-%EF%B8%8F) feature to let ChatGPT automatically add a docstring to a Python function:
+
+![Screenshot](chatgpt_text_transformation.gif)
 
 #### **Text transformation** ⚙️
 This feature allows you to easily let ChatGPT transform your text using a pre-defined prompt. Just replace the default *ChatGPT transformation prompt* in the workflow's configuration with your own prompt. Use either the [Send to ChatGPT 💬 Universal Actions](#universal-action--combined-prompts-%EF%B8%8F) (option: <kbd>⇧</kbd>) to pass the highlighted text to ChatGPT using your transformation prompt. Or configure a hotkey to use the clipboard content.

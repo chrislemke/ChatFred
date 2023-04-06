@@ -6,6 +6,19 @@
 	<string>ai.lemke.chatfred</string>
 	<key>connections</key>
 	<dict>
+		<key>003A7C41-7356-4A50-A970-7B23386F4576</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>45B5F36B-A668-4C79-A272-2948ABAF36C3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
 		<array>
 			<dict>
@@ -111,6 +124,16 @@
 				<integer>131072</integer>
 				<key>modifiersubtext</key>
 				<string>Speak the answer 🗣️</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B1DD86D5-9F02-4409-88DE-CEE4B76D8E6F</string>
+				<key>modifiers</key>
+				<integer>1572864</integer>
+				<key>modifiersubtext</key>
+				<string>Paste ChatGPT's answer to app ⌨️</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -247,11 +270,47 @@
 				<false/>
 			</dict>
 		</array>
+		<key>45E9AF0A-4852-4F0A-BA55-60EB3B483668</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>703A86F6-9BC5-4F81-8E45-AB13862691F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>45B5F36B-A668-4C79-A272-2948ABAF36C3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>46391C1D-A4D4-4AF8-A1F8-3D6D25D4FDA0</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>85D395D2-6A54-4F10-9FE3-05DB60981986</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>489FB38F-A6C5-4413-AC80-6BC8AD896964</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A714CC5B-5F89-4D9A-A71D-DB9DD4F85305</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -573,6 +632,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>489FB38F-A6C5-4413-AC80-6BC8AD896964</string>
+				<key>modifiers</key>
+				<integer>1572864</integer>
+				<key>modifiersubtext</key>
+				<string>Paste ChatGPT's answer to app ⌨️</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</string>
 				<key>modifiers</key>
 				<integer>131072</integer>
@@ -742,6 +811,29 @@
 		<array/>
 		<key>AD46F538-F4DD-41B2-BE43-E830535CA0E3</key>
 		<array/>
+		<key>B1DD86D5-9F02-4409-88DE-CEE4B76D8E6F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>703A86F6-9BC5-4F81-8E45-AB13862691F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>45B5F36B-A668-4C79-A272-2948ABAF36C3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B62CBEE1-3486-4276-AC19-52E8DE526050</key>
 		<array>
 			<dict>
@@ -823,6 +915,26 @@
 				<integer>131072</integer>
 				<key>modifiersubtext</key>
 				<string>Use text transformation prompt ⚙️</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>003A7C41-7356-4A50-A970-7B23386F4576</string>
+				<key>modifiers</key>
+				<integer>1572864</integer>
+				<key>modifiersubtext</key>
+				<string>Paste ChatGPT's answer to app ⌨️</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>45E9AF0A-4852-4F0A-BA55-60EB3B483668</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Use text transformation prompt and paste response ⚙️</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1244,6 +1356,26 @@ RESPONSE:'{query}'</string>
 			<string>alfred.workflow.utility.debug</string>
 			<key>uid</key>
 			<string>3E8AAE6B-9833-4A30-8522-301BBEA42592</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>paste_response</key>
+					<string>1</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>489FB38F-A6C5-4413-AC80-6BC8AD896964</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1727,6 +1859,27 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>💾 "{query}" has been saved for later usage.</string>
+				<key>title</key>
+				<string>ChatFred</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>211128E1-95B4-4BAD-B046-F78111D83574</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alignment</key>
 				<integer>2</integer>
 				<key>backgroundcolor</key>
@@ -1752,27 +1905,6 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 			<string>EA76A340-8584-41BA-B696-FAAEC3B7A14F</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>💾 "{query}" has been saved for later usage.</string>
-				<key>title</key>
-				<string>ChatFred</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>211128E1-95B4-4BAD-B046-F78111D83574</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2048,6 +2180,26 @@ RESPONSE:'{query}'</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>paste_response</key>
+					<string>1</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>B1DD86D5-9F02-4409-88DE-CEE4B76D8E6F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>seconds</key>
 				<string>0.7</string>
 			</dict>
@@ -2206,6 +2358,48 @@ RESPONSE:'{query}'</string>
 			<string>AD46F538-F4DD-41B2-BE43-E830535CA0E3</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>paste_response</key>
+					<string>1</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>003A7C41-7356-4A50-A970-7B23386F4576</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>paste_response</key>
+					<string>1</string>
+					<key>text_transformation_prompt</key>
+					<string>{var:transformation_prompt}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>45E9AF0A-4852-4F0A-BA55-60EB3B483668</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2396,35 +2590,6 @@ python3 -c 'import caching_manager; caching_manager.combine_user_input_with_quer
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>50</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>100</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>5D9861D9-2F55-408C-B1BD-33ADD7A02566</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -2471,6 +2636,35 @@ python3 -c 'import caching_manager; caching_manager.combine_user_input_with_quer
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>7B3B0EFA-A003-4C15-9647-0F1550A51D14</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>50</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>100</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>5D9861D9-2F55-408C-B1BD-33ADD7A02566</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -2662,6 +2856,10 @@ or use ChatFred as a fallback search in Alfred:
 
 ![Screenshot](assets/images/screenshot8.png)
 
+Or paste ChatGPT's response directly into the frontmost app with switching on the *Paste response to frontmost app* in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) or using the &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⌥&lt;/kbd&gt; option. This is especially useful in combination with the Text transformation feature.
+
+![Screenshot](assets/images/screenshot18.png)
+
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard* or *Paste response to frontmost app*).
 
 #### **Text transformation** ⚙️
@@ -2822,6 +3020,17 @@ Please feel free to [open an issue](https://github.com/chrislemke/ChatFred/issue
 Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).</string>
 	<key>uidata</key>
 	<dict>
+		<key>003A7C41-7356-4A50-A970-7B23386F4576</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Set variable to paste text to app.</string>
+			<key>xpos</key>
+			<real>290</real>
+			<key>ypos</key>
+			<real>1580</real>
+		</dict>
 		<key>00A84B22-93A9-4F5B-8208-5A09AE39A270</key>
 		<dict>
 			<key>colorindex</key>
@@ -2878,7 +3087,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>xpos</key>
 			<real>1220</real>
 			<key>ypos</key>
-			<real>1145</real>
+			<real>1105</real>
 		</dict>
 		<key>2CD4970E-43C0-4C91-BE0F-3FB55C662C1D</key>
 		<dict>
@@ -2887,9 +3096,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>1505</real>
+			<real>1340</real>
 			<key>ypos</key>
-			<real>2250</real>
+			<real>2320</real>
 		</dict>
 		<key>326D2898-9873-45CB-803B-D4F77C46E6CF</key>
 		<dict>
@@ -2916,9 +3125,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Copies ChatFred's reply to the clipboard.</string>
 			<key>xpos</key>
-			<real>1330</real>
+			<real>1165</real>
 			<key>ypos</key>
-			<real>2220</real>
+			<real>2290</real>
 		</dict>
 		<key>3E8AAE6B-9833-4A30-8522-301BBEA42592</key>
 		<dict>
@@ -2958,6 +3167,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>1285</real>
 		</dict>
+		<key>45E9AF0A-4852-4F0A-BA55-60EB3B483668</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Handles: "transformation_prompt".</string>
+			<key>xpos</key>
+			<real>525</real>
+			<key>ypos</key>
+			<real>1610</real>
+		</dict>
 		<key>46391C1D-A4D4-4AF8-A1F8-3D6D25D4FDA0</key>
 		<dict>
 			<key>colorindex</key>
@@ -2968,6 +3188,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<real>1295</real>
 			<key>ypos</key>
 			<real>1255</real>
+		</dict>
+		<key>489FB38F-A6C5-4413-AC80-6BC8AD896964</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Set variable to paste text to app.</string>
+			<key>xpos</key>
+			<real>290</real>
+			<key>ypos</key>
+			<real>545</real>
 		</dict>
 		<key>4C6745E5-A076-49F7-B070-E0A22C1C54DC</key>
 		<dict>
@@ -2985,9 +3216,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Automatically copies conversation if 'Always copy reply to clipboard' is checked.</string>
 			<key>xpos</key>
-			<real>1010</real>
+			<real>845</real>
 			<key>ypos</key>
-			<real>2200</real>
+			<real>2270</real>
 		</dict>
 		<key>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</key>
 		<dict>
@@ -3007,9 +3238,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Automatically saves conversation if 'Always save conversation to file' is checked.</string>
 			<key>xpos</key>
-			<real>735</real>
+			<real>570</real>
 			<key>ypos</key>
-			<real>2590</real>
+			<real>2660</real>
 		</dict>
 		<key>538391F2-A3CE-4AD0-849E-3D78B5DD2843</key>
 		<dict>
@@ -3018,9 +3249,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>1130</real>
+			<real>965</real>
 			<key>ypos</key>
-			<real>2535</real>
+			<real>2605</real>
 		</dict>
 		<key>53D403AB-73C5-4662-9933-5D29892F5A0A</key>
 		<dict>
@@ -3040,9 +3271,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Saves/appends the conversation (request and reply) to the ChatFred.txt file.</string>
 			<key>xpos</key>
-			<real>920</real>
+			<real>755</real>
 			<key>ypos</key>
-			<real>2505</real>
+			<real>2575</real>
 		</dict>
 		<key>5D9861D9-2F55-408C-B1BD-33ADD7A02566</key>
 		<dict>
@@ -3051,9 +3282,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>1100</real>
+			<real>935</real>
 			<key>ypos</key>
-			<real>2320</real>
+			<real>2390</real>
 		</dict>
 		<key>63692C20-123A-4C28-BF36-40F18336FA66</key>
 		<dict>
@@ -3283,6 +3514,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>1555</real>
 		</dict>
+		<key>B1DD86D5-9F02-4409-88DE-CEE4B76D8E6F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Set variable to paste text to app.</string>
+			<key>xpos</key>
+			<real>280</real>
+			<key>ypos</key>
+			<real>1445</real>
+		</dict>
 		<key>B62CBEE1-3486-4276-AC19-52E8DE526050</key>
 		<dict>
 			<key>colorindex</key>
@@ -3339,9 +3581,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1610</real>
+			<real>1445</real>
 			<key>ypos</key>
-			<real>2220</real>
+			<real>2290</real>
 		</dict>
 		<key>C83E6264-8F02-47D0-A671-2CF460D1052E</key>
 		<dict>
@@ -3366,9 +3608,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 		<key>E08CC934-9538-464C-9749-DBA3D887699A</key>
 		<dict>
 			<key>xpos</key>
-			<real>475</real>
+			<real>440</real>
 			<key>ypos</key>
-			<real>2520</real>
+			<real>2580</real>
 		</dict>
 		<key>E1171C29-3760-40F7-8FD6-C083889A0848</key>
 		<dict>
@@ -3417,9 +3659,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1265</real>
+			<real>1100</real>
 			<key>ypos</key>
-			<real>2505</real>
+			<real>2575</real>
 		</dict>
 		<key>F0FC541F-FCDF-4ADC-9A0B-35E52C1067B1</key>
 		<dict>
@@ -4012,7 +4254,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.3.3</string>
+	<string>1.4.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
