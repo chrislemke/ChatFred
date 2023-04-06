@@ -46,7 +46,7 @@ or use ChatFred as a fallback search in Alfred:
 
 ![Screenshot](workflow/assets/images/screenshot8.png)
 
-The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
+The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard* or *Paste response to frontmost app*).
 
 #### **Text transformation** ⚙️
 This feature allows you to easily let ChatGPT transform your text using a pre-defined prompt. Just replace the default *ChatGPT transformation prompt* in the workflow's configuration with your own prompt. Use either the [Send to ChatGPT 💬 Universal Actions](#universal-action--combined-prompts-%EF%B8%8F) (option: <kbd>⇧</kbd>) to pass the highlighted text to ChatGPT using your transformation prompt. Or configure a hotkey to use the clipboard content.
@@ -212,6 +212,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
+- **Paste response to frontmost app**: If enabled, the response will be pasted to the frontmost app. Default: `off`.
 - **Show notifications**: Shows all notifications provided by the workflow. For this, to work System notifications must be activated for Alfred. Default: `on`.
 - **Show ChatGPT is thinking message**: Shows the message: "💭 Stay tuned... ChatGPT is thinking" while OpenAI is processing your request. Default: `on`.
 

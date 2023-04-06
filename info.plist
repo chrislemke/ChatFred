@@ -19,6 +19,31 @@
 				<false/>
 			</dict>
 		</array>
+		<key>03113C41-05C4-405D-8478-AD3E8DA1A222</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>86B89828-395A-45F9-AFDD-75CE2B667AD4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>51F955A2-8162-4E40-907C-4D757F21FB00</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9DA641B9-0F6E-4A67-8555-0F3E2DA9AE1E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>102B0D78-41C3-4F27-A0C3-43C38776205E</key>
 		<array>
 			<dict>
@@ -173,7 +198,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9DA641B9-0F6E-4A67-8555-0F3E2DA9AE1E</string>
+				<string>03113C41-05C4-405D-8478-AD3E8DA1A222</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -493,6 +518,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>86B89828-395A-45F9-AFDD-75CE2B667AD4</key>
+		<array/>
 		<key>8D3B95CA-78A1-4E37-920A-29C777780804</key>
 		<array>
 			<dict>
@@ -599,6 +626,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>9DA641B9-0F6E-4A67-8555-0F3E2DA9AE1E</key>
+		<array/>
 		<key>A5007DE0-7C69-4529-B502-ADF0661B899B</key>
 		<array>
 			<dict>
@@ -1693,6 +1722,25 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>86B89828-395A-45F9-AFDD-75CE2B667AD4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1714,6 +1762,38 @@ sys.stdout.write(ast.literal_eval(sys.argv[1])["text"])</string>
 			<string>A5007DE0-7C69-4529-B502-ADF0661B899B</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:paste_response}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>51F955A2-8162-4E40-907C-4D757F21FB00</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string></string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>03113C41-05C4-405D-8478-AD3E8DA1A222</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1761,25 +1841,6 @@ sys.stdout.write(ast.literal_eval(sys.argv[1])["text"])</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>9DA641B9-0F6E-4A67-8555-0F3E2DA9AE1E</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>text</key>
 				<string>Ask ChatGPT '{query}'</string>
 			</dict>
@@ -1807,6 +1868,25 @@ RESPONSE:'{query}'</string>
 			<string>33C006A9-47ED-40F7-8F56-6B98D7343DCD</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>9DA641B9-0F6E-4A67-8555-0F3E2DA9AE1E</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2425,7 +2505,7 @@ or use ChatFred as a fallback search in Alfred:
 
 ![Screenshot](assets/images/screenshot8.png)
 
-The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard*).
+The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard* or *Paste response to frontmost app*).
 
 #### **Text transformation** ⚙️
 This feature allows you to easily let ChatGPT transform your text using a pre-defined prompt. Just replace the default *ChatGPT transformation prompt* in the workflow's configuration with your own prompt. Use either Send to ChatGPT 💬 Universal Actions (option: &lt;kbd&gt;⇧&lt;/kbd&gt;) to pass the highlighted text to ChatGPT using your transformation prompt. Or configure a hotkey to use the clipboard content.
@@ -2554,6 +2634,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
+- **Paste response to frontmost app**: If enabled, the response will be pasted to the frontmost app. Default: `off`.
 - **Show notifications**: Shows all notifications provided by the workflow. For this, to work System notifications must be activated for Alfred. Default: `on`.
 - **Show ChatGPT is thinking message**: Shows the message: "💭 Stay tuned... ChatGPT is thinking" while OpenAI is processing your request. Default: `on`.
 
@@ -2562,6 +2643,9 @@ You can tweak the workflow to your liking. The following parameters are availabl
 When having trouble it is always a good idea to download the [newest release version 🌈](https://github.com/chrislemke/ChatFred/releases). Before you install it, remove the old workflow and its files (`~/Library/Application Support/Alfred/Workflow Data/some-long-identifier/`).
 
 Also, make sure that you have some Python version installed. You can check this by running `python --version` in the terminal. If you don't have Python installed, you can download it as a [Homebrew package](https://brew.sh): `brew install python`.
+
+### Remove history 🕰️
+Sometimes it makes sense to delete the history of your conversation with ChatGPT. Simply use the `forget me` command for this.
 
 ### Error messages 🚨
 If you have received an error, you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
@@ -2591,6 +2675,15 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<real>60</real>
 			<key>ypos</key>
 			<real>2430</real>
+		</dict>
+		<key>03113C41-05C4-405D-8478-AD3E8DA1A222</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>1160</real>
+			<key>ypos</key>
+			<real>1275</real>
 		</dict>
 		<key>102B0D78-41C3-4F27-A0C3-43C38776205E</key>
 		<dict>
@@ -2867,6 +2960,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>825</real>
 		</dict>
+		<key>86B89828-395A-45F9-AFDD-75CE2B667AD4</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>note</key>
+			<string>Copies ChatFred's reply to the clipboard and pastes the text to the frontmost app.</string>
+			<key>xpos</key>
+			<real>1395</real>
+			<key>ypos</key>
+			<real>1205</real>
+		</dict>
 		<key>8D3B95CA-78A1-4E37-920A-29C777780804</key>
 		<dict>
 			<key>colorindex</key>
@@ -2914,9 +3018,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Copies ChatFred's reply to the clipboard.</string>
 			<key>xpos</key>
-			<real>1275</real>
+			<real>1385</real>
 			<key>ypos</key>
-			<real>1340</real>
+			<real>1390</real>
 		</dict>
 		<key>A5007DE0-7C69-4529-B502-ADF0661B899B</key>
 		<dict>
@@ -3645,6 +3749,25 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>If this is checked the answer from ChatGPT will be pasted to the frontmost app.</string>
+			<key>label</key>
+			<string>Paste response to frontmost app</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>paste_response</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<true/>
 				<key>required</key>
 				<false/>
@@ -3681,7 +3804,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.3.2</string>
+	<string>1.3.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
