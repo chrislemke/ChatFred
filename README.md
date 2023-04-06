@@ -46,7 +46,10 @@ or use ChatFred as a fallback search in Alfred:
 
 ![Screenshot](workflow/assets/images/screenshot8.png)
 
-The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard* or *Paste response to frontmost app*).
+Or paste ChatGPT's response directly into the current app with switching on the *Paste response to frontmost app* option in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/). This is especially useful in combination with the [Text transformation](#text-transformation-%EF%B8%8F) feature.
+![Screenshot](workflow/assets/images/screenshot18.png)
+
+The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the workflow's configuration for more options (e.g. *Always copy reply to clipboard*).
 
 #### **Text transformation** ⚙️
 This feature allows you to easily let ChatGPT transform your text using a pre-defined prompt. Just replace the default *ChatGPT transformation prompt* in the workflow's configuration with your own prompt. Use either the [Send to ChatGPT 💬 Universal Actions](#universal-action--combined-prompts-%EF%B8%8F) (option: <kbd>⇧</kbd>) to pass the highlighted text to ChatGPT using your transformation prompt. Or configure a hotkey to use the clipboard content.
