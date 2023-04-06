@@ -23,7 +23,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>86B89828-395A-45F9-AFDD-75CE2B667AD4</string>
+				<string>46391C1D-A4D4-4AF8-A1F8-3D6D25D4FDA0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -198,7 +198,17 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>03113C41-05C4-405D-8478-AD3E8DA1A222</string>
+				<string>BD4C5BED-7121-47CC-BA8C-A1A995CF5E5C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7A40ABA4-CA58-47C0-BF13-4CEEF47FDE52</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -229,6 +239,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>46391C1D-A4D4-4AF8-A1F8-3D6D25D4FDA0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85D395D2-6A54-4F10-9FE3-05DB60981986</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -412,6 +435,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>7A40ABA4-CA58-47C0-BF13-4CEEF47FDE52</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>03113C41-05C4-405D-8478-AD3E8DA1A222</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<array>
 			<dict>
@@ -510,6 +546,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>71081001-6D53-4FDE-BFBC-89F5B2DD5C58</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>85D395D2-6A54-4F10-9FE3-05DB60981986</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>86B89828-395A-45F9-AFDD-75CE2B667AD4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -719,6 +768,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BD4C5BED-7121-47CC-BA8C-A1A995CF5E5C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>882B41C8-7455-4747-9660-1C859BABEB43</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C77106A0-BA2D-4E7E-9BFF-C00BF4126C5A</key>
 		<array>
 			<dict>
@@ -826,6 +888,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>EA76A340-8584-41BA-B696-FAAEC3B7A14F</key>
+		<array/>
 		<key>EF4028E7-9747-4303-8F40-30C6B60F0588</key>
 		<array>
 			<dict>
@@ -1479,6 +1543,24 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>out_format</key>
+					<string>name</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/macOS/app.current</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>BD4C5BED-7121-47CC-BA8C-A1A995CF5E5C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -1536,6 +1618,26 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 			<string>9D373129-2BF8-437F-9529-0D4651FB60F1</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>frontmost_app</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>882B41C8-7455-4747-9660-1C859BABEB43</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1722,25 +1824,6 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>86B89828-395A-45F9-AFDD-75CE2B667AD4</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1762,6 +1845,60 @@ sys.stdout.write(ast.literal_eval(sys.argv[1])["text"])</string>
 			<string>A5007DE0-7C69-4529-B502-ADF0661B899B</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>app_list</key>
+					<string>{var:theApp}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/macOS/app.open</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>85D395D2-6A54-4F10-9FE3-05DB60981986</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{var:response}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>86B89828-395A-45F9-AFDD-75CE2B667AD4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>46391C1D-A4D4-4AF8-A1F8-3D6D25D4FDA0</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1841,6 +1978,26 @@ sys.stdout.write(ast.literal_eval(sys.argv[1])["text"])</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>response</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>7A40ABA4-CA58-47C0-BF13-4CEEF47FDE52</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>text</key>
 				<string>Ask ChatGPT '{query}'</string>
 			</dict>
@@ -1875,7 +2032,7 @@ RESPONSE:'{query}'</string>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
-				<string>{query}</string>
+				<string></string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>transient</key>
@@ -2634,7 +2791,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
-- **Paste response to frontmost app**: If enabled, the response will be pasted to the frontmost app. Default: `off`.
+- **Paste response to frontmost app**: If enabled, the response will be pasted to the frontmost app. If this feature is switched on, the response will not be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Default: `off`.
 - **Show notifications**: Shows all notifications provided by the workflow. For this, to work System notifications must be activated for Alfred. Default: `on`.
 - **Show ChatGPT is thinking message**: Shows the message: "💭 Stay tuned... ChatGPT is thinking" while OpenAI is processing your request. Default: `on`.
 
@@ -2801,6 +2958,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>1285</real>
 		</dict>
+		<key>46391C1D-A4D4-4AF8-A1F8-3D6D25D4FDA0</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>No argument passed to Automation Task</string>
+			<key>xpos</key>
+			<real>1295</real>
+			<key>ypos</key>
+			<real>1255</real>
+		</dict>
 		<key>4C6745E5-A076-49F7-B070-E0A22C1C54DC</key>
 		<dict>
 			<key>colorindex</key>
@@ -2938,6 +3106,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>1000</real>
 		</dict>
+		<key>7A40ABA4-CA58-47C0-BF13-4CEEF47FDE52</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Save ChatGPT response to variable.</string>
+			<key>xpos</key>
+			<real>1070</real>
+			<key>ypos</key>
+			<real>1325</real>
+		</dict>
 		<key>7B3B0EFA-A003-4C15-9647-0F1550A51D14</key>
 		<dict>
 			<key>colorindex</key>
@@ -2960,6 +3139,15 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>825</real>
 		</dict>
+		<key>85D395D2-6A54-4F10-9FE3-05DB60981986</key>
+		<dict>
+			<key>note</key>
+			<string>Ensure app with selected text is active</string>
+			<key>xpos</key>
+			<real>1400</real>
+			<key>ypos</key>
+			<real>1220</real>
+		</dict>
 		<key>86B89828-395A-45F9-AFDD-75CE2B667AD4</key>
 		<dict>
 			<key>colorindex</key>
@@ -2967,9 +3155,20 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Copies ChatFred's reply to the clipboard and pastes the text to the frontmost app.</string>
 			<key>xpos</key>
-			<real>1395</real>
+			<real>1565</real>
 			<key>ypos</key>
-			<real>1205</real>
+			<real>1220</real>
+		</dict>
+		<key>882B41C8-7455-4747-9660-1C859BABEB43</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Set variable for the frontmost app.</string>
+			<key>xpos</key>
+			<real>1470</real>
+			<key>ypos</key>
+			<real>950</real>
 		</dict>
 		<key>8D3B95CA-78A1-4E37-920A-29C777780804</key>
 		<dict>
@@ -3103,6 +3302,15 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<real>55</real>
 			<key>ypos</key>
 			<real>1875</real>
+		</dict>
+		<key>BD4C5BED-7121-47CC-BA8C-A1A995CF5E5C</key>
+		<dict>
+			<key>note</key>
+			<string>Identify frontmost app.</string>
+			<key>xpos</key>
+			<real>1300</real>
+			<key>ypos</key>
+			<real>920</real>
 		</dict>
 		<key>BE49CE10-D46F-4E7E-AD8A-DEBCC4E3A6B0</key>
 		<dict>
@@ -3700,6 +3908,25 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>If this is checked the answer from ChatGPT will be pasted to the frontmost app. If this feature is switched on, the response will not be shown in Large Type.</string>
+			<key>label</key>
+			<string>Paste response to frontmost app</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>paste_response</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<true/>
 				<key>required</key>
 				<false/>
@@ -3744,25 +3971,6 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<string>popupbutton</string>
 			<key>variable</key>
 			<string>image_size</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<false/>
-				<key>required</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-			</dict>
-			<key>description</key>
-			<string>If this is checked the answer from ChatGPT will be pasted to the frontmost app.</string>
-			<key>label</key>
-			<string>Paste response to frontmost app</string>
-			<key>type</key>
-			<string>checkbox</string>
-			<key>variable</key>
-			<string>paste_response</string>
 		</dict>
 		<dict>
 			<key>config</key>
