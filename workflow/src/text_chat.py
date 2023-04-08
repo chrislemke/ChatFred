@@ -1,8 +1,10 @@
 """This module contains the chatGPT API."""
 
 import csv
+import functools
 import os
 import sys
+import time
 import uuid
 from typing import List, Optional, Tuple
 
@@ -36,6 +38,22 @@ __jailbreak_prompt = os.getenv("jailbreak_prompt")
 __unlocked = int(os.getenv("unlocked") or 0)
 
 
+def time_it(func):
+    @functools.wraps(func)
+    def timeit_wrapper(*args):
+        start_time = time.perf_counter()
+        result = func(*args)
+        end_time = time.perf_counter()
+        total_time = end_time - start_time
+        print(
+            f"Function: {func.__name__} took {total_time:.4f} seconds\n",
+            file=sys.stderr,
+        )
+        return result
+
+    return timeit_wrapper
+
+
 def get_query() -> str:
     """Join the arguments into a query string."""
     return " ".join(sys.argv[1:])
@@ -61,6 +79,7 @@ def exit_on_error() -> None:
         sys.exit(0)
 
 
+@time_it
 def read_from_log() -> List[Tuple[str, str]]:
     if os.path.isfile(__log_file_path) is False:
         return [("", "")]
@@ -76,6 +95,7 @@ def read_from_log() -> List[Tuple[str, str]]:
     return history[-__history_length:]
 
 
+@time_it
 def write_to_log(
     user_input: str, assistant_output: str, jailbreak_prompt: Optional[str] = None
 ) -> None:
@@ -116,6 +136,7 @@ def intercept_custom_prompts(prompt: str):
         sys.exit(0)
 
 
+@time_it
 def create_message(prompt: str):
     """Creates the messages for the OpenAI API request."""
     transformation_pre_prompt = """You are a helpful assistant who interprets every input as raw
@@ -146,6 +167,7 @@ def create_message(prompt: str):
     return messages
 
 
+@time_it
 def make_chat_request(
     prompt: str,
     temperature: float,
