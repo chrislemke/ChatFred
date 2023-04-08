@@ -58,6 +58,7 @@ itself. Don't put the code is a code block.
 Now we can use Alfred's [Text Action](https://www.alfredapp.com/universal-actions/) and the [text transformation](#text-transformation-%EF%B8%8F) feature (<kbd>fn</kbd> option)  to let ChatGPT automatically add a docstring to a Python function:
 
 ![Screenshot](chatgpt_text_transformation.gif)
+
 Check out [this Python script](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/text_chat.py). All docstrings where automatically added by ChatGPT.
 
 #### **Text transformation** ⚙️
