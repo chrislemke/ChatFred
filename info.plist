@@ -2856,11 +2856,12 @@ or use ChatFred as a fallback search in Alfred:
 
 ![Screenshot](assets/images/screenshot8.png)
 
-Or paste ChatGPT's response directly into the frontmost app with switching on the *Paste response to frontmost app* in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) or using the &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⌥&lt;/kbd&gt; option. This is especially useful in combination with the Text transformation feature.
+
+The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the workflow's configuration for more options (e.g. *Always copy reply to clipboard*).
+
+ChatFred can also automatically paste ChatGPT's response directly into the frontmost app. Just switch on the *Paste response to frontmost app* in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) or use the &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⌥&lt;/kbd&gt; option.
 
 ![Screenshot](assets/images/screenshot18.png)
-
-The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) for more options (e.g. *Always copy reply to clipboard* or *Paste response to frontmost app*).
 
 #### **Text transformation** ⚙️
 This feature allows you to easily let ChatGPT transform your text using a pre-defined prompt. Just replace the default *ChatGPT transformation prompt* in the workflow's configuration with your own prompt. Use either Send to ChatGPT 💬 Universal Actions (option: &lt;kbd&gt;⇧&lt;/kbd&gt;) to pass the highlighted text to ChatGPT using your transformation prompt. Or configure a hotkey to use the clipboard content.
@@ -2989,7 +2990,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
-- **Paste response to frontmost app**: If enabled, the response will be pasted to the frontmost app. If this feature is switched on, the response will not be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Default: `off`.
+- **Paste response to frontmost app**: If enabled, the response will be pasted to the frontmost app. If this feature is switched on, the response will not be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Alternatively you can also use the option &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⌥&lt;/kbd&gt; when sending the request to ChatGPT.  Default: `off`.
 - **Show notifications**: Shows all notifications provided by the workflow. For this, to work System notifications must be activated for Alfred. Default: `on`.
 - **Show ChatGPT is thinking message**: Shows the message: "💭 Stay tuned... ChatGPT is thinking" while OpenAI is processing your request. Default: `on`.
 

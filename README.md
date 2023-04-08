@@ -55,9 +55,10 @@ Return this Python function including the Google style Python docstrings.
 The response should be in plain text and should only contain the function
 itself. Don't put the code is a code block.
 ```
-Now we can use Alfred's [Text Action](https://www.alfredapp.com/universal-actions/) and the [text transformation](#text-transformation-%EF%B8%8F) feature to let ChatGPT automatically add a docstring to a Python function:
+Now we can use Alfred's [Text Action](https://www.alfredapp.com/universal-actions/) and the [text transformation](#text-transformation-%EF%B8%8F) feature (<kbd>fn</kbd> option)  to let ChatGPT automatically add a docstring to a Python function:
 
 ![Screenshot](chatgpt_text_transformation.gif)
+Check out [this Python script](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/text_chat.py). All docstrings where automatically added by ChatGPT.
 
 #### **Text transformation** ⚙️
 This feature allows you to easily let ChatGPT transform your text using a pre-defined prompt. Just replace the default *ChatGPT transformation prompt* in the workflow's configuration with your own prompt. Use either the [Send to ChatGPT 💬 Universal Actions](#universal-action--combined-prompts-%EF%B8%8F) (option: <kbd>⇧</kbd>) to pass the highlighted text to ChatGPT using your transformation prompt. Or configure a hotkey to use the clipboard content.
@@ -221,7 +222,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Always read out reply**: If enabled, ChatFred will read out all replies automatically. Default: `off`.
 - **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Only available for InstructGPT. Default: `off`.
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).
-- **Paste response to frontmost app**: If enabled, the response will be pasted to the frontmost app. If this feature is switched on, the response will not be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Default: `off`.
+- **Paste response to frontmost app**: If enabled, the response will be pasted to the frontmost app. If this feature is switched on, the response will not be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Alternatively you can also use the option <kbd>⌘</kbd> <kbd>⌥</kbd> when sending the request to ChatGPT.  Default: `off`.
 - **Always copy to clipboard**: If enabled, all of ChatFred's replies will be copied to the clipboard automatically. Default: `on`.
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
 - **Show notifications**: Shows all notifications provided by the workflow. For this, to work System notifications must be activated for Alfred. Default: `on`.
