@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: openai
-Version: 0.27.2
+Version: 0.27.4
 Summary: Python client library for the OpenAI API
 Home-page: https://github.com/openai/openai-python
 Author: OpenAI
@@ -116,7 +116,7 @@ print(completion.choices[0].text)
 
 
 ### Params
-All endpoints have a `.create` method that supports a `request_timeout` param.  This param takes a `Union[float, Tuple[float, float]]` and will raise an `openai.error.TimeoutError` error if the request exceeds that time in seconds (See: https://requests.readthedocs.io/en/latest/user/quickstart/#timeouts).
+All endpoints have a `.create` method that supports a `request_timeout` param.  This param takes a `Union[float, Tuple[float, float]]` and will raise an `openai.error.Timeout` error if the request exceeds that time in seconds (See: https://requests.readthedocs.io/en/latest/user/quickstart/#timeouts).
 
 ### Microsoft Azure Endpoints
 
@@ -128,10 +128,10 @@ import openai
 openai.api_type = "azure"
 openai.api_key = "..."
 openai.api_base = "https://example-endpoint.openai.azure.com"
-openai.api_version = "2022-12-01"
+openai.api_version = "2023-03-15-preview"
 
 # create a completion
-completion = openai.Completion.create(engine="deployment-name", prompt="Hello world")
+completion = openai.Completion.create(deployment_id="deployment-name", prompt="Hello world")
 
 # print the completion
 print(completion.choices[0].text)
@@ -160,7 +160,7 @@ token = default_credential.get_token("https://cognitiveservices.azure.com/.defau
 openai.api_type = "azure_ad"
 openai.api_key = token.token
 openai.api_base = "https://example-endpoint.openai.azure.com/"
-openai.api_version = "2022-12-01"
+openai.api_version = "2023-03-15-preview"
 
 # ...
 ```
@@ -331,7 +331,7 @@ See the [usage guide](https://platform.openai.com/docs/guides/images) for more d
 
 In general, we want to support the versions of Python that our
 customers are using. If you run into problems with any version
-issues, please let us know at on our [support page](https://help.openai.com/en/).
+issues, please let us know on our [support page](https://help.openai.com/en/).
 
 ## Credit
 
