@@ -2143,24 +2143,6 @@ sys.stdout.write(ast.literal_eval(sys.argv[1])["text"])</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>VARIABLES:{variables}
-RESPONSE:'{query}'</string>
-				<key>cleardebuggertext</key>
-				<true/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>33C006A9-47ED-40F7-8F56-6B98D7343DCD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -2176,6 +2158,24 @@ RESPONSE:'{query}'</string>
 			<string>9DA641B9-0F6E-4A67-8555-0F3E2DA9AE1E</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>VARIABLES:{variables}
+RESPONSE:'{query}'</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>33C006A9-47ED-40F7-8F56-6B98D7343DCD</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3114,9 +3114,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 		<key>33C006A9-47ED-40F7-8F56-6B98D7343DCD</key>
 		<dict>
 			<key>xpos</key>
-			<real>990</real>
+			<real>965</real>
 			<key>ypos</key>
-			<real>1375</real>
+			<real>1395</real>
 		</dict>
 		<key>3BF9843F-60FD-4683-9ADF-C5533691858B</key>
 		<dict>
@@ -4157,7 +4157,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<string></string>
 			</dict>
 			<key>description</key>
-			<string>If this is checked the answer from ChatGPT will be pasted to the frontmost app. If this feature is switched on, the response will not be shown in Large Type.</string>
+			<string>If this is checked the answer from ChatGPT will be pasted to the frontmost app. If this feature is switched on, the response will not be shown in Large Type. If this is deactivated you can still paste the response by using the CMD+OPTION keys when sending a request.</string>
 			<key>label</key>
 			<string>Paste response to frontmost app</string>
 			<key>type</key>
