@@ -42,7 +42,6 @@ def prepare_file_name(prompt: str) -> str:
 
 def intercept_custom_prompts(prompt: str):
     """Intercepts custom queries."""
-
     last_request_successful = read_from_cache(
         "last_image_generation_request_successful"
     )
@@ -56,7 +55,6 @@ def intercept_custom_prompts(prompt: str):
 
 def make_request(prompt: str, size: int) -> str:
     """Makes the request to the OpenAI API."""
-
     datetime_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     file_path = f"{os.path.expanduser('~')}/ChatFred_{prepare_file_name(prompt)}_{datetime_string}.png"
 
