@@ -236,6 +236,7 @@ When having trouble it is always a good idea to download the [newest release ver
 ### Remove history 🕰️
 Sometimes it makes sense to delete the history of your conversation with ChatGPT. Simply use the `forget me` command for this.
 
+### Install Python 🐍
 Also, make sure that you have some Python version installed. You can check this by running `python --version` in the terminal. If you don't have Python installed, you can download it as a [Homebrew package](https://brew.sh): `brew install python`.
 
 ### Error messages 🚨
