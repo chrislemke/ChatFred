@@ -18,6 +18,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 import openai
 
 openai.api_key = os.getenv("api_key")
+if os.getenv("custom_api_url"):
+    openai.api_base = os.getenv("custom_api_url")
 __model = os.getenv("instruct_gpt_model") or "text-davinci-003"
 __temperature = float(os.getenv("temperature") or 0.0)
 __max_tokens = int(os.getenv("completion_max_tokens") or 50)
