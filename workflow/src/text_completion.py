@@ -62,7 +62,6 @@ def stdout_write(output_string: str) -> None:
 
 def intercept_custom_prompts(prompt: str):
     """Intercepts custom queries."""
-
     user_prompt = prompt.replace("Q: ", "").split("\n")[0]
     last_request_successful = read_from_cache("last_text_completion_request_successful")
     if user_prompt in error_prompts and not last_request_successful:
