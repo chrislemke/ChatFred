@@ -69,12 +69,6 @@ repos:
       - id: no-commit-to-branch
         args: ["--branch=main"]
 
-  - repo: https://github.com/PyCQA/docformatter
-    rev: v1.6.0
-    hooks:
-      - id: docformatter
-        exclude: "workflow/src/libs"
-
   - repo: https://github.com/bwhmather/ssort
     rev: v0.11.6
     hooks:
