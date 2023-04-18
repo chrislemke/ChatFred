@@ -23,6 +23,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 import openai
 
 openai.api_key = os.getenv("api_key")
+if os.getenv("custom_api_url"):
+    openai.api_base = os.getenv("custom_api_url")
 
 __model = os.getenv("chat_gpt_model") or "gpt-3.5-turbo"
 __history_length = int(os.getenv("history_length") or 4)
