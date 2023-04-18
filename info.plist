@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>ai.lemke.chatfred</string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>003A7C41-7356-4A50-A970-7B23386F4576</key>
@@ -134,6 +136,21 @@
 				<integer>1572864</integer>
 				<key>modifiersubtext</key>
 				<string>Paste ChatGPT's answer to app ⌨️</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>27C522BD-D85F-4BBD-A0C8-0BB2DA568312</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BC24F01A-D192-41B0-80EA-F45A1546FF56</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>03B09396-117B-4CBE-BD96-5BA88D287C95</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -511,7 +528,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>AD7BB662-4857-404A-9CEC-3F8D966EEF52</string>
+				<string>BC24F01A-D192-41B0-80EA-F45A1546FF56</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
@@ -521,7 +538,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>401B6197-0ADF-4EA6-AAE1-F8D31E8E8DA6</string>
+				<string>27C522BD-D85F-4BBD-A0C8-0BB2DA568312</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -531,7 +548,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>AD46F538-F4DD-41B2-BE43-E830535CA0E3</string>
+				<string>186A1889-E7C4-4609-8A28-13B57466ECB9</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
@@ -2486,6 +2503,82 @@ python3 -c 'import caching_manager; caching_manager.combine_user_input_with_quer
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>text</key>
+				<string>{query}</string>
+				<key>usevoiceover</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.speak</string>
+			<key>uid</key>
+			<string>BC24F01A-D192-41B0-80EA-F45A1546FF56</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:always_speak}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>03B09396-117B-4CBE-BD96-5BA88D287C95</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>27C522BD-D85F-4BBD-A0C8-0BB2DA568312</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>100</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>💬 {query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>100</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>186A1889-E7C4-4609-8A28-13B57466ECB9</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -2642,35 +2735,6 @@ python3 -c 'import caching_manager; caching_manager.combine_user_input_with_quer
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>50</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>100</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>5D9861D9-2F55-408C-B1BD-33ADD7A02566</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -2696,6 +2760,35 @@ python3 -c 'import caching_manager; caching_manager.combine_user_input_with_quer
 			<string>00A84B22-93A9-4F5B-8208-5A09AE39A270</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>50</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>100</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>5D9861D9-2F55-408C-B1BD-33ADD7A02566</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2998,10 +3091,11 @@ You can tweak the workflow to your liking. The following parameters are availabl
 ### General 🙀
 When having trouble it is always a good idea to download the [newest release version 🌈](https://github.com/chrislemke/ChatFred/releases). Before you install it, remove the old workflow and its files (`~/Library/Application Support/Alfred/Workflow Data/some-long-identifier/`).
 
-Also, make sure that you have some Python version installed. You can check this by running `python --version` in the terminal. If you don't have Python installed, you can download it as a [Homebrew package](https://brew.sh): `brew install python`.
-
 ### Remove history 🕰️
 Sometimes it makes sense to delete the history of your conversation with ChatGPT. Simply use the `forget me` command for this.
+
+### Install Python 🐍
+Also, make sure that you have some Python version installed. You can check this by running `python --version` in the terminal. If you don't have Python installed, you can download it as a [Homebrew package](https://brew.sh): `brew install python`.
 
 ### Error messages 🚨
 If you have received an error, you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
@@ -3039,9 +3133,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Add a hotkey to start ChatFred without typing 'cf'.</string>
 			<key>xpos</key>
-			<real>60</real>
+			<real>30</real>
 			<key>ypos</key>
-			<real>2430</real>
+			<real>2395</real>
 		</dict>
 		<key>03113C41-05C4-405D-8478-AD3E8DA1A222</key>
 		<dict>
@@ -3081,6 +3175,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>1375</real>
 		</dict>
+		<key>186A1889-E7C4-4609-8A28-13B57466ECB9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>note</key>
+			<string>Shows a large text-box with ChatFred's reply.</string>
+			<key>xpos</key>
+			<real>1190</real>
+			<key>ypos</key>
+			<real>2075</real>
+		</dict>
 		<key>211128E1-95B4-4BAD-B046-F78111D83574</key>
 		<dict>
 			<key>colorindex</key>
@@ -3090,6 +3195,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>1105</real>
 		</dict>
+		<key>27C522BD-D85F-4BBD-A0C8-0BB2DA568312</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Automatically reads out ChatFred's reply if 'Always read out reply' is checked.</string>
+			<key>xpos</key>
+			<real>615</real>
+			<key>ypos</key>
+			<real>2065</real>
+		</dict>
 		<key>2CD4970E-43C0-4C91-BE0F-3FB55C662C1D</key>
 		<dict>
 			<key>colorindex</key>
@@ -3097,9 +3213,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>1340</real>
+			<real>1240</real>
 			<key>ypos</key>
-			<real>2320</real>
+			<real>2325</real>
 		</dict>
 		<key>326D2898-9873-45CB-803B-D4F77C46E6CF</key>
 		<dict>
@@ -3126,14 +3242,14 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Copies ChatFred's reply to the clipboard.</string>
 			<key>xpos</key>
-			<real>1165</real>
+			<real>1065</real>
 			<key>ypos</key>
-			<real>2290</real>
+			<real>2295</real>
 		</dict>
 		<key>3E8AAE6B-9833-4A30-8522-301BBEA42592</key>
 		<dict>
 			<key>xpos</key>
-			<real>690</real>
+			<real>780</real>
 			<key>ypos</key>
 			<real>325</real>
 		</dict>
@@ -3217,9 +3333,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Automatically copies conversation if 'Always copy reply to clipboard' is checked.</string>
 			<key>xpos</key>
-			<real>845</real>
+			<real>890</real>
 			<key>ypos</key>
-			<real>2270</real>
+			<real>2245</real>
 		</dict>
 		<key>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</key>
 		<dict>
@@ -3239,9 +3355,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Automatically saves conversation if 'Always save conversation to file' is checked.</string>
 			<key>xpos</key>
-			<real>570</real>
+			<real>470</real>
 			<key>ypos</key>
-			<real>2660</real>
+			<real>2665</real>
 		</dict>
 		<key>538391F2-A3CE-4AD0-849E-3D78B5DD2843</key>
 		<dict>
@@ -3250,9 +3366,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>965</real>
+			<real>865</real>
 			<key>ypos</key>
-			<real>2605</real>
+			<real>2610</real>
 		</dict>
 		<key>53D403AB-73C5-4662-9933-5D29892F5A0A</key>
 		<dict>
@@ -3272,9 +3388,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Saves/appends the conversation (request and reply) to the ChatFred.txt file.</string>
 			<key>xpos</key>
-			<real>755</real>
+			<real>655</real>
 			<key>ypos</key>
-			<real>2575</real>
+			<real>2580</real>
 		</dict>
 		<key>5D9861D9-2F55-408C-B1BD-33ADD7A02566</key>
 		<dict>
@@ -3283,9 +3399,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>935</real>
+			<real>835</real>
 			<key>ypos</key>
-			<real>2390</real>
+			<real>2395</real>
 		</dict>
 		<key>63692C20-123A-4C28-BF36-40F18336FA66</key>
 		<dict>
@@ -3294,7 +3410,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Only show notification if 'Show notifications' is checked.</string>
 			<key>xpos</key>
-			<real>845</real>
+			<real>935</real>
 			<key>ypos</key>
 			<real>190</real>
 		</dict>
@@ -3312,7 +3428,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 		<key>69B13DF7-F365-4690-A804-F6439C7B9CA7</key>
 		<dict>
 			<key>xpos</key>
-			<real>460</real>
+			<real>565</real>
 			<key>ypos</key>
 			<real>35</real>
 		</dict>
@@ -3356,9 +3472,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Makes a request to the InstructGPT API.</string>
 			<key>xpos</key>
-			<real>305</real>
+			<real>205</real>
 			<key>ypos</key>
-			<real>2390</real>
+			<real>2395</real>
 		</dict>
 		<key>7CF07DAA-DED0-4740-897B-7D92DBFDB841</key>
 		<dict>
@@ -3489,7 +3605,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1025</real>
+			<real>1115</real>
 			<key>ypos</key>
 			<real>160</real>
 		</dict>
@@ -3535,6 +3651,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>1460</real>
 		</dict>
+		<key>BC24F01A-D192-41B0-80EA-F45A1546FF56</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>note</key>
+			<string>Reads out ChatFred's reply.</string>
+			<key>xpos</key>
+			<real>815</real>
+			<key>ypos</key>
+			<real>2060</real>
+		</dict>
 		<key>BCA16B64-CE45-4F06-9E49-0A323FDCEA3B</key>
 		<dict>
 			<key>colorindex</key>
@@ -3562,7 +3689,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Opens the generated image in the default application. Usually: 'Preview'.</string>
 			<key>xpos</key>
-			<real>665</real>
+			<real>755</real>
 			<key>ypos</key>
 			<real>25</real>
 		</dict>
@@ -3582,9 +3709,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1445</real>
+			<real>1345</real>
 			<key>ypos</key>
-			<real>2290</real>
+			<real>2295</real>
 		</dict>
 		<key>C83E6264-8F02-47D0-A671-2CF460D1052E</key>
 		<dict>
@@ -3609,9 +3736,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 		<key>E08CC934-9538-464C-9749-DBA3D887699A</key>
 		<dict>
 			<key>xpos</key>
-			<real>440</real>
+			<real>340</real>
 			<key>ypos</key>
-			<real>2580</real>
+			<real>2585</real>
 		</dict>
 		<key>E1171C29-3760-40F7-8FD6-C083889A0848</key>
 		<dict>
@@ -3660,9 +3787,9 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1100</real>
+			<real>1000</real>
 			<key>ypos</key>
-			<real>2575</real>
+			<real>2580</real>
 		</dict>
 		<key>F0FC541F-FCDF-4ADC-9A0B-35E52C1067B1</key>
 		<dict>
@@ -3704,7 +3831,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Checks if 'Run Script' return a path to an image. If not it posts a notification with an error message.</string>
 			<key>xpos</key>
-			<real>575</real>
+			<real>665</real>
 			<key>ypos</key>
 			<real>200</real>
 		</dict>
@@ -3715,7 +3842,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>note</key>
 			<string>Shows a large text-box with ChatFred's reply.</string>
 			<key>xpos</key>
-			<real>950</real>
+			<real>1040</real>
 			<key>ypos</key>
 			<real>315</real>
 		</dict>
@@ -4255,7 +4382,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.4.0</string>
+	<string>1.5.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
