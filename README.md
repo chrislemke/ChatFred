@@ -11,24 +11,31 @@
 **[Alfred workflow](https://www.alfredapp.com/workflows/) using [ChatGPT](https://chat.openai.com/chat), [DALL·E 2](https://openai.com/product/dall-e-2) and other models for chatting, image generation and more.**
 
 ## Table of contents 📚
-- [Setup](#setup-)
-- [Usage](#usage-)
-    - [Talk to ChatGPT](#talk-to-chatgpt-)
-        - [Text transformation](#text-transformation-%EF%B8%8F)
-        - [Universal action & combined prompts](#universal-action--combined-prompts-%EF%B8%8F)
-        - [Aliases](#aliases-%EF%B8%8F)
-        - [Voice to ChatGPT](#voice-to-chatgpt-%EF%B8%8F)
-        - [Jailbreak](#jailbreak-)
-        - [ChatFred_ChatGPT.csv](#chatfred_chatgptcsv-)
-    - [Text generation with InstructGPT](#text-generation-with-instructgpt-)
-        - [Options](#options-)
-        - [Save conversations to file](#save-conversations-to-file-)
-    - [Image generation by DALL·E 2](#image-generation-by-dalle-2-%EF%B8%8F)
-- [Configure the workflow (optional)](#configure-the-workflow-optional-)
-- [Troubleshooting](#troubleshooting-%EF%B8%8F)
-- [Beta testing](#beta-testing-)
-- [Contributing](#contributing-)
-- [Safety best practices](#safety-best-practices-%EF%B8%8F)
+- [ChatFred](#chatfred)
+  - [Table of contents 📚](#table-of-contents-)
+  - [Setup 🧰](#setup-)
+  - [Usage 🧑‍💻](#usage-)
+    - [Talk to ChatGPT 💬](#talk-to-chatgpt-)
+      - [**Text transformation** ⚙️](#text-transformation-️)
+      - [**Universal action \& combined prompts** ➡️](#universal-action--combined-prompts-️)
+      - [**Aliases** ⌨️](#aliases-️)
+      - [**Voice to ChatGPT** 🗣️](#voice-to-chatgpt-️)
+      - [**Jailbreak** 🔓](#jailbreak-)
+      - [**`ChatFred_ChatGPT.csv`** 📄](#chatfred_chatgptcsv-)
+    - [Text generation with InstructGPT 🤖](#text-generation-with-instructgpt-)
+      - [**Options** 🤗](#options-)
+      - [**Save conversations to file** 📝](#save-conversations-to-file-)
+    - [Image generation by DALL·E 2 🖼️](#image-generation-by-dalle-2-️)
+  - [Configure the workflow (optional) 🦾](#configure-the-workflow-optional-)
+  - [Troubleshooting ⛑️](#troubleshooting-️)
+    - [General 🙀](#general-)
+    - [Remove history 🕰️](#remove-history-️)
+    - [Install Python 🐍](#install-python-)
+    - [Error messages 🚨](#error-messages-)
+    - [Open an issue 🕵️](#open-an-issue-️)
+  - [Beta testing 🧪](#beta-testing-)
+  - [Contributing 🤝](#contributing-)
+  - [Safety best practices 🛡️](#safety-best-practices-️)
 
 ## Setup 🧰
 [⤓ Install on the Alfred Gallery](https://alfred.app/workflows/chrislemke/chatfred/) or download it over [GitHub](https://github.com/chrislemke/ChatFred/releases) and add your OpenAI API key. If you have used ChatGPT or DALL·E 2, you already have an OpenAI account. Otherwise, you can [sign up here](https://beta.openai.com/signup) - You will receive [$5 in free credit](https://openai.com/api/pricing/), no payment data is required. Afterwards you can [create your API key](https://beta.openai.com/account/api-keys).
@@ -220,6 +227,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Top-p**: Top-p sampling selects from the smallest possible set of words whose cumulative probability exceeds probability p. In this way, the number of words in the set can be dynamically increased and decreased according to the nearest word probability distribution. Default: `1`.
 - **Frequency penalty**: A value between `-2.0` and `2.0`. The frequency penalty parameter controls the model’s tendency to repeat predictions. Default: `0`.
 - **Presence penalty**: A Value between `-2.0` and `2.0`. The presence penalty parameter encourages the model to make novel predictions. Default: `0`.
+- **Custom API URL**: Custom OpenAI API Url. e.g. `https://closeai.deno.dev/v1`
 - **Always read out reply**: If enabled, ChatFred will read out all replies automatically. Default: `off`.
 - **Always save conversation to file**: If enabled, all your request and ChatFred's replies will automatically be saved to a file (`{File directory}/ChatFred.txt`). Only available for InstructGPT. Default: `off`.
 - **File directory**: Custom directory where the 'ChatFred.txt' should be stored. Default to the user's home directory (`~/`).

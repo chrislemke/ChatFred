@@ -4193,6 +4193,27 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>https://api.openai.com/v1</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Enter a custom OpenAI API URL address. If not entered, the default OpenAI API path will be used.</string>
+			<key>label</key>
+			<string>Custom OpenAI API URL</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>custom_api_url</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>search</string>
 				<key>pairs</key>
 				<array>

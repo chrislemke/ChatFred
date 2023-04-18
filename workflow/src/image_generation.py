@@ -18,6 +18,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 import openai
 
 openai.api_key = os.getenv("api_key")
+if os.getenv("custom_api_url"):
+    openai.api_base = os.getenv("custom_api_url")
 __size = int(os.getenv("image_size") or 512)
 
 
