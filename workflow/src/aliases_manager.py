@@ -34,5 +34,5 @@ def prompt_for_alias(prompt: str) -> str:
 
     for k, v in aliases_dict.items():
         prompt = prompt.replace(k, v)
-    
+
     return prompt
