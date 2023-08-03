@@ -128,7 +128,7 @@ def read_from_log() -> List[Tuple[str, str]]:
         for row in reader:
             history.append((row[1], row[2]))
 
-    return history[len(history) - __history_length:]
+    return history[len(history) - __history_length :]
 
 
 @time_it
