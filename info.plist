@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>ai.lemke.chatfred</string>
-	<key>category</key>
-	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>003A7C41-7356-4A50-A970-7B23386F4576</key>
@@ -1910,7 +1908,7 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>largetypetext</key>
-				<string>💭 Stay tuned... ChatGPT is thinking</string>
+				<string>{var:loading_indicator_text}</string>
 				<key>textcolor</key>
 				<string></string>
 				<key>wrapat</key>
@@ -4245,12 +4243,12 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>Be warned! He is very chatty 😎</string>
+				<string>Always read out reply</string>
 			</dict>
 			<key>description</key>
 			<string>To let ChatFred speak and read out his replies you can hit 'OPTION+Return' (only available for InstructGPT). If this box is checked, all replies will be read out automatically.</string>
 			<key>label</key>
-			<string>Always read out reply</string>
+			<string>Speak</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
@@ -4264,12 +4262,12 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>Useful for not forgetting ChatFred's replies</string>
+				<string>Always save conversation to file</string>
 			</dict>
 			<key>description</key>
-			<string>Your conversation with ChatFred's InstructGPT models can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN' (only available for InstructGPT). If this box is checked, all requests and replies will be stored to file automatically.</string>
+			<string>Useful for not forgetting ChatFred's reply. Your conversation with ChatFred's InstructGPT models can be saved to file (~/ChatFred.txt) by hitting 'SHIFT+RETURN' (only available for InstructGPT). If this box is checked, all requests and replies will be stored to file automatically.</string>
 			<key>label</key>
-			<string>Always save conversation to file</string>
+			<string>History</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
@@ -4304,12 +4302,12 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string></string>
+				<string>Paste response to frontmost app</string>
 			</dict>
 			<key>description</key>
 			<string>If this is checked the answer from ChatGPT will be pasted to the frontmost app. If this feature is switched on, the response will not be shown in Large Type. If this is deactivated you can still paste the response by using the CMD+OPTION keys when sending a request.</string>
 			<key>label</key>
-			<string>Paste response to frontmost app</string>
+			<string>Paste</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
@@ -4402,9 +4400,30 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>variable</key>
 			<string>show_loading_indicator</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>💭 Stay tuned... ChatGPT is thinking</string>
+				<key>placeholder</key>
+				<string>💭 Stay tuned... ChatGPT is thinking</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Customize the indicator text.</string>
+			<key>label</key>
+			<string>Loading indicator text</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>loading_indicator_text</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>1.5.0</string>
+	<string>1.5.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>

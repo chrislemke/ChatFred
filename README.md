@@ -236,6 +236,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Image size**: The size of the by DALL·E 2 generated image. Default: `512x512`.
 - **Show notifications**: Shows all notifications provided by the workflow. For this, to work System notifications must be activated for Alfred. Default: `on`.
 - **Show ChatGPT is thinking message**: Shows the message: "💭 Stay tuned... ChatGPT is thinking" while OpenAI is processing your request. Default: `on`.
+- **Loading indicator text**: The text that is shown while ChatGPT is thinking. Default: `💭 Stay tuned... ChatGPT is thinking`.
 
 ## Troubleshooting ⛑️
 ### General 🙀
@@ -243,9 +244,6 @@ When having trouble it is always a good idea to download the [newest release ver
 
 ### Remove history 🕰️
 Sometimes it makes sense to delete the history of your conversation with ChatGPT. Simply use the `forget me` command for this.
-
-### Install Python 🐍
-Also, make sure that you have some Python version installed. You can check this by running `python --version` in the terminal. If you don't have Python installed, you can download it as a [Homebrew package](https://brew.sh): `brew install python`.
 
 ### Error messages 🚨
 If you have received an error, you can ask ChatFred: `what does that even mean?` to get more information about it. If this prompt is too long for you - find some alternatives in the [`custom_prompts.py`](https://github.com/chrislemke/ChatFred/blob/main/workflow/src/custom_prompts.py) file.
