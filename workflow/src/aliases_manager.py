@@ -31,6 +31,8 @@ def prompt_for_alias(prompt: str) -> str:
         str: The prompt for the provided alias, or the original prompt if the alias is not found.
     """
     aliases_dict = __prepare_aliases()
-    if prompt in aliases_dict:
-        return aliases_dict[prompt]
+
+    for k, v in aliases_dict.items():
+        prompt = prompt.replace(k, v)
+    
     return prompt
