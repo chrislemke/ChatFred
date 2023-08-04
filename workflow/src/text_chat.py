@@ -24,6 +24,7 @@ import openai
 import litellm
 
 openai.api_key = os.getenv("api_key")
+os.environ['OPENAI_API_KEY'] = openai.api_key
 if os.getenv("custom_api_url"):
     openai.api_base = os.getenv("custom_api_url")
 
@@ -353,7 +354,7 @@ def make_litellm_chat_request(
 
 
 exit_on_error()
-__prompt, __response = make_chat_request(
+__prompt, __response = make_litellm_chat_request(
     get_query(),
     __temperature,
     __max_tokens,

@@ -7,8 +7,9 @@
 [![Downloads](https://img.shields.io/github/downloads/chrislemke/chatfred/total?label=downloads%20on%20GitHub)](https://github.com/chrislemke/ChatFred/releases)
 [![License](https://img.shields.io/github/license/chrislemke/chatfred)](https://github.com/chrislemke/chatfred/blob/main/LICENSE)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![litellm](https://img.shields.io/badge/%20%F0%9F%9A%85%20liteLLM-OpenAI%7CAzure%7CAnthropic%7CPalm%7CCohere-blue?color=green)](https://github.com/BerriAI/litellm)
 
-**[Alfred workflow](https://www.alfredapp.com/workflows/) using [ChatGPT](https://chat.openai.com/chat), [DALL·E 2](https://openai.com/product/dall-e-2) and other models for chatting, image generation and more.**
+**[Alfred workflow](https://www.alfredapp.com/workflows/) using [ChatGPT](https://chat.openai.com/chat), [Claude, Llama2, Bard, Palm, Cohere](https://github.com/BerriAI/litellm), [DALL·E 2](https://openai.com/product/dall-e-2) and other models for chatting, image generation and more.**
 
 ## Table of contents 📚
 - [ChatFred](#chatfred)
@@ -220,7 +221,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **ChatGPT aliases**: If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`
 - **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be automatically included to your request. You can use it by hitting <kbd>⌘</kbd> <kbd>⏎</kbd>. Default: `None`.
 - **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. Default: `Davinci`. ([Read more](https://platform.openai.com/docs/models/overview))
-- **ChatGPT model**: Following models are available: `ChatGPT-3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). Default: `ChatGPT-3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
+- **Chat models**: Following models are available: `ChatGPT-3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). `Claude2`, `Claude-instant-1`,`Command-Nightly`, `Palm`, `Llama2` [litellm](https://github.com/BerriAI/litellm/)Default: `ChatGPT-3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
 - **ChatGPT maximum tokens**: The maximum number of tokens to generated. Default: `4096`.
 - **InstructGPT maximum tokens**: The maximum number of tokens to generated. Default: `50`.
