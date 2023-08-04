@@ -24,7 +24,8 @@ import openai
 import litellm
 
 openai.api_key = os.getenv("api_key")
-os.environ["OPENAI_API_KEY"] = openai.api_key
+if openai.api_key!=None:
+    os.environ["OPENAI_API_KEY"] = openai.api_key
 if os.getenv("custom_api_url"):
     openai.api_base = os.getenv("custom_api_url")
 
