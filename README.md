@@ -237,7 +237,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **Show notifications**: Shows all notifications provided by the workflow. For this, to work System notifications must be activated for Alfred. Default: `on`.
 - **Show ChatGPT is thinking message**: Shows the message: "💭 Stay tuned... ChatGPT is thinking" while OpenAI is processing your request. Default: `on`.
 - **Loading indicator text**: The text that is shown while ChatGPT is thinking. Default: `💭 Stay tuned... ChatGPT is thinking`.
-- **Stream reply**: If checked, partial message deltas will be sent, like in ChatGPT. Reply will be shown in a stand-alone window implemented using [Flet](https://flet.dev). Close it by pressing Esc.
+- **Stream reply**: If checked, partial message deltas will be sent, like in ChatGPT. Reply will be shown in a stand-alone window implemented using [Flet](https://flet.dev). Close it by pressing Esc. Default: `off`.
 
 ## Troubleshooting ⛑️
 ### General 🙀
