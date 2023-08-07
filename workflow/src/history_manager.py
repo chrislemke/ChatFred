@@ -14,6 +14,7 @@ from thefuzz import process
 __workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("~")
 __log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.csv"
 __history_type = os.getenv("history_type")
+__model = os.getenv("chat_gpt_model") or "gpt-3.5-turbo"
 
 
 def get_query() -> str:
@@ -47,9 +48,9 @@ def provide_history():
         history = [tuple[0] for tuple in process.extract(prompt, history, limit=20)]
 
     if prompt in ["", " "]:
-        history.insert(0, (str(uuid.uuid1()), "...", "Talk to ChatGPT 💬", "0"))
+        history.insert(0, (str(uuid.uuid1()), "...", f"Talk to {__model} 💬", "0"))
     else:
-        history.insert(0, (str(uuid.uuid1()), prompt, "Talk to ChatGPT 💬", "0"))
+        history.insert(0, (str(uuid.uuid1()), prompt, f"Talk to {__model} 💬", "0"))
 
     non_hist_text = [prompt, "..."]
 

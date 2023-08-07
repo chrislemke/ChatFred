@@ -1,0 +1,230 @@
+Metadata-Version: 2.1
+Name: jinja2-ansible-filters
+Version: 1.3.2
+Summary: A port of Ansible's jinja2 filters without requiring ansible core.
+Home-page: https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters
+Author: Nick Shobe
+Author-email: nickshobe@gmail.com
+License: GPL3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Jinja2
+Requires-Dist: PyYAML
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+
+# Jinja2 Ansible Filters
+
+## Overview
+
+Jinja2 Ansible Filters is a port of the ansible filters provided by Ansible's templating engine.
+
+This repository is not inteded to supplant ansible functionality however there are a lot of filters ansible provides that are not present in upstream Jinja2 so you may find these helpful.
+
+### Included filters
+
+- b64decode
+- b64encode
+- basename
+- bool
+- checksum
+- comment
+- dirname
+- expanduser
+- expandvars
+- extract
+- fileglob
+- flatten
+- from_json
+- from_yaml
+- from_yaml_all
+- ans_groupby
+- hash
+- mandatory
+- md5
+- quote
+- ans_random
+- random_mac
+- realpath
+- regex_escape
+- regex_findall
+- regex_replace
+- regex_search
+- relpath
+- sha1
+- shuffle
+- splitext
+- strftime
+- subelements
+- ternary
+- to_datetime
+- to_json
+- to_nice_json
+- to_nice_yaml
+- to_uuid
+- to_yaml
+- type_debug
+- win_basename
+- win_dirname
+- win_splitdrive
+
+### Renamed filters
+
+Due to naming conflicts with Jinja2 builtin filters, these filters have been prefixed with ans_
+
+- groupby
+- random
+
+so:
+
+- ans_groupby
+- ans_random
+
+Additionally any filter naming collisions detected at runtime will be renamed to ans_filter and a warning message raised for each.
+
+Several heavy filters have been omitted due to their extensive dependency on ansible core:
+
+### Excluded Filters
+
+- combine
+- get_encrypted_password
+- dict2items
+- items2dict
+
+## Install
+
+`pip install jinja2-ansible-filters`
+
+## Usage
+
+### Typical usage with jinja2
+
+```python
+  from jinja2 import Environment
+
+...
+  env = Environment(extensions=['jinja2_ansible_filters.AnsibleCoreFiltersExtension'])
+...
+# OR
+  from jinja2_ansible_filters import AnsibleCoreFiltersExtension
+  env = Environment(extensions=[AnsibleCoreFiltersExtension])
+...
+```
+
+### Include into cookiecutter
+
+cookiecutter.json
+
+```json
+{
+  "_extensions": ["jinja2_ansible_filters.AnsibleCoreFiltersExtension"]
+}
+```
+
+## License
+
+Due to multiple licenses in the Ansible source the licenses have both been included in LICENSE as well as proper attribution. Additionally license stubs where preserved with the source files they covered in the origional ansible repository.
+
+## [1.3.2](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/compare/v1.3.1...v1.3.2) (2022-06-30)
+
+
+### Bug Fixes
+
+* Add VERSION to MANIFEST.in ([6dfc56a](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/commit/6dfc56a))
+
+## [1.3.1](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/compare/v1.3.0...v1.3.1) (2022-04-14)
+
+
+### Bug Fixes
+
+* environmentfilter renamed to pass_environment in jinja2>=3.1 ([47f7173](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/commit/47f7173))
+
+# [1.3.0](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/compare/v1.2.1...v1.3.0) (2020-04-14)
+
+
+### Features
+
+* Adds Combine filter and tests ([085806b](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/commit/085806b))
+
+## [1.2.1](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/compare/v1.2.0...v1.2.1) (2019-11-15)
+
+
+### Bug Fixes
+
+* Fixed description by removing quotes ([2d29bff](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/commit/2d29bff))
+
+# [1.2.0](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/compare/v1.1.0...v1.2.0) (2019-11-07)
+
+
+### Features
+
+* removed six requirement from setup.cfg ([4902da9](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/commit/4902da9))
+
+# [1.1.0](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/compare/v1.0.0...v1.1.0) (2019-11-06)
+
+
+### Features
+
+* Added test  coverage to satisfactory level ([f14ca2c](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/commit/f14ca2c))
+* Initial commit with full function and tests ([702e321](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/commit/702e321))
+
+# 1.0.0 (2019-11-06)
+
+
+### Features
+
+* Added test  coverage to satisfactory level ([bbb0cb0](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/commit/bbb0cb0))
+* Initial commit with full function and tests ([529c606](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters/commit/529c606))
+
+(c) 2019, Nick Shobe <nickshobe@gmail.com>
+(c) 2016, Toshio Kuratomi <a.badger@gmail.com>
+(c) 2012-2014, Michael DeHaan <michael.dehaan@gmail.com>
+
+
+This code is derived from Ansible's template Jinja2 filters
+
+It contains source released under two licenses GPL3 and BSD license
+Applicable licenses have been added to the respective files that they apply to.
+
+
+This code is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This code is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
+
+
+BSD License
+
+Some of this code was ported from Ansible, but is an independent component.
+This particular file snippet, and this file snippet only, is BSD licensed.
+Modules you write using this snippet, which is embedded dynamically by Ansible
+still belong to the author of the module, and may assign their own license
+to the complete work.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above copyright notice,
+     this list of conditions and the following disclaimer in the documentation
+     and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
