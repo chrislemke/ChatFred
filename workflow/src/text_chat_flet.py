@@ -119,8 +119,9 @@ def read_from_log() -> List[Tuple[str, str]]:
             Each tuple contains two strings: the first is the timestamp and the second is the log message.
             If the log file does not exist, returns a list with one empty tuple.
     """
-    
-    if __history_length == 0: return [("", "")]
+
+    if __history_length == 0:
+        return [("", "")]
 
     with open(__log_file_path, "r") as csv_file:
         csv.register_dialect("custom", delimiter=" ", skipinitialspace=True)
@@ -130,7 +131,7 @@ def read_from_log() -> List[Tuple[str, str]]:
         for row in reader:
             history.append((row[1], row[2]))
 
-    return history[len(history) - __history_length:]
+    return history[len(history) - __history_length :]
 
 
 @time_it
@@ -262,14 +263,14 @@ def make_chat_request(
 
     try:
         response = openai.ChatCompletion.create(
-                model=__model,
-                messages=messages,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                top_p=top_p,
-                frequency_penalty=frequency_penalty,
-                presence_penalty=presence_penalty,
-                stream=True
+            model=__model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            top_p=top_p,
+            frequency_penalty=frequency_penalty,
+            presence_penalty=presence_penalty,
+            stream=True,
         )
     except Exception as exception:  # pylint: disable=broad-except
         response = exception_response(exception)
@@ -286,7 +287,7 @@ def make_chat_request(
                 "presence_penalty": presence_penalty,
             },
         )
-    
+
     collected_messages = []
 
     def streaming_window(page: ft.Page):
@@ -297,7 +298,9 @@ def make_chat_request(
 
         # fonts setting by page.fonts and ft.theme
         page.fonts = {
-            "Helvetica": os.path.join(os.path.dirname(__file__), "fonts", "Helvetica.ttc")
+            "Helvetica": os.path.join(
+                os.path.dirname(__file__), "fonts", "Helvetica.ttc"
+            )
         }
         theme = ft.Theme
 
@@ -307,29 +310,25 @@ def make_chat_request(
         def on_keyboard(e: ft.KeyboardEvent):
             if e.key == "Escape":
                 page.window_destroy()
-        
+
         page.on_keyboard_event = on_keyboard
 
         # main TextField for reply
         t = ft.TextField(
-                label="",
-                multiline=True,
-                value='',
-                color='grey',
-                border_color='transparent'
-            )
+            label="", multiline=True, value="", color="grey", border_color="transparent"
+        )
         page.controls.append(t)
         page.update()
 
         # iterate the streamed reply
         for chunk in response:
-            chunk_message = chunk['choices'][0]['delta']
+            chunk_message = chunk["choices"][0]["delta"]
             collected_messages.append(chunk_message)
-            
+
             # contact streamed result and add a left half block for ChatGPT-like cursor effect
             t.value = f"{''.join([m.get('content', '') for m in collected_messages])}▌"
             t.update()
-        
+
         # remove left half block since all results have been streamed
         t.value = t.value[:-1]
         # set cursor focus to TextField
@@ -343,7 +342,7 @@ def make_chat_request(
     # show window
     ft.app(target=streaming_window)
 
-    full_reply_content = ''.join([m.get('content', '') for m in collected_messages])
+    full_reply_content = "".join([m.get("content", "") for m in collected_messages])
 
     return prompt, full_reply_content
 
