@@ -4492,7 +4492,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<string></string>
 			</dict>
 			<key>description</key>
-			<string>If checked, partial message deltas will be sent, like in ChatGPT. Reply will be shown in a stand-alone window implemented using Flet.</string>
+			<string>If checked, partial message deltas will be sent, like in ChatGPT. Reply will be shown in a stand-alone window implemented using Flet. Close it by pressing Esc.</string>
 			<key>label</key>
 			<string>Stream reply</string>
 			<key>type</key>
