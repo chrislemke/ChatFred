@@ -40,6 +40,7 @@ __log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.csv"
 __text_transformation_prompt = os.getenv("text_transformation_prompt") or None
 __jailbreak_prompt = os.getenv("jailbreak_prompt")
 __unlocked = int(os.getenv("unlocked") or 0)
+__stream_reply = int(os.getenv("stream_reply") or 0)
 
 
 def time_it(func):
@@ -119,8 +120,7 @@ def read_from_log() -> List[Tuple[str, str]]:
             Each tuple contains two strings: the first is the timestamp and the second is the log message.
             If the log file does not exist, returns a list with one empty tuple.
     """
-
-    if __history_length == 0:
+    if os.path.isfile(__log_file_path) is False:
         return [("", "")]
 
     with open(__log_file_path, "r") as csv_file:
@@ -216,7 +216,7 @@ def create_message(prompt: str) -> List[Dict[str, str]]:
     # messages = [{"role": "system", "content": "You are a helpful assistant"}]
 
     messages = [{"role": "system", "content": ""}]
-    # Leave as empty doesn't make such a difference?
+    # Leave as empty doesn't make such a difference? I'll work on it more when implementing custom system prompt
 
     for user_text, assistant_text in read_from_log():
         if user_text == __jailbreak_prompt:
@@ -241,6 +241,7 @@ def make_chat_request(
     top_p: int,
     frequency_penalty: float,
     presence_penalty: float,
+    stream_reply: int
 ) -> Tuple[str, str]:
     """Sends a chat request to OpenAI's GTP-3 model and returns the prompt and
     response as a tuple.
@@ -252,6 +253,7 @@ def make_chat_request(
         top_p (int): Controls the "quality" of the response. Higher values result in more coherent responses.
         frequency_penalty (float): Controls the model's tendency to repeat itself.
         presence_penalty (float): Controls the model's tendency to stay on topic.
+        stream_reply: (int) Controls whether to stream the reply.
 
     Returns:
         Tuple[str, str]: A tuple containing the prompt and the response from the model.
@@ -270,7 +272,7 @@ def make_chat_request(
             top_p=top_p,
             frequency_penalty=frequency_penalty,
             presence_penalty=presence_penalty,
-            stream=True,
+            stream=bool(stream_reply),
         )
     except Exception as exception:  # pylint: disable=broad-except
         response = exception_response(exception)
@@ -287,62 +289,64 @@ def make_chat_request(
                 "presence_penalty": presence_penalty,
             },
         )
+    if __stream_reply:
+        collected_messages = []
 
-    collected_messages = []
+        def streaming_window(page: ft.Page):
+            # scrollable setting by ScrollMode
 
-    def streaming_window(page: ft.Page):
-        # scrollable setting by ScrollMode
+            page.scroll = ft.ScrollMode("auto")
+            page.auto_scroll = True
 
-        page.scroll = ft.ScrollMode("auto")
-        page.auto_scroll = True
+            # fonts setting by page.fonts and ft.theme
+            page.fonts = {
+                "Helvetica": os.path.join(
+                    os.path.dirname(__file__), "fonts", "Helvetica.ttc"
+                )
+            }
+            theme = ft.Theme
 
-        # fonts setting by page.fonts and ft.theme
-        page.fonts = {
-            "Helvetica": os.path.join(
-                os.path.dirname(__file__), "fonts", "Helvetica.ttc"
+            page.theme = theme(font_family="Helvetica")
+
+            # press Esc to close window
+            def on_keyboard(e: ft.KeyboardEvent):
+                if e.key == "Escape":
+                    page.window_destroy()
+
+            page.on_keyboard_event = on_keyboard
+
+            # main TextField for reply
+            t = ft.TextField(
+                label="", multiline=True, value="", color="grey", border_color="transparent"
             )
-        }
-        theme = ft.Theme
+            page.controls.append(t)
+            page.update()
 
-        page.theme = theme(font_family="Helvetica")
+            # iterate the streamed reply
+            for chunk in response:
+                chunk_message = chunk["choices"][0]["delta"]
+                collected_messages.append(chunk_message)
 
-        # press Esc to close window
-        def on_keyboard(e: ft.KeyboardEvent):
-            if e.key == "Escape":
-                page.window_destroy()
+                # contact streamed result and add a left half block for ChatGPT-like cursor effect
+                t.value = f"{''.join([m.get('content', '') for m in collected_messages])}▌"
+                t.update()
 
-        page.on_keyboard_event = on_keyboard
-
-        # main TextField for reply
-        t = ft.TextField(
-            label="", multiline=True, value="", color="grey", border_color="transparent"
-        )
-        page.controls.append(t)
-        page.update()
-
-        # iterate the streamed reply
-        for chunk in response:
-            chunk_message = chunk["choices"][0]["delta"]
-            collected_messages.append(chunk_message)
-
-            # contact streamed result and add a left half block for ChatGPT-like cursor effect
-            t.value = f"{''.join([m.get('content', '') for m in collected_messages])}▌"
+            # remove left half block since all results have been streamed
+            t.value = t.value[:-1]
+            # set cursor focus to TextField
+            t.autofocus = True
             t.update()
 
-        # remove left half block since all results have been streamed
-        t.value = t.value[:-1]
-        # set cursor focus to TextField
-        t.autofocus = True
-        t.update()
+            # all content is loaded, the user should be able to scrolling freely
+            page.auto_scroll = False
+            page.update()
 
-        # all content is loaded, the user should be able to scrolling freely
-        page.auto_scroll = False
-        page.update()
+        # show window
+        ft.app(target=streaming_window)
 
-    # show window
-    ft.app(target=streaming_window)
-
-    full_reply_content = "".join([m.get("content", "") for m in collected_messages])
+        full_reply_content = "".join([m.get("content", "") for m in collected_messages])
+    else:
+        full_reply_content = response.choices[0].message["content"]
 
     return prompt, full_reply_content
 
@@ -355,6 +359,7 @@ __prompt, __response = make_chat_request(
     __top_p,
     __frequency_penalty,
     __presence_penalty,
+    __stream_reply
 )
 stdout_write(__response)
 write_to_log(__prompt, __response, __jailbreak_prompt if __unlocked else None)

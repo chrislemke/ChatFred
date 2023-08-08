@@ -501,8 +501,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>sourceoutputuid</key>
-				<string>EB4174C6-1124-4C08-9E80-AAAA8419FA81</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1679,7 +1677,7 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
-						<integer>5</integer>
+						<integer>6</integer>
 						<key>matchstring</key>
 						<string></string>
 						<key>outputlabel</key>
@@ -1687,11 +1685,25 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 						<key>uid</key>
 						<string>EB4174C6-1124-4C08-9E80-AAAA8419FA81</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:stream_reply}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>94D6C3C4-6719-4DD6-AB66-DAD9F2279483</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
 				<key>hideelse</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2100,11 +2112,7 @@ sys.stdout.write(ast.literal_eval(sys.argv[1])["text"])</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>if [ "$stream_reply" = "1" ]; then
-  python3 src/text_chat_flet.py "$1"
-else
-  python3 src/text_chat.py "$1"
-fi</string>
+				<string>python3 src/text_chat_flet.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -3496,7 +3504,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>Shows the message: "💭 Stay tuned... ChatGPT is thinking" if "show_loading_indicator" is checked.</string>
+			<string>Shows the message: "💭 Stay tuned... ChatGPT is thinking" if "show_loading_indicator" is checked and "stream_reply" isn't.</string>
 			<key>xpos</key>
 			<real>540</real>
 			<key>ypos</key>
@@ -4502,7 +4510,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.5.4</string>
+	<string>1.5.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>
