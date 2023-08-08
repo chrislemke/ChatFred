@@ -241,7 +241,7 @@ def make_chat_request(
     top_p: int,
     frequency_penalty: float,
     presence_penalty: float,
-    stream_reply: int
+    stream_reply: int,
 ) -> Tuple[str, str]:
     """Sends a chat request to OpenAI's GTP-3 model and returns the prompt and
     response as a tuple.
@@ -317,7 +317,11 @@ def make_chat_request(
 
             # main TextField for reply
             t = ft.TextField(
-                label="", multiline=True, value="", color="grey", border_color="transparent"
+                label="",
+                multiline=True,
+                value="",
+                color="grey",
+                border_color="transparent",
             )
             page.controls.append(t)
             page.update()
@@ -328,7 +332,9 @@ def make_chat_request(
                 collected_messages.append(chunk_message)
 
                 # contact streamed result and add a left half block for ChatGPT-like cursor effect
-                t.value = f"{''.join([m.get('content', '') for m in collected_messages])}▌"
+                t.value = (
+                    f"{''.join([m.get('content', '') for m in collected_messages])}▌"
+                )
                 t.update()
 
             # remove left half block since all results have been streamed
@@ -359,7 +365,7 @@ __prompt, __response = make_chat_request(
     __top_p,
     __frequency_penalty,
     __presence_penalty,
-    __stream_reply
+    __stream_reply,
 )
 stdout_write(__response)
 write_to_log(__prompt, __response, __jailbreak_prompt if __unlocked else None)
