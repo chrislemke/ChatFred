@@ -2112,7 +2112,7 @@ sys.stdout.write(ast.literal_eval(sys.argv[1])["text"])</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 src/text_chat_flet.py $1</string>
+				<string>python3 src/text_chat.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
