@@ -1,4 +1,4 @@
-"""This module contains the ChatGPT API."""
+"""This module contains the ChatGPT API. Modified to use Flet to show streaming reply"""
 
 import csv
 import functools
@@ -22,6 +22,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
 import openai
 
+import flet as ft
+
 openai.api_key = os.getenv("api_key")
 if os.getenv("custom_api_url"):
     openai.api_base = os.getenv("custom_api_url")
@@ -38,6 +40,7 @@ __log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.csv"
 __text_transformation_prompt = os.getenv("text_transformation_prompt") or None
 __jailbreak_prompt = os.getenv("jailbreak_prompt")
 __unlocked = int(os.getenv("unlocked") or 0)
+__stream_reply = int(os.getenv("stream_reply") or 0)
 
 
 def time_it(func):
@@ -210,10 +213,15 @@ def create_message(prompt: str) -> List[Dict[str, str]]:
             },
         ]
 
-    messages = [{"role": "system", "content": "You are a helpful assistant"}]
+    # messages = [{"role": "system", "content": "You are a helpful assistant"}]
+
+    messages = [{"role": "system", "content": ""}]
+    # Leave as empty doesn't make such a difference? I'll work on it more when implementing custom system prompt
+
     for user_text, assistant_text in read_from_log():
         if user_text == __jailbreak_prompt:
             continue
+
         messages.append({"role": "user", "content": user_text})
         messages.append({"role": "assistant", "content": assistant_text})
 
@@ -233,6 +241,7 @@ def make_chat_request(
     top_p: int,
     frequency_penalty: float,
     presence_penalty: float,
+    stream_reply: int,
 ) -> Tuple[str, str]:
     """Sends a chat request to OpenAI's GTP-3 model and returns the prompt and
     response as a tuple.
@@ -244,6 +253,7 @@ def make_chat_request(
         top_p (int): Controls the "quality" of the response. Higher values result in more coherent responses.
         frequency_penalty (float): Controls the model's tendency to repeat itself.
         presence_penalty (float): Controls the model's tendency to stay on topic.
+        stream_reply: (int) Controls whether to stream the reply.
 
     Returns:
         Tuple[str, str]: A tuple containing the prompt and the response from the model.
@@ -254,20 +264,16 @@ def make_chat_request(
     write_to_cache("last_chat_request_successful", True)
 
     try:
-        response = (
-            openai.ChatCompletion.create(
-                model=__model,
-                messages=messages,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                top_p=top_p,
-                frequency_penalty=frequency_penalty,
-                presence_penalty=presence_penalty,
-            )
-            .choices[0]
-            .message["content"]
+        response = openai.ChatCompletion.create(
+            model=__model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            top_p=top_p,
+            frequency_penalty=frequency_penalty,
+            presence_penalty=presence_penalty,
+            stream=bool(stream_reply),
         )
-
     except Exception as exception:  # pylint: disable=broad-except
         response = exception_response(exception)
         write_to_cache("last_chat_request_successful", False)
@@ -283,8 +289,72 @@ def make_chat_request(
                 "presence_penalty": presence_penalty,
             },
         )
+    if __stream_reply:
+        collected_messages = []
 
-    return prompt, response
+        def streaming_window(page: ft.Page):
+            # scrollable setting by ScrollMode
+
+            page.scroll = ft.ScrollMode("auto")
+            page.auto_scroll = True
+
+            # fonts setting by page.fonts and ft.theme
+            page.fonts = {
+                "Helvetica": os.path.join(
+                    os.path.dirname(__file__), "fonts", "Helvetica.ttc"
+                )
+            }
+            theme = ft.Theme
+
+            page.theme = theme(font_family="Helvetica")
+
+            # press Esc to close window
+            def on_keyboard(e: ft.KeyboardEvent):
+                if e.key == "Escape":
+                    page.window_destroy()
+
+            page.on_keyboard_event = on_keyboard
+
+            # main TextField for reply
+            t = ft.TextField(
+                label="",
+                multiline=True,
+                value="",
+                color="grey",
+                border_color="transparent",
+            )
+            page.controls.append(t)
+            page.update()
+
+            # iterate the streamed reply
+            for chunk in response:
+                chunk_message = chunk["choices"][0]["delta"]
+                collected_messages.append(chunk_message)
+
+                # contact streamed result and add a left half block for ChatGPT-like cursor effect
+                t.value = (
+                    f"{''.join([m.get('content', '') for m in collected_messages])}▌"
+                )
+                t.update()
+
+            # remove left half block since all results have been streamed
+            t.value = t.value[:-1]
+            # set cursor focus to TextField
+            t.autofocus = True
+            t.update()
+
+            # all content is loaded, the user should be able to scrolling freely
+            page.auto_scroll = False
+            page.update()
+
+        # show window
+        ft.app(target=streaming_window)
+
+        full_reply_content = "".join([m.get("content", "") for m in collected_messages])
+    else:
+        full_reply_content = response.choices[0].message["content"]
+
+    return prompt, full_reply_content
 
 
 exit_on_error()
@@ -295,6 +365,7 @@ __prompt, __response = make_chat_request(
     __top_p,
     __frequency_penalty,
     __presence_penalty,
+    __stream_reply,
 )
 stdout_write(__response)
 write_to_log(__prompt, __response, __jailbreak_prompt if __unlocked else None)

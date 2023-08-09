@@ -1,0 +1,3 @@
+[console_scripts]
+copier=copier.__main__:copier_app_run
+
