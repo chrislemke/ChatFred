@@ -199,7 +199,7 @@ def create_message(prompt: str) -> List[Dict[str, Optional[str]]]:
         prompt (str): The prompt to be included in the message.
 
     Returns:
-        List[Dict[str, str]]: A list of dictionaries representing the message,
+        List[Dict[str, Optional[str]]]: A list of dictionaries representing the message,
             with each dictionary containing the role and content of the message.
     """
     transformation_pre_prompt = """You are a helpful assistant who interprets every input as raw
