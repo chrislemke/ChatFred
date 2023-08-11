@@ -334,6 +334,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4A3C5397-3804-448F-8AB6-85D3F667C17A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A714CC5B-5F89-4D9A-A71D-DB9DD4F85305</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4EE8169F-9FB4-426C-9BE8-4D2FC5A079AF</key>
 		<array>
 			<dict>
@@ -656,6 +669,16 @@
 		<array/>
 		<key>8D3B95CA-78A1-4E37-920A-29C777780804</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4A3C5397-3804-448F-8AB6-85D3F667C17A</string>
+				<key>modifiers</key>
+				<integer>1179648</integer>
+				<key>modifiersubtext</key>
+				<string>Use system prompt '{var:system_prompt}'</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>489FB38F-A6C5-4413-AC80-6BC8AD896964</string>
@@ -1382,6 +1405,26 @@ RESPONSE:'{query}'</string>
 			<string>alfred.workflow.utility.debug</string>
 			<key>uid</key>
 			<string>3E8AAE6B-9833-4A30-8522-301BBEA42592</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>use_system_prompt</key>
+					<string>1</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>4A3C5397-3804-448F-8AB6-85D3F667C17A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3125,6 +3168,7 @@ You can tweak the workflow to your liking. The following parameters are availabl
 - **ChatGPT transformation prompt**: Use this prompt to automatically  transform either highlighted text through Universal actions or by adding a hotkey to process the content of the clipboard.
 - **ChatGPT aliases**: If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`
 - **ChatGPT jailbreak prompt**: Add your ChatGPT jailbreak prompt which will be automatically included to your request. You can use it by hitting &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;. Default: `None`.
+- **System prompt**: Include pre-set system prompt in your request to send to ChatGPT. You can use it by hitting &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⇧&lt;/kbd&gt; &lt;kbd&gt;⏎&lt;/kbd&gt;.
 - **InstructGPT model**: Following models are available: `Ada`, `Babbage`, `Curie`, `Davinci`. Default: `Davinci`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **ChatGPT model**: Following models are available: `ChatGPT-3.5`, `GPT-4` ([limited beta](https://openai.com/waitlist/gpt-4-api)), `GPT-4 (32k)` ([limited beta](https://openai.com/waitlist/gpt-4-api)). Default: `ChatGPT-3.5`. ([Read more](https://platform.openai.com/docs/models/overview))
 - **Temperature**: The temperature determines how greedy the generative model is (between `0` and `2`). If the temperature is high, the model can output words other than the highest probability with a fairly high probability. The generated text will be more diverse, but there is a higher probability of grammar errors and the generation of nonsense . Default: `0`.
@@ -3367,11 +3411,22 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>Set variable to paste text to app.</string>
+			<string>Set variable 'paste_response' to paste text to app.</string>
 			<key>xpos</key>
 			<real>290</real>
 			<key>ypos</key>
 			<real>545</real>
+		</dict>
+		<key>4A3C5397-3804-448F-8AB6-85D3F667C17A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Set variable 'use_system_prompt' to use system prompt.</string>
+			<key>xpos</key>
+			<real>290</real>
+			<key>ypos</key>
+			<real>435</real>
 		</dict>
 		<key>4C6745E5-A076-49F7-B070-E0A22C1C54DC</key>
 		<dict>
@@ -4003,6 +4058,27 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>joke=tell me a joke;</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>9</integer>
+			</dict>
+			<key>description</key>
+			<string>If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`</string>
+			<key>label</key>
+			<string>ChatGPT aliases</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>cf_aliases</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>Write the text so that each letter is replaced by its successor in the alphabet.</string>
 				<key>required</key>
 				<false/>
@@ -4024,22 +4100,22 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>joke=tell me a joke;</string>
+				<string>You are a helpful assistant.</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
 				<true/>
 				<key>verticalsize</key>
-				<integer>9</integer>
+				<integer>6</integer>
 			</dict>
 			<key>description</key>
-			<string>If you use a certain prompt over and over again you can create an alias for it. This will save you from typing the same prompt over and over again. It is similar to the aliases in the command line. Format `alias=prompt;`</string>
+			<string>System prompt to send to ChatGPT. Overridden if ChatGPT transformation prompt is set.</string>
 			<key>label</key>
-			<string>ChatGPT aliases</string>
+			<string>System prompt</string>
 			<key>type</key>
 			<string>textarea</string>
 			<key>variable</key>
-			<string>cf_aliases</string>
+			<string>system_prompt</string>
 		</dict>
 		<dict>
 			<key>config</key>
