@@ -1,4 +1,4 @@
-"""This module contains the chatGPT API."""
+"""This module handles the history searching and matching when you compose a new message with 'cf'"""
 
 import csv
 import json
@@ -47,10 +47,15 @@ def provide_history():
     if __history_type == "search" and prompt != "":
         history = [tuple[0] for tuple in process.extract(prompt, history, limit=20)]
 
-    if prompt in ["", " "]:
-        history.insert(0, (str(uuid.uuid1()), "...", f"Talk to {__model} 💬", "0"))
-    else:
-        history.insert(0, (str(uuid.uuid1()), prompt, f"Talk to {__model} 💬", "0"))
+    history.insert(
+        0,
+        (
+            str(uuid.uuid1()),
+            prompt if prompt.strip() else "...",
+            f"Talk to {__model} 💬",
+            "0",
+        ),
+    )
 
     non_hist_text = [prompt, "..."]
 
