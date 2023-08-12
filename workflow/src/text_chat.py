@@ -39,6 +39,8 @@ __workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("
 __log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.csv"
 __text_transformation_prompt = os.getenv("text_transformation_prompt") or None
 __jailbreak_prompt = os.getenv("jailbreak_prompt")
+__system_prompt = os.getenv("system_prompt") if os.getenv("system_prompt") else ""
+__use_system_prompt = int(os.getenv("use_system_prompt") or 0)
 __unlocked = int(os.getenv("unlocked") or 0)
 __stream_reply = int(os.getenv("stream_reply") or 0)
 
@@ -190,14 +192,14 @@ def intercept_custom_prompts(prompt: str) -> None:
 
 
 @time_it
-def create_message(prompt: str) -> List[Dict[str, str]]:
+def create_message(prompt: str) -> List[Dict[str, Optional[str]]]:
     """Creates a message to be sent to the model.
 
     Args:
         prompt (str): The prompt to be included in the message.
 
     Returns:
-        List[Dict[str, str]]: A list of dictionaries representing the message,
+        List[Dict[str, Optional[str]]]: A list of dictionaries representing the message,
             with each dictionary containing the role and content of the message.
     """
     transformation_pre_prompt = """You are a helpful assistant who interprets every input as raw
@@ -213,10 +215,10 @@ def create_message(prompt: str) -> List[Dict[str, str]]:
             },
         ]
 
-    # messages = [{"role": "system", "content": "You are a helpful assistant"}]
-
-    messages = [{"role": "system", "content": ""}]
-    # Leave as empty doesn't make such a difference? I'll work on it more when implementing custom system prompt
+    if __use_system_prompt:
+        messages = [{"role": "system", "content": __system_prompt}]
+    else:
+        messages = [{"role": "system", "content": ""}]
 
     for user_text, assistant_text in read_from_log():
         if user_text == __jailbreak_prompt:
