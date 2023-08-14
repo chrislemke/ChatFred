@@ -33,12 +33,11 @@ def provide_history():
     prompt = get_query()
 
     if os.getenv("uuid_") is None or os.getenv("user_prompt") != prompt:
-
         # Return the result without history once first in case
         # the history or the prompt is too long
         # for the full history to generate
         # within a reasonable amount of time
-        
+
         # Lag is mostly caused by process.extract()
 
         # Utilized an Alfred feature that the variables'
@@ -48,10 +47,7 @@ def provide_history():
         uuid_ = str(uuid.uuid1())
 
         pre_history_dict = {
-            "variables": {
-                "user_prompt": prompt,
-                "uuid_": uuid_
-            },
+            "variables": {"user_prompt": prompt, "uuid_": uuid_},
             "rerun": 0.1,
             "items": [
                 {
@@ -60,9 +56,7 @@ def provide_history():
                     "subtitle": f"Talk to {__model} 💬".strip(),
                     "arg": [uuid_, prompt],
                     "autocomplete": prompt,
-                    "icon": {
-                        "path": "./icon.png"
-                    },
+                    "icon": {"path": "./icon.png"},
                 }
             ],
         }
@@ -92,7 +86,7 @@ def provide_history():
         0,
         (
             os.getenv("uuid_"),
-            prompt if prompt.strip() else '...',
+            prompt if prompt.strip() else "...",
             f"Talk to {__model} 💬",
             "0",
         ),
@@ -120,7 +114,7 @@ def provide_history():
     }
 
     stdout_write(json.dumps(response_dict))
-    
+
     return
 
 
