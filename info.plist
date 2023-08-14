@@ -1562,7 +1562,7 @@ sys.stdout.write(sys.argv[2])</string>
 				<key>queuedelaymode</key>
 				<integer>0</integer>
 				<key>queuemode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string>Loading...</string>
 				<key>script</key>

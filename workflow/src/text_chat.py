@@ -159,7 +159,19 @@ def write_to_log(
             writer.writerow(
                 [str(uuid.uuid1()), jailbreak_prompt, "Okay! How can I help?", 1]
             )
-        writer.writerow([str(uuid.uuid1()), user_input, assistant_output, 0])
+
+        # A mulfunction of Alfred could lead to assistant_output being None but still logged
+        # leading to a line in the history being of a wrong length and when trying to read
+        # that line, history_manager.py fails at line: if row[3] == "0":
+        # so guarding is added here
+        writer.writerow(
+            [
+                str(uuid.uuid1()),
+                user_input if user_input else "",
+                assistant_output if assistant_output else "",
+                0,
+            ]
+        )
 
 
 def remove_log_file() -> None:
