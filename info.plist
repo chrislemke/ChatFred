@@ -349,6 +349,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4F8D85D8-499B-4A92-805A-2B06BB064695</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AD46F538-F4DD-41B2-BE43-E830535CA0E3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</key>
 		<array>
 			<dict>
@@ -488,8 +501,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>sourceoutputuid</key>
-				<string>EB4174C6-1124-4C08-9E80-AAAA8419FA81</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1006,7 +1017,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>AD46F538-F4DD-41B2-BE43-E830535CA0E3</string>
+				<string>4F8D85D8-499B-4A92-805A-2B06BB064695</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1666,7 +1677,7 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
-						<integer>5</integer>
+						<integer>6</integer>
 						<key>matchstring</key>
 						<string></string>
 						<key>outputlabel</key>
@@ -1674,11 +1685,25 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 						<key>uid</key>
 						<string>EB4174C6-1124-4C08-9E80-AAAA8419FA81</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:stream_reply}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>94D6C3C4-6719-4DD6-AB66-DAD9F2279483</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
 				<key>hideelse</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2413,6 +2438,38 @@ RESPONSE:'{query}'</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>45E9AF0A-4852-4F0A-BA55-60EB3B483668</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:stream_reply}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string>🚨\s</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>898A73C4-3AC4-4A30-830C-187C148678D6</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string></string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>4F8D85D8-499B-4A92-805A-2B06BB064695</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3336,6 +3393,17 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>ypos</key>
 			<real>2245</real>
 		</dict>
+		<key>4F8D85D8-499B-4A92-805A-2B06BB064695</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>If stream_reply is used, don't show Large Type</string>
+			<key>xpos</key>
+			<real>1190</real>
+			<key>ypos</key>
+			<real>1625</real>
+		</dict>
 		<key>51AA54E6-C0D7-4A43-B5C9-D18B0A805FA9</key>
 		<dict>
 			<key>colorindex</key>
@@ -3436,7 +3504,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>Shows the message: "💭 Stay tuned... ChatGPT is thinking" if "show_loading_indicator" is checked.</string>
+			<string>Shows the message: "💭 Stay tuned... ChatGPT is thinking" if "show_loading_indicator" is checked and "stream_reply" isn't.</string>
 			<key>xpos</key>
 			<real>540</real>
 			<key>ypos</key>
@@ -4421,9 +4489,28 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 			<key>variable</key>
 			<string>loading_indicator_text</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>If checked, partial message deltas will be sent, like in ChatGPT. Reply will be shown in a stand-alone window implemented using Flet. Close it by pressing Esc.</string>
+			<key>label</key>
+			<string>Stream reply</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>stream_reply</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>1.5.3</string>
+	<string>1.6.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrislemke/ChatFred</string>
 </dict>

@@ -1,0 +1,12 @@
+../../bin/dunamai,sha256=HpIMY3Tl-nD0m7dUe2uDXXWN9bbZ-bNlldBd01kbO00,254
+dunamai-1.18.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+dunamai-1.18.0.dist-info/LICENSE,sha256=zXXFVkB446rfZiqd89I0MPRwXf7t670Ou-71OZitlKg,1089
+dunamai-1.18.0.dist-info/METADATA,sha256=TIejWd5Q4ZUT-L9WNIgSmuz_Ml1nfYDcis000X64qlk,9967
+dunamai-1.18.0.dist-info/RECORD,,
+dunamai-1.18.0.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+dunamai-1.18.0.dist-info/entry_points.txt,sha256=SqYMME8Xq7UxW47z78G-kTA0485JEfA9PWhRCInwLBY,49
+dunamai/__init__.py,sha256=DnMQYwqJ4280EFPMGSlTMa6f_c3hYtambGIRJpvaY-g,76072
+dunamai/__main__.py,sha256=1hJIJZ-N6quyC1d0g460CCiCppQYp8xakFqxjMKjBag,10286
+dunamai/__pycache__/__init__.cpython-310.pyc,,
+dunamai/__pycache__/__main__.cpython-310.pyc,,
+dunamai/py.typed,sha256=bWew9mHgMy8LqMu7RuqQXFXLBxh2CRx0dUbSx-3wE48,27
