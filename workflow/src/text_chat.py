@@ -289,7 +289,7 @@ def make_chat_request(
             stream=bool(stream_reply),
         )
     except Exception as exception:  # pylint: disable=broad-except
-        response = exception_response(exception)
+        response_mes = exception_response(exception)
         write_to_cache("last_chat_request_successful", False)
         log_error_if_needed(
             model=__model,
@@ -303,6 +303,7 @@ def make_chat_request(
                 "presence_penalty": presence_penalty,
             },
         )
+        return prompt, response_mes
     if __stream_reply:
         collected_messages = []
 
