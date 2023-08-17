@@ -38,11 +38,11 @@ def env_value_error_if_needed(
     ):
         return "🚨 'Maximum tokens' must be ≤ 2048."
 
-    if frequency_penalty <= -2.0 or frequency_penalty >= 2.0:
-        return "🚨 'Frequency penalty' must be between -2.0 and 2.0."
+    if frequency_penalty < -2.0 or frequency_penalty > 2.0:
+        return f"🚨 'Frequency penalty' must be between -2.0 and 2.0. But you have set it to {frequency_penalty}."
 
-    if presence_penalty <= -2.0 or presence_penalty >= 2.0:
-        return "🚨 'Presence penalty' must be between -2.0 and 2.0."
+    if presence_penalty < -2.0 or presence_penalty > 2.0:
+        return f"🚨 'Presence penalty' must be between -2.0 and 2.0. But you have set it to {frequency_penalty}."
 
     return None
 
