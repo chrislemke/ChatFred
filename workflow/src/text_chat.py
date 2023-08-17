@@ -167,8 +167,8 @@ def write_to_log(
         writer.writerow(
             [
                 str(uuid.uuid1()),
-                user_input if user_input else "",
-                assistant_output if assistant_output else "",
+                user_input if user_input else "...",
+                assistant_output if assistant_output else "...",
                 0,
             ]
         )
