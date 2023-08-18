@@ -1020,7 +1020,6 @@ class Application(Generic[_AppResult]):
         """
         app = self
         # Inline import on purpose. We don't want to import pdb, if not needed.
-        import pdb
         from types import FrameType
 
         TraceDispatch = Callable[[FrameType, str, Any], Any]
@@ -1077,7 +1076,7 @@ class Application(Generic[_AppResult]):
             finally:
                 done.set()
 
-        class CustomPdb(pdb.Pdb):
+        class CustomPdb():
             def trace_dispatch(
                 self, frame: FrameType, event: str, arg: Any
             ) -> TraceDispatch:

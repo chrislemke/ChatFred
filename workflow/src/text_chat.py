@@ -167,8 +167,8 @@ def write_to_log(
         writer.writerow(
             [
                 str(uuid.uuid1()),
-                user_input if user_input else "",
-                assistant_output if assistant_output else "",
+                user_input if user_input else "...",
+                assistant_output if assistant_output else "...",
                 0,
             ]
         )
@@ -289,7 +289,7 @@ def make_chat_request(
             stream=bool(stream_reply),
         )
     except Exception as exception:  # pylint: disable=broad-except
-        response = exception_response(exception)
+        response_mes = exception_response(exception)
         write_to_cache("last_chat_request_successful", False)
         log_error_if_needed(
             model=__model,
@@ -303,6 +303,7 @@ def make_chat_request(
                 "presence_penalty": presence_penalty,
             },
         )
+        return prompt, response_mes
     if __stream_reply:
         collected_messages = []
 
@@ -318,13 +319,11 @@ def make_chat_request(
                     os.path.dirname(__file__), "fonts", "Helvetica.ttc"
                 )
             }
-            theme = ft.Theme
+            page.theme = ft.Theme(font_family="Helvetica")
 
-            page.theme = theme(font_family="Helvetica")
-
-            # press Esc to close window
+            # press Esc or cmd + w to close window
             def on_keyboard(e: ft.KeyboardEvent):
-                if e.key == "Escape":
+                if e.key == "Escape" or (e.key == "W" and e.meta):
                     page.window_destroy()
 
             page.on_keyboard_event = on_keyboard
@@ -345,7 +344,7 @@ def make_chat_request(
                 chunk_message = chunk["choices"][0]["delta"]
                 collected_messages.append(chunk_message)
 
-                # contact streamed result and add a left half block for ChatGPT-like cursor effect
+                # concatenate streamed result and add a left half block for ChatGPT-like cursor effect
                 t.value = (
                     f"{''.join([m.get('content', '') for m in collected_messages])}▌"
                 )
@@ -354,7 +353,7 @@ def make_chat_request(
             # remove left half block since all results have been streamed
             t.value = t.value[:-1]
             # set cursor focus to TextField
-            t.autofocus = True
+            t.focus()
             t.update()
 
             # all content is loaded, the user should be able to scrolling freely
