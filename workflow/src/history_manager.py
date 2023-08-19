@@ -14,7 +14,11 @@ from thefuzz import process
 __workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("~")
 __log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.csv"
 __history_type = os.getenv("history_type")
-__model = os.getenv("chat_gpt_model") or "gpt-3.5-turbo"
+
+if os.getenv("alternative_key"):
+    __model = os.getenv("alternative_model")
+else:
+    __model = os.getenv("chat_gpt_model") or "gpt-3.5-turbo"
 
 
 def get_query() -> str:
