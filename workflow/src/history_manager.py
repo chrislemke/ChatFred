@@ -1,4 +1,4 @@
-"""This module contains the chatGPT API."""
+"""This module handles the history searching and matching when you compose a new message with 'cf'"""
 
 import csv
 import json
@@ -29,7 +29,42 @@ def stdout_write(output_string: str) -> None:
 
 def provide_history():
     """Provide the history of the user."""
+
     prompt = get_query()
+
+    if os.getenv("uuid_") is None or os.getenv("user_prompt") != prompt:
+        # Return the result without history once first in case
+        # the history or the prompt is too long
+        # for the full history to generate
+        # within a reasonable amount of time
+
+        # Lag is mostly caused by process.extract()
+
+        # Utilized an Alfred feature that the variables'
+        # field will be passed back through to reruns of
+        # script from the same session
+        # Significantly increases speed for long prompts & long history
+        uuid_ = str(uuid.uuid1())
+
+        pre_history_dict = {
+            "variables": {"user_prompt": prompt, "uuid_": uuid_},
+            "rerun": 0.1,
+            "items": [
+                {
+                    "type": "default",
+                    "title": prompt,
+                    "subtitle": f"Talk to {__model} 💬".strip(),
+                    "arg": [uuid_, prompt],
+                    "autocomplete": prompt,
+                    "icon": {"path": "./icon.png"},
+                }
+            ],
+        }
+
+        stdout_write(json.dumps(pre_history_dict))
+
+        return
+
     history: List[Tuple[str, str, str, str]] = []
 
     if not os.path.exists(__workflow_data_path):
@@ -45,12 +80,17 @@ def provide_history():
 
     history = list(reversed(history))
     if __history_type == "search" and prompt != "":
-        history = [tuple[0] for tuple in process.extract(prompt, history, limit=20)]
+        history = [tuple_[0] for tuple_ in process.extract(prompt, history, limit=20)]
 
-    if prompt in ["", " "]:
-        history.insert(0, (str(uuid.uuid1()), "...", f"Talk to {__model} 💬", "0"))
-    else:
-        history.insert(0, (str(uuid.uuid1()), prompt, f"Talk to {__model} 💬", "0"))
+    history.insert(
+        0,
+        (
+            os.getenv("uuid_"),
+            prompt if prompt.strip() else "...",
+            f"Talk to {__model} 💬",
+            "0",
+        ),
+    )
 
     non_hist_text = [prompt, "..."]
 
@@ -72,7 +112,10 @@ def provide_history():
             for index, entry in enumerate(history)
         ],
     }
-    sys.stdout.write(json.dumps(response_dict))
+
+    stdout_write(json.dumps(response_dict))
+
+    return
 
 
 provide_history()
