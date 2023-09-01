@@ -4621,14 +4621,6 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 						<string>openai/gpt-4-32k</string>
 					</array>
 					<array>
-						<string>Google: PaLM 2 Bison (Code Chat)</string>
-						<string>google/palm-2-codechat-bison</string>
-					</array>
-					<array>
-						<string>Google: PaLM 2 Bison</string>
-						<string>google/palm-2-chat-bison</string>
-					</array>
-					<array>
 						<string>OpenAI: GPT-3.5 Turbo</string>
 						<string>openai/gpt-3.5-turbo</string>
 					</array>
@@ -4645,12 +4637,40 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 						<string>anthropic/claude-instant-v1</string>
 					</array>
 					<array>
+						<string>Google: PaLM 2 Bison (Code Chat)</string>
+						<string>google/palm-2-codechat-bison</string>
+					</array>
+					<array>
+						<string>Google: PaLM 2 Bison</string>
+						<string>google/palm-2-chat-bison</string>
+					</array>
+					<array>
 						<string>Meta: Llama v2 13B Chat (beta)</string>
 						<string>meta-llama/llama-2-13b-chat</string>
 					</array>
 					<array>
 						<string>Meta: Llama v2 70B Chat (beta)</string>
 						<string>meta-llama/llama-2-70b-chat</string>
+					</array>
+					<array>
+						<string>Meta: CodeLlama 34B Instruct (beta)</string>
+						<string>meta-llama/codellama-34b-instruct</string>
+					</array>
+					<array>
+						<string>Nous: Hermes Llama2 13B (beta)</string>
+						<string>nousresearch/nous-hermes-llama2-13b</string>
+					</array>
+					<array>
+						<string>Gryphe: MythoMax L2 13B</string>
+						<string>gryphe/mythomax-L2-13b</string>
+					</array>
+					<array>
+						<string>Mancer: Weaver 12k (alpha)</string>
+						<string>mancer/weaver</string>
+					</array>
+					<array>
+						<string>Jon Durbin: Airoboros L2 70B (beta)</string>
+						<string>jondurbin/airoboros-l2-70b-2.1</string>
 					</array>
 				</array>
 			</dict>
