@@ -1,4 +1,9 @@
-"""This module contains the ChatGPT API. Modified to use Flet to show streaming reply"""
+"""
+This module contains the ChatGPT API.
+Modified to use Flet to show streaming reply.
+And implemented API routing for OpenRouter (https://openrouter.ai)
+set custom API URL to https://openrouter.ai/api/v1
+"""
 
 import csv
 import functools
@@ -7,6 +12,7 @@ import sys
 import time
 import uuid
 from typing import Dict, List, Optional, Tuple
+import ast
 
 from aliases_manager import prompt_for_alias
 from caching_manager import read_from_cache, write_to_cache
@@ -24,11 +30,22 @@ import openai
 
 import flet as ft
 
-openai.api_key = os.getenv("api_key")
 if os.getenv("custom_api_url"):
     openai.api_base = os.getenv("custom_api_url")
 
-__model = os.getenv("chat_gpt_model") or "gpt-3.5-turbo"
+if os.getenv("alternative_key"):
+    __model = os.getenv("alternative_model") or "gpt-3.5-turbo"
+    openai.api_key = os.getenv("alternative_key")
+else:
+    __model = os.getenv("chat_gpt_model") or "gpt-3.5-turbo"
+    openai.api_key = os.getenv("api_key")
+
+__headers = (
+    {}
+    if not os.getenv("custom_headers")
+    else ast.literal_eval(str(os.getenv("custom_headers")))
+)
+
 __history_length = int(os.getenv("history_length") or 4)
 __temperature = float(os.getenv("temperature") or 0.0)
 __max_tokens = int(os.getenv("chat_max_tokens")) if os.getenv("chat_max_tokens") else None  # type: ignore
@@ -287,6 +304,7 @@ def make_chat_request(
             frequency_penalty=frequency_penalty,
             presence_penalty=presence_penalty,
             stream=bool(stream_reply),
+            headers=__headers,
         )
     except Exception as exception:  # pylint: disable=broad-except
         response_mes = exception_response(exception)
@@ -301,6 +319,8 @@ def make_chat_request(
                 "top_p": top_p,
                 "frequency_penalty": frequency_penalty,
                 "presence_penalty": presence_penalty,
+                "stream_reply": bool(stream_reply),
+                "custom_headers": __headers,
             },
         )
         return prompt, response_mes
@@ -312,6 +332,9 @@ def make_chat_request(
 
             page.scroll = ft.ScrollMode("auto")
             page.auto_scroll = True
+
+            # set page title
+            page.title = f'Reply from "{__model}"'
 
             # fonts setting by page.fonts and ft.theme
             page.fonts = {
