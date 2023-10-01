@@ -54,6 +54,9 @@ or use ChatFred as a fallback search in Alfred:
 ![Screenshot](workflow/assets/images/screenshot8.png)
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the workflow's configuration for more options (e.g. *Always copy reply to clipboard*).
 
+Using the **Stream reply** feature the response would be a stream - like the ChatGPT UI looking like this:
+![Screenshot](workflow/assets/images/screenshot19.png)
+
 ChatFred can also automatically paste ChatGPT's response directly into the frontmost app. Just switch on the *Paste response to frontmost app* in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) or use the <kbd>⌘</kbd> <kbd>⌥</kbd> option.
 
 In this example we use ChatGPT to automatically add a docstring to a Python function. For this we put the following prompt into the workflow's configuration (*ChatGPT transformation prompt*):
