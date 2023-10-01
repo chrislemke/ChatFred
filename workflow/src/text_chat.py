@@ -42,6 +42,8 @@ __workflow_data_path = os.getenv("alfred_workflow_data") or os.path.expanduser("
 __log_file_path = f"{__workflow_data_path}/ChatFred_ChatGPT.csv"
 __text_transformation_prompt = os.getenv("text_transformation_prompt") or None
 __jailbreak_prompt = os.getenv("jailbreak_prompt")
+__system_prompt = os.getenv("system_prompt") if os.getenv("system_prompt") else ""
+__use_system_prompt = int(os.getenv("use_system_prompt") or 0)
 __unlocked = int(os.getenv("unlocked") or 0)
 __stream_reply = int(os.getenv("stream_reply") or 0)
 
@@ -160,7 +162,19 @@ def write_to_log(
             writer.writerow(
                 [str(uuid.uuid1()), jailbreak_prompt, "Okay! How can I help?", 1]
             )
-        writer.writerow([str(uuid.uuid1()), user_input, assistant_output, 0])
+
+        # A mulfunction of Alfred could lead to assistant_output being None but still logged
+        # leading to a line in the history being of a wrong length and when trying to read
+        # that line, history_manager.py fails at line: if row[3] == "0":
+        # so guarding is added here
+        writer.writerow(
+            [
+                str(uuid.uuid1()),
+                user_input if user_input else "...",
+                assistant_output if assistant_output else "...",
+                0,
+            ]
+        )
 
 
 def remove_log_file() -> None:
@@ -193,14 +207,14 @@ def intercept_custom_prompts(prompt: str) -> None:
 
 
 @time_it
-def create_message(prompt: str) -> List[Dict[str, str]]:
+def create_message(prompt: str) -> List[Dict[str, Optional[str]]]:
     """Creates a message to be sent to the model.
 
     Args:
         prompt (str): The prompt to be included in the message.
 
     Returns:
-        List[Dict[str, str]]: A list of dictionaries representing the message,
+        List[Dict[str, Optional[str]]]: A list of dictionaries representing the message,
             with each dictionary containing the role and content of the message.
     """
     transformation_pre_prompt = """You are a helpful assistant who interprets every input as raw
@@ -216,10 +230,10 @@ def create_message(prompt: str) -> List[Dict[str, str]]:
             },
         ]
 
-    # messages = [{"role": "system", "content": "You are a helpful assistant"}]
-
-    messages = [{"role": "system", "content": ""}]
-    # Leave as empty doesn't make such a difference? I'll work on it more when implementing custom system prompt
+    if __use_system_prompt:
+        messages = [{"role": "system", "content": __system_prompt}]
+    else:
+        messages = [{"role": "system", "content": ""}]
 
     for user_text, assistant_text in read_from_log():
         if user_text == __jailbreak_prompt:
@@ -278,7 +292,7 @@ def make_chat_request(
             stream=bool(stream_reply),
         )
     except Exception as exception:  # pylint: disable=broad-except
-        response = exception_response(exception)
+        response_mes = exception_response(exception)
         write_to_cache("last_chat_request_successful", False)
         log_error_if_needed(
             model=__model,
@@ -292,6 +306,7 @@ def make_chat_request(
                 "presence_penalty": presence_penalty,
             },
         )
+        return prompt, response_mes
     if __stream_reply:
         collected_messages = []
 
@@ -307,13 +322,11 @@ def make_chat_request(
                     os.path.dirname(__file__), "fonts", "Helvetica.ttc"
                 )
             }
-            theme = ft.Theme
+            page.theme = ft.Theme(font_family="Helvetica")
 
-            page.theme = theme(font_family="Helvetica")
-
-            # press Esc to close window
+            # press Esc or cmd + w to close window
             def on_keyboard(e: ft.KeyboardEvent):
-                if e.key == "Escape":
+                if e.key == "Escape" or (e.key == "W" and e.meta):
                     page.window_destroy()
 
             page.on_keyboard_event = on_keyboard
@@ -334,7 +347,7 @@ def make_chat_request(
                 chunk_message = chunk["choices"][0]["delta"]
                 collected_messages.append(chunk_message)
 
-                # contact streamed result and add a left half block for ChatGPT-like cursor effect
+                # concatenate streamed result and add a left half block for ChatGPT-like cursor effect
                 t.value = (
                     f"{''.join([m.get('content', '') for m in collected_messages])}▌"
                 )
@@ -343,7 +356,7 @@ def make_chat_request(
             # remove left half block since all results have been streamed
             t.value = t.value[:-1]
             # set cursor focus to TextField
-            t.autofocus = True
+            t.focus()
             t.update()
 
             # all content is loaded, the user should be able to scrolling freely
