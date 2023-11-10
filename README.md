@@ -15,21 +15,20 @@
   - [Setup 🧰](#setup-)
   - [Usage 🧑‍💻](#usage-)
     - [Talk to ChatGPT 💬](#talk-to-chatgpt-)
-      - [Text transformation ⚙️](#text-transformation-️)
-      - [Universal action \& combined prompts ➡️](#universal-action--combined-prompts-️)
-      - [Aliases ⌨️](#aliases-️)
-      - [Voice to ChatGPT 🗣️](#voice-to-chatgpt-️)
-      - [Jailbreak 🔓](#jailbreak-)
-      - [`ChatFred_ChatGPT.csv` 📄](#chatfred_chatgptcsv-)
+      - [**Text transformation** ⚙️](#text-transformation-️)
+      - [**Universal action \& combined prompts** ➡️](#universal-action--combined-prompts-️)
+      - [**Aliases** ⌨️](#aliases-️)
+      - [**Voice to ChatGPT** 🗣️](#voice-to-chatgpt-️)
+      - [**Jailbreak** 🔓](#jailbreak-)
+      - [**`ChatFred_ChatGPT.csv`** 📄](#chatfred_chatgptcsv-)
     - [Text generation with InstructGPT 🤖](#text-generation-with-instructgpt-)
-      - [Options 🤗](#options-)
-      - [Save conversations to file 📝](#save-conversations-to-file-)
+      - [**Options** 🤗](#options-)
+      - [**Save conversations to file** 📝](#save-conversations-to-file-)
     - [Image generation by DALL·E 2 🖼️](#image-generation-by-dalle-2-️)
   - [Configure the workflow (optional) 🦾](#configure-the-workflow-optional-)
   - [Troubleshooting ⛑️](#troubleshooting-️)
     - [General 🙀](#general-)
     - [Remove history 🕰️](#remove-history-️)
-    - [Install Python 🐍](#install-python-)
     - [Error messages 🚨](#error-messages-)
     - [Open an issue 🕵️](#open-an-issue-️)
   - [Beta testing 🧪](#beta-testing-)
@@ -262,6 +261,14 @@ Want to try out the newest not yet released features? You can download the beta 
 
 ## Contributing 🤝
 Please feel free to [open an issue](https://github.com/chrislemke/ChatFred/issues/new/choose) if you have any questions or suggestions. Or participate in the [discussion](https://github.com/chrislemke/ChatFred/discussions). If you want to contribute, please read the [contribution guidelines](https://github.com/chrislemke/ChatFred/blob/main/CONTRIBUTING.md) for more information.
+
+If you want to update the version of a package, you can use the following command:
+```
+$ pip3 install --target workflow/src/libs openai --upgrade
+$ rm -rf workflow/src/libs/*.dist-info
+$ find . -name "*.so" -type f
+$ find . -name "*.so" -type f -exec rm {} +
+```
 
 ## Safety best practices 🛡️
 Please refer to OpenAI's [safety best practices guide](https://platform.openai.com/docs/guides/safety-best-practices) for more information on how to use the API safely and what to consider when using it. Also check out OpenAPI's [Usage policies](https://platform.openai.com/docs/usage-policies/usage-policies).
