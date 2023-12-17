@@ -22,8 +22,6 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
 import openai
 
-import flet as ft
-
 openai.api_key = os.getenv("api_key")
 if os.getenv("custom_api_url"):
     openai.api_base = os.getenv("custom_api_url")
@@ -43,6 +41,9 @@ __system_prompt = os.getenv("system_prompt") if os.getenv("system_prompt") else 
 __use_system_prompt = int(os.getenv("use_system_prompt") or 0)
 __unlocked = int(os.getenv("unlocked") or 0)
 __stream_reply = int(os.getenv("stream_reply") or 0)
+
+if __stream_reply:
+    import flet as ft
 
 
 def time_it(func):
