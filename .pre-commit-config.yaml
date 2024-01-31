@@ -70,13 +70,13 @@ repos:
         args: ["--branch=main"]
 
   - repo: https://github.com/bwhmather/ssort
-    rev: 0.12.2
+    rev: 0.12.3
     hooks:
       - id: ssort
         exclude: "workflow/src/libs"
 
   - repo: https://github.com/psf/black
-    rev: 23.12.1
+    rev: 24.1.1
     hooks:
       - id: black
         exclude: "workflow/src/libs"
@@ -94,7 +94,7 @@ repos:
         exclude: "workflow/src/libs"
 
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.6
+    rev: 1.7.7
     hooks:
       - id: bandit
         exclude: "workflow/src/libs"
