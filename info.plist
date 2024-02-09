@@ -574,7 +574,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Show repy in large text</string>
+				<string>Show reply in large text</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -604,7 +604,7 @@
 				<key>modifiers</key>
 				<integer>1310720</integer>
 				<key>modifiersubtext</key>
-				<string>Show repy in large text and copy to clipboard</string>
+				<string>Show reply in large text and copy to clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1928,7 +1928,7 @@ python3 -c 'import custom_prompts; custom_prompts.custom_or_error_prompt_usage()
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>🔓 Jailbreak was activated but no "ChatGPT jailbreak promt" is provided in the worksflow's configuration.</string>
+				<string>🔓 Jailbreak was activated but no "ChatGPT jailbreak prompt" is provided in the workflow's configuration.</string>
 				<key>title</key>
 				<string>ChatFred</string>
 			</dict>
@@ -3049,6 +3049,9 @@ or use ChatFred as a fallback search in Alfred:
 
 
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the workflow's configuration for more options (e.g. *Always copy reply to clipboard*).
+
+Using the **Stream reply** feature the response would be a stream - like the ChatGPT UI looking like this:
+![Screenshot](assets/images/screenshot19.png)
 
 ChatFred can also automatically paste ChatGPT's response directly into the frontmost app. Just switch on the *Paste response to frontmost app* in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) or use the &lt;kbd&gt;⌘&lt;/kbd&gt; &lt;kbd&gt;⌥&lt;/kbd&gt; option.
 

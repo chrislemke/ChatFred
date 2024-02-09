@@ -4,7 +4,6 @@
 [![Alfred](https://img.shields.io/badge/Alfred-Workflow-blueviolet%20)](https://alfred.app/workflows/chrislemke/chatfred/)
 [![Releases](https://img.shields.io/github/v/release/chrislemke/chatfred?include_prereleases)](https://github.com/chrislemke/ChatFred/releases)
 [![Issues](https://img.shields.io/github/issues/chrislemke/chatfred)](https://github.com/chrislemke/ChatFred/issues)
-[![Downloads](https://img.shields.io/github/downloads/chrislemke/chatfred/total?label=downloads%20on%20GitHub)](https://github.com/chrislemke/ChatFred/releases)
 [![License](https://img.shields.io/github/license/chrislemke/chatfred)](https://github.com/chrislemke/chatfred/blob/main/LICENSE)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![litellm](https://img.shields.io/badge/%20%F0%9F%9A%85%20liteLLM-OpenAI%7CAzure%7CAnthropic%7CPalm%7CCohere-blue?color=green)](https://github.com/BerriAI/litellm)
@@ -54,6 +53,9 @@ or use ChatFred as a fallback search in Alfred:
 
 ![Screenshot](workflow/assets/images/screenshot8.png)
 The results will always be shown in [Large Type](https://www.alfredapp.com/help/features/large-type/). Check out the workflow's configuration for more options (e.g. *Always copy reply to clipboard*).
+
+Using the **Stream reply** feature the response would be a stream - like the ChatGPT UI looking like this:
+![Screenshot](workflow/assets/images/screenshot19.png)
 
 ChatFred can also automatically paste ChatGPT's response directly into the frontmost app. Just switch on the *Paste response to frontmost app* in the [workflow's configuration](https://www.alfredapp.com/help/workflows/user-configuration/) or use the <kbd>⌘</kbd> <kbd>⌥</kbd> option.
 
