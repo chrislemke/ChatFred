@@ -4613,6 +4613,10 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<key>pairs</key>
 				<array>
 					<array>
+						<string>OpenAi: GPT-4 Turbo</string>
+						<string>openai/gpt-4-1106-preview</string>
+					</array>
+					<array>
 						<string>OpenAI: GPT-4</string>
 						<string>openai/gpt-4</string>
 					</array>
@@ -4671,6 +4675,14 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 					<array>
 						<string>Jon Durbin: Airoboros L2 70B (beta)</string>
 						<string>jondurbin/airoboros-l2-70b-2.1</string>
+					</array>
+					<array>
+						<string>Anthropic: Claude v3 Opus</string>
+						<string>anthropic/claude-3-opus</string>
+					</array>
+					<array>
+						<string>Anthropic: Claude v3 Sonnet</string>
+						<string>anthropic/claude-3-sonnet</string>
 					</array>
 				</array>
 			</dict>
