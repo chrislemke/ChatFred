@@ -21,8 +21,11 @@ from error_handler import (
 sys.path.append(os.path.join(os.path.dirname(__file__), "libs"))
 
 import openai
+import litellm
 
 openai.api_key = os.getenv("api_key")
+if openai.api_key is not None:
+    os.environ["OPENAI_API_KEY"] = openai.api_key
 if os.getenv("custom_api_url"):
     openai.api_base = os.getenv("custom_api_url")
 
@@ -371,8 +374,72 @@ def make_chat_request(
     return prompt, full_reply_content
 
 
+@time_it
+def make_litellm_chat_request(
+    prompt: str,
+    model: str,
+    temperature: float,
+    max_tokens: Optional[int],
+    top_p: int,
+    frequency_penalty: float,
+    presence_penalty: float,
+) -> Tuple[str, str]:
+    """Sends a chat request to OpenAI/Azure/Cohere/Anthropic/Bard/Pal model and returns the prompt and
+    response as a tuple.
+
+    Args:
+        prompt (str): The prompt to send to the model.
+        model (str): The model to be used, see https://litellm.readthedocs.io/en/latest/supported/ for models
+        temperature (float): Controls the "creativity" of the response. Higher values result in more diverse responses.
+        max_tokens (Optional[int]): The maximum number of tokens (words) in the response.
+        top_p (int): Controls the "quality" of the response. Higher values result in more coherent responses.
+        frequency_penalty (float): Controls the model's tendency to repeat itself.
+        presence_penalty (float): Controls the model's tendency to stay on topic.
+
+    Returns:
+        Tuple[str, str]: A tuple containing the prompt and the response from the model.
+    """
+    intercept_custom_prompts(prompt)
+    prompt = prompt_for_alias(prompt)
+    messages = create_message(prompt)
+    write_to_cache("last_chat_request_successful", True)
+
+    try:
+        response = (
+            litellm.completion(
+                model=model,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                top_p=top_p,
+                frequency_penalty=frequency_penalty,
+                presence_penalty=presence_penalty,
+            )
+            .choices[0]
+            .message["content"]
+        )
+
+    except Exception as exception:  # pylint: disable=broad-except
+        response = exception_response(exception)
+        write_to_cache("last_chat_request_successful", False)
+        log_error_if_needed(
+            model=__model,
+            error_message=exception._message,  # type: ignore  # pylint: disable=protected-access
+            user_prompt=prompt,
+            parameters={
+                "temperature": temperature,
+                "max_tokens": max_tokens,
+                "top_p": top_p,
+                "frequency_penalty": frequency_penalty,
+                "presence_penalty": presence_penalty,
+            },
+        )
+
+    return prompt, response
+
+
 exit_on_error()
-__prompt, __response = make_chat_request(
+__prompt, __response = make_litellm_chat_request(
     get_query(),
     __temperature,
     __max_tokens,
