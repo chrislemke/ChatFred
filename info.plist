@@ -4614,7 +4614,7 @@ Please refer to OpenAI's [safety best practices guide](https://platform.openai.c
 				<array>
 					<array>
 						<string>OpenAi: GPT-4 Turbo</string>
-						<string>openai/gpt-4-1106-preview</string>
+						<string>openai/gpt-4-turbo</string>
 					</array>
 					<array>
 						<string>OpenAI: GPT-4</string>
