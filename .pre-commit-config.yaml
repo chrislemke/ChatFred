@@ -70,7 +70,7 @@ repos:
         args: ["--branch=main"]
 
   - repo: https://github.com/bwhmather/ssort
-    rev: 0.12.4
+    rev: 0.13.0
     hooks:
       - id: ssort
         exclude: "workflow/src/libs"
@@ -82,7 +82,7 @@ repos:
         exclude: "workflow/src/libs"
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.3.7"
+    rev: "v0.4.1"
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
