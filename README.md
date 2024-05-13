@@ -1,5 +1,7 @@
 ![chatfred](workflow/assets/images/chatfred.png)
 
+## This repo is not maintained anymore. If you want to continue maintaining it please get in touch. Also consider using The [offical OpenAI Workflow](https://alfred.app/workflows/alfredapp/openai/) from the Alfred team.<br>
+
 # ChatFred
 [![Alfred](https://img.shields.io/badge/Alfred-Workflow-blueviolet%20)](https://alfred.app/workflows/chrislemke/chatfred/)
 [![Releases](https://img.shields.io/github/v/release/chrislemke/chatfred?include_prereleases)](https://github.com/chrislemke/ChatFred/releases)
